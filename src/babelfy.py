@@ -12,4 +12,5 @@ def babelfy(text):
     return map(lambda x: {'token_start':eval(x.split('\t')[0]),
                           'token_end':eval(x.split('\t')[1]),
                           'entity':x.split('\t')[2]},
+                          #'synset':x.split('\t')[3]},
                           lines)

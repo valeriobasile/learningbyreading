@@ -23,8 +23,8 @@ parser.add_option('-o',
 with open(options.input_file) as f:
     text = f.read()
 
-babel = babelfy(text)
-print babel
+#babel = babelfy(text)
+#print babel
 drs = boxer(text)
 print drs
 

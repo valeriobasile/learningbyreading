@@ -4,18 +4,11 @@ from lxml import etree, objectify
 
 def boxer(text):
     # HTTP request
-    r = post('http://gingerbeard.alwaysdata.net/candcapi/proxy.php/raw/pipeline?resolve=true&instantiate=true&format=xml', data=text)
+    r = post('http://gingerbeard.alwaysdata.net/candcapi/proxy.php/raw/pipeline?resolve=true&instantiate=true&roles=verbnet&format=xml', data=text)
     xml = r.text.encode("utf-8")
-    #with open("boxer.xml") as f:
-    #       xml = f.read()
     drs = objectify.fromstring(xml)
     tagtokens = drs['xdrs']['taggedtokens']['tagtoken']
-    '''
-    for tagtoken in tagtokens:
-        print tagtoken.attrib['{http://www.w3.org/XML/1998/namespace}id']
-        for tag in tagtokens['tags']['tag']:
-            print "\t{0}".format(tag.attrib)
-    '''
+    # get the predicates
     predicates = []
     preds = drs.findall('.//pred')
     for pred in preds:
@@ -25,17 +18,32 @@ def boxer(text):
                      'variable':pred.attrib['arg']}
         predicates.append(predicate)
 
-    return predicates
+    # get the relations
+    relations = []
+    rels = drs.findall('.//rel')
+    for rel in rels:
+        relation = {'arg1':rel.attrib['arg1'],
+                     'arg2':rel.attrib['arg2'],
+                     'symbol':rel.attrib['symbol']}
+        relations.append(relation)
+
+    # get the identities
+    identities = []
+    eqs = drs.findall('.//eq')
+    for eq in eqs:
+        identity = {'arg1':eq.attrib['arg1'],
+                    'arg2':eq.attrib['arg2']}
+        identities.append(identity)
+
+    return {"predicates" : predicates,
+            "relations" : relations,
+            "identities" : identities}
 
 '''
-<xdrs xml:id="xdrs1">
- <taggedtokens>
-  <tagtoken xml:id="i1001">
-   <tags>
-     <tag type="tok">When</tag>
-     <tag type="pos">WRB</tag>
-     <tag type="lemma">when</tag>
-     <tag type="namex">O</tag>
-   </tags>
-  </tagtoken>
+    <cond label="l">
+     <rel arg1="e1" arg2="x1" symbol="agent" sense="0">
+     <indexlist>
+     </indexlist>
+     </rel>
+    </cond>
 '''
