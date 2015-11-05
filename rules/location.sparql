@@ -1,0 +1,17 @@
+prefix rel: <http://ns.inria.fr/aloof/relation#>
+prefix cat: <http://ns.inria.fr/aloof/category#>
+prefix boxerrel: <http://ns.inria.fr/aloof/boxer/relation#>
+
+construct {
+ ?room rel:category cat:room .
+}
+
+where {
+  ?tool rel:comention ?room .
+  service <http://dbpedia.org/sparql> {
+      ?tool <http://purl.org/dc/terms/subject> ?cat1 .
+      ?cat1 <http://www.w3.org/2004/02/skos/core#broader>{,2} <http://dbpedia.org/resource/Category:Tools> .
+      ?room <http://purl.org/dc/terms/subject> ?cat2 .
+      ?cat2 <http://www.w3.org/2004/02/skos/core#broader>{,2} <http://dbpedia.org/resource/Category:Rooms> .
+  }
+}
