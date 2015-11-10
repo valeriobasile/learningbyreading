@@ -1,0 +1,420 @@
+<?xml version="1.0" ?>
+<rdf:RDF
+xmlns:pp='http://ns.inria.fr/edelweiss/2010/kgram/pprinter/'
+xmlns:st='http://ns.inria.fr/sparql-template/'
+xmlns:owl='http://www.w3.org/2002/07/owl#'
+xmlns:cos='http://www.inria.fr/acacia/corese#'
+xmlns:xsd='http://www.w3.org/2001/XMLSchema#'
+xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#'
+xmlns:fp='ftp://ftp-sop.inria.fr/wimmics/soft/pprint/'
+xmlns:boxerrel='http://ns.inria.fr/aloof/boxer/relation#'
+xmlns:cw='http://ns.inria.fr/edelweiss/2010/kgram/construct/'
+xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+xmlns:xml='http://www.w3.org/XML/1998/namespace'
+xmlns:cat='http://ns.inria.fr/aloof/category#'
+xmlns:rel='http://ns.inria.fr/aloof/relation#'
+xmlns:xt='http://ns.inria.fr/sparql-extension/'
+xmlns:kg='http://ns.inria.fr/edelweiss/2010/kgram/'
+xmlns:sp='http://spinrdf.org/sp#'
+xmlns:foaf='http://xmlns.com/foaf/0.1/'
+xmlns:eng='http://ns.inria.fr/edelweiss/2010/kgram/extension/'>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Cook_stove'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Dining_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Kitchen'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Air_conditioning'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Parlour'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Dining_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Baton_(law_enforcement)'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Suitcase'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Matchbook'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Dining_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Knife'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Fork'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Dining_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Drawer_(furniture)'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Soap_dish'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Towel'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Basement'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Laundry_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Shaving_cream'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Cabinet_(room)'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bowl'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Dining_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Paper_towel'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Dining_room'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Broom'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Cabinet_(room)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Oven'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Changing_room'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bathroom'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Sideboard'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Cabinet_(room)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Vestibule_(architecture)'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Vacuum_cleaner'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Hall'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Parlour'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Cabinet_(room)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Toothbrush'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Attic'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Fireplace'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Basement'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Dining_room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Attic'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Garage_(residential)'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bedroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Razor'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Basket'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Laundry_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Brush'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Frying_pan'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bottle'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Peeler'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Captive_bolt_pistol'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Parlour'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Screwdriver'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Wallet'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Cabinet_(room)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bin_bag'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Hall'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Diaper'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Tap_(valve)'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Box'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Parlour'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Cabinet_(room)'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Vestibule_(architecture)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Plate_(dishware)'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Carton'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bedroom'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bathtub'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Parlour'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Cup'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Dining_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Jar'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Dining_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Garage_(residential)'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Parlour'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Weapon'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Container'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Laundry_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Switch'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Cabinet_(room)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Sponge_(material)'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Rifle'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Cabinet_(room)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Cabinetry'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Changing_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Washing_machine'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Laundry_room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Refrigerator'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Kitchen_cabinet'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bookcase'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Parlour'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Pail_(container)'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Garbage_disposal_unit'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Honda'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Water_heating'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Room'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Chest_of_drawers'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Spoon'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Laundry_room'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Toaster'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Basement'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bag'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bed_sheet'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Room'/>
+ <rel:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+</rdf:RDF>

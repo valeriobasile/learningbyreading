@@ -1,0 +1,996 @@
+<?xml version="1.0" ?>
+<rdf:RDF
+xmlns:pp='http://ns.inria.fr/edelweiss/2010/kgram/pprinter/'
+xmlns:st='http://ns.inria.fr/sparql-template/'
+xmlns:owl='http://www.w3.org/2002/07/owl#'
+xmlns:cos='http://www.inria.fr/acacia/corese#'
+xmlns:xsd='http://www.w3.org/2001/XMLSchema#'
+xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#'
+xmlns:fp='ftp://ftp-sop.inria.fr/wimmics/soft/pprint/'
+xmlns:boxerrel='http://ns.inria.fr/aloof/boxer/relation#'
+xmlns:cw='http://ns.inria.fr/edelweiss/2010/kgram/construct/'
+xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+xmlns:xml='http://www.w3.org/XML/1998/namespace'
+xmlns:rel='http://ns.inria.fr/aloof/relation#'
+xmlns:xt='http://ns.inria.fr/sparql-extension/'
+xmlns:kg='http://ns.inria.fr/edelweiss/2010/kgram/'
+xmlns:sp='http://spinrdf.org/sp#'
+xmlns:foaf='http://xmlns.com/foaf/0.1/'
+xmlns:eng='http://ns.inria.fr/edelweiss/2010/kgram/extension/'>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Papa_(nickname)'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bed'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Million'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Passenger'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Freddy_Moore'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Government_agency'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Librarian'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Causes_(company)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bear'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Man'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Kimberley_(surname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Letter_(message)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Teacher'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/United_States'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People_(magazine)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Walking'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Enneagram_of_Personality'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Enneagram_of_Personality'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Minor_(law)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Sidewalk'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Consumer'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Loaf'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Teacher'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/United_States'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People_(magazine)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bean'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Freddy_Moore'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bean'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Aerodrome'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Stomach'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Night'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Night'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Blackout_(Britney_Spears_album)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Employment'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Baseball'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bicycle'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bank'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bank'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Letter_(message)'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Man'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Kimberley_(surname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Letter_(message)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Librarian'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Government_agency'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Librarian'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Causes_(company)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Music'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Year'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Music'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Tints_and_shades'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Fence'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tints_and_shades'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Fence'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Fence'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tints_and_shades'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Music_examination'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Insect_wing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Music_examination'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Arm'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Influenza'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Couch'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Employment'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Night'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Employment'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Baseball'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bicycle'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Baseball'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Night'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Employment'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Baseball'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bicycle'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Air_current'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Water'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Air_current'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Apartment'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bird'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Leaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Teacher'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/United_States'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People_(magazine)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Fence'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tints_and_shades'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Ocean'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Arm'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Insect_wing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Music_examination'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Arm'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Water'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Water'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Air_current'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Apartment'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Idea'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Truck'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Prison'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Family'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prisoner'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prison'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Minor_(law)'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Enneagram_of_Personality'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Minor_(law)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Sidewalk'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Consumer'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Rose'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Rose'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Girl'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bed'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Million'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Man'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Family'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prisoner'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prison'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Apollo_(crater)'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Teacher'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Apollo_(crater)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Teacher'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Teacher'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/United_States'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People_(magazine)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Apollo_(crater)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bed'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bed'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Million'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Workweek_and_weekend'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Squirrel'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Workweek_and_weekend'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Leaf'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Leaf'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Tuple'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Insect_wing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Music_examination'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Arm'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Night'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Employment'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Baseball'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bicycle'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Aerodrome'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Husband'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Man'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Kimberley_(surname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Letter_(message)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Gunfighter'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Gunfighter'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bicycle'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Night'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Employment'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Baseball'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bicycle'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Fun_(film)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Contract'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Government_agency'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Contract'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Musical_ensemble'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Musical_ensemble'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Logos'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bed'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Million'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Passenger'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Freddy_Moore'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Child'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bank'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Family'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prisoner'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prison'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Year'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Music'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Human'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Monk'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Time'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Time'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Door'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bed'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Million'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Enneagram_of_Personality'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Minor_(law)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Sidewalk'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Consumer'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Fence'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tints_and_shades'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Woman'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Man'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Kimberley_(surname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Letter_(message)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Enneagram_of_Personality'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Minor_(law)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Sidewalk'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Consumer'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Gunfighter'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/People'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tree'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Night'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Employment'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Baseball'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bicycle'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bank'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Leaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Passenger'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Freddy_Moore'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Enneagram_of_Personality'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Minor_(law)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Sidewalk'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Consumer'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Family'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prisoner'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prison'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Teacher'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/United_States'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People_(magazine)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Rose'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Water'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Air_current'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Apartment'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Musical_ensemble'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Walking'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bean'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Cancer'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Blackout_(Britney_Spears_album)'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Night'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Blackout_(Britney_Spears_album)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Tree'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Temperature'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Temperature'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Prisoner'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Family'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prisoner'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prison'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Infant'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bank'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Kimberley_(surname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Family'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prisoner'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prison'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Teacher'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/United_States'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People_(magazine)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Water'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Air_current'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Apartment'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Apollo_(crater)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Government_agency'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Government_agency'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Librarian'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Causes_(company)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Contract'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Birthday'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Night'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Employment'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Baseball'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bicycle'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prisoner'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prison'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Rose'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Fun_(film)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Contract'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Truck'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Water'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Idea'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Truck'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Kimberley_(surname)'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Man'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Kimberley_(surname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Letter_(message)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Man'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Man'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Kimberley_(surname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Letter_(message)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Apartment'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Water'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Air_current'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Apartment'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Boy'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Leaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bed'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Million'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Passenger'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Freddy_Moore'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Man'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Kimberley_(surname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Letter_(message)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Need'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Fun_(film)'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bicycle'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Fun_(film)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Year'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Music'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Freddy_Moore'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Passenger'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Freddy_Moore'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bean'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Money'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Money'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Cancer'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Cancer'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Idea'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Water'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Truck'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/People_(magazine)'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Teacher'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/United_States'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People_(magazine)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Student'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Classroom'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Aerodrome'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Passenger'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Freddy_Moore'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Couch'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Influenza'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Couch'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Insect_wing'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Music_examination'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Arm'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Tinnitus'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Company'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Company'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Family'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Family'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prisoner'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prison'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/United_States'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Teacher'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/United_States'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People_(magazine)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Million'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bed'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Million'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Need'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Need'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Day'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Night'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bicycle'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bank'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Leaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Need'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Influenza'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Couch'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Loaf'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Monk'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Fun_(film)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Nightstand'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Child'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Infant'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Influenza'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Couch'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Family'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prisoner'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Prison'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Walking'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Government_agency'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Librarian'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Causes_(company)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Clothing'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Birthday'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bicycle'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bed'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Girl'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Million'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Fun_(film)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Squirrel'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Workweek_and_weekend'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Cat'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Cat'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Sidewalk'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Enneagram_of_Personality'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Minor_(law)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Sidewalk'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Consumer'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Passenger'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Logos'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Passenger'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Freddy_Moore'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Walking'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Walking'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Monk'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Monk'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Ocean'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Ocean'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Tooth'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tooth'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Causes_(company)'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Nightstand'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Government_agency'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Librarian'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Causes_(company)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Home'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tuple'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Classroom'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Papa_(nickname)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Bear'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Tinnitus'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Stomach'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Doctor_(Star_Trek:_Voyager)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Consumer'>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/People'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Woman'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Enneagram_of_Personality'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Minor_(law)'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Sidewalk'/>
+ <rel:coagent rdf:resource='http://dbpedia.org/resource/Consumer'/>
+</rdf:Description>
+
+</rdf:RDF>

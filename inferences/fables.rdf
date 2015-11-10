@@ -1,0 +1,1150 @@
+<?xml version="1.0" ?>
+<rdf:RDF
+xmlns:pp='http://ns.inria.fr/edelweiss/2010/kgram/pprinter/'
+xmlns:st='http://ns.inria.fr/sparql-template/'
+xmlns:owl='http://www.w3.org/2002/07/owl#'
+xmlns:cos='http://www.inria.fr/acacia/corese#'
+xmlns:xsd='http://www.w3.org/2001/XMLSchema#'
+xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#'
+xmlns:fp='ftp://ftp-sop.inria.fr/wimmics/soft/pprint/'
+xmlns:boxerrel='http://ns.inria.fr/aloof/boxer/relation#'
+xmlns:cw='http://ns.inria.fr/edelweiss/2010/kgram/construct/'
+xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+xmlns:xml='http://www.w3.org/XML/1998/namespace'
+xmlns:cat='http://ns.inria.fr/aloof/category#'
+xmlns:rel='http://ns.inria.fr/aloof/relation#'
+xmlns:xt='http://ns.inria.fr/sparql-extension/'
+xmlns:kg='http://ns.inria.fr/edelweiss/2010/kgram/'
+xmlns:sp='http://spinrdf.org/sp#'
+xmlns:foaf='http://xmlns.com/foaf/0.1/'
+xmlns:eng='http://ns.inria.fr/edelweiss/2010/kgram/extension/'>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Room'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Workshop'>
+ <rel:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+</rdf:RDF>
+<?xml version="1.0" ?>
+<rdf:RDF
+xmlns:pp='http://ns.inria.fr/edelweiss/2010/kgram/pprinter/'
+xmlns:st='http://ns.inria.fr/sparql-template/'
+xmlns:owl='http://www.w3.org/2002/07/owl#'
+xmlns:cos='http://www.inria.fr/acacia/corese#'
+xmlns:xsd='http://www.w3.org/2001/XMLSchema#'
+xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#'
+xmlns:fp='ftp://ftp-sop.inria.fr/wimmics/soft/pprint/'
+xmlns:boxerrel='http://ns.inria.fr/aloof/boxer/relation#'
+xmlns:cw='http://ns.inria.fr/edelweiss/2010/kgram/construct/'
+xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+xmlns:xml='http://www.w3.org/XML/1998/namespace'
+xmlns:rel='http://ns.inria.fr/aloof/relation#'
+xmlns:xt='http://ns.inria.fr/sparql-extension/'
+xmlns:kg='http://ns.inria.fr/edelweiss/2010/kgram/'
+xmlns:sp='http://spinrdf.org/sp#'
+xmlns:foaf='http://xmlns.com/foaf/0.1/'
+xmlns:eng='http://ns.inria.fr/edelweiss/2010/kgram/extension/'>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Boy'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grappling_hold'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Rock_music'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farmer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Train'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bat'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Flesh'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Axe'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Watch'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Attention'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lookout'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Individual'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Monarch'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Money'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Counsel'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Sense'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Disappointment'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Physical_body'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/House'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nest'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Beach'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dowry'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dramatis_person&#230;'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mask'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shipwreck'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish_anatomy'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Art'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Music'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farmer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dome'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Law'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nous'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Prayer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Saddle'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Firearm'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Melody'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Trick-taking_game'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Number'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Death'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Course_(navigation)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish_anatomy'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Art'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Horse'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mode_(literature)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Light_beam'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/PC_game'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Father'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Death'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Trade'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Monkey'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Company'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Goose'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tree'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Prince'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Legal_proceeding'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Farmer'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farmer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dome'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Law'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nous'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Prayer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Saddle'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Firearm'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Trap_(tactic)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tree'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Pincer_(biology)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Garden'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Human'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nest'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Autumn'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tribunal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Intellect'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farm'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mobile_phone'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hobo'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Character_(arts)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Boldness'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mode_(literature)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Light_beam'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/PC_game'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Assertion_(software_development)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Linen'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Food'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Seed'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Daughter'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dart_(missile)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fruit'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grading_(education)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Engagement_(military)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Companies_law'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bird'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Profession'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Day'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nest'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish_anatomy'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Art'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tribunal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Assertion_(software_development)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Linen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Province'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hobo'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Time'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Telescope'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Attitude_(psychology)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Location_(geography)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Convention_(meeting)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Evening'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Watch'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Attention'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lookout'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Individual'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Monarch'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Daughter'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Food'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mouse'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Muscle'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Gentleman'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Hair'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Watch'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Attention'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lookout'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Individual'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Monarch'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Word'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Coast'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Location_(geography)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Newspaper'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shore'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Horse'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Rattlesnake'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Output_(economics)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Horse'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Suit_(clothing)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Food'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Accomplice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Pocket'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hour'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Columbidae'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Intellect'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farm'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mobile_phone'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Eye'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ivory'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Mourv&#232;dre'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Aglais_io'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Tuple'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Company'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Toad'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Goose'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Market_(economics)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grappling_hold'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Rock_music'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farmer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Train'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bat'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Watch'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Attention'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lookout'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Individual'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Monarch'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Horn_(anatomy)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hobo'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Shame'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Death'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Instant'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farmer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Linen'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dome'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Law'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nous'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Prayer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Saddle'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Firearm'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Death'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Death'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Clothing'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Horse'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Company'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mouse'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Assertion_(software_development)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Domestic_pig'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hair'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mode_(literature)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Door'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Proclamation'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shipwreck'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Gentleman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Student'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Meadow'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Feather'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Location_(geography)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Death'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nous'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Leaf'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nature'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Breast'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Youth'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Time'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hair'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Word'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Coast'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Location_(geography)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Newspaper'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shore'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mode_(literature)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Goose'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Eye'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Destiny'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Lip'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Table_of_contents'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Head'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Pes_(anatomy)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Song'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Machinist'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Lie'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Proclamation'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Buttocks'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Boat'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Wild_boar'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Physical_body'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Daughter'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Paganism'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Mole_(unit)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bear'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Physical_body'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Crocodile'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grappling_hold'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Rock_music'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farmer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Train'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bat'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nest'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tribunal'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Melody'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Attention'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Lion'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hobo'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Linen'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Goose'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wig'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Animal'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Thunder'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Ficus'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Insect_wing'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Season'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tree'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Twist_(mathematics)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Destiny'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Olive'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Motility'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ficus'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Sparrow'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Attention'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/House'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nest'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Beach'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Word'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Coast'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Location_(geography)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Newspaper'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shore'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Goose'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tree'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Prince'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Pincer_(biology)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Garden'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Proletariat'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Shepherd'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grappling_hold'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Rock_music'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farmer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Train'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bat'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Location_(geography)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Time'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Evening'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Altar_(Wicca)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Soldier'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Harm'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Company'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Clothing'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Prince'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shipwreck'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Gentleman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Engagement_(military)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Student'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Aeroelasticity'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Water'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Laughter'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Word'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Goose'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Augury'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Attention'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Nest'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Word'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Coast'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Location_(geography)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Newspaper'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shore'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Horse'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Assertion_(software_development)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Linen'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Goose'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tree'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Prince'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Authorship_of_the_Bible'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Wood_(golf)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hair'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Intellect'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farm'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mobile_phone'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mode_(literature)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Door'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Desire'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Error'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Tongue'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Rock_music'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farmer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Share_(finance)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Design'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Queer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Pannier'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Act_(document)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Ostrich'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dowry'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dramatis_person&#230;'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mask'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Door'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Goose'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tree'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Prince'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Warfare'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wind_wave'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Insect_wing'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Season'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Conflict_(process)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Hound'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Horse'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Company'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mouse'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Shipwreck'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Word'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Coast'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Location_(geography)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Newspaper'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shore'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Arrow'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bridge'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Money'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Counsel'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Sense'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Food'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mouse'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Vine'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Proletariat'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Heat'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Thirst'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bramble'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Table_of_contents'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Head'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Pes_(anatomy)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Song'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Cartography'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Word'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Coast'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Location_(geography)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Newspaper'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shore'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Wheel'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Proclamation'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Shore'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Pleasure'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Aeroelasticity'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tyrant'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Hand'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Coast'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fox'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wheel'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Horse'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Goose'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Cervix_(insect_anatomy)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Table_of_contents'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Coast'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/House'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nest'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Beach'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Word'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Snake'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Coast'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Location_(geography)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Newspaper'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shore'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Assertion_(software_development)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Company'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/MT_Haven'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Dramatis_person&#230;'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Boy'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shore'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Wig'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Air_current'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Trunk_(botany)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Weapon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tooth'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Child'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Feather'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Rock_music'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Insect_wing'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Animal'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Horse'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Calf'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shipwreck'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Gentleman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hair'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shore'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mode_(literature)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Door'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Student'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Mouse'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nous'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Physician'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Woman'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Road'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Plank_(wood)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Sheep'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Gray_wolf'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Intervention_(international_law)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Columbidae'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Henceforth'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Disappointment'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chase_(land)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Intellect'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Food'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Officer_(armed_forces)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Suit_(clothing)'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Tourism'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Individual'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Death'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Motility'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grappling_hold'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Hearing_(law)'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Food'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Mouse'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Profession'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Fox'>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Human'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tail'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Contemplation_(Kafka)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Day'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shepherd'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Tegument_(helminth)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Carucate'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Number'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Dick_(slang)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Shadow'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fish'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grape'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Result'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chalice'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Husband'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Ownership'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Fisherman'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Vulture'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Stable'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Swan'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Distress_(medicine)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wagon'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Grappling_hold'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Rock_music'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Farmer'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bird'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Train'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Bat'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Maestro'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Lie'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Hand'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Money'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Counsel'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Sense'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Disappointment'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/House'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Nest'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Beach'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wood_(golf)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Assertion_(software_development)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Home'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/MT_Haven'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Clothing'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Chase_(land)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Cervix_(insect_anatomy)'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Table_of_contents'/>
+ <rel:agenttotheme rdf:resource='http://dbpedia.org/resource/Wall'/>
+</rdf:Description>
+
+</rdf:RDF>
