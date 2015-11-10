@@ -1,0 +1,11 @@
+prefix rel: <http://ns.inria.fr/aloof/relation#>
+prefix boxerrel: <http://ns.inria.fr/aloof/boxer/relation#>
+
+construct {
+ ?p rel:coagent ?q .
+}
+
+where {
+ ?p boxerrel:Agent ?r .
+ ?q boxerrel:Agent ?r .
+}
