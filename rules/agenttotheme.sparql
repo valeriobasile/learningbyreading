@@ -6,6 +6,6 @@ construct {
 }
 
 where {
- ?p boxerrel:agent ?r .
- ?q boxerrel:theme ?r .
+ ?p boxerrel:Agent ?r .
+ ?q boxerrel:Theme ?r .
 }

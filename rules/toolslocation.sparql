@@ -3,12 +3,14 @@ prefix cat: <http://ns.inria.fr/aloof/category#>
 prefix boxerrel: <http://ns.inria.fr/aloof/boxer/relation#>
 
 construct {
- ?room rel:category cat:room .
+  ?room rel:category cat:room .
+  ?tool rel:category cat:tool .
+  ?tool rel:likelyfound ?room .
 }
 
 where {
   ?tool rel:comention ?room .
-  service <http://dbpedia.org/sparql> {
+  service <http://lod.openlinksw.com/sparql> {
       ?tool <http://purl.org/dc/terms/subject> ?cat1 .
       ?cat1 <http://www.w3.org/2004/02/skos/core#broader>{,2} <http://dbpedia.org/resource/Category:Tools> .
       ?room <http://purl.org/dc/terms/subject> ?cat2 .
