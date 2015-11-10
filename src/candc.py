@@ -11,9 +11,13 @@ def tokenize(text):
 def boxer(tokenized):
     # HTTP request
     # takes the input text already tokenized
-    r = post('http://gingerbeard.alwaysdata.net/candcapi/proxy.php/raw/candcboxer?resolve=true&instantiate=true&roles=proto&integrate=true&format=xml', data=tokenized)
-    xml = r.text.encode("utf-8")
-    drs = objectify.fromstring(xml)
+    try:
+        r = post('http://gingerbeard.alwaysdata.net/candcapi/proxy.php/raw/candcboxer?resolve=true&instantiate=true&roles=verbnet&integrate=true&format=xml', data=tokenized)
+        xml = r.text.encode("utf-8")
+        drs = objectify.fromstring(xml)
+    except:
+        log.error("boxer(): contacting API")
+        return None
 
     # get the tokens and their IDs
     try:
