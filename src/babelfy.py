@@ -8,7 +8,7 @@ with open('config/babelfy.var.properties') as f:
 
 def babelfy(text):
     try:
-        process = subprocess.Popen(["java", "-jar", "libs/babelfy.jar", text],
+        process = subprocess.Popen(["java", "-cp", "libs/babelfy-aloof/babelfy-aloof.jar:libs/babelfy-aloof/lib/*", "BabelfyAloof", text],
                                shell=False,
                                stdin=subprocess.PIPE,
                                stdout=subprocess.PIPE,
@@ -22,8 +22,8 @@ def babelfy(text):
         lines = out.split("\n")[:-1]
         entities = map(lambda x: {'token_start':eval(x.split('\t')[0]),
                               'token_end':eval(x.split('\t')[1]),
-                              'synset':x.split('\t')[2],
-                              'entity':x.split('\t')[3]},
+                              'synset':x.split('\t')[3],
+                              'entity':x.split('\t')[4]},
                               lines)
     except:
         log.error("babelfy(): error processing Babelfy output")
