@@ -47,11 +47,17 @@ public class BabelfyAloof {
 			BabelNet bn = BabelNet.getInstance();
 			BabelSynset bs = bn.getSynset(bsid);
 			List<WordNetSynsetID> offsets = bs.getWordNetOffsets();
-
+			String offset;
+			if (offsets.isEmpty()){
+				offset = "";
+			}
+			else {
+				offset = offsets.get(0).getID();
+			}
 			System.out.println(annotation.getTokenOffsetFragment().getStart() +
 								"\t" + annotation.getTokenOffsetFragment().getEnd() +
 								"\t" + annotation.getBabelNetURL() +
-								"\t" + offsets.get(0) +
+								"\t" + offset +
 								"\t" + annotation.getDBpediaURL());
 		}
 	}
