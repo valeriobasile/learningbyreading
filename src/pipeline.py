@@ -8,6 +8,7 @@ from os import listdir
 from os.path import isfile, join
 from itertools import product, combinations
 from sys import exit
+from framenet import frames
 
 # log configuration
 log.basicConfig(level=log.INFO)
@@ -93,7 +94,16 @@ for filename in documents:
             for event, entity in product(variables[relation['arg1']],
                                          variables[relation['arg2']]):
                 if (entity[0] != 'null'):
-                    triples.add((entity[0], relation['symbol'], event[1]))
+                    # fix ID format wn:00035718r ->  00594989-v
+                    synset_id = event[1].split(':')[1][:-1]+'-'+event[1].split(':')[1][-1]
+                    #print synset_id
+                    if synset_id in frames:
+                        print synset_id
+                        framelist = frames[synset_id]
+                    else:
+                        framelist = ['unknown_frame']
+                    for frame in framelist:
+                        triples.add((entity[0], relation['symbol'], frame))
 
 with open(options.output_file, "w") as f:
     for triple in triples:
