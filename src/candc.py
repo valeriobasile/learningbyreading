@@ -2,9 +2,12 @@ from requests import post
 from lxml import etree, objectify
 import logging as log
 
+BASE_URL = 'http://www.let.rug.nl/basile/candcproxy/proxy.php'
+#BASE_URL = 'http://gingerbeard.alwaysdata.net/candcapi/proxy.php'
+
 def tokenize(text):
     # HTTP request
-    r = post('http://gingerbeard.alwaysdata.net/candcapi/proxy.php/raw/t', data=text)
+    r = post('{0}/raw/t'.format(BASE_URL), data=text)
     tokenized = r.text.encode("utf-8")
     return tokenized.split(" ")
 
@@ -12,7 +15,7 @@ def boxer(tokenized):
     # HTTP request
     # takes the input text already tokenized
     try:
-        r = post('http://gingerbeard.alwaysdata.net/candcapi/proxy.php/raw/candcboxer?resolve=true&instantiate=true&roles=verbnet&integrate=true&format=xml', data=tokenized)
+        r = post('{0}/raw/candcboxer?resolve=true&instantiate=true&roles=verbnet&integrate=true&format=xml'.format(BASE_URL), data=tokenized)
         xml = r.text.encode("utf-8")
         drs = objectify.fromstring(xml)
     except:
