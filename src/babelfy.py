@@ -18,6 +18,11 @@ def babelfy(text):
         log.error("babelfy(): error executing Babelfy Java API")
         return None
 
+    if err:
+        log.error("babelfy(): error executing Babelfy Java API:\n{0}".format(err))
+        return None
+
+
     try:
         lines = out.split("\n")[:-1]
         entities = map(lambda x: {'token_start':eval(x.split('\t')[0]),
