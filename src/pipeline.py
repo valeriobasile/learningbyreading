@@ -70,7 +70,7 @@ for filename in documents:
     for entity1, entity2 in combinations(dbpedia_entities, 2):
         if (entity1 != 'null' and
             entity2 != 'null'):
-            triples.add((entity1, 'http://ns.inria.fr/aloof/relation#comention', entity2))
+            triples.add(('<{0}>'.format(entity1), 'aloof_relation:comention', '<{0}>'.format(entity2)))
 
     # build dictionary of variables
     try:
@@ -93,19 +93,17 @@ for filename in documents:
             relation['arg2'] in variables):
             for event, entity in product(variables[relation['arg1']],
                                          variables[relation['arg2']]):
-                if (entity[0] != 'null'):
+                if (entity[0] != 'null' and event[1] != ''):
                     # fix ID format wn:00035718r ->  00594989-v
                     synset_id = event[1].split(':')[1][:-1]+'-'+event[1].split(':')[1][-1]
-                    #print synset_id
                     if synset_id in frames:
-                        print synset_id
                         framelist = frames[synset_id]
                     else:
                         framelist = ['unknown_frame']
                     for frame in framelist:
-                        triples.add((entity[0], relation['symbol'], frame))
+                        triples.add(('<{0}>'.format(entity[0]), relation['symbol'], 'framenet:{0}'.format(frame)))
 
 with open(options.output_file, "w") as f:
     for triple in triples:
         # write down n-triples
-        f.write("<{0}> <{1}> <{2}>\n".format(*triple))
+        f.write("{0} {1} {2}\n".format(*triple))

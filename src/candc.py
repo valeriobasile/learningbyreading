@@ -2,8 +2,8 @@ from requests import post
 from lxml import etree, objectify
 import logging as log
 
-BASE_URL = 'http://www.let.rug.nl/basile/candcproxy/proxy.php'
-#BASE_URL = 'http://gingerbeard.alwaysdata.net/candcapi/proxy.php'
+# TODO: read this from a config file
+BASE_URL = 'http://gingerbeard.alwaysdata.net/candcapi/proxy.php'
 
 def tokenize(text):
     # HTTP request
@@ -53,7 +53,7 @@ def boxer(tokenized):
         rels = drs.findall('.//rel')
         for rel in rels:
             # transform Boxer relations into URIs
-            rel_url = 'http://ns.inria.fr/aloof/boxer/relation#{0}'.format(rel.attrib['symbol'])
+            rel_url = 'aloof_boxerrelation:{0}'.format(rel.attrib['symbol'])
 
             relation = {'arg1':rel.attrib['arg1'],
                          'arg2':rel.attrib['arg2'],
