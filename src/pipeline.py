@@ -82,7 +82,7 @@ for filename in documents:
                 # baseline alignment
                 # TODO: make this smarter
                 if predicate['token_start'] == entity['token_start'] and predicate['token_end'] == entity['token_end']:
-                    variables[predicate['variable']].append((entity['entity'], entity['synset']))
+                    variables[predicate['variable']].append((entity['entity'], entity['bn_url']))
     except:
         log.error("error during the alignment on file '{0}', exiting".format(filename))
         continue
@@ -95,9 +95,10 @@ for filename in documents:
                                          variables[relation['arg2']]):
                 if (entity[0] != 'null' and event[1] != ''):
                     # fix ID format wn:00035718r ->  00594989-v
-                    synset_id = event[1].split(':')[1][:-1]+'-'+event[1].split(':')[1][-1]
-                    if synset_id in frames:
-                        framelist = frames[synset_id]
+                    bn_id = event[1].split('/')[-1]
+                    #wn_offset = bn2offset[bn_id]
+                    if bn_id in frames:
+                        framelist = frames[bn_id]
                     else:
                         framelist = ['unknown_frame']
                     for frame in framelist:

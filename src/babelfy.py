@@ -27,8 +27,8 @@ def babelfy(text):
         lines = out.split("\n")[:-1]
         entities = map(lambda x: {'token_start':eval(x.split('\t')[0]),
                               'token_end':eval(x.split('\t')[1]),
-                              'synset':x.split('\t')[3],
-                              'entity':x.split('\t')[4]},
+                              'bn_url':x.split('\t')[2],
+                              'entity':x.split('\t')[3]},
                               lines)
     except:
         log.error("babelfy(): error processing Babelfy output")

@@ -11,11 +11,6 @@ import it.uniroma1.lcl.babelfy.commons.annotation.SemanticAnnotation.Source;
 import it.uniroma1.lcl.babelfy.core.Babelfy;
 import it.uniroma1.lcl.jlt.util.Language;
 
-import it.uniroma1.lcl.babelnet.BabelNet;
-import it.uniroma1.lcl.babelnet.BabelSynset;
-import it.uniroma1.lcl.babelnet.BabelSynsetID;
-import it.uniroma1.lcl.babelnet.resources.WordNetSynsetID;
-
 public class BabelfyAloof {
 	public static void main(String[] args) {
 		List<String> str_tokens = new ArrayList<String>();
@@ -41,23 +36,9 @@ public class BabelfyAloof {
 
 		for (SemanticAnnotation annotation : bfyAnnotations)
 		{
-			String bsid_str = annotation.getBabelSynsetID();
-
-			BabelSynsetID bsid = new BabelSynsetID(bsid_str);
-			BabelNet bn = BabelNet.getInstance();
-			BabelSynset bs = bn.getSynset(bsid);
-			List<WordNetSynsetID> offsets = bs.getWordNetOffsets();
-			String offset;
-			if (offsets.isEmpty()){
-				offset = "";
-			}
-			else {
-				offset = offsets.get(0).getID();
-			}
 			System.out.println(annotation.getTokenOffsetFragment().getStart() +
 								"\t" + annotation.getTokenOffsetFragment().getEnd() +
 								"\t" + annotation.getBabelNetURL() +
-								"\t" + offset +
 								"\t" + annotation.getDBpediaURL());
 		}
 	}
