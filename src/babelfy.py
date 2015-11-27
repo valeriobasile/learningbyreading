@@ -15,11 +15,11 @@ def babelfy(text):
                                stderr=subprocess.PIPE)
         out, err = process.communicate(text)
     except:
-        log.error("babelfy(): error executing Babelfy Java API")
+        log.error("babelfy(): error executing Babelfy Java API:\n{0}".format(err))
         return None
 
-    if err:
-        log.error("babelfy(): error executing Babelfy Java API:\n{0}".format(err))
+    if process.returncode:
+        log.error("babelfy(): error executing Babelfy Java API (return code:{0}):\n{1}".format(process.returncode, err))
         return None
 
 
