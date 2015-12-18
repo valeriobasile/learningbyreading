@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<rdf:RDF
+xmlns:pp='http://ns.inria.fr/edelweiss/2010/kgram/pprinter/'
+xmlns:st='http://ns.inria.fr/sparql-template/'
+xmlns:owl='http://www.w3.org/2002/07/owl#'
+xmlns:cos='http://www.inria.fr/acacia/corese#'
+xmlns:xsd='http://www.w3.org/2001/XMLSchema#'
+xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#'
+xmlns:fp='ftp://ftp-sop.inria.fr/wimmics/soft/pprint/'
+xmlns:relation='http://ns.inria.fr/aloof/relation#'
+xmlns:boxerrel='http://ns.inria.fr/aloof/boxer/relation#'
+xmlns:cw='http://ns.inria.fr/edelweiss/2010/kgram/construct/'
+xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+xmlns:xml='http://www.w3.org/XML/1998/namespace'
+xmlns:cat='http://ns.inria.fr/aloof/category#'
+xmlns:xt='http://ns.inria.fr/sparql-extension/'
+xmlns:kg='http://ns.inria.fr/edelweiss/2010/kgram/'
+xmlns:sp='http://spinrdf.org/sp#'
+xmlns:foaf='http://xmlns.com/foaf/0.1/'
+xmlns:boxerrelation='http://ns.inria.fr/aloof/boxer/relation#'
+xmlns:eng='http://ns.inria.fr/edelweiss/2010/kgram/extension/'>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bag'>
+ <relation:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <relation:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Handbag'>
+ <relation:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <relation:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Tool'>
+ <relation:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <relation:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bathtub'>
+ <relation:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <relation:likelyfound rdf:resource='http://dbpedia.org/resource/Bathroom'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Kitchen'>
+ <relation:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Bathroom'>
+ <relation:category rdf:resource='http://ns.inria.fr/aloof/category#room'/>
+</rdf:Description>
+
+<rdf:Description rdf:about='http://dbpedia.org/resource/Cup'>
+ <relation:category rdf:resource='http://ns.inria.fr/aloof/category#tool'/>
+ <relation:likelyfound rdf:resource='http://dbpedia.org/resource/Kitchen'/>
+</rdf:Description>
+
+</rdf:RDF>
+
