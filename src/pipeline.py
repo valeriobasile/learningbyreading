@@ -9,6 +9,7 @@ from os.path import isfile, join
 from itertools import product, combinations
 from sys import exit
 from framenet import frames
+from collections import Counter
 
 # log configuration
 log.basicConfig(level=log.INFO)
@@ -37,7 +38,7 @@ if options.input_file:
 else:
     documents = [ join(options.input_dir,f) for f in listdir(options.input_dir) if isfile(join(options.input_dir,f)) ]
 
-triples = set()
+triples = list()
 for filename in documents:
     # read file
     log.info("opening file {0}".format(filename))
@@ -70,7 +71,7 @@ for filename in documents:
     for entity1, entity2 in combinations(dbpedia_entities, 2):
         if (entity1 != 'null' and
             entity2 != 'null'):
-            triples.add(('<{0}>'.format(entity1), 'aloof_relation:comention', '<{0}>'.format(entity2)))
+            triples.append(('<{0}>'.format(entity1), 'aloof_relation:comention', '<{0}>'.format(entity2)))
 
     # build dictionary of variables
     try:
@@ -102,9 +103,9 @@ for filename in documents:
                     else:
                         framelist = ['unknown_frame']
                     for frame in framelist:
-                        triples.add(('<{0}>'.format(entity[0]), relation['symbol'], 'framenet:{0}'.format(frame)))
+                        triples.append(('<{0}>'.format(entity[0]), relation['symbol'], 'framenet:{0}'.format(frame)))
 
 with open(options.output_file, "w") as f:
-    for triple in triples:
-        # write down n-triples
-        f.write("{0} {1} {2}\n".format(*triple))
+    for triple, frequency in Counter(triples).iteritems():
+        # write down n-triples with frequency
+        f.write("{0} {1} {2} {3}\n".format(frequency, *triple))
