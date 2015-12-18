@@ -1,15 +1,16 @@
-prefix rel: <http://ns.inria.fr/aloof/relation#>
+prefix relation: <http://ns.inria.fr/aloof/relation#>
 prefix cat: <http://ns.inria.fr/aloof/category#>
 prefix boxerrel: <http://ns.inria.fr/aloof/boxer/relation#>
+prefix boxerrelation: <http://ns.inria.fr/aloof/boxer/relation#>
 
 construct {
-  ?room rel:category cat:room .
-  ?tool rel:category cat:tool .
-  ?tool rel:likelyfound ?room .
+  ?room relation:category cat:room .
+  ?tool relation:category cat:tool .
+  ?tool relation:likelyfound ?room .
 }
 
 where {
-  ?tool rel:comention ?room .
+  ?tool relation:comention ?room .
   service <http://lod.openlinksw.com/sparql> {
       ?tool <http://purl.org/dc/terms/subject> ?cat1 .
       ?cat1 <http://www.w3.org/2004/02/skos/core#broader>{,2} <http://dbpedia.org/resource/Category:Tools> .
