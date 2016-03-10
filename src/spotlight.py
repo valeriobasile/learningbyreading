@@ -1,23 +1,30 @@
-import subprocess
 import simplejson as json
-from requests import get
+from requests import post
 import logging as log
 
 def spotlight(text):
     try:
-        url = 'http://localhost:2222/rest/annotate?text={0}'.format(text)
+        url = 'http://massivity:2222/rest/annotate'
+        params = {'text': text}
         headers = {'Accept': 'application/json'}
-        data = {'confidence': 0.2, 'support': 20}
-        r = requests.get(http://massivity:2222/rest/annotate)
+        data = {'confidence': 0.2, 'support': 20, 'text': text}
+        r = post(url, params=params, headers=headers, data=data)
         out = r.json()
     except:
-        log.error("spotlight(): error executing Spotlight API:\n{0}".format(err))
+        log.error("spotlight(): error executing Spotlight API.")
         return None
 
     try:
-        entities = out
+        entities = []
+        entities_spotlight = out['Resources']
+        for entity in entities_spotlight:
+            entities.append({'token_start': entity['@offset'],
+                             'token_end': eval(entity['@offset'])+len(entity['@surfaceForm']),
+                             'entity': entity['@URI']})
     except:
         log.error("spotlight(): error processing Spotlight output")
         return None
 
     return {'entities' : entities}
+
+
