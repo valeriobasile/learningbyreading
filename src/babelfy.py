@@ -8,7 +8,7 @@ with open('config/babelfy.var.properties') as f:
 
 def babelfy(text):
     try:
-        process = subprocess.Popen(["java", "-cp", "libs/babelfy-aloof/babelfy-aloof.jar:libs/babelfy-aloof/lib/*", "BabelfyAloof", text],
+        process = subprocess.Popen(["java", "-cp", "libs/babelfy-aloof/babelfy-aloof.jar:libs/babelfy-aloof/libs/*", "BabelfyAloof", text],
                                shell=False,
                                stdin=subprocess.PIPE,
                                stdout=subprocess.PIPE,
