@@ -71,7 +71,7 @@ for filename in documents:
     for entity1, entity2 in combinations(dbpedia_entities, 2):
         if (entity1 != 'null' and
             entity2 != 'null'):
-            triples.append(('<{0}>'.format(entity1), 'aloof_relation:comention', '<{0}>'.format(entity2)))
+            triples.append(('<{0}>'.format(entity1), '<http://ns.inria.fr/aloof/relation#comention>', '<{0}>'.format(entity2)))
 
     # build dictionary of variables
     try:
@@ -101,11 +101,12 @@ for filename in documents:
                     if bn_id in frames:
                         framelist = frames[bn_id]
                     else:
-                        framelist = ['unknown_frame']
+                        framelist = ['unknown']
                     for frame in framelist:
-                        triples.append(('<{0}>'.format(entity[0]), relation['symbol'], 'framenet:{0}'.format(frame)))
+                        triples.append(('<{0}>'.format(entity[0]), relation['symbol'], '<http://ns.inria.fr/aloof/frame#{0}>'.format(frame)))
 
 with open(options.output_file, "w") as f:
     for triple, frequency in Counter(triples).iteritems():
         # write down n-triples with frequency
-        f.write("{0} {1} {2} {3}\n".format(frequency, *triple))
+        #f.write("{0} {1} {2} {3}\n".format(frequency, *triple))
+        f.write("{0} {1} {2}\n".format(*triple))

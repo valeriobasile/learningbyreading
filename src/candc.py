@@ -53,7 +53,7 @@ def boxer(tokenized):
         rels = drs.findall('.//rel')
         for rel in rels:
             # transform Boxer relations into URIs
-            rel_url = 'aloof_boxerrelation:{0}'.format(rel.attrib['symbol'])
+            rel_url = '<http://ns.inria.fr/aloof/boxer/relation#{0}>'.format(rel.attrib['symbol'])
 
             relation = {'arg1':rel.attrib['arg1'],
                          'arg2':rel.attrib['arg2'],
