@@ -1,0 +1,20 @@
+prefix relation: <http://ns.inria.fr/aloof/relation#>
+prefix cat: <http://ns.inria.fr/aloof/category#>
+prefix boxerrel: <http://ns.inria.fr/aloof/boxer/relation#>
+prefix boxerrelation: <http://ns.inria.fr/aloof/boxer/relation#>
+
+construct {
+  ?furniture relation:category cat:furniture .
+  ?tool relation:category cat:tool .
+  ?tool relation:likelyfound ?furniture .
+}
+
+where {
+  ?tool relation:comention ?furniture .
+  service <http://lod.openlinksw.com/sparql> {
+      ?tool <http://purl.org/dc/terms/subject> ?cat1 .
+      ?cat1 <http://www.w3.org/2004/02/skos/core#broader>{,2} <http://dbpedia.org/resource/Category:Tools> .
+      ?furniture <http://purl.org/dc/terms/subject> ?cat2 .
+      ?cat2 <http://www.w3.org/2004/02/skos/core#broader>{,2} <http://dbpedia.org/resource/Category:Furniture> .
+  }
+}
