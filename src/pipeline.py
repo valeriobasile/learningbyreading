@@ -37,6 +37,11 @@ parser.add_option('-w',
                   action="store_true",
                   dest="wordnet",
                   help="only link to WordNet")
+parser.add_option('-c',
+                  '--comentions',
+                  action="store_true",
+                  dest="comentions",
+                  help="output co-mentions")
 (options, args) = parser.parse_args()
 
 if options.input_file:
@@ -73,11 +78,12 @@ for filename in documents:
         continue
 
     # extracting co-mentions
-    dbpedia_entities = set(map(lambda x: x['entity'], babel['entities']))
-    for entity1, entity2 in combinations(dbpedia_entities, 2):
-        if (entity1 != 'null' and
-            entity2 != 'null'):
-            triples.append(('<{0}>'.format(entity1), '<http://ns.inria.fr/aloof/relation#comention>', '<{0}>'.format(entity2)))
+    if options.comentions:
+        dbpedia_entities = set(map(lambda x: x['entity'], babel['entities']))
+        for entity1, entity2 in combinations(dbpedia_entities, 2):
+            if (entity1 != 'null' and
+                entity2 != 'null'):
+                triples.append(('<{0}>'.format(entity1), '<http://ns.inria.fr/aloof/relation#comention>', '<{0}>'.format(entity2)))
 
     # build dictionary of variables
     try:
