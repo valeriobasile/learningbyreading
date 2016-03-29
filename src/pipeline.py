@@ -98,6 +98,7 @@ for filename in documents:
                     # fix ID format wn:00035718r ->  00594989-v
                     bn_id = event[1].split('/')[-1]
                     #wn_offset = bn2offset[bn_id]
+
                     if bn_id in frames:
                         framelist = frames[bn_id]
                     else:

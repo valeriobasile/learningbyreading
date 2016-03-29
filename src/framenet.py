@@ -14,6 +14,26 @@ for line in lines:
 # builds a dictionary of frame names indexed by wordnet synset id
 frames = dict()
 
+with open('resources/mapping_frame_synsets.txt') as f:
+    lines = f.readlines()
+
+for line in lines:
+    # fixes bugged lines with pipeline symbol in them
+    frame, synset_id = line.rstrip().split('\t')
+    pos, offset = synset_id.split('#')
+
+    try:
+        bnsynset = wn16tobn['{0}-{1}'.format(offset, pos)]
+    except:
+        continue
+    if bnsynset in frames:
+        if not frame in frames[bnsynset]:
+            frames[bnsynset].append(frame)
+    else:
+        frames[bnsynset] = [frame]
+
+'''
+
 with open('resources/eXtendedWFN') as f:
     lines = f.readlines()
 
@@ -36,3 +56,4 @@ for line in lines:
                 frames[synset].append(current_frame)
         else:
             frames[synset] = [current_frame]
+'''
