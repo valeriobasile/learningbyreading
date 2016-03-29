@@ -10,6 +10,7 @@ from itertools import product, combinations
 from sys import exit
 from framenet import frames
 from collections import Counter
+from mappings import bn2offset
 
 # log configuration
 log.basicConfig(level=log.INFO)
@@ -31,6 +32,11 @@ parser.add_option('-o',
                   dest="output_file",
                   help="write JSON to FILE",
                   metavar="FILE")
+parser.add_option('-w',
+                  '--wordnet',
+                  action="store_true",
+                  dest="wordnet",
+                  help="only link to WordNet")
 (options, args) = parser.parse_args()
 
 if options.input_file:
@@ -61,7 +67,7 @@ for filename in documents:
         continue
 
     log.info("calling Babelfy")
-    babel = babelfy(tokenized)
+    babel = babelfy(tokenized, wordnet=options.wordnet)
     if not babel:
         log.error("error during the execution of Babelfy on file '{0}', exiting".format(filename))
         continue
@@ -97,14 +103,20 @@ for filename in documents:
                 if (entity[0] != 'null' and event[1] != ''):
                     # fix ID format wn:00035718r ->  00594989-v
                     bn_id = event[1].split('/')[-1]
-                    #wn_offset = bn2offset[bn_id]
 
-                    if bn_id in frames:
-                        framelist = frames[bn_id]
+                    # map to FrameNet
+                    if not options.wordnet:
+                        if bn_id in frames:
+                            framelist = map(lambda x: 'http://ns.inria.fr/aloof/frame#{0}'.format(x), frames[bn_id])
+                        else:
+                            framelist = ['http://ns.inria.fr/aloof/frame#unknown']
                     else:
-                        framelist = ['unknown']
+                        if bn_id in bn2offset:
+                            framelist = ['http://wordnet-rdf.princeton.edu/wn31/{0}'.format(bn2offset[bn_id])]
+                        else:
+                            framelist = ['http://ns.inria.fr/aloof/frame#unknown']
                     for frame in framelist:
-                        triples.append(('<{0}>'.format(entity[0]), relation['symbol'], '<http://ns.inria.fr/aloof/frame#{0}>'.format(frame)))
+                        triples.append(('<{0}>'.format(entity[0]), relation['symbol'], '<{0}>'.format(frame)))
 
 with open(options.output_file, "w") as f:
     for triple, frequency in Counter(triples).iteritems():
