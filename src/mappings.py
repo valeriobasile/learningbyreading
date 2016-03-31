@@ -1,4 +1,5 @@
 import logging as log
+import os
 
 # builds a dictionary of frame names indexed by wordnet synset id
 offset2bn = dict()
@@ -10,7 +11,7 @@ bn2wn = dict()
 
 # the mapping is in a tabular file, e.g.:
 # s00069798n Scout-n#2-n 110582611-n
-with open('resources/bn35-wn31.map') as f:
+with open(os.path.join(os.path.dirname(__file__), '../resources/bn35-wn31.map')) as f:
     for line in f:
         bn_id, wn_id, wn_offset = line.rstrip().split(' ')
         offset2bn[wn_offset] = bn_id

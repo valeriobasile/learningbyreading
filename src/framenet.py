@@ -1,10 +1,11 @@
 import logging as log
 import sys
+import os
 
 # reads the mapping between version 1.6 and 3.0 of wordnet
 wn16tobn = dict()
 
-with open('resources/wnid-bn-16') as f:
+with open(os.path.join(os.path.dirname(__file__), '../resources/wnid-bn-16')) as f:
     lines = f.readlines()
 
 for line in lines:
@@ -14,7 +15,7 @@ for line in lines:
 # builds a dictionary of frame names indexed by wordnet synset id
 frames = dict()
 
-with open('resources/mapping_frame_synsets.txt') as f:
+with open(os.path.join(os.path.dirname(__file__), '../resources/mapping_frame_synsets.txt')) as f:
     lines = f.readlines()
 
 for line in lines:
@@ -31,6 +32,7 @@ for line in lines:
             frames[bnsynset].append(frame)
     else:
         frames[bnsynset] = [frame]
+
 
 '''
 
