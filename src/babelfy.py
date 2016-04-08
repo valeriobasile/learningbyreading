@@ -12,7 +12,6 @@ def babelfy(text, wordnet=False):
     try:
         libs = ["libs/babelfy-aloof/babelfy-aloof.jar","libs/babelfy-aloof/libs/*", "config"]
         local_libs = map(lambda x: os.path.join(os.path.dirname(__file__), "../"+x), libs)
-        print ":".join(local_libs)
         process = subprocess.Popen(["java", "-cp", ":".join(local_libs), "BabelfyAloof", text],
                                shell=False,
                                stdin=subprocess.PIPE,
@@ -50,6 +49,5 @@ def babelfy(text, wordnet=False):
     except:
         log.error("babelfy(): error linking to WordNet output")
         return None
-
 
     return {'entities' : entities}

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from optparse import OptionParser
 from babelfy import babelfy
-from candc import tokenize, boxer
+from candc import tokenize, get_all, get_fol
 import simplejson as json
 import logging as log
 from os import listdir
@@ -66,13 +66,18 @@ for filename in documents:
 
     # process the text
     log.info("calling Boxer")
-    drs = boxer(tokenized)
+    fol = get_fol(tokenized)
+    #print fol
+    drs = get_all(tokenized)
+    #print drs
+    #exit(0)
     if not drs:
         log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
         continue
 
     log.info("calling Babelfy")
     babel = babelfy(tokenized, wordnet=options.wordnet)
+    #babel = None
     if not babel:
         log.error("error during the execution of Babelfy on file '{0}', exiting".format(filename))
         continue
