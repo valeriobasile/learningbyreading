@@ -16,7 +16,7 @@ def boxer(tokenized, fol=False):
     # takes the input text already tokenized
     try:
         if fol:
-            r = post('{0}/raw/candcboxer?resolve=true&instantiate=true&roles=verbnet&integrate=true&semantics=fol'.format(BASE_URL), data=tokenized)
+            r = post('{0}/raw/candcboxer?resolve=true&roles=verbnet&integrate=true&semantics=fol'.format(BASE_URL), data=tokenized)
             ret = r.text.encode("utf-8")
         else:
             r = post('{0}/raw/candcboxer?resolve=true&instantiate=true&roles=verbnet&integrate=true&format=xml'.format(BASE_URL), data=tokenized)
@@ -96,13 +96,8 @@ def predicate2folsymbol(predicate):
     return "".join((predicate['type'], sense, predicate['symbol']))
 
 def get_fol(tokenized):
-    drs = boxer(tokenized)
     fol = boxer(tokenized, fol=True)
-    token_ids = get_tokens(drs)
-    predicates = get_predicates(drs, token_ids)
-    #for predicate in predicates:
-    #    print predicate2folsymbol(predicate)
-    return fol
+    return fol.split('\n')[-2]
 
 def get_all(tokenized):
     # get the tokens and their IDs
