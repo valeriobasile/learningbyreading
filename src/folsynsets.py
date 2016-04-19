@@ -96,7 +96,6 @@ for filename in documents:
         if not predicate['variable'] in prolog_variables:
             prolog_variables[predicate['variable']] = ascii_uppercase[i]
             i+=1
-
     # build symbol-synset dictionary
     synsets = dict()
     for variable, predicates in variables.iteritems():
