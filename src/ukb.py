@@ -4,7 +4,6 @@ from requests import get
 import logging as log
 from mappings import bn2offset, wn30wn31, offset2bn, bn2dbpedia
 import os
-import ConfigParser
 from tempfile import NamedTemporaryFile
 import sys
 import shlex
@@ -12,8 +11,7 @@ from subprocess import CalledProcessError
 
 def wsd(predicates, wordnet=False):
     context = ['{0}#{1}#{2}-{3}#1'.format(predicate['symbol'], predicate['type'], predicate['token_start'], predicate['token_end']) for predicate in predicates]
-    #f = NamedTemporaryFile()
-    f = open('test.txt', 'w')
+    f = NamedTemporaryFile('w', delete=False)
     f.write('sentence\n{0}\n'.format(' '.join(context)))
     f.close()
     basedir = os.path.abspath('ext/ukb')
@@ -21,7 +19,7 @@ def wsd(predicates, wordnet=False):
     relation_file = '{0}/wn30.bin'.format(basedir)
     dict_file = '{0}/lkb_sources/30/wnet30_dict.txt'.format(basedir)
     cmdline = "{0} --ppr -K {1} -D {2} {3}".format(ukb, relation_file, dict_file, os.path.abspath(f.name))
-
+    os.remove(f.name)
     try:
         process = subprocess.Popen(shlex.split(cmdline), universal_newlines=True,
                             shell=False,
