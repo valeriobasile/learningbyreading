@@ -45,7 +45,7 @@ def babelfy(text, wordnet=False):
                 if bn_id in bn2offset:
                     entity['entity'] = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(bn2offset[bn_id])
                 else:
-                    entity['entity'] = 'null'
+                    entity['entity'] = ''
     except:
         log.error("babelfy(): error linking to WordNet output")
         return None

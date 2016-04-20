@@ -10,7 +10,7 @@ import sys
 import shlex
 from subprocess import CalledProcessError
 
-def wsd(predicates):
+def wsd(predicates, wordnet=False):
     context = ['{0}#{1}#{2}-{3}#1'.format(predicate['symbol'], predicate['type'], predicate['token_start'], predicate['token_end']) for predicate in predicates]
     #f = NamedTemporaryFile()
     f = open('test.txt', 'w')
@@ -49,15 +49,27 @@ def wsd(predicates):
                 bn_id = offset2bn[wn31id]
             except:
                 log.info('cannot find BabelNet synset for WN3.1 synset {0}'.format(wn31id))
-                dbpedia_id = 'null'
+                dbpedia_id = ''
             try:
                 dbpedia_id = bn2dbpedia[bn_id]
+                if dbpedia_id == "-NA-":
+                    dbpedia_id=''
             except:
                 log.info('cannot find DBpedia synset for BabelNet synset {0}'.format(bn_id))
-                dbpedia_id = 'null'
+                dbpedia_id = ''
+
             token_start, token_end = map(eval, tokens.split('-'))
+            synset = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(wn31id)
+            if wordnet:
+                entity = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(wn31id)
+            else:
+                if dbpedia_id != '':
+                    entity = 'http://dbpedia.org/resource/{0}'.format(dbpedia_id)
+                else:
+                    entity = ''
+
             entities.append({'token_start':token_start,
                              'token_end':token_end,
-                             'synset': 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(wn31id),
-                             'entity': 'http://dbpedia.org/resource/{0}'.format(dbpedia_id)})
+                             'synset': synset,
+                             'entity': entity})
     return {'entities':entities}

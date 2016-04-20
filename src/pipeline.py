@@ -12,10 +12,17 @@ from sys import exit
 from framenet import frames
 from collections import Counter
 from mappings import bn2offset
+import ConfigParser
 
 # log configuration
 log.basicConfig(level=log.INFO)
 
+# read configuration
+config = ConfigParser.ConfigParser()
+config.read('config/namespace.conf')
+
+with open('resources/thematic_roles.txt') as f:
+    thematic_roles = [line.rstrip() for line in f]
 # command line argument partsing
 parser = OptionParser()
 parser.add_option('-i',
@@ -67,7 +74,6 @@ for filename in documents:
 
     # process the text
     log.info("calling Boxer")
-#    fol = get_fol(tokenized)
     drs = get_all(tokenized)
     if not drs:
         log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
@@ -75,7 +81,7 @@ for filename in documents:
 
     log.info("calling Babelfy")
     #disambiguated = babelfy(tokenized, wordnet=options.wordnet)
-    disambiguated = wsd(drs['predicates'])
+    disambiguated = wsd(drs['predicates'], wordnet=options.wordnet)
     if not disambiguated:
         log.error("error during the disambiguation of file '{0}', exiting".format(filename))
         continue
@@ -99,6 +105,7 @@ for filename in documents:
                 # TODO: make this smarter
                 if predicate['token_start'] == entity['token_start'] and predicate['token_end'] == entity['token_end']:
                     variables[predicate['variable']].append((entity['entity'], entity['synset']))
+
     except:
         log.error("error during the alignment on file '{0}', exiting".format(filename))
         continue
@@ -107,25 +114,14 @@ for filename in documents:
     for relation in drs['relations']:
         if (relation['arg1'] in variables and
             relation['arg2'] in variables):
-            for event, entity in product(variables[relation['arg1']],
+            for entity1, entity2 in product(variables[relation['arg1']],
                                          variables[relation['arg2']]):
-                if (entity[0] != 'null' and event[1] != ''):
-                    # fix ID format wn:00035718r ->  00594989-v
-                    bn_id = event[1].split('/')[-1]
-
-                    # map to FrameNet
-                    if not options.wordnet:
-                        if bn_id in frames:
-                            framelist = map(lambda x: 'http://ns.inria.fr/aloof/frame#{0}'.format(x), frames[bn_id])
-                        else:
-                            framelist = ['http://ns.inria.fr/aloof/frame#unknown']
-                    else:
-                        if bn_id in bn2offset:
-                            framelist = ['http://wordnet-rdf.princeton.edu/wn31/{0}'.format(bn2offset[bn_id])]
-                        else:
-                            framelist = ['http://ns.inria.fr/aloof/frame#unknown']
-                    for frame in framelist:
-                        triples.append(('<{0}>'.format(entity[0]), relation['symbol'], '<{0}>'.format(frame)))
+                if relation['symbol'] in thematic_roles:
+                        if (entity2[0] != '' and entity1[1] != ''):
+                            triples.append(('<{0}>'.format(entity2[0]), relation['symbol'], '<{0}>'.format(entity1[1])))
+                else:
+                        if (entity2[0] != '' and entity1[0] != ''):
+                            triples.append(('<{0}>'.format(entity1[0]), relation['symbol'], '<{0}>'.format(entity2[0])))
 
 with open(options.output_file, "w") as f:
     for triple, frequency in Counter(triples).iteritems():

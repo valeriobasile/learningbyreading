@@ -7,6 +7,7 @@ import subprocess
 config = ConfigParser.ConfigParser()
 config.read('config/boxer.conf')
 
+
 def tokenize(text):
     if config.get('boxer', 'mode') == 'local' or config.get('boxer', 'mode') == 'soap':
         return tokenize_local(text)
@@ -152,7 +153,7 @@ def get_relations(drs):
         rels = drs.findall('.//rel')
         for rel in rels:
             # transform Boxer relations into URIs
-            rel_url = '<http://ns.inria.fr/aloof/boxer/relation#{0}>'.format(rel.attrib['symbol'])
+            rel_url = rel.attrib['symbol']
 
             relation = {'arg1':rel.attrib['arg1'],
                          'arg2':rel.attrib['arg2'],
