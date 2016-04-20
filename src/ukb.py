@@ -10,9 +10,9 @@ import shlex
 from subprocess import CalledProcessError
 
 def wsd(predicates, wordnet=False):
-    context = ['{0}#{1}#{2}-{3}#1'.format(predicate['symbol'], predicate['type'], predicate['token_start'], predicate['token_end']) for predicate in predicates]
+    context = [u'{0}#{1}#{2}:{3}#1'.format(predicate['symbol'], predicate['type'], predicate['token_start'], predicate['token_end']) for predicate in predicates]
     f = NamedTemporaryFile('w', delete=False)
-    f.write('sentence\n{0}\n'.format(' '.join(context)))
+    f.write(u'sentence\n{0}\n'.format(' '.join(context)).encode('utf-8'))
     f.close()
     basedir = os.path.abspath('ext/ukb')
     ukb = '{0}/bin/ukb_wsd'.format(basedir)
@@ -38,37 +38,50 @@ def wsd(predicates, wordnet=False):
     entities = []
     for line in out.split('\n'):
         if not line.startswith('!!') and len(line) > 1:
-            ctxid, tokens, _, wn30id, _, lemma = line.rstrip().split(' ')
             try:
-                wn31id = wn30wn31[wn30id]
+                fields = line.rstrip().split(' ')
+                ctxid = fields[0]
+                tokens = fields[1]
+                lemma = fields[-1]
+                wn30ids = fields[3:-2]
             except:
-                log.info('cannot find Wordnet 3.1 synset for WN3.0 synset {0}'.format(wn30id))
-                continue
-            try:
-                bn_id = offset2bn[wn31id]
-            except:
-                log.info('cannot find BabelNet synset for WN3.1 synset {0}'.format(wn31id))
-                dbpedia_id = ''
-            try:
-                dbpedia_id = bn2dbpedia[bn_id]
-                if dbpedia_id == "-NA-":
-                    dbpedia_id=''
-            except:
-                log.info('cannot find DBpedia synset for BabelNet synset {0}'.format(bn_id))
-                dbpedia_id = ''
-
-            token_start, token_end = map(eval, tokens.split('-'))
-            synset = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(wn31id)
-            if wordnet:
-                entity = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(wn31id)
-            else:
-                if dbpedia_id != '':
-                    entity = 'http://dbpedia.org/resource/{0}'.format(dbpedia_id)
+                log.error('cannot parse line:\n{0}'.format(line))
+                sys.exit(1)
+            for wn30id in wn30ids:
+                try:
+                    wn31id = wn30wn31[wn30id]
+                except:
+                    log.info('cannot find Wordnet 3.1 synset for WN3.0 synset {0}'.format(wn30id))
+                    continue
+                if not wordnet:
+                    try:
+                        bn_id = offset2bn[wn31id]
+                        try:
+                            dbpedia_id = bn2dbpedia[bn_id]
+                            if dbpedia_id == "-NA-":
+                                dbpedia_id=''
+                        except:
+                            log.info('cannot find DBpedia synset for BabelNet synset {0}'.format(bn_id))
+                            dbpedia_id = ''
+                    except:
+                        log.info('cannot find BabelNet synset for WN3.1 synset {0}'.format(wn31id))
+                        dbpedia_id = ''
+                try:
+                    token_start, token_end = map(eval, tokens.split(':'))
+                except:
+                    print line
+                    sys.exit(1)
+                synset = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(wn31id)
+                if wordnet:
+                    entity = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(wn31id)
                 else:
-                    entity = ''
+                    if dbpedia_id != '':
+                        entity = 'http://dbpedia.org/resource/{0}'.format(dbpedia_id)
+                    else:
+                        entity = ''
 
-            entities.append({'token_start':token_start,
-                             'token_end':token_end,
-                             'synset': synset,
-                             'entity': entity})
+                entities.append({'token_start':token_start,
+                                 'token_end':token_end,
+                                 'synset': synset,
+                                 'entity': entity})
     return {'entities':entities}

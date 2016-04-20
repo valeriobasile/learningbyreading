@@ -15,7 +15,7 @@ from mappings import bn2offset
 import ConfigParser
 
 # log configuration
-log.basicConfig(level=log.INFO)
+log.basicConfig(level=log.INFO, format='%(asctime)s.%(msecs)03d %(levelname)s %(message)s')
 
 # read configuration
 config = ConfigParser.ConfigParser()
@@ -58,6 +58,9 @@ else:
     documents = [ join(options.input_dir,f) for f in listdir(options.input_dir) if isfile(join(options.input_dir,f)) ]
 
 triples = list()
+with open(options.output_file, "w") as f:
+    pass
+
 for filename in documents:
     # read file
     log.info("opening file {0}".format(filename))
@@ -92,7 +95,7 @@ for filename in documents:
         for entity1, entity2 in combinations(dbpedia_entities, 2):
             if (entity1 != 'null' and
                 entity2 != 'null'):
-                triples.append(('<{0}>'.format(entity1), '<http://ns.inria.fr/aloof/relation#comention>', '<{0}>'.format(entity2)))
+                triples.append(('<{0}>'.format(entity1), '<{0}#comention>', '<{2}>'.format(config.get('namespace', 'relation'), entity2)))
 
     # build dictionary of variables
     try:
@@ -111,20 +114,31 @@ for filename in documents:
         continue
 
     # scanning relations
-    for relation in drs['relations']:
-        if (relation['arg1'] in variables and
-            relation['arg2'] in variables):
-            for entity1, entity2 in product(variables[relation['arg1']],
-                                         variables[relation['arg2']]):
-                if relation['symbol'] in thematic_roles:
+    with open(options.output_file, "a") as f:
+        for relation in drs['relations']:
+            if (relation['arg1'] in variables and
+                relation['arg2'] in variables):
+                for entity1, entity2 in product(variables[relation['arg1']],
+                                             variables[relation['arg2']]):
+                    if relation['symbol'] in thematic_roles:
                         if (entity2[0] != '' and entity1[1] != ''):
-                            triples.append(('<{0}>'.format(entity2[0]), relation['symbol'], '<{0}>'.format(entity1[1])))
-                else:
+                            triple = ('<{0}>'.format(entity2[0]),
+                                      '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol']),
+                                      '<{0}>'.format(entity1[1]))
+                            triples.append(triple)
+                            f.write("{0} {1} {2} .\n".format(*triple))
+                    else:
                         if (entity2[0] != '' and entity1[0] != ''):
-                            triples.append(('<{0}>'.format(entity1[0]), relation['symbol'], '<{0}>'.format(entity2[0])))
+                            triple = ('<{0}>'.format(entity1[0]),
+                                      '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol']),
+                                      '<{0}>'.format(entity2[0]))
+                            triples.append(triple)
+                            f.write("{0} {1} {2} .\n".format(*triple))
 
+'''
 with open(options.output_file, "w") as f:
     for triple, frequency in Counter(triples).iteritems():
         # write down n-triples with frequency
         #f.write("{0} {1} {2} {3}\n".format(frequency, *triple))
-        f.write("{0} {1} {2}\n".format(*triple))
+        f.write("{0} {1} {2} .\n".format(*triple))
+'''

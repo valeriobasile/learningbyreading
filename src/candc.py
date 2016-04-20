@@ -30,7 +30,7 @@ def tokenize_local(text):
     out, err = process.communicate(text)
     if err:
         log.error('Tokenizer error: {0}'.format(err))
-    tokenized = out.encode("utf-8")
+    tokenized = out.decode('utf-8').encode("utf-8")
     return tokenized.split(" ")
 
 def parse_local(tokenized):
@@ -47,7 +47,7 @@ def parse_local(tokenized):
         # C&C writes info on the stderr, we want to ignore it
         if not err.startswith('#'):
             log.error('Parser error: {0}'.format(err))
-    parsed = out.encode("utf-8")
+    parsed = out.decode('utf-8').encode("utf-8")
     return parsed
 
 def parse_soap(tokenized):
@@ -63,7 +63,7 @@ def parse_soap(tokenized):
         # C&C writes info on the stderr, we want to ignore it
         if not err.startswith('#'):
             log.error('Parser error: {0}'.format(err))
-    parsed = out.encode("utf-8")
+    parsed = out.decode('utf-8').encode("utf-8")
     return parsed
 
 def get_boxer_options():
@@ -103,13 +103,13 @@ def boxer_local(tokenized, fol=False):
         # Boxer throws a silly error every time (a bug), we want to ignore it
         if not "No source location" in err:
             log.error('Boxer error: {0}'.format(err))
-    boxed = out.encode("utf-8")
+    boxed = out.decode('utf-8').encode("utf-8")
     return boxed
 
 def tokenize_online(text):
     # HTTP request
     r = post('{0}/raw/t'.format(config.get('online', 'http_url')), data=text)
-    tokenized = r.text.encode("utf-8")
+    tokenized = r.text.decode('utf-8').encode("utf-8")
     return tokenized.split(" ")
 
 def boxer_online(tokenized, fol=False):
@@ -124,7 +124,7 @@ def boxer_online(tokenized, fol=False):
     except:
         log.error("boxer(): contacting API")
         return None
-    return r.text.encode("utf-8")
+    return r.text.decode('utf-8').encode("utf-8")
 
 def get_predicates(drs, token_ids):
     predicates = []
@@ -201,7 +201,11 @@ def get_fol(tokenized):
 
 def get_all(tokenized):
     # get the tokens and their IDs
-    drs = objectify.fromstring(boxer(tokenized))
+    try:
+        drs = objectify.fromstring(boxer(tokenized))
+    except:
+        log.error("cannot read Boxer XML")
+        return None
     token_ids = get_tokens(drs)
     predicates = get_predicates(drs, token_ids)
     relations = get_relations(drs)
