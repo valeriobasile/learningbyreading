@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from optparse import OptionParser
 from babelfy import babelfy
+from ukb import wsd
 from candc import tokenize, get_all, get_fol
 import simplejson as json
 import logging as log
@@ -66,25 +67,22 @@ for filename in documents:
 
     # process the text
     log.info("calling Boxer")
-    fol = get_fol(tokenized)
-    #print fol
+#    fol = get_fol(tokenized)
     drs = get_all(tokenized)
-    #print drs
-    #exit(0)
     if not drs:
         log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
         continue
 
     log.info("calling Babelfy")
-    babel = babelfy(tokenized, wordnet=options.wordnet)
-    #babel = None
-    if not babel:
-        log.error("error during the execution of Babelfy on file '{0}', exiting".format(filename))
+    #disambiguated = babelfy(tokenized, wordnet=options.wordnet)
+    disambiguated = wsd(drs['predicates'])
+    if not disambiguated:
+        log.error("error during the disambiguation of file '{0}', exiting".format(filename))
         continue
 
     # extracting co-mentions
     if options.comentions:
-        dbpedia_entities = set(map(lambda x: x['entity'], babel['entities']))
+        dbpedia_entities = set(map(lambda x: x['entity'], disambiguated['entities']))
         for entity1, entity2 in combinations(dbpedia_entities, 2):
             if (entity1 != 'null' and
                 entity2 != 'null'):
@@ -96,11 +94,11 @@ for filename in documents:
         for predicate in drs['predicates']:
             if not predicate['variable'] in variables:
                 variables[predicate['variable']] = []
-            for entity in babel['entities']:
+            for entity in disambiguated['entities']:
                 # baseline alignment
                 # TODO: make this smarter
                 if predicate['token_start'] == entity['token_start'] and predicate['token_end'] == entity['token_end']:
-                    variables[predicate['variable']].append((entity['entity'], entity['bn_url']))
+                    variables[predicate['variable']].append((entity['entity'], entity['synset']))
     except:
         log.error("error during the alignment on file '{0}', exiting".format(filename))
         continue

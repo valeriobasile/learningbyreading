@@ -30,7 +30,7 @@ def babelfy(text, wordnet=False):
         lines = out.split("\n")[:-1]
         entities = map(lambda x: {'token_start':eval(x.split('\t')[0]),
                                   'token_end':eval(x.split('\t')[1]),
-                                  'bn_url':x.split('\t')[2],
+                                  'synset':x.split('\t')[2],
                                   'entity':'{0}'.format(x.split('\t')[3])},
                                   lines)
     except:
@@ -41,7 +41,7 @@ def babelfy(text, wordnet=False):
         if wordnet:
             log.info("linking to WordNet only")
             for entity in entities:
-                bn_id = entity['bn_url'].split('/')[-1]
+                bn_id = entity['synset'].split('/')[-1]
                 if bn_id in bn2offset:
                     entity['entity'] = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(bn2offset[bn_id])
                 else:
