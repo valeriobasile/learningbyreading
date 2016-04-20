@@ -19,7 +19,6 @@ def wsd(predicates, wordnet=False):
     relation_file = '{0}/wn30.bin'.format(basedir)
     dict_file = '{0}/lkb_sources/30/wnet30_dict.txt'.format(basedir)
     cmdline = "{0} --ppr -K {1} -D {2} {3}".format(ukb, relation_file, dict_file, os.path.abspath(f.name))
-    os.remove(f.name)
     try:
         process = subprocess.Popen(shlex.split(cmdline), universal_newlines=True,
                             shell=False,
@@ -34,6 +33,8 @@ def wsd(predicates, wordnet=False):
         print e.returncode
         print '--'
     out, err = process.communicate()
+    os.remove(f.name)
+
     entities = []
     for line in out.split('\n'):
         if not line.startswith('!!') and len(line) > 1:
