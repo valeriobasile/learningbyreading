@@ -9,7 +9,7 @@ import sys
 import shlex
 from subprocess import CalledProcessError
 
-def wsd(predicates, wordnet=False):
+def wsd(predicates):
     context = [u'{0}#{1}#{2}:{3}#1'.format(predicate['symbol'], predicate['type'], predicate['token_start'], predicate['token_end']) for predicate in predicates]
     f = NamedTemporaryFile('w', delete=False)
     f.write(u'sentence\n{0}\n'.format(' '.join(context)).encode('utf-8'))
@@ -35,7 +35,7 @@ def wsd(predicates, wordnet=False):
     out, err = process.communicate()
     os.remove(f.name)
 
-    entities = []
+    synsets = []
     for line in out.split('\n'):
         if not line.startswith('!!') and len(line) > 1:
             try:
@@ -53,35 +53,14 @@ def wsd(predicates, wordnet=False):
                 except:
                     log.info('cannot find Wordnet 3.1 synset for WN3.0 synset {0}'.format(wn30id))
                     continue
-                if not wordnet:
-                    try:
-                        bn_id = offset2bn[wn31id]
-                        try:
-                            dbpedia_id = bn2dbpedia[bn_id]
-                            if dbpedia_id == "-NA-":
-                                dbpedia_id=''
-                        except:
-                            log.info('cannot find DBpedia synset for BabelNet synset {0}'.format(bn_id))
-                            dbpedia_id = ''
-                    except:
-                        log.info('cannot find BabelNet synset for WN3.1 synset {0}'.format(wn31id))
-                        dbpedia_id = ''
                 try:
                     token_start, token_end = map(eval, tokens.split(':'))
                 except:
                     print line
                     sys.exit(1)
                 synset = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(wn31id)
-                if wordnet:
-                    entity = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(wn31id)
-                else:
-                    if dbpedia_id != '':
-                        entity = 'http://dbpedia.org/resource/{0}'.format(dbpedia_id)
-                    else:
-                        entity = ''
 
-                entities.append({'token_start':token_start,
+                synsets.append({'token_start':token_start,
                                  'token_end':token_end,
-                                 'synset': synset,
-                                 'entity': entity})
-    return {'entities':entities}
+                                 'synset': synset})
+    return {'synsets':synsets}

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 from optparse import OptionParser
-from babelfy import babelfy
-from ukb import wsd
+from disambiguation import disambiguation
 from candc import tokenize, get_all, get_fol
 import simplejson as json
 import logging as log
@@ -40,11 +39,6 @@ parser.add_option('-o',
                   dest="output_file",
                   help="write JSON to FILE",
                   metavar="FILE")
-parser.add_option('-w',
-                  '--wordnet',
-                  action="store_true",
-                  dest="wordnet",
-                  help="only link to WordNet")
 parser.add_option('-c',
                   '--comentions',
                   action="store_true",
@@ -68,7 +62,7 @@ for filename in documents:
         text = f.read()
 
     # tokenization
-    log.info("calling tokenizer")
+    log.info("Tokenization")
     tokens = tokenize(text)
     if not tokens:
         log.error("error during tokenization of file '{0}', exiting".format(filename))
@@ -76,22 +70,21 @@ for filename in documents:
     tokenized = " ".join(tokens)
 
     # process the text
-    log.info("calling Boxer")
+    log.info("Parsing")
     drs = get_all(tokenized)
     if not drs:
         log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
         continue
 
-    log.info("calling Babelfy")
-    #disambiguated = babelfy(tokenized, wordnet=options.wordnet)
-    disambiguated = wsd(drs['predicates'], wordnet=options.wordnet)
-    if not disambiguated:
-        log.error("error during the disambiguation of file '{0}', exiting".format(filename))
-        continue
+    log.info("Word sense disambiguation and entity linking")
+    synsets, entities = disambiguation(tokenized, drs)
+    if synsets==None or entities==None:
+		log.error("error during the disambiguation of file '{0}', exiting".format(filename))
+		continue
 
     # extracting co-mentions
     if options.comentions:
-        dbpedia_entities = set(map(lambda x: x['entity'], disambiguated['entities']))
+        dbpedia_entities = set(map(lambda x: x['entity'], entities))
         for entity1, entity2 in combinations(dbpedia_entities, 2):
             if (entity1 != 'null' and
                 entity2 != 'null'):
@@ -103,12 +96,16 @@ for filename in documents:
         for predicate in drs['predicates']:
             if not predicate['variable'] in variables:
                 variables[predicate['variable']] = []
-            for entity in disambiguated['entities']:
-                # baseline alignment
+            for synset in synsets:
+                # baseline sysnet alignment
                 # TODO: make this smarter
-                if predicate['token_start'] == entity['token_start'] and predicate['token_end'] == entity['token_end']:
-                    variables[predicate['variable']].append((entity['entity'], entity['synset']))
-
+                if predicate['token_start'] == synset['token_start'] and predicate['token_end'] == synset['token_end']:
+                    variables[predicate['variable']].append(synset['synset'])
+            for entity in entities:
+                # baseline entity alignment
+                # TODO: make this smarter
+                if predicate['token_start'] == entity['token_start'] and predicate['token_end'] == entity['token_end'] and entity['entity'] != 'null':
+                    variables[predicate['variable']].append(entity['entity'])
     except:
         log.error("error during the alignment on file '{0}', exiting".format(filename))
         continue
@@ -121,19 +118,17 @@ for filename in documents:
                 for entity1, entity2 in product(variables[relation['arg1']],
                                              variables[relation['arg2']]):
                     if relation['symbol'] in thematic_roles:
-                        if (entity2[0] != '' and entity1[1] != ''):
-                            triple = ('<{0}>'.format(entity2[0]),
+                        if (entity2 != '' and entity1 != ''):
+                            triple = ('<{0}>'.format(entity2),
                                       '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol']),
-                                      '<{0}>'.format(entity1[1]))
-                            triples.append(triple)
-                            f.write("{0} {1} {2} .\n".format(*triple))
+                                      '<{0}>'.format(entity1))
                     else:
-                        if (entity2[0] != '' and entity1[0] != ''):
-                            triple = ('<{0}>'.format(entity1[0]),
+                        if (entity2 != '' and entity1 != ''):
+                            triple = ('<{0}>'.format(entity1),
                                       '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol']),
-                                      '<{0}>'.format(entity2[0]))
-                            triples.append(triple)
-                            f.write("{0} {1} {2} .\n".format(*triple))
+                                      '<{0}>'.format(entity2))
+                    triples.append(triple)
+                    f.write("{0} {1} {2} .\n".format(*triple))
 
 '''
 with open(options.output_file, "w") as f:

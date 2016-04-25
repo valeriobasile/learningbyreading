@@ -8,7 +8,7 @@ import os
 with open(os.path.join(os.path.dirname(__file__), '../config/babelfy.var.properties')) as f:
     babelnet_key = f.readlines()[0][:-1].split('=')[1]
 
-def babelfy(text, wordnet=False):
+def babelfy(text):
     try:
         libs = ["libs/babelfy-aloof/babelfy-aloof.jar","libs/babelfy-aloof/libs/*", "config"]
         local_libs = map(lambda x: os.path.join(os.path.dirname(__file__), "../"+x), libs)
@@ -28,9 +28,12 @@ def babelfy(text, wordnet=False):
 
     try:
         lines = out.split("\n")[:-1]
+        synsets = map(lambda x: {'token_start':eval(x.split('\t')[0]),
+                                  'token_end':eval(x.split('\t')[1]),
+                                  'synset':x.split('\t')[2]},
+                                  lines)
         entities = map(lambda x: {'token_start':eval(x.split('\t')[0]),
                                   'token_end':eval(x.split('\t')[1]),
-                                  'synset':x.split('\t')[2],
                                   'entity':'{0}'.format(x.split('\t')[3])},
                                   lines)
     except:
@@ -38,16 +41,14 @@ def babelfy(text, wordnet=False):
         return None
 
     try:
-        if wordnet:
-            log.info("linking to WordNet only")
-            for entity in entities:
-                bn_id = entity['synset'].split('/')[-1]
-                if bn_id in bn2offset:
-                    entity['entity'] = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(bn2offset[bn_id])
-                else:
-                    entity['entity'] = ''
+        for synset in synsets:
+            bn_id = synset['synset'].split('/')[-1]
+            if bn_id in bn2offset:
+                synset['synset'] = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(bn2offset[bn_id])
+            else:
+                synset['synset'] = ''
     except:
         log.error("babelfy(): error linking to WordNet output")
         return None
 
-    return {'entities' : entities}
+    return {'synsets' : synsets, 'entities' : entities}
