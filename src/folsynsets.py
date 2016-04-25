@@ -81,7 +81,7 @@ for filename in documents:
                 if predicate['token_start'] == entity['token_start'] and predicate['token_end'] == entity['token_end']:
                     variables[predicate['variable']].append({
                         'entity' : entity['entity'],
-                        'bn_url' : entity['bn_url'],
+                        'bn_url' : entity['synset'],
                         'symbol' : predicate['symbol'],
                         'sense' : predicate['sense'],
                         'type' : predicate['type']})
