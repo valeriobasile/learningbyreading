@@ -5,7 +5,7 @@ from candc import tokenize, get_all, get_fol
 import simplejson as json
 import logging as log
 from os import listdir
-from os.path import isfile, join
+from os.path import isfile, join, dirname
 from itertools import product, combinations
 from sys import exit
 from framenet import frames
@@ -18,9 +18,9 @@ log.basicConfig(level=log.INFO, format='%(asctime)s.%(msecs)03d %(levelname)s %(
 
 # read configuration
 config = ConfigParser.ConfigParser()
-config.read('config/namespace.conf')
+config.read(join(dirname(__file__),'../config/namespace.conf'))
 
-with open('resources/thematic_roles.txt') as f:
+with open(join(dirname(__file__),'../resources/thematic_roles.txt')) as f:
     thematic_roles = [line.rstrip() for line in f]
 # command line argument partsing
 parser = OptionParser()
@@ -75,7 +75,6 @@ for filename in documents:
     if not drs:
         log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
         continue
-
     log.info("Word sense disambiguation and entity linking")
     synsets, entities = disambiguation(tokenized, drs)
     if synsets==None or entities==None:
@@ -93,19 +92,21 @@ for filename in documents:
     # build dictionary of variables
     try:
         variables = dict()
-        for predicate in drs['predicates']:
+        for predicate in drs['predicates']+drs['namedentities']:
             if not predicate['variable'] in variables:
                 variables[predicate['variable']] = []
             for synset in synsets:
                 # baseline sysnet alignment
                 # TODO: make this smarter
                 if predicate['token_start'] == synset['token_start'] and predicate['token_end'] == synset['token_end']:
-                    variables[predicate['variable']].append(synset['synset'])
+                    if not synset['synset'] in variables[predicate['variable']]:
+                        variables[predicate['variable']].append(synset['synset'])
             for entity in entities:
                 # baseline entity alignment
                 # TODO: make this smarter
                 if predicate['token_start'] == entity['token_start'] and predicate['token_end'] == entity['token_end'] and entity['entity'] != 'null':
-                    variables[predicate['variable']].append(entity['entity'])
+                    if not entity['entity'] in variables[predicate['variable']]:
+                        variables[predicate['variable']].append(entity['entity'])
     except:
         log.error("error during the alignment on file '{0}', exiting".format(filename))
         continue
@@ -122,13 +123,15 @@ for filename in documents:
                             triple = ('<{0}>'.format(entity2),
                                       '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol']),
                                       '<{0}>'.format(entity1))
+                            triples.append(triple)
+                            f.write("{0} {1} {2} .\n".format(*triple))
                     else:
                         if (entity2 != '' and entity1 != ''):
                             triple = ('<{0}>'.format(entity1),
                                       '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol']),
                                       '<{0}>'.format(entity2))
-                    triples.append(triple)
-                    f.write("{0} {1} {2} .\n".format(*triple))
+                            triples.append(triple)
+                            f.write("{0} {1} {2} .\n".format(*triple))
 
 '''
 with open(options.output_file, "w") as f:

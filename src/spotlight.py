@@ -2,10 +2,11 @@ import simplejson as json
 from requests import post
 import logging as log
 import ConfigParser
+from os.path import join, dirname
 
 # read configuration
 config = ConfigParser.ConfigParser()
-config.read('config/disambiguation.conf')
+config.read(join(dirname(__file__),'../config/disambiguation.conf'))
 
 def spotlight(tokenized):
     # mapping character offset to token offset

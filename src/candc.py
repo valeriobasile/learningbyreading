@@ -3,10 +3,10 @@ from lxml import etree, objectify
 import logging as log
 import ConfigParser
 import subprocess
+from os.path import join, dirname
 
 config = ConfigParser.ConfigParser()
-config.read('config/boxer.conf')
-
+config.read(join(dirname(__file__),'../config/boxer.conf'))
 
 def tokenize(text):
     if config.get('boxer', 'mode') == 'local' or config.get('boxer', 'mode') == 'soap':
@@ -21,7 +21,7 @@ def boxer(tokenized, fol=False):
         return boxer_online(tokenized, fol)
 
 def tokenize_local(text):
-    tokenizer = '{0}/bin/t'.format(config.get('local', 'base_dir'))
+    tokenizer = join(dirname(__file__),'../{0}/bin/t'.format(config.get('local', 'base_dir')))
     process = subprocess.Popen([tokenizer, '--stdin'],
                            shell=False,
                            stdin=subprocess.PIPE,
@@ -34,7 +34,7 @@ def tokenize_local(text):
     return tokenized.split(" ")
 
 def parse_local(tokenized):
-    parser_options = ['--models', '{0}/models/boxer'.format(config.get('local', 'base_dir')),
+    parser_options = ['--models', join(dirname(__file__),'../{0}/models/boxer'.format(config.get('local', 'base_dir'))),
                       '--candc-printer', 'boxer']
     parser = '{0}/bin/candc'.format(config.get('local', 'base_dir'))
     process = subprocess.Popen([parser] + parser_options,
@@ -52,7 +52,7 @@ def parse_local(tokenized):
 
 def parse_soap(tokenized):
     parser_options = ['--url', '{0}:{1}'.format(config.get('soap', 'soap_url'), config.get('soap', 'soap_port'))]
-    parser = '{0}/bin/soap_client'.format(config.get('local', 'base_dir'))
+    parser = join(dirname(__file__),'../{0}/bin/soap_client'.format(config.get('local', 'base_dir')))
     process = subprocess.Popen([parser] + parser_options,
                            shell=False,
                            stdin=subprocess.PIPE,
@@ -87,11 +87,12 @@ def boxer_local(tokenized, fol=False):
                          '--semantics', 'fol']
     else:
         boxer_options = ['--stdin',
-                         '--format', 'xml',
-                         '--instantiate', 'true']
+                         '--instantiate', 'true',
+                         '--format', 'xml']
         boxer_options.extend(get_boxer_options().split(' '))
 
-    boxer = '{0}/bin/boxer'.format(config.get('local', 'base_dir'))
+    boxer = join(dirname(__file__),'../{0}/bin/boxer'.format(config.get('local', 'base_dir')))
+
     process = subprocess.Popen([boxer] + boxer_options,
                            shell=False,
                            stdin=subprocess.PIPE,
@@ -147,6 +148,27 @@ def get_predicates(drs, token_ids):
         return None
     return predicates
 
+def get_named(drs, token_ids):
+    namedentities = []
+    try:
+        nameds = drs.findall('.//named')
+        for named in nameds:
+            try:
+                poslist = map(lambda x: token_ids.index(x.text), named['indexlist']['index'])
+            except:
+                poslist = [-1]
+            namedentity = {'token_start' : poslist[0],
+                         'token_end' : poslist[-1],
+                         'symbol' : named.attrib['symbol'],
+                         'type' : named.attrib['type'],
+                         'class' : named.attrib['class'],
+                         'variable' : named.attrib['arg']}
+            namedentities.append(namedentity)
+    except:
+        log.error("boxer(): error getting named entities")
+        return None
+    return namedentities
+
 def get_relations(drs):
     relations = []
     try:
@@ -183,7 +205,6 @@ def get_tokens(drs):
         tagtokens = drs['xdrs']['taggedtokens']['tagtoken']
         token_ids = map(lambda x: x.attrib['{http://www.w3.org/XML/1998/namespace}id'], tagtokens)
     except:
-        print drs
         log.error("boxer(): error getting token IDs")
         return None
     return token_ids
@@ -208,9 +229,11 @@ def get_all(tokenized):
         return None
     token_ids = get_tokens(drs)
     predicates = get_predicates(drs, token_ids)
+    namedentities = get_named(drs, token_ids)
     relations = get_relations(drs)
     identities = get_identities(drs)
 
     return {"predicates" : predicates,
+            "namedentities" : namedentities,
             "relations" : relations,
             "identities" : identities}

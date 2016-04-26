@@ -4,14 +4,16 @@ from requests import get
 import logging as log
 from mappings import bn2offset
 import os
+from os.path import join, dirname
 
-with open(os.path.join(os.path.dirname(__file__), '../config/babelfy.var.properties')) as f:
+with open(join(dirname(__file__),'../config/babelfy.var.properties')) as f:
     babelnet_key = f.readlines()[0][:-1].split('=')[1]
 
 def babelfy(text):
     try:
-        libs = ["libs/babelfy-aloof/babelfy-aloof.jar","libs/babelfy-aloof/libs/*", "config"]
-        local_libs = map(lambda x: os.path.join(os.path.dirname(__file__), "../"+x), libs)
+        libs = [join(dirname(__file__),'../libs/babelfy-aloof/babelfy-aloof.jar'),join(dirname(__file__),'../libs/babelfy-aloof/libs/*'), join(dirname(__file__),'../config')]
+        local_libs = map(lambda x: join(dirname(__file__),'../'+x), libs)
+        local_libs = libs
         process = subprocess.Popen(["java", "-cp", ":".join(local_libs), "BabelfyAloof", text],
                                shell=False,
                                stdin=subprocess.PIPE,

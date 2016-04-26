@@ -8,13 +8,14 @@ from tempfile import NamedTemporaryFile
 import sys
 import shlex
 from subprocess import CalledProcessError
+from os.path import join, dirname
 
 def wsd(predicates):
     context = [u'{0}#{1}#{2}:{3}#1'.format(predicate['symbol'], predicate['type'], predicate['token_start'], predicate['token_end']) for predicate in predicates]
     f = NamedTemporaryFile('w', delete=False)
     f.write(u'sentence\n{0}\n'.format(' '.join(context)).encode('utf-8'))
     f.close()
-    basedir = os.path.abspath('ext/ukb')
+    basedir = os.path.abspath(join(dirname(__file__),'../ext/ukb'))
     ukb = '{0}/bin/ukb_wsd'.format(basedir)
     relation_file = '{0}/wn30.bin'.format(basedir)
     dict_file = '{0}/lkb_sources/30/wnet30_dict.txt'.format(basedir)
