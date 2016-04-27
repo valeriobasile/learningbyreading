@@ -1,61 +1,30 @@
 import logging as log
 import sys
-import os
-
-# reads the mapping between version 1.6 and 3.0 of wordnet
-wn16tobn = dict()
-
-with open(os.path.join(os.path.dirname(__file__), '../resources/wnid-bn-16')) as f:
-    lines = f.readlines()
-
-for line in lines:
-    fields = line.rstrip().split(' ')
-    wn16tobn[fields[2]] = fields[1]
-
-# builds a dictionary of frame names indexed by wordnet synset id
+from os.path import join, dirname
+from mappings import wn30wn31
+# builds a dictionary of frame names indexed by wordnet3.1 synset id
 frames = dict()
 
-with open(os.path.join(os.path.dirname(__file__), '../resources/mapping_frame_synsets.txt')) as f:
-    lines = f.readlines()
-
-for line in lines:
-    # fixes bugged lines with pipeline symbol in them
-    frame, synset_id = line.rstrip().split('\t')
-    pos, offset = synset_id.split('#')
-
-    try:
-        bnsynset = wn16tobn['{0}-{1}'.format(offset, pos)]
-    except:
-        continue
-    if bnsynset in frames:
-        if not frame in frames[bnsynset]:
-            frames[bnsynset].append(frame)
-    else:
-        frames[bnsynset] = [frame]
-
-
-'''
-
-with open('resources/eXtendedWFN') as f:
-    lines = f.readlines()
-
-for line in lines:
-    # fixes bugged lines with pipeline symbol in them
-    line = line.rstrip().replace('|', ' ')
-
-    if line.startswith('Frame:'):
-        current_frame = line.replace('Frame: ', '')
-    elif line != '':
-        fields = line.split(' ')
-        lemma = fields[0]
-        pos = fields[1]
+with open(join(dirname(__file__), '../resources/framenet-wordnet-map.txt')) as f:
+    #   0 ## Killing - suffocation.n - n#225593
+    for line in f:
         try:
-            synset = wn16tobn[fields[2]]
+            frame, synset_id, posoffset = line.rstrip().split(' - ')
         except:
+            print "error reading line\n{0}".format(line)
             continue
-        if synset in frames:
-            if not current_frame in frames[synset]:
-                frames[synset].append(current_frame)
+        frame = frame.split(' ')[-1]
+        lemma, pos = synset_id.split('.')
+        pos, offset = posoffset.split('#')
+        offset30 = '{0:8d}-{1}'.format(eval(offset), pos).replace(' ', '0')
+
+        if offset30 in wn30wn31:
+            offset31 = wn30wn31[offset30]
+
+            if offset31 in frames:
+                if not frame in frames[offset31]:
+                    frames[offset31].append(frame)
+            else:
+                frames[offset31] = [frame]
         else:
-            frames[synset] = [current_frame]
-'''
+            print "{0} not in wn30 mapping".format(offset30)
