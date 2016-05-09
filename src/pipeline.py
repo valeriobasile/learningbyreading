@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from optparse import OptionParser
 from disambiguation import disambiguation
-from candc import tokenize, get_all, get_fol
+from candc import tokenize, get_all, get_fol, get_drg
 import simplejson as json
 import logging as log
 from os import listdir
@@ -12,6 +12,8 @@ from framenet import frames
 from collections import Counter
 from mappings import bn2offset
 import ConfigParser
+from unboxer import unboxer, drg
+import re
 
 # log configuration
 log.basicConfig(level=log.INFO, format='%(asctime)s.%(msecs)03d %(levelname)s %(message)s')
@@ -111,6 +113,20 @@ for filename in documents:
         log.error("error during the alignment on file '{0}', exiting".format(filename))
         continue
 
+    # read DRG
+    tuples = get_drg(tokenized)
+    drgparser = drg.DRGParser()
+    d = drgparser.parse_tup_lines(tuples)
+
+    # de-reificate variables (build a mapping)
+    reificated = dict()
+    for t in d.tuples:
+        if t.to_node.startswith('k'):
+            dereificated = re.sub(".*:", "", t.to_node)
+            if not dereificated in reificated:
+                reificated[dereificated] = set()
+            reificated[dereificated].add(t.to_node)
+
     # scanning relations
     with open(options.output_file, "a") as f:
         for relation in drs['relations']:
@@ -133,10 +149,40 @@ for filename in documents:
                             triples.append(triple)
                             f.write("{0} {1} {2} .\n".format(*triple))
 
-'''
-with open(options.output_file, "w") as f:
-    for triple, frequency in Counter(triples).iteritems():
-        # write down n-triples with frequency
-        #f.write("{0} {1} {2} {3}\n".format(frequency, *triple))
-        f.write("{0} {1} {2} .\n".format(*triple))
-'''
+
+
+    # get variables surface forms
+    surfaceforms = dict()
+    for variable in variables.keys():
+        for reificated_var in reificated[variable]:
+            surface = []
+            unboxer.generate_from_referent(d, reificated_var, surface, generic=True)
+            if len(surface) > 0 and ' '.join(surface)!='*':
+                if not variable in surfaceforms:
+                    surfaceforms[variable] = []
+                surfaceforms[variable].append(' '.join(surface))
+
+    with open(options.output_file, "a") as f:
+        for variable, content in variables.iteritems():
+            if variable in surfaceforms:
+                for item in content:
+                    for surfaceform in surfaceforms[variable]:
+                        triple = ('<{0}>'.format(item),
+                                  '<{0}#entity>'.format(config.get('namespace', 'lexicalization')),
+                                  '"{0}"'.format(surfaceform))
+                        triples.append(triple)
+                        f.write("{0} {1} {2} .\n".format(*triple))
+
+    # get surface forms for relations
+    with open(options.output_file, "a") as f:
+        for relation in drs['relations']:
+            for arg1, arg2 in product(reificated[relation['arg1']], reificated[relation['arg2']]):
+                surface = unboxer.generate_from_relation(d, arg1, arg2)
+                if surface:
+                    # TODO: implement schema from FrameBase
+
+                    triple = ('<{0}>'.format(relation['symbol']),
+                              '<{0}#relation>'.format(config.get('namespace', 'lexicalization')),
+                              '"{0}"'.format(surface))
+                    triples.append(triple)
+                    f.write("{0} {1} {2} .\n".format(*triple))

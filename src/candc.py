@@ -14,11 +14,11 @@ def tokenize(text):
     elif config.get('boxer', 'mode') == 'online':
         return tokenize_online(text)
 
-def boxer(tokenized, fol=False):
+def boxer(tokenized, fol=False, drg=False):
     if config.get('boxer', 'mode') == 'local' or config.get('boxer', 'mode') == 'soap':
-        return boxer_local(tokenized, fol)
+        return boxer_local(tokenized, fol, drg)
     elif config.get('boxer', 'mode') == 'online':
-        return boxer_online(tokenized, fol)
+        return boxer_online(tokenized, fol, drg)
 
 def tokenize_local(text):
     tokenizer = join(dirname(__file__),'../{0}/bin/t'.format(config.get('local', 'base_dir')))
@@ -76,7 +76,7 @@ def get_boxer_options():
         option_list = ['{0}={1}'.format(parameter, value) for parameter, value in options.iteritems()]
         return '&'.join(option_list)
 
-def boxer_local(tokenized, fol=False):
+def boxer_local(tokenized, fol=False, drg=False):
     if config.get('boxer', 'mode') == 'local':
         parsed = parse_local(tokenized)
     elif config.get('boxer', 'mode') == 'soap':
@@ -85,6 +85,10 @@ def boxer_local(tokenized, fol=False):
     if fol:
         boxer_options = ['--stdin',
                          '--semantics', 'fol']
+    elif drg:
+        boxer_options = ['--stdin',
+                         '--resolve', 'true',
+                         '--semantics', 'drg']
     else:
         boxer_options = ['--stdin',
                          '--instantiate', 'true',
@@ -113,13 +117,15 @@ def tokenize_online(text):
     tokenized = r.text.decode('utf-8').encode("utf-8")
     return tokenized.split(" ")
 
-def boxer_online(tokenized, fol=False):
+def boxer_online(tokenized, fol=False, drg=False):
     # HTTP request
     # takes the input text already tokenized
     boxer_options = get_boxer_options()
     try:
         if fol:
             r = post('{0}/raw/candcboxer?instantiate=true&semantics=fol&{1}'.format(config.get('online', 'http_url'), boxer_options), data=tokenized)
+        elif drg:
+            r = post('{0}/raw/candcboxer?instantiate=true&semantics=drg&{1}'.format(config.get('online', 'http_url'), boxer_options), data=tokenized)
         else:
             r = post('{0}/raw/candcboxer?instantiate=true&format=xml&{1}'.format(config.get('online', 'http_url'), boxer_options), data=tokenized)
     except:
@@ -219,6 +225,11 @@ def predicate2folsymbol(predicate):
 def get_fol(tokenized):
     fol = boxer(tokenized, fol=True)
     return fol.split('\n')[-2]
+
+def get_drg(tokenized):
+    drg = boxer(tokenized, drg=True)
+    lines = [line+'\n' for line in drg.split('\n') if not (line.startswith('%') or len(line)==0)]
+    return lines
 
 def get_all(tokenized):
     # get the tokens and their IDs
