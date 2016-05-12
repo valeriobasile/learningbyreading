@@ -69,9 +69,9 @@ for filename in documents:
     if not tokens:
         log.error("error during tokenization of file '{0}', exiting".format(filename))
         continue
-    tokenized = " ".join(tokens)
 
-    # process the text
+    tokenized = "\n".join([' '.join(sentence) for sentence in tokens[:-1]])
+
     log.info("Parsing")
     drs = get_all(tokenized)
     if not drs:
@@ -117,16 +117,14 @@ for filename in documents:
     tuples = get_drg(tokenized)
     drgparser = drg.DRGParser()
     d = drgparser.parse_tup_lines(tuples)
-
     # de-reificate variables (build a mapping)
     reificated = dict()
     for t in d.tuples:
-        if t.to_node.startswith('k'):
+        if t.edge_type == "referent":
             dereificated = re.sub(".*:", "", t.to_node)
             if not dereificated in reificated:
                 reificated[dereificated] = set()
             reificated[dereificated].add(t.to_node)
-
     # scanning relations
     with open(options.output_file, "a") as f:
         for relation in drs['relations']:
@@ -149,18 +147,19 @@ for filename in documents:
                             triples.append(triple)
                             f.write("{0} {1} {2} .\n".format(*triple))
 
-
-
     # get variables surface forms
     surfaceforms = dict()
     for variable in variables.keys():
-        for reificated_var in reificated[variable]:
-            surface = []
-            unboxer.generate_from_referent(d, reificated_var, surface, generic=True)
-            if len(surface) > 0 and ' '.join(surface)!='*':
-                if not variable in surfaceforms:
-                    surfaceforms[variable] = []
-                surfaceforms[variable].append(' '.join(surface))
+        try:
+            for reificated_var in reificated[variable]:
+                surface = []
+                unboxer.generate_from_referent(d, reificated_var, surface, generic=True)
+                if len(surface) > 0 and ' '.join(surface)!='*':
+                    if not variable in surfaceforms:
+                        surfaceforms[variable] = []
+                        surfaceforms[variable].append(' '.join(surface))
+        except:
+            log.error('cannot find mapping for variable {0}'.format(variable))
 
     with open(options.output_file, "a") as f:
         for variable, content in variables.iteritems():
@@ -176,13 +175,16 @@ for filename in documents:
     # get surface forms for relations
     with open(options.output_file, "a") as f:
         for relation in drs['relations']:
-            for arg1, arg2 in product(reificated[relation['arg1']], reificated[relation['arg2']]):
-                surface = unboxer.generate_from_relation(d, arg1, arg2)
-                if surface:
-                    # TODO: implement schema from FrameBase
+            try:
+                for arg1, arg2 in product(reificated[relation['arg1']], reificated[relation['arg2']]):
+                    surface = unboxer.generate_from_relation(d, arg1, arg2)
+                    if surface:
+                        # TODO: implement schema from FrameBase
 
-                    triple = ('<{0}>'.format(relation['symbol']),
-                              '<{0}#relation>'.format(config.get('namespace', 'lexicalization')),
-                              '"{0}"'.format(surface))
-                    triples.append(triple)
-                    f.write("{0} {1} {2} .\n".format(*triple))
+                        triple = ('<{0}>'.format(relation['symbol']),
+                                  '<{0}#relation>'.format(config.get('namespace', 'lexicalization')),
+                                  '"{0}"'.format(surface))
+                        triples.append(triple)
+                        f.write("{0} {1} {2} .\n".format(*triple))
+            except:
+                log.error('cannot find variable mapping for relation {0} {1} {2}'.format(relation['arg1'], relation['symbol'], relation['arg2']))

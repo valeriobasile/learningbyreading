@@ -31,7 +31,8 @@ def tokenize_local(text):
     if err:
         log.error('Tokenizer error: {0}'.format(err))
     tokenized = out.decode('utf-8').encode("utf-8")
-    return tokenized.split(" ")
+    sentences = tokenized.split('\n')
+    return [sentence.split(" ") for sentence in sentences]
 
 def parse_local(tokenized):
     parser_options = ['--models', join(dirname(__file__),'../{0}/models/boxer'.format(config.get('local', 'base_dir'))),
@@ -88,15 +89,17 @@ def boxer_local(tokenized, fol=False, drg=False):
     elif drg:
         boxer_options = ['--stdin',
                          '--resolve', 'true',
+                         '--integrate', 'true',
                          '--semantics', 'drg']
     else:
         boxer_options = ['--stdin',
                          '--instantiate', 'true',
+                         '--resolve', 'true',
+                         '--semantics', 'pdrs',
                          '--format', 'xml']
         boxer_options.extend(get_boxer_options().split(' '))
 
     boxer = join(dirname(__file__),'../{0}/bin/boxer'.format(config.get('local', 'base_dir')))
-
     process = subprocess.Popen([boxer] + boxer_options,
                            shell=False,
                            stdin=subprocess.PIPE,
@@ -115,7 +118,8 @@ def tokenize_online(text):
     # HTTP request
     r = post('{0}/raw/t'.format(config.get('online', 'http_url')), data=text)
     tokenized = r.text.decode('utf-8').encode("utf-8")
-    return tokenized.split(" ")
+    sentences = tokenized.split('\n')
+    return [sentence.split(" ") for sentence in sentences]
 
 def boxer_online(tokenized, fol=False, drg=False):
     # HTTP request
