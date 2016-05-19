@@ -2,6 +2,8 @@ import logging as log
 import sys
 from os.path import join, dirname
 from mappings import wn30wn31
+from lxml import etree, objectify
+
 # builds a dictionary of frame names indexed by wordnet3.1 synset id
 frames = dict()
 
@@ -28,3 +30,19 @@ with open(join(dirname(__file__), '../resources/framenet-wordnet-map.txt')) as f
                 frames[offset31] = [frame]
         else:
             print "{0} not in wn30 mapping".format(offset30)
+
+# read SemLinks for the mapping between Verbnet and FrameNet roles
+vn2fn_roles = dict()
+with open(join(dirname(__file__), '../resources/VN-FNRoleMapping.txt')) as f:
+    #   0 ## Killing - suffocation.n - n#225593
+    semlinks = objectify.fromstring(f.read())
+    for verbclass in semlinks.findall('.//vncls'):
+        frame = verbclass.attrib['fnframe']
+        if not frame in vn2fn_roles:
+            vn2fn_roles[frame] = dict()
+        try:
+            for role in verbclass['roles']['role']:
+                vn2fn_roles[frame][role.attrib['vnrole']] = role.attrib['fnrole']
+        except:
+            # there is one empty frame: Weathcer
+            pass
