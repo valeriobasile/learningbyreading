@@ -35,7 +35,7 @@ def generate_from_referent(drg, ref, surface, complete=False, generic=False):
             #if len(drg.out_edges(potential_embed, edge_type="event")) > 0:
             #      generate_from_referent(drg, drg.out_edges(drg.out_edges(potential_embed, edge_type="event")[0].to_node, edge_type="instance")[0].to_node, surface)
 
-def generate_from_relation(drg, int_ref, ext_ref):
+def generate_from_relation(drg, int_ref, ext_ref, generic=False):
     #sys.stderr.write("generate from %s\n" % (ref))
 
     in_edges_dict = dict()
@@ -69,7 +69,10 @@ def generate_from_relation(drg, int_ref, ext_ref):
         surface_generic = []
         for token in surface:
             if token in drg.nodes:
-                surface_generic.append('*')
+                if generic:
+                    surface_generic.append("*")
+                else:
+                    surface_generic.append(drg.dereificated[token])
             else:
                 surface_generic.append(token)
         return ' '.join(surface_generic)

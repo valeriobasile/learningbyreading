@@ -8,7 +8,7 @@ from os import listdir
 from os.path import isfile, join, dirname
 from itertools import product, combinations
 from sys import exit
-from framenet import frames
+from framenet import frames, vn2fn_roles
 from collections import Counter
 from mappings import bn2offset
 import ConfigParser
@@ -113,18 +113,72 @@ for filename in documents:
         log.error("error during the alignment on file '{0}', exiting".format(filename))
         continue
 
+
+    # outputs frame instances
+    instance_counter = dict()
+    frame_instances = dict()
+    for variable, senses in variables.iteritems():
+        for sense in senses:
+            synset = sense.split('/')[-1]
+            if synset in frames:
+                for frame in frames[synset]:
+                    # create new frame instance
+                    if not frame in instance_counter:
+                        instance_counter[frame] = 0
+                    instance_id = "{0}_{1}".format(frame, instance_counter[frame])
+                    frame_instances[instance_id] = dict()
+                    frame_instances[instance_id]['frame'] = frame
+                    frame_instances[instance_id]['synset'] = synset
+                    frame_instances[instance_id]['variable'] = variable
+                    frame_instances[instance_id]['roles'] = dict()
+
+                    for relation in drs['relations']:
+                        if relation['arg1'] == variable and relation['arg2'] in variables and relation['symbol'] in thematic_roles:
+                            for filler in variables[relation['arg2']]:
+                                if frame in vn2fn_roles:
+                                    if relation['symbol'] in vn2fn_roles[frame]:
+                                        role = vn2fn_roles[frame][relation['symbol']]
+                                    else:
+                                        role = "vn:{0}".format(relation['symbol'])
+                                    frame_instances[instance_id]['roles'][role] = (relation['arg2'], filler)
+                    instance_counter[frame] += 1
+
     # read DRG
+    # TODO: put this into the Unboxer module
     tuples = get_drg(tokenized)
     drgparser = drg.DRGParser()
     d = drgparser.parse_tup_lines(tuples)
-    # de-reificate variables (build a mapping)
-    reificated = dict()
-    for t in d.tuples:
-        if t.edge_type == "referent":
-            dereificated = re.sub(".*:", "", t.to_node)
-            if not dereificated in reificated:
-                reificated[dereificated] = set()
-            reificated[dereificated].add(t.to_node)
+
+    for instance_id, frame_instance in frame_instances.iteritems():
+        if len(frame_instance['roles']) > 0:
+            # very brutal XML output
+            print "<frameinstance id='{0}' type='{1}-{2}', internalvariable='{3}'>".format(instance_id, frame_instance['frame'], frame_instance['synset'], frame_instance['variable'])
+            for reificated_frame_var in d.reificated[frame_instance['variable']]:
+                print "<framelexicalization>"
+                surface = []
+                unboxer.generate_from_referent(d, reificated_frame_var, surface, complete=True)
+                print ' '.join(surface)
+                print "</framelexicalization>"
+                print "<frameelements>"
+                for role, (variable, filler) in frame_instance['roles'].iteritems():
+                    print "<frameelement role='{0}' internalvariable='{1}'>".format(role, variable)
+                    print "<concept>"
+                    print filler
+                    print "</concept>"
+                    for reificated_role_var in d.reificated[variable]:
+                        print "<conceptexicalization>"
+                        surface = []
+                        unboxer.generate_from_referent(d, reificated_role_var, surface, complete=True)
+                        print ' '.join(surface)
+                        print "</conceptlexicalization>"
+                        print "<roleexicalization>"
+                        surface = unboxer.generate_from_relation(d, reificated_frame_var, reificated_role_var)
+                        print surface
+                        print "</rolelexicalization>"
+                    print "</frameelement>"
+                print "</frameelements>"
+            print "</frameinstance>"
+
     # scanning relations
     with open(options.output_file, "a") as f:
         for relation in drs['relations']:
@@ -133,58 +187,34 @@ for filename in documents:
                 for entity1, entity2 in product(variables[relation['arg1']],
                                              variables[relation['arg2']]):
                     if relation['symbol'] in thematic_roles:
-                        if (entity2 != '' and entity1 != ''):
-                            triple = ('<{0}>'.format(entity2),
-                                      '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol']),
-                                      '<{0}>'.format(entity1))
-                            triples.append(triple)
-                            f.write("{0} {1} {2} .\n".format(*triple))
+                        # thematic roles
+                        synset = entity1.split('/')[-1]
+                        try:
+                            framelist = frames[synset]
+                        except:
+                            log.info('No frame found for synset {0}'.format(synset))
+                            continue
+
+                        for frame in framelist:
+                            if (entity2 != '' and frame != ''):
+                                vnrole = relation['symbol']
+                                if frame in vn2fn_roles:
+                                    if vnrole in vn2fn_roles[frame]:
+                                        role = vn2fn_roles[frame][vnrole]
+                                    #else:
+                                    #    role = "verbnet:{0}".format(vnrole)
+                                        triple = ('<{0}>'.format(entity2),
+                                                  '<{0}#{1}>'.format(config.get('namespace', 'relation'), role),
+                                                  '<{0}#{1}>'.format(config.get('namespace', 'frame'), frame))
+                                        triples.append(triple)
+                                        f.write("{0} {1} {2} .\n".format(*triple))
+                    '''
                     else:
+                        # other types of relations
                         if (entity2 != '' and entity1 != ''):
                             triple = ('<{0}>'.format(entity1),
                                       '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol']),
                                       '<{0}>'.format(entity2))
                             triples.append(triple)
                             f.write("{0} {1} {2} .\n".format(*triple))
-
-    # get variables surface forms
-    surfaceforms = dict()
-    for variable in variables.keys():
-        try:
-            for reificated_var in reificated[variable]:
-                surface = []
-                unboxer.generate_from_referent(d, reificated_var, surface, generic=True)
-                if len(surface) > 0 and ' '.join(surface)!='*':
-                    if not variable in surfaceforms:
-                        surfaceforms[variable] = []
-                        surfaceforms[variable].append(' '.join(surface))
-        except:
-            log.error('cannot find mapping for variable {0}'.format(variable))
-
-    with open(options.output_file, "a") as f:
-        for variable, content in variables.iteritems():
-            if variable in surfaceforms:
-                for item in content:
-                    for surfaceform in surfaceforms[variable]:
-                        triple = ('<{0}>'.format(item),
-                                  '<{0}#entity>'.format(config.get('namespace', 'lexicalization')),
-                                  '"{0}"'.format(surfaceform))
-                        triples.append(triple)
-                        f.write("{0} {1} {2} .\n".format(*triple))
-
-    # get surface forms for relations
-    with open(options.output_file, "a") as f:
-        for relation in drs['relations']:
-            try:
-                for arg1, arg2 in product(reificated[relation['arg1']], reificated[relation['arg2']]):
-                    surface = unboxer.generate_from_relation(d, arg1, arg2)
-                    if surface:
-                        # TODO: implement schema from FrameBase
-
-                        triple = ('<{0}>'.format(relation['symbol']),
-                                  '<{0}#relation>'.format(config.get('namespace', 'lexicalization')),
-                                  '"{0}"'.format(surface))
-                        triples.append(triple)
-                        f.write("{0} {1} {2} .\n".format(*triple))
-            except:
-                log.error('cannot find variable mapping for relation {0} {1} {2}'.format(relation['arg1'], relation['symbol'], relation['arg2']))
+                    '''

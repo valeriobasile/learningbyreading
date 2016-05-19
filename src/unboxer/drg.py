@@ -1,6 +1,7 @@
 from pygraph.classes.digraph import digraph
 from pygraph.algorithms.searching import depth_first_search
 import sys
+import re
 
 RHETORICAL_RELATIONS = [
     "continuation",
@@ -96,6 +97,18 @@ class DRG:
         neighbors = sorted(neighbors, key=lambda token_index: neighbors[0])
         return neighbors
 
+    def make_reification_mapping(self):
+        # de-reificate variables (build a mapping)
+        self.reificated = dict()
+        self.dereificated = dict()
+        for t in self.tuples:
+            if t.edge_type == "referent":
+                dereificated_var = re.sub(".*:", "", t.to_node)
+                if not dereificated_var in self.reificated:
+                    self.reificated[dereificated_var] = set()
+                self.reificated[dereificated_var].add(t.to_node)
+                self.dereificated[t.to_node] = dereificated_var
+
 class DRGParser:
     def __init__(self):
         pass
@@ -108,6 +121,7 @@ class DRGParser:
                 tup = self.parse_tup_line(line)
                 drg.add_tuple(tup)
         fd_tup.close()
+        drg.make_reification_mapping()
         return drg
 
     def parse_tup_lines(self, lines):
@@ -116,6 +130,7 @@ class DRGParser:
             if line[0] != "%" and line != "\n":
                 tup = self.parse_tup_line(line)
                 drg.add_tuple(tup)
+        drg.make_reification_mapping()
         return drg
 
     def parse_tup_line(self, line):
