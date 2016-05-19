@@ -1,0 +1,4026 @@
+<?xml version="1.0"?>
+<!DOCTYPE verbnetRoles-framenetFEs_RoleMappingData  [
+  <!ELEMENT verbnetRoles-framenetFEs_RoleMappingData (vncls+)>
+  <!ELEMENT vncls   (roles)>
+  <!ELEMENT roles   (role+)>
+  <!ELEMENT role   (#PCDATA)>
+  <!ATTLIST verbnetRoles-framenetFEs_RoleMappingData  date CDATA #IMPLIED>
+  <!ATTLIST vncls class   CDATA #REQUIRED>
+  <!ATTLIST vncls fnframe CDATA #REQUIRED>
+  <!ATTLIST role  fnrole  CDATA #REQUIRED>
+  <!ATTLIST role  vnrole  CDATA #REQUIRED>
+]>
+<verbnetRoles-framenetFEs_RoleMappingData  date='8-28-06'>
+  <vncls class='9.1' fnframe='Placing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.2' fnframe='Placing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.3' fnframe='Cause_impact'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Impactor' vnrole='Theme'/>
+      <role fnrole='Impactee' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='9.3' fnframe='Placing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.5' fnframe='Fluidic_motion'>
+    <roles>
+      <role fnrole='Fluid' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Area' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='9.6' fnframe='Cause_to_move_in_place'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Bodypart_of_agent' vnrole='Theme'/>
+      <role fnrole='Fixed_location' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='9.6' fnframe='Reshaping'>
+    <roles>
+      <role fnrole='Deformer' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Theme'/>
+      <role fnrole='Resistant_surface' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='9.7' fnframe='Placing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.7' fnframe='Filling'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.8' fnframe='Adorning'>
+    <roles>
+      <role fnrole='Location' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.8' fnframe='Filling'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.8' fnframe='Placing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.9' fnframe='Adorning'>
+    <roles>
+      <role fnrole='Location' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.9' fnframe='Filling'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.9' fnframe='Fining'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Payer' vnrole='Destination'/>
+      <role fnrole='Fine' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.9' fnframe='Preserving'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Medium' vnrole='Destination'/>
+      <role fnrole='Undergoer' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.10' fnframe='Placing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='9.10' fnframe='Inhibit_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Holding_location' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='10.1' fnframe='Change_of_leadership'>
+    <roles>
+      <role fnrole='Selector' vnrole='Agent'/>
+      <role fnrole='Old_leader' vnrole='Theme'/>
+      <role fnrole='Old_order' vnrole='Theme'/>
+      <role fnrole='Role' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='10.1' fnframe='Removing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='10.2' fnframe='Removing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='10.3' fnframe='Emptying'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='10.3' fnframe='Removing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='10.4.1' fnframe='Removing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='10.5' fnframe='Removing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+      <role fnrole='Goal' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='10.5' fnframe='Kidnapping'>
+    <roles>
+      <role fnrole='Perpetrator' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='10.5' fnframe='Piracy'>
+    <roles>
+      <role fnrole='Perpetrator' vnrole='Agent'/>
+      <role fnrole='Vehicle' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='10.5' fnframe='Smuggling'>
+    <roles>
+      <role fnrole='Perpetrator' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+      <role fnrole='Goal' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='10.5' fnframe='Theft'>
+    <roles>
+      <role fnrole='Perpetrator' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+      <role fnrole='Victim' vnrole='Source'/>
+      <role fnrole='Purpose' vnrole='Beneficiary'/>
+      <role fnrole='Reason' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='10.6' fnframe='Cure'>
+    <roles>
+      <role fnrole='Healer' vnrole='Agent'/>
+      <role fnrole='Affliction' vnrole='Theme'/>
+      <role fnrole='Body_part' vnrole='Theme'/>
+      <role fnrole='Patient' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='10.6' fnframe='Emptying'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='10.6' fnframe='Removing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='10.6' fnframe='Robbery'>
+    <roles>
+      <role fnrole='Perpetrator' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+      <role fnrole='Victim' vnrole='Source'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='10.7' fnframe='Emptying'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='10.8' fnframe='Emptying'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='11.1' fnframe='Carry_goods'>
+    <roles>
+      <role fnrole='Distributor' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='11.1' fnframe='Sending'>
+    <roles>
+      <role fnrole='Sender' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Recipient' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='11.3' fnframe='Carry_goods'>
+    <roles>
+      <role fnrole='Distributor' vnrole='Instrument'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='11.4' fnframe='Carry_goods'>
+    <roles>
+      <role fnrole='Distributor' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='11.4' fnframe='Cause_motion'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='11.5' fnframe='Carry_goods'>
+    <roles>
+      <role fnrole='Distributor' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='12' fnframe='Cause_motion'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='12' fnframe='Manipulation'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Entity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.1' fnframe='Giving'>
+    <roles>
+      <role fnrole='Donor' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Recipient' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='13.1' fnframe='Commerce_buy'>
+    <roles>
+      <role fnrole='Buyer' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.1' fnframe='Commerce_sell'>
+    <roles>
+      <role fnrole='Seller' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.1' fnframe='Commerce_pay'>
+    <roles>
+      <role fnrole='Seller' vnrole='Agent'/>
+      <role fnrole='Buyer' vnrole='Recipient'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+      <role fnrole='Money' vnrole='Asset'/>
+    </roles>
+  </vncls>
+  <vncls class='13.2' fnframe='Giving'>
+    <roles>
+      <role fnrole='Donor' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Recipient' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='13.2' fnframe='Commerce_pay'>
+    <roles>
+      <role fnrole='Seller' vnrole='Agent'/>
+      <role fnrole='Reason' vnrole='Agent'/>
+      <role fnrole='Buyer' vnrole='Recipient'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.3' fnframe='Giving'>
+    <roles>
+      <role fnrole='Donor' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Recipient' vnrole='Goal'/>
+    </roles>
+  </vncls>
+  <vncls class='13.4.2' fnframe='Commerce_collect'>
+    <roles>
+      <role fnrole='Buyer' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.1' fnframe='Commerce_buy'>
+    <roles>
+      <role fnrole='Buyer' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.1' fnframe='Choosing'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Chosen' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.1' fnframe='Claim_ownership'>
+    <roles>
+      <role fnrole='Claimant' vnrole='Agent'/>
+      <role fnrole='Property' vnrole='Theme'/>
+      <role fnrole='Beneficiary' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.1' fnframe='Getting'>
+    <roles>
+      <role fnrole='Recipient' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.1' fnframe='Hiring'>
+    <roles>
+      <role fnrole='Employer' vnrole='Agent'/>
+      <role fnrole='Employee' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.1' fnframe='Request'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Theme'/>
+      <role fnrole='Addressee' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.2' fnframe='Commerce_buy'>
+    <roles>
+      <role fnrole='Buyer' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.2' fnframe='Commerce_collect'>
+    <roles>
+      <role fnrole='Buyer' vnrole='Agent'/>
+      <role fnrole='Seller' vnrole='Source'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+      <role fnrole='Money' vnrole='Asset'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.2' fnframe='Choosing'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Chosen' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.2' fnframe='Getting'>
+    <roles>
+      <role fnrole='Recipient' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.2' fnframe='Receiving'>
+    <roles>
+      <role fnrole='Donor' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='13.5.2' fnframe='Taking'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='13.6' fnframe='Replacing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Old' vnrole='Theme'/>
+      <role fnrole='New' vnrole='Co-Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='14' fnframe='Getting'>
+    <roles>
+      <role fnrole='Recipient' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Topic'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='14' fnframe='Education_teaching'>
+    <roles>
+      <role fnrole='Student' vnrole='Agent'/>
+      <role fnrole='Subject' vnrole='Topic'/>
+      <role fnrole='Teacher' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='14' fnframe='Reading'>
+    <roles>
+      <role fnrole='Reader' vnrole='Agent'/>
+      <role fnrole='Text' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='15.1' fnframe='Manipulation'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Entity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='16' fnframe='Eclipse'>
+    <roles>
+      <role fnrole='Obstruction' vnrole='Agent'/>
+      <role fnrole='Eclipsed' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='17.1' fnframe='Cause_impact'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Agent' vnrole='Cause'/>
+      <role fnrole='Impactor' vnrole='Theme'/>
+      <role fnrole='Impactee' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='17.1' fnframe='Cause_motion'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Cause'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='17.1' fnframe='Removing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Cause'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='17.1' fnframe='Shoot_projectiles'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Projectile' vnrole='Theme'/>
+      <role fnrole='Firearm' vnrole='Initial_Location'/>
+    </roles>
+  </vncls>
+  <vncls class='17.2' fnframe='Cause_harm'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Theme'/>
+      <role fnrole='Body_part' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='18.1' fnframe='Cause_harm'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Patient'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='18.1' fnframe='Cause_impact'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Impactor' vnrole='Instrument'/>
+      <role fnrole='Impactee' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='18.1' fnframe='Hit_target'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Agent' vnrole='Instrument'/>
+      <role fnrole='Target' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='18.1' fnframe='Impact'>
+    <roles>
+      <role fnrole='Impactor' vnrole='Instrument'/>
+      <role fnrole='Impactee' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='18.2' fnframe='Cause_harm'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Patient'/>
+      <role fnrole='Body_part' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='18.3' fnframe='Cause_harm'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Patient'/>
+      <role fnrole='Body_part' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='18.4' fnframe='Impact'>
+    <roles>
+      <role fnrole='Impactor' vnrole='Theme'/>
+      <role fnrole='Impactee' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='19' fnframe='Cause_harm'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Patient'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='20' fnframe='Cause_impact'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Impactor' vnrole='Instrument'/>
+      <role fnrole='Impactee' vnrole='Experiencer'/>
+    </roles>
+  </vncls>
+  <vncls class='20' fnframe='Impact'>
+    <roles>
+      <role fnrole='Impactor' vnrole='Instrument'/>
+      <role fnrole='Impactee' vnrole='Experiencer'/>
+    </roles>
+  </vncls>
+  <vncls class='21.1' fnframe='Cause_harm'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Patient'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='21.1' fnframe='Damaging'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Patient' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='21.1' fnframe='Experience_bodily_harm'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+      <role fnrole='Injuring_entity' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='21.2' fnframe='Cause_harm'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Patient'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='21.2' fnframe='Damaging'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Patient' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='21.2' fnframe='Cutting'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='21.2' fnframe='Grinding'>
+    <roles>
+      <role fnrole='Grinder' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='21.2' fnframe='Cause_to_fragment'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Whole_patient' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.1' fnframe='Amalgamation'>
+    <roles>
+      <role fnrole='Part_1' vnrole='Patient'/>
+      <role fnrole='Part_2' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.1' fnframe='Cause_to_amalgamate'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Part_1' vnrole='Patient'/>
+      <role fnrole='Part_2' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.1' fnframe='Make_cognitive_connection'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Concept_1' vnrole='Patient'/>
+      <role fnrole='Concept_2' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.2' fnframe='Compatibility'>
+    <roles>
+      <role fnrole='Item_1' vnrole='Patient'/>
+      <role fnrole='Item_2' vnrole='Co-Patient'/>
+      <role fnrole='Items' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.2' fnframe='Amalgamation'>
+    <roles>
+      <role fnrole='Part_1' vnrole='Patient'/>
+      <role fnrole='Part_2' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.2' fnframe='Cause_to_amalgamate'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Part_1' vnrole='Patient'/>
+      <role fnrole='Part_2' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.3' fnframe='Cause_to_amalgamate'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Part_1' vnrole='Patient'/>
+      <role fnrole='Part_2' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.3' fnframe='Amalgamation'>
+    <roles>
+      <role fnrole='Part_1' vnrole='Patient'/>
+      <role fnrole='Part_2' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.3' fnframe='Attaching'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Connector' vnrole='Patient'/>
+      <role fnrole='Goal' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.3' fnframe='Inchoative_attaching'>
+    <roles>
+      <role fnrole='Connector' vnrole='Patient'/>
+      <role fnrole='Goal' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='22.4' fnframe='Attaching'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Connector' vnrole='Patient'/>
+      <role fnrole='Goal' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='23.1' fnframe='Separating'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Part_1' vnrole='Patient'/>
+      <role fnrole='Part_2' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='23.2' fnframe='Cause_to_fragment'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Whole_patient' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='23.2' fnframe='Separating'>
+    <roles>
+      <role fnrole='Part_1' vnrole='Patient'/>
+      <role fnrole='Part_2' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='23.3' fnframe='Attaching'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Patient'/>
+      <role fnrole='Goal' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='23.3' fnframe='Separating'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Part_1' vnrole='Patient'/>
+      <role fnrole='Part_2' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='23.3' fnframe='Closure'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Fastener' vnrole='Patient'/>
+      <role fnrole='Containing_object' vnrole='Co-Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='23.3' fnframe='Destroying'>
+    <roles>
+      <role fnrole='Destroyer' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='23.4' fnframe='Differentiation'>
+    <roles>
+      <role fnrole='Phenomenon_1' vnrole='Theme'/>
+      <role fnrole='Phenomenon_2' vnrole='Co-Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='24' fnframe='Filling'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Patient'/>
+      <role fnrole='Result' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='24' fnframe='Processing_materials'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Material' vnrole='Patient'/>
+      <role fnrole='Result' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='25.1' fnframe='Processing_materials'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Material' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='25.2' fnframe='Duplication'>
+    <roles>
+      <role fnrole='Copy' vnrole='Theme'/>
+      <role fnrole='Creator' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='25.2' fnframe='Spelling_and_pronouncing'>
+    <roles>
+      <role fnrole='Formal_realization' vnrole='Theme'/>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Context' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='25.2' fnframe='Text_creation'>
+    <roles>
+      <role fnrole='Text' vnrole='Theme'/>
+      <role fnrole='Author' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='25.3' fnframe='Filling'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='25.4' fnframe='Duplication'>
+    <roles>
+      <role fnrole='Copy' vnrole='Theme'/>
+      <role fnrole='Creator' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='25.4' fnframe='Text_creation'>
+    <roles>
+      <role fnrole='Text' vnrole='Theme'/>
+      <role fnrole='Author' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Destination'/>
+      <role fnrole='Place' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='26.1' fnframe='Building'>
+    <roles>
+      <role fnrole='Components' vnrole='Material'/>
+      <role fnrole='Created_entity' vnrole='Product'/>
+      <role fnrole='Agent' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.1' fnframe='Cooking_creation'>
+    <roles>
+      <role fnrole='Produced_food' vnrole='Product'/>
+      <role fnrole='Cook' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.1' fnframe='Coming_up_with'>
+    <roles>
+      <role fnrole='Idea' vnrole='Product'/>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.1' fnframe='Intentionally_create'>
+    <roles>
+      <role fnrole='Created_entity' vnrole='Product'/>
+      <role fnrole='Creator' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.1' fnframe='Manufacturing'>
+    <roles>
+      <role fnrole='Product' vnrole='Product'/>
+      <role fnrole='Manufacturer' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.1' fnframe='Undergo_change'>
+    <roles>
+      <role fnrole='Final_category' vnrole='Product'/>
+      <role fnrole='Entity' vnrole='Agent'/>
+      <role fnrole='Initial_category' vnrole='Material'/>
+    </roles>
+  </vncls>
+  <vncls class='26.1' fnframe='Reshaping'>
+    <roles>
+      <role fnrole='Result' vnrole='Product'/>
+      <role fnrole='Deformer' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Material'/>
+    </roles>
+  </vncls>
+  <vncls class='26.2' fnframe='Coming_to_be'>
+    <roles>
+      <role fnrole='Entity' vnrole='Product'/>
+      <role fnrole='Components' vnrole='Material'/>
+    </roles>
+  </vncls>
+  <vncls class='26.2' fnframe='Coming_up_with'>
+    <roles>
+      <role fnrole='Idea' vnrole='Product'/>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.3' fnframe='Setting_fire'>
+    <roles>
+      <role fnrole='Flammables' vnrole='Patient'/>
+      <role fnrole='Kindler' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.3' fnframe='Cooking_creation'>
+    <roles>
+      <role fnrole='Produced_food' vnrole='Patient'/>
+      <role fnrole='Cook' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.4' fnframe='Achieving_first'>
+    <roles>
+      <role fnrole='New_idea' vnrole='Result'/>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.4' fnframe='Coming_up_with'>
+    <roles>
+      <role fnrole='Idea' vnrole='Result'/>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.4' fnframe='Text_creation'>
+    <roles>
+      <role fnrole='Text' vnrole='Result'/>
+      <role fnrole='Author' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.4' fnframe='Cooking_creation'>
+    <roles>
+      <role fnrole='Produced_food' vnrole='Result'/>
+      <role fnrole='Ingredients' vnrole='Material'/>
+      <role fnrole='Cook' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.4' fnframe='Building'>
+    <roles>
+      <role fnrole='Created_entity' vnrole='Result'/>
+      <role fnrole='Components' vnrole='Material'/>
+      <role fnrole='Agent' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.4' fnframe='Intentionally_create'>
+    <roles>
+      <role fnrole='Created_entity' vnrole='Result'/>
+      <role fnrole='Creator' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.4' fnframe='Manufacturing'>
+    <roles>
+      <role fnrole='Product' vnrole='Result'/>
+      <role fnrole='Resource' vnrole='Material'/>
+      <role fnrole='Manufacturer' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.4' fnframe='Behind_the_scenes'>
+    <roles>
+      <role fnrole='Production' vnrole='Result'/>
+      <role fnrole='Medium' vnrole='Material'/>
+      <role fnrole='Artist' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.5' fnframe='Reshaping'>
+    <roles>
+      <role fnrole='Result' vnrole='Product'/>
+      <role fnrole='Undergoer' vnrole='Material'/>
+      <role fnrole='Deformer' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='26.5' fnframe='Manipulation'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Entity' vnrole='Product'/>
+    </roles>
+  </vncls>
+  <vncls class='26.6.1' fnframe='Undergo_change'>
+    <roles>
+      <role fnrole='Final_category' vnrole='Result'/>
+      <role fnrole='Initial_category' vnrole='Material'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Entity' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='26.6.1' fnframe='Reshaping'>
+    <roles>
+      <role fnrole='Deformer' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Material'/>
+      <role fnrole='Result' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='26.6.1' fnframe='Categorization'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Patient'/>
+      <role fnrole='Category' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='26.6.2' fnframe='Replacing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Old' vnrole='Source'/>
+      <role fnrole='New' vnrole='Goal'/>
+    </roles>
+  </vncls>
+  <vncls class='26.7' fnframe='Behind_the_scenes'>
+    <roles>
+      <role fnrole='Artist' vnrole='Agent'/>
+      <role fnrole='Production' vnrole='Theme'/>
+      <role fnrole='Studio' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='26.7' fnframe='Performers_and_roles'>
+    <roles>
+      <role fnrole='Performer' vnrole='Agent'/>
+      <role fnrole='Performance' vnrole='Theme'/>
+      <role fnrole='Audience' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='26.7' fnframe='Text_creation'>
+    <roles>
+      <role fnrole='Author' vnrole='Agent'/>
+      <role fnrole='Text' vnrole='Theme'/>
+      <role fnrole='Purpose' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='26.7' fnframe='Coming_up_with'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Idea' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='27' fnframe='Causation'>
+    <roles>
+      <role fnrole='Cause' vnrole='Cause'/>
+      <role fnrole='Effect' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='27' fnframe='Cause_to_start'>
+    <roles>
+      <role fnrole='Cause' vnrole='Cause'/>
+      <role fnrole='Effect' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='27' fnframe='Birth'>
+    <roles>
+      <role fnrole='Mother' vnrole='Cause'/>
+      <role fnrole='Child' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='28' fnframe='Birth'>
+    <roles>
+      <role fnrole='Parents' vnrole='Agent'/>
+      <role fnrole='Child' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='29.1' fnframe='Change_of_leadership'>
+    <roles>
+      <role fnrole='Selector' vnrole='Agent'/>
+      <role fnrole='New_leader' vnrole='Theme'/>
+      <role fnrole='Role' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='29.1' fnframe='Name_conferral'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Entity' vnrole='Theme'/>
+      <role fnrole='Name' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='29.1' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.1' fnframe='Awareness'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.2' fnframe='Judgment_communication'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Evaluee' vnrole='Theme'/>
+      <role fnrole='Role' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='29.2' fnframe='Categorization'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Theme'/>
+      <role fnrole='Category' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='29.2' fnframe='Speak_on_topic'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.2' fnframe='Topic'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.2' fnframe='Judgment'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Evaluee' vnrole='Theme'/>
+      <role fnrole='Role' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='29.2' fnframe='Communicate_categorization'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Theme'/>
+      <role fnrole='Category' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='29.2' fnframe='Awareness'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.2' fnframe='Memory'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.2' fnframe='Evidence'>
+    <roles>
+      <role fnrole='Support' vnrole='Agent'/>
+      <role fnrole='Proposition' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.2' fnframe='Reporting'>
+    <roles>
+      <role fnrole='Authorities' vnrole='Agent'/>
+      <role fnrole='Behavior' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.3' fnframe='Being_named'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Entity' vnrole='Theme'/>
+      <role fnrole='Name' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='29.3' fnframe='Name_conferral'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Entity' vnrole='Theme'/>
+      <role fnrole='Name' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='29.3' fnframe='Verdict'>
+    <roles>
+      <role fnrole='Judge' vnrole='Agent'/>
+      <role fnrole='Defendant' vnrole='Theme'/>
+      <role fnrole='Finding' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='29.4' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Theme'/>
+      <role fnrole='Message' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='29.4' fnframe='Awareness'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.4' fnframe='Becoming_aware'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Phenomenon' vnrole='Theme'/>
+      <role fnrole='State' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='29.4' fnframe='Deserving'>
+    <roles>
+      <role fnrole='State_of_affairs' vnrole='Agent'/>
+      <role fnrole='Action' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.5' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Theme'/>
+      <role fnrole='Message' vnrole='Predicate'/>
+    </roles>
+  </vncls>
+  <vncls class='29.5' fnframe='Coming_to_believe'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.5' fnframe='Awareness'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.5' fnframe='Becoming_aware'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Phenomenon' vnrole='Theme'/>
+      <role fnrole='State' vnrole='Predicate'/>
+    </roles>
+  </vncls>
+  <vncls class='29.5' fnframe='Reasoning'>
+    <roles>
+      <role fnrole='Arguer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.5' fnframe='Predicting'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Eventuality' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.5' fnframe='Certainty'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.5' fnframe='Expectation'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Phenomenon' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='29.6' fnframe='Conduct'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Manner' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='29.6' fnframe='Assessing'>
+    <roles>
+      <role fnrole='Assessor' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='29.6' fnframe='Performers_and_roles'>
+    <roles>
+      <role fnrole='Performer' vnrole='Agent'/>
+      <role fnrole='Role' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='29.8' fnframe='Commitment'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='29.8' fnframe='Manipulate_into_doing'>
+    <roles>
+      <role fnrole='Manipulator' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='29.8' fnframe='Killing'>
+    <roles>
+      <role fnrole='Killer' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='29.8' fnframe='Being_employed'>
+    <roles>
+      <role fnrole='Employee' vnrole='Agent'/>
+      <role fnrole='Task' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='29.8' fnframe='Cotheme'>
+    <roles>
+      <role fnrole='Source' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='29.8' fnframe='Education_teaching'>
+    <roles>
+      <role fnrole='Teacher' vnrole='Agent'/>
+      <role fnrole='Student' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='29.8' fnframe='Performers_and_roles'>
+    <roles>
+      <role fnrole='Performer' vnrole='Agent'/>
+      <role fnrole='Audience' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='29.8' fnframe='Achieving_first'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='New_idea' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='29.8' fnframe='Collaboration'>
+    <roles>
+      <role fnrole='Partners' vnrole='Agent'/>
+      <role fnrole='Undertaking' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='29.8' fnframe='Social_event'>
+    <roles>
+      <role fnrole='Host' vnrole='Agent'/>
+      <role fnrole='Social_event' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='29.9' fnframe='Categorization'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Theme'/>
+      <role fnrole='Category' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='29.9' fnframe='Cogitation'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='30.1' fnframe='Perception_experience'>
+    <roles>
+      <role fnrole='Perceiver_passive' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.1' fnframe='Becoming_aware'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.2' fnframe='Becoming_aware'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.2' fnframe='Scrutiny'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.2' fnframe='Perception_active'>
+    <roles>
+      <role fnrole='Perceiver_agentive' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.2' fnframe='Perception_experience'>
+    <roles>
+      <role fnrole='Perceiver_passive' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.2' fnframe='Perception'>
+    <roles>
+      <role fnrole='Perceiver' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.2' fnframe='Feeling'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Emotion' vnrole='Stimulus'/>
+      <role fnrole='Emotional_state' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.2' fnframe='Reading'>
+    <roles>
+      <role fnrole='Reader' vnrole='Experiencer'/>
+      <role fnrole='Text' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.3' fnframe='Perception_active'>
+    <roles>
+      <role fnrole='Perceiver_agentive' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.4' fnframe='Appearance'>
+    <roles>
+      <role fnrole='Perceiver_passive' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='30.4' fnframe='Perception_active'>
+    <roles>
+      <role fnrole='Perceiver_agentive' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.1' fnframe='Experiencer_obj'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Stimulus' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.1' fnframe='Eventive_cognizer_affecting'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Experiencer'/>
+      <role fnrole='Event' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.1' fnframe='Attempt_suasion'>
+    <roles>
+      <role fnrole='Addressee' vnrole='Experiencer'/>
+      <role fnrole='Speaker' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.1' fnframe='Manipulate_into_doing'>
+    <roles>
+      <role fnrole='Victim' vnrole='Experiencer'/>
+      <role fnrole='Manipulator' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.1' fnframe='Feeling'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Emotion' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.1' fnframe='Cause_to_experience'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Agent' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.1' fnframe='Cause_harm'>
+    <roles>
+      <role fnrole='Victim' vnrole='Experiencer'/>
+      <role fnrole='Agent' vnrole='Stimulus'/>
+      <role fnrole='Cause' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.2' fnframe='Feeling'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Emotion' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.2' fnframe='Judgment'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Experiencer'/>
+      <role fnrole='Evaluee' vnrole='Stimulus'/>
+      <role fnrole='Role' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='31.2' fnframe='Judgment_communication'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Experiencer'/>
+      <role fnrole='Evaluee' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.2' fnframe='Preference'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Event' vnrole='Stimulus'/>
+      <role fnrole='Location_of_Event' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='31.2' fnframe='Partiality'>
+    <roles>
+      <role fnrole='Judge' vnrole='Experiencer'/>
+      <role fnrole='Dispute' vnrole='Stimulus'/>
+      <role fnrole='Sides' vnrole='Stimulus'/>
+      <role fnrole='Side_1' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.3' fnframe='Experiencer_obj'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Stimulus' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.3' fnframe='Emotion_active'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Topic' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.3' fnframe='Feeling'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Emotion' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.3' fnframe='Judgment'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Experiencer'/>
+      <role fnrole='Evaluee' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='31.3' fnframe='Cogitation'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Experiencer'/>
+      <role fnrole='Topic' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='32.1' fnframe='Desiring'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Pivot'/>
+      <role fnrole='Event' vnrole='Theme'/>
+      <role fnrole='Focal_participant' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='32.1' fnframe='Preference'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Pivot'/>
+      <role fnrole='Event' vnrole='Theme'/>
+      <role fnrole='Focal_participant' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='32.1' fnframe='Partiality'>
+    <roles>
+      <role fnrole='Judge' vnrole='Pivot'/>
+      <role fnrole='Dispute' vnrole='Theme'/>
+      <role fnrole='Sides' vnrole='Theme'/>
+      <role fnrole='Side_1' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='32.2' fnframe='Desiring'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Event' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='32.2' fnframe='Feeling'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Emotion' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='33' fnframe='Judgment_communication'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Evaluee' vnrole='Theme'/>
+      <role fnrole='Reason' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='33' fnframe='Judgment'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Evaluee' vnrole='Theme'/>
+      <role fnrole='Reason' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='33' fnframe='Judgment_direct_address'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Theme'/>
+      <role fnrole='Reason' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='33' fnframe='Forgiveness'>
+    <roles>
+      <role fnrole='Judge' vnrole='Agent'/>
+      <role fnrole='Evaluee' vnrole='Theme'/>
+      <role fnrole='Offense' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='33' fnframe='Rewards_and_punishments'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Evaluee' vnrole='Theme'/>
+      <role fnrole='Reason' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='33' fnframe='Grant_permission'>
+    <roles>
+      <role fnrole='Grantor' vnrole='Agent'/>
+      <role fnrole='Grantee' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='33' fnframe='Certainty'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='33' fnframe='Attack'>
+    <roles>
+      <role fnrole='Assailant' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Theme'/>
+      <role fnrole='Reason' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='33' fnframe='Notification_of_charges'>
+    <roles>
+      <role fnrole='Arraign_authority' vnrole='Agent'/>
+      <role fnrole='Accused' vnrole='Theme'/>
+      <role fnrole='Charges' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='33' fnframe='Heralding'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Event' vnrole='Theme'/>
+      <role fnrole='Individual' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='34.1' fnframe='Scrutiny'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Ground' vnrole='Theme'/>
+      <role fnrole='Phenomenon' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='34.1' fnframe='Assessing'>
+    <roles>
+      <role fnrole='Assessor' vnrole='Agent'/>
+      <role fnrole='Phenomenon' vnrole='Theme'/>
+      <role fnrole='Feature' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='35.1' fnframe='Seeking'>
+    <roles>
+      <role fnrole='Cognizer_agent' vnrole='Agent'/>
+      <role fnrole='Ground' vnrole='Location'/>
+      <role fnrole='Sought_entity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='35.2' fnframe='Seeking'>
+    <roles>
+      <role fnrole='Cognizer_agent' vnrole='Agent'/>
+      <role fnrole='Ground' vnrole='Location'/>
+      <role fnrole='Sought_entity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='35.2' fnframe='Scrutiny'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Ground' vnrole='Location'/>
+      <role fnrole='Phenomenon' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='35.4' fnframe='Seeking'>
+    <roles>
+      <role fnrole='Cognizer_agent' vnrole='Agent'/>
+      <role fnrole='Ground' vnrole='Location'/>
+      <role fnrole='Sought_entity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='35.4' fnframe='Scrutiny'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Ground' vnrole='Location'/>
+      <role fnrole='Phenomenon' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='35.4' fnframe='Operational_testing'>
+    <roles>
+      <role fnrole='Tester' vnrole='Agent'/>
+      <role fnrole='Product' vnrole='Location'/>
+      <role fnrole='Tested_property' vnrole='Location'/>
+      <role fnrole='Unwanted_characteristics' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='35.5' fnframe='Seeking'>
+    <roles>
+      <role fnrole='Cognizer_agent' vnrole='Agent'/>
+      <role fnrole='Ground' vnrole='Location'/>
+      <role fnrole='Sought_entity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='35.5' fnframe='Scrutiny'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Ground' vnrole='Location'/>
+      <role fnrole='Phenomenon' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='35.6' fnframe='Seeking'>
+    <roles>
+      <role fnrole='Cognizer_agent' vnrole='Agent'/>
+      <role fnrole='Ground' vnrole='Source'/>
+      <role fnrole='Sought_entity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='36.1' fnframe='Compatibility'>
+    <roles>
+      <role fnrole='Item_1' vnrole='Agent'/>
+      <role fnrole='Item_2' vnrole='Co-Agent'/>
+      <role fnrole='Parameter' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='36.1' fnframe='Collaboration'>
+    <roles>
+      <role fnrole='Partner_1' vnrole='Agent'/>
+      <role fnrole='Partner_2' vnrole='Co-Agent'/>
+      <role fnrole='Undertaking' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='36.1' fnframe='Discussion'>
+    <roles>
+      <role fnrole='Interlocutor_1' vnrole='Agent'/>
+      <role fnrole='Interlocutor_2' vnrole='Co-Agent'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='36.1' fnframe='Quarreling'>
+    <roles>
+      <role fnrole='Arguer1' vnrole='Agent'/>
+      <role fnrole='Arguer2' vnrole='Co-Agent'/>
+      <role fnrole='Issue' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='36.1' fnframe='Hostile_encounter'>
+    <roles>
+      <role fnrole='Side_1' vnrole='Agent'/>
+      <role fnrole='Side_2' vnrole='Co-Agent'/>
+      <role fnrole='Issue' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='36.1' fnframe='Competition'>
+    <roles>
+      <role fnrole='Participant_1' vnrole='Agent'/>
+      <role fnrole='Participant_2' vnrole='Co-Agent'/>
+      <role fnrole='Competition' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='36.1' fnframe='Amalgamation'>
+    <roles>
+      <role fnrole='Parts' vnrole='Agent'/>
+      <role fnrole='Part_1' vnrole='Agent'/>
+      <role fnrole='Part_2' vnrole='Co-Agent'/>
+      <role fnrole='Whole' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='36.2' fnframe='Personal_relationship'>
+    <roles>
+      <role fnrole='Partner_1' vnrole='Agent'/>
+      <role fnrole='Partner_2' vnrole='Co-Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='36.2' fnframe='Forming_relationships'>
+    <roles>
+      <role fnrole='Partner_1' vnrole='Agent'/>
+      <role fnrole='Partner_2' vnrole='Co-Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='36.3' fnframe='Quarreling'>
+    <roles>
+      <role fnrole='Arguer1' vnrole='Agent'/>
+      <role fnrole='Arguer2' vnrole='Co-Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='36.3' fnframe='Discussion'>
+    <roles>
+      <role fnrole='Interlocutor_1' vnrole='Agent'/>
+      <role fnrole='Interlocutor_2' vnrole='Co-Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='36.3' fnframe='Competition'>
+    <roles>
+      <role fnrole='Participant_1' vnrole='Agent'/>
+      <role fnrole='Participant_2' vnrole='Co-Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='36.3' fnframe='Hostile_encounter'>
+    <roles>
+      <role fnrole='Side_1' vnrole='Agent'/>
+      <role fnrole='Side_2' vnrole='Co-Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='36.4' fnframe='Communication'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Co-Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.1' fnframe='Reasoning'>
+    <roles>
+      <role fnrole='Arguer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.1' fnframe='Justifying'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='State_of_affairs' vnrole='Topic'/>
+      <role fnrole='Act' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.1' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.1' fnframe='Speak_on_topic'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Audience' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.1' fnframe='Hear'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Hearer' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.1' fnframe='Reporting'>
+    <roles>
+      <role fnrole='Informer' vnrole='Agent'/>
+      <role fnrole='Behavior' vnrole='Topic'/>
+      <role fnrole='Authorities' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.1' fnframe='Request'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.1' fnframe='Telling'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.1' fnframe='Contacting'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Communication' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.1' fnframe='Questioning'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.1.2' fnframe='Questioning'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.2' fnframe='Reporting'>
+    <roles>
+      <role fnrole='Informer' vnrole='Agent'/>
+      <role fnrole='Behavior' vnrole='Topic'/>
+      <role fnrole='Authorities' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.2' fnframe='Request'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.2' fnframe='Telling'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.3' fnframe='Communication_manner'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.3' fnframe='Communication_noise'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.3' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.4' fnframe='Communication_means'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.4' fnframe='Contacting'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Communication' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.5' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Co-Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='37.6' fnframe='Quarreling'>
+    <roles>
+      <role fnrole='Arguer1' vnrole='Agent'/>
+      <role fnrole='Arguer2' vnrole='Co-Agent'/>
+      <role fnrole='Issue' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='37.6' fnframe='Chatting'>
+    <roles>
+      <role fnrole='Interlocutor_1' vnrole='Agent'/>
+      <role fnrole='Interlocutor_2' vnrole='Co-Agent'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='37.6' fnframe='Discussion'>
+    <roles>
+      <role fnrole='Interlocutor_1' vnrole='Agent'/>
+      <role fnrole='Interlocutor_2' vnrole='Co-Agent'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='37.7' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.7' fnframe='Telling'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.7' fnframe='Expressing_publicly'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.7' fnframe='Reveal_secret'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Information' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.7' fnframe='Text_creation'>
+    <roles>
+      <role fnrole='Author' vnrole='Agent'/>
+      <role fnrole='Text' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.7' fnframe='Communication_response'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Trigger' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.8' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.9' fnframe='Attempt_suasion'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.9' fnframe='Telling'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.9' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.11' fnframe='Speak_on_topic'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Audience' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='37.11' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='38' fnframe='Communication_noise'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='38' fnframe='Make_noise'>
+    <roles>
+      <role fnrole='Noisy_event' vnrole='Agent'/>
+      <role fnrole='Sound_source' vnrole='Agent'/>
+      <role fnrole='Sound' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='39.1' fnframe='Ingestion'>
+    <roles>
+      <role fnrole='Ingestor' vnrole='Agent'/>
+      <role fnrole='Ingestibles' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='39.2' fnframe='Ingestion'>
+    <roles>
+      <role fnrole='Ingestor' vnrole='Agent'/>
+      <role fnrole='Ingestibles' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='39.2' fnframe='Grinding'>
+    <roles>
+      <role fnrole='Grinder' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='39.3' fnframe='Ingestion'>
+    <roles>
+      <role fnrole='Ingestor' vnrole='Agent'/>
+      <role fnrole='Ingestibles' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='39.4' fnframe='Ingestion'>
+    <roles>
+      <role fnrole='Ingestor' vnrole='Agent'/>
+      <role fnrole='Ingestibles' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='39.5' fnframe='Ingestion'>
+    <roles>
+      <role fnrole='Ingestor' vnrole='Agent'/>
+      <role fnrole='Ingestibles' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='39.6' fnframe='Ingestion'>
+    <roles>
+      <role fnrole='Ingestor' vnrole='Agent'/>
+      <role fnrole='Ingestibles' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='39.7' fnframe='Ingestion'>
+    <roles>
+      <role fnrole='Ingestor' vnrole='Agent'/>
+      <role fnrole='Ingestibles' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='40.1.1' fnframe='Excreting'>
+    <roles>
+      <role fnrole='Excreter' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='40.1.1' fnframe='Body_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='40.1.2' fnframe='Fluidic_motion'>
+    <roles>
+      <role fnrole='Fluid' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='40.1.2' fnframe='Excreting'>
+    <roles>
+      <role fnrole='Excreter' vnrole='Agent'/>
+      <role fnrole='Excreta' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='40.1.2' fnframe='Breathing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Air' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='40.1.3' fnframe='Emitting'>
+    <roles>
+      <role fnrole='Source_emitter' vnrole='Pivot'/>
+      <role fnrole='Emission' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='40.1.3' fnframe='Breathing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Pivot'/>
+      <role fnrole='Air' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='40.2' fnframe='Communication_noise'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='40.2' fnframe='Making_faces'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='40.2' fnframe='Communication_manner'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='40.2' fnframe='Body_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='40.2' fnframe='Judgment_communication'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Evaluee' vnrole='Theme'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='40.3.1' fnframe='Gesture'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+      <role fnrole='Message' vnrole='Theme'/>
+      <role fnrole='Indicated_entity' vnrole='Theme'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='40.3.1' fnframe='Body_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='40.3.2' fnframe='Body_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='40.3.2' fnframe='Posture'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='40.3.2' fnframe='Self_motion'>
+    <roles>
+      <role fnrole='Self_mover' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='40.3.3' fnframe='Body_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='40.4' fnframe='Sleep'>
+    <roles>
+      <role fnrole='Sleeper' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='40.6' fnframe='Body_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Experiencer'/>
+    </roles>
+  </vncls>
+  <vncls class='40.7' fnframe='Death'>
+    <roles>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Protagonist' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='40.7' fnframe='Killing'>
+    <roles>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Killer' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='40.8.1' fnframe='Perception_body'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='40.8.2' fnframe='Perception_body'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='40.8.3' fnframe='Experience_bodily_harm'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Experiencer'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='41.1.1' fnframe='Grooming'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+      <role fnrole='Patient' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='41.1.2' fnframe='Grooming'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+      <role fnrole='Patient' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='41.2.1' fnframe='Grooming'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+      <role fnrole='Patient' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='41.2.2' fnframe='Grooming'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+      <role fnrole='Patient' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='41.2.2' fnframe='Hair_configuration'>
+    <roles>
+      <role fnrole='Hair' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='41.3.1' fnframe='Wearing'>
+    <roles>
+      <role fnrole='Wearer' vnrole='Agent'/>
+      <role fnrole='Clothing' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='42.1' fnframe='Killing'>
+    <roles>
+      <role fnrole='Killer' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='42.1' fnframe='Execution'>
+    <roles>
+      <role fnrole='Executioner' vnrole='Agent'/>
+      <role fnrole='Executed' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='42.2' fnframe='Killing'>
+    <roles>
+      <role fnrole='Killer' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='42.2' fnframe='Cause_harm'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Patient'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='42.2' fnframe='Execution'>
+    <roles>
+      <role fnrole='Executioner' vnrole='Agent'/>
+      <role fnrole='Executed' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='43.1' fnframe='Light_movement'>
+    <roles>
+      <role fnrole='Emitter' vnrole='Agent'/>
+      <role fnrole='Beam' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='43.1' fnframe='Location_of_light'>
+    <roles>
+      <role fnrole='Cause_of_shine' vnrole='Agent'/>
+      <role fnrole='Figure' vnrole='Theme'/>
+      <role fnrole='Light' vnrole='Theme'/>
+      <role fnrole='Ground' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='43.2' fnframe='Make_noise'>
+    <roles>
+      <role fnrole='Noisy_event' vnrole='Theme'/>
+      <role fnrole='Sound' vnrole='Theme'/>
+      <role fnrole='Sound_source' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='43.2' fnframe='Motion_noise'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='43.3' fnframe='Chemical-sense_description'>
+    <roles>
+      <role fnrole='Sensory_attribute' vnrole='Theme'/>
+      <role fnrole='Perceptual_source' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='43.4' fnframe='Fluidic_motion'>
+    <roles>
+      <role fnrole='Fluid' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='43.4' fnframe='Excreting'>
+    <roles>
+      <role fnrole='Excreta' vnrole='Theme'/>
+      <role fnrole='Excreter' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='43.4' fnframe='Emanating'>
+    <roles>
+      <role fnrole='Emission' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Path' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='43.4' fnframe='Emitting'>
+    <roles>
+      <role fnrole='Emission' vnrole='Theme'/>
+      <role fnrole='Source_emitter' vnrole='Source'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Path' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='43.4' fnframe='Mass_motion'>
+    <roles>
+      <role fnrole='Mass_theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Source'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Path' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='44' fnframe='Damaging'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Patient' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='44' fnframe='Destroying'>
+    <roles>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Destroyer' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='44' fnframe='Cause_to_fragment'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Whole_patient' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.1' fnframe='Damaging'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Patient' vnrole='Patient'/>
+      <role fnrole='Character_of_end_state' vnrole='Result'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.1' fnframe='Cause_to_fragment'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Whole_patient' vnrole='Patient'/>
+      <role fnrole='Pieces' vnrole='Result'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.2' fnframe='Reshaping'>
+    <roles>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Deformer' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+      <role fnrole='Configuration' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='45.3' fnframe='Absorb_heat'>
+    <roles>
+      <role fnrole='Heat_source' vnrole='Agent'/>
+      <role fnrole='Entity' vnrole='Patient'/>
+      <role fnrole='Result' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='45.3' fnframe='Apply_heat'>
+    <roles>
+      <role fnrole='Cook' vnrole='Agent'/>
+      <role fnrole='Food' vnrole='Patient'/>
+      <role fnrole='Heating_instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.3' fnframe='Cooking_creation'>
+    <roles>
+      <role fnrole='Cook' vnrole='Agent'/>
+      <role fnrole='Ingredients' vnrole='Patient'/>
+      <role fnrole='Heating_instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.3' fnframe='Cause_temperature_change'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Patient'/>
+      <role fnrole='Hot_Cold_source' vnrole='Instrument'/>
+      <role fnrole='Result' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='45.3' fnframe='Inchoative_change_of_temperature'>
+    <roles>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Patient'/>
+      <role fnrole='Hot_Cold_source' vnrole='Instrument'/>
+      <role fnrole='Final_temperature' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Cure'>
+    <roles>
+      <role fnrole='Healer' vnrole='Agent'/>
+      <role fnrole='Treatment' vnrole='Instrument'/>
+      <role fnrole='Medication' vnrole='Instrument'/>
+      <role fnrole='Affliction' vnrole='Patient'/>
+      <role fnrole='Patient' vnrole='Patient'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Emptying'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Instrument'/>
+      <role fnrole='Source' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Filling'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Patient'/>
+      <role fnrole='Theme' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Waking_up'>
+    <roles>
+      <role fnrole='Sleeper' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Cause_to_wake'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Sleeper' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Undergo_change'>
+    <roles>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Initial_category' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Apply_heat'>
+    <roles>
+      <role fnrole='Cook' vnrole='Agent'/>
+      <role fnrole='Food' vnrole='Patient'/>
+      <role fnrole='Heating_instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Cause_temperature_change'>
+    <roles>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Patient'/>
+      <role fnrole='Hot_Cold_source' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Inchoative_change_of_temperature'>
+    <roles>
+      <role fnrole='Item' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Closure'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Fastener' vnrole='Instrument'/>
+      <role fnrole='Containing_object' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Change_of_consistency'>
+    <roles>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Change_of_phase'>
+    <roles>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Expansion'>
+    <roles>
+      <role fnrole='Item' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Corroding'>
+    <roles>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Cause_to_be_wet'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Liquid' vnrole='Instrument'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Rotting'>
+    <roles>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Cause_change_of_position_on_a_scale'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Attribute' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Change_position_on_a_scale'>
+    <roles>
+      <role fnrole='Attribute' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Cause_change_of_phase'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Cause_to_be_dry'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+      <role fnrole='Dryee' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Dispersal'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Individuals' vnrole='Patient'/>
+      <role fnrole='Means' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Separating'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Whole' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Cause_expansion'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Reshaping'>
+    <roles>
+      <role fnrole='Deformer' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Amalgamation'>
+    <roles>
+      <role fnrole='Parts' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Cause_to_amalgamate'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Parts' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Experiencer_obj'>
+    <roles>
+      <role fnrole='Stimulus' vnrole='Agent'/>
+      <role fnrole='Experiencer' vnrole='Patient'/>
+      <role fnrole='Means' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Become_silent'>
+    <roles>
+      <role fnrole='Expressor' vnrole='Patient'/>
+      <role fnrole='Speaker' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Silencing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Speaker' vnrole='Patient'/>
+      <role fnrole='Expressor' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+      <role fnrole='Means' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Setting_fire'>
+    <roles>
+      <role fnrole='Kindler' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Flame' vnrole='Patient'/>
+      <role fnrole='Flammables' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Corroding_caused'>
+    <roles>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Duplication'>
+    <roles>
+      <role fnrole='Copy' vnrole='Agent'/>
+      <role fnrole='Creator' vnrole='Agent'/>
+      <role fnrole='Original' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Cause_change_of_consistency'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+      <role fnrole='Change_agent' vnrole='Instrument'/>
+      <role fnrole='Means' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Eclipse'>
+    <roles>
+      <role fnrole='Obstruction' vnrole='Agent'/>
+      <role fnrole='Eclipsed' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Rite'>
+    <roles>
+      <role fnrole='Leader' vnrole='Agent'/>
+      <role fnrole='Guardian' vnrole='Agent'/>
+      <role fnrole='Member' vnrole='Patient'/>
+      <role fnrole='Object' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Bungling'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Patient' vnrole='Patient'/>
+      <role fnrole='Action' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Categorization'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Experience_bodily_harm'>
+    <roles>
+      <role fnrole='Experiencer' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+      <role fnrole='Injuring_entity' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Preserving'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+      <role fnrole='Medium' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.4' fnframe='Killing'>
+    <roles>
+      <role fnrole='Killer' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Patient'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='45.5' fnframe='Corroding'>
+    <roles>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.5' fnframe='Rotting'>
+    <roles>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.5' fnframe='Corroding_caused'>
+    <roles>
+      <role fnrole='Undergoer' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.5' fnframe='Cause_expansion'>
+    <roles>
+      <role fnrole='Item' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.5' fnframe='Cause_change_of_position_on_a_scale'>
+    <roles>
+      <role fnrole='Attribute' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='45.6' fnframe='Cause_change_of_position_on_a_scale'>
+    <roles>
+      <role fnrole='Item' vnrole='Patient'/>
+      <role fnrole='Attribute' vnrole='Attribute'/>
+      <role fnrole='Difference' vnrole='Extent'/>
+    </roles>
+  </vncls>
+  <vncls class='45.6' fnframe='Change_position_on_a_scale'>
+    <roles>
+      <role fnrole='Item' vnrole='Patient'/>
+      <role fnrole='Attribute' vnrole='Attribute'/>
+      <role fnrole='Difference' vnrole='Extent'/>
+    </roles>
+  </vncls>
+  <vncls class='45.6' fnframe='Cause_expansion'>
+    <roles>
+      <role fnrole='Item' vnrole='Patient'/>
+      <role fnrole='Dimension' vnrole='Attribute'/>
+      <role fnrole='Size_change' vnrole='Extent'/>
+    </roles>
+  </vncls>
+  <vncls class='45.6' fnframe='Self_motion'>
+    <roles>
+      <role fnrole='Self_mover' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='46' fnframe='Residence'>
+    <roles>
+      <role fnrole='Resident' vnrole='Theme'/>
+      <role fnrole='Location' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.1' fnframe='Existence'>
+    <roles>
+      <role fnrole='Entity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.1' fnframe='Process_continue'>
+    <roles>
+      <role fnrole='Event' vnrole='Theme'/>
+      <role fnrole='Place' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.2' fnframe='Fluidic_motion'>
+    <roles>
+      <role fnrole='Fluid' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.2' fnframe='Corroding'>
+    <roles>
+      <role fnrole='Undergoer' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.2' fnframe='Rotting'>
+    <roles>
+      <role fnrole='Undergoer' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.2' fnframe='Motion_noise'>
+    <roles>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.2' fnframe='Corroding_caused'>
+    <roles>
+      <role fnrole='Undergoer' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.2' fnframe='Emotion_heat'>
+    <roles>
+      <role fnrole='Emotion' vnrole='Theme'/>
+      <role fnrole='Experiencer' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.2' fnframe='Dispersal'>
+    <roles>
+      <role fnrole='Individuals' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Location'/>
+      <role fnrole='Goal_area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.3' fnframe='Cause_to_move_in_place'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Bodypart_of_agent' vnrole='Theme'/>
+      <role fnrole='Fixed_location' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.3' fnframe='Moving_in_place'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Fixed_location' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.3' fnframe='Body_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.3' fnframe='Self_motion'>
+    <roles>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Self_mover' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.3' fnframe='Motion'>
+    <roles>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.4' fnframe='Sound_movement'>
+    <roles>
+      <role fnrole='Sound' vnrole='Theme'/>
+      <role fnrole='Sound_source' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.5.1' fnframe='Self_motion'>
+    <roles>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Self_mover' vnrole='Theme'/>
+      <role fnrole='Area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.5.1' fnframe='Abundance'>
+    <roles>
+      <role fnrole='Collection' vnrole='Theme'/>
+      <role fnrole='Place' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.5.1' fnframe='Mass_motion'>
+    <roles>
+      <role fnrole='Mass_theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.5.2' fnframe='Commerce_collect'>
+    <roles>
+      <role fnrole='Buyer' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.5.2' fnframe='Come_together'>
+    <roles>
+      <role fnrole='Individuals' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.5.2' fnframe='Gathering_up'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Individuals' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.5.2' fnframe='Mass_motion'>
+    <roles>
+      <role fnrole='Mass_theme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.6' fnframe='Posture'>
+    <roles>
+      <role fnrole='Agent' vnrole='Theme'/>
+      <role fnrole='Location' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.7' fnframe='Fluidic_motion'>
+    <roles>
+      <role fnrole='Fluid' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.7' fnframe='Self_motion'>
+    <roles>
+      <role fnrole='Self_mover' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.7' fnframe='Motion_directional'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Path' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.7' fnframe='Path_shape'>
+    <roles>
+      <role fnrole='Road' vnrole='Theme'/>
+      <role fnrole='Path' vnrole='Location'/>
+      <role fnrole='Area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.7' fnframe='Motion'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Area' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='47.7' fnframe='Expansion'>
+    <roles>
+      <role fnrole='Item' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.8' fnframe='Adorning'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Location' vnrole='Co-Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.8' fnframe='Closure'>
+    <roles>
+      <role fnrole='Fastener' vnrole='Theme'/>
+      <role fnrole='Containing_object' vnrole='Co-Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.8' fnframe='Containing'>
+    <roles>
+      <role fnrole='Container' vnrole='Theme'/>
+      <role fnrole='Contents' vnrole='Co-Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.8' fnframe='Cotheme'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Cotheme' vnrole='Co-Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='47.8' fnframe='Path_shape'>
+    <roles>
+      <role fnrole='Road' vnrole='Theme'/>
+      <role fnrole='Road' vnrole='Co-Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='48.1.1' fnframe='Coming_to_be'>
+    <roles>
+      <role fnrole='Entity' vnrole='Theme'/>
+      <role fnrole='Place' vnrole='Location'/>
+      <role fnrole='Time' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='48.1.1' fnframe='Waking_up'>
+    <roles>
+      <role fnrole='Sleeper' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='48.1.1' fnframe='Process_start'>
+    <roles>
+      <role fnrole='Event' vnrole='Theme'/>
+      <role fnrole='Place' vnrole='Location'/>
+      <role fnrole='Time' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='48.1.2' fnframe='Statement'>
+    <roles>
+      <role fnrole='Topic' vnrole='Theme'/>
+      <role fnrole='Message' vnrole='Theme'/>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='48.1.2' fnframe='Reveal_secret'>
+    <roles>
+      <role fnrole='Topic' vnrole='Theme'/>
+      <role fnrole='Information' vnrole='Theme'/>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+    </roles>
+  </vncls>
+  <vncls class='48.2' fnframe='Death'>
+    <roles>
+      <role fnrole='Protagonist' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='48.2' fnframe='Departing'>
+    <roles>
+      <role fnrole='Theme' vnrole='Patient'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+    </roles>
+  </vncls>
+  <vncls class='48.3' fnframe='Event'>
+    <roles>
+      <role fnrole='Event' vnrole='Theme'/>
+      <role fnrole='Place' vnrole='Location'/>
+      <role fnrole='Time' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='48.3' fnframe='Catastrophe'>
+    <roles>
+      <role fnrole='Undesirable_Event' vnrole='Theme'/>
+      <role fnrole='Place' vnrole='Location'/>
+      <role fnrole='Time' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='48.3' fnframe='Daring'>
+    <roles>
+      <role fnrole='Action' vnrole='Theme'/>
+      <role fnrole='Place' vnrole='Location'/>
+      <role fnrole='Time' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='49' fnframe='Body_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Body_part' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='49' fnframe='Self_motion'>
+    <roles>
+      <role fnrole='Self_mover' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='50' fnframe='Change_posture'>
+    <roles>
+      <role fnrole='Protagonist' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='51.1' fnframe='Self_motion'>
+    <roles>
+      <role fnrole='Self_mover' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+      <role fnrole='Path' vnrole='Trajectory'/>
+    </roles>
+  </vncls>
+  <vncls class='51.1' fnframe='Path_shape'>
+    <roles>
+      <role fnrole='Road' vnrole='Theme'/>
+      <role fnrole='Path' vnrole='Trajectory'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='51.1' fnframe='Departing'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+      <role fnrole='Path' vnrole='Trajectory'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='51.1' fnframe='Quitting_a_place'>
+    <roles>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+      <role fnrole='Path' vnrole='Trajectory'/>
+    </roles>
+  </vncls>
+  <vncls class='51.1' fnframe='Arriving'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Path' vnrole='Trajectory'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.1' fnframe='Escaping'>
+    <roles>
+      <role fnrole='Escapee' vnrole='Theme'/>
+      <role fnrole='Undesirable_location' vnrole='Initial_Location'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Path' vnrole='Trajectory'/>
+    </roles>
+  </vncls>
+  <vncls class='51.1' fnframe='Evading'>
+    <roles>
+      <role fnrole='Evader' vnrole='Theme'/>
+      <role fnrole='Path' vnrole='Trajectory'/>
+    </roles>
+  </vncls>
+  <vncls class='51.1' fnframe='Motion_directional'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Path' vnrole='Trajectory'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.1' fnframe='Motion'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+      <role fnrole='Path' vnrole='Trajectory'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.2' fnframe='Departing'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Source' vnrole='Initial_Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.3.1' fnframe='Cause_to_move_in_place'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Bodypart_of_agent' vnrole='Theme'/>
+      <role fnrole='Fixed_location' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.3.1' fnframe='Motion_directional'>
+    <roles>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.3.1' fnframe='Motion'>
+    <roles>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.3.1' fnframe='Path_shape'>
+    <roles>
+      <role fnrole='Road' vnrole='Theme'/>
+      <role fnrole='Path' vnrole='Location'/>
+      <role fnrole='Road' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.3.1' fnframe='Moving_in_place'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Fixed_location' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.3.2' fnframe='Self_motion'>
+    <roles>
+      <role fnrole='Self_mover' vnrole='Theme'/>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Path' vnrole='Location'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.3.2' fnframe='Motion'>
+    <roles>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.3.2' fnframe='Travel'>
+    <roles>
+      <role fnrole='Traveler' vnrole='Theme'/>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Path' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.4.1' fnframe='Carry_goods'>
+    <roles>
+      <role fnrole='Distributor' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+      <role fnrole='Place' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.4.1' fnframe='Operate_vehicle'>
+    <roles>
+      <role fnrole='Driver' vnrole='Agent'/>
+      <role fnrole='Vehicle' vnrole='Theme'/>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.4.1' fnframe='Ride_vehicle'>
+    <roles>
+      <role fnrole='Vehicle' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.4.2' fnframe='Operate_vehicle'>
+    <roles>
+      <role fnrole='Driver' vnrole='Agent'/>
+      <role fnrole='Vehicle' vnrole='Theme'/>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.4.2' fnframe='Ride_vehicle'>
+    <roles>
+      <role fnrole='Vehicle' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.4.2' fnframe='Carry_goods'>
+    <roles>
+      <role fnrole='Distributor' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Theme'/>
+      <role fnrole='Place' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.4.2' fnframe='Travel'>
+    <roles>
+      <role fnrole='Traveler' vnrole='Agent'/>
+      <role fnrole='Co_participant' vnrole='Theme'/>
+      <role fnrole='Baggage' vnrole='Theme'/>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Goal' vnrole='Location'/>
+      <role fnrole='Path' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.5' fnframe='Self_motion'>
+    <roles>
+      <role fnrole='Self_mover' vnrole='Theme'/>
+      <role fnrole='Area' vnrole='Location'/>
+      <role fnrole='Goal' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='51.6' fnframe='Cotheme'>
+    <roles>
+      <role fnrole='Theme' vnrole='Agent'/>
+      <role fnrole='Cotheme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='51.7' fnframe='Cotheme'>
+    <roles>
+      <role fnrole='Theme' vnrole='Agent'/>
+      <role fnrole='Cotheme' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='51.8' fnframe='Arriving'>
+    <roles>
+      <role fnrole='Theme' vnrole='Agent'/>
+      <role fnrole='Goal' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='52' fnframe='Avoiding'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Undesirable_situation' vnrole='Theme'/>
+      <role fnrole='Undesirable_situation' vnrole='Location'/>
+      <role fnrole='Place' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='52' fnframe='Preventing'>
+    <roles>
+      <role fnrole='Preventing_cause' vnrole='Agent'/>
+      <role fnrole='Event' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='52' fnframe='Evading'>
+    <roles>
+      <role fnrole='Evader' vnrole='Agent'/>
+      <role fnrole='Pursuer' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='53.1' fnframe='Prevarication'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='53.2' fnframe='Self_motion'>
+    <roles>
+      <role fnrole='Self_mover' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='54.1' fnframe='Dimension'>
+    <roles>
+      <role fnrole='Object' vnrole='Theme'/>
+      <role fnrole='Measurement' vnrole='Value'/>
+    </roles>
+  </vncls>
+  <vncls class='54.1' fnframe='Adding_up'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Numbers' vnrole='Theme'/>
+      <role fnrole='Result' vnrole='Value'/>
+    </roles>
+  </vncls>
+  <vncls class='54.1' fnframe='Amounting_to'>
+    <roles>
+      <role fnrole='Attribute' vnrole='Theme'/>
+      <role fnrole='Value' vnrole='Value'/>
+    </roles>
+  </vncls>
+  <vncls class='54.2' fnframe='Expensiveness'>
+    <roles>
+      <role fnrole='Goods' vnrole='Theme'/>
+      <role fnrole='Asset' vnrole='Value'/>
+      <role fnrole='Payer' vnrole='Beneficiary'/>
+    </roles>
+  </vncls>
+  <vncls class='54.3' fnframe='Containing'>
+    <roles>
+      <role fnrole='Container' vnrole='Location'/>
+      <role fnrole='Contents' vnrole='Value'/>
+    </roles>
+  </vncls>
+  <vncls class='54.3' fnframe='Suitability'>
+    <roles>
+      <role fnrole='Evaluee' vnrole='Location'/>
+      <role fnrole='User' vnrole='Value'/>
+      <role fnrole='Purpose' vnrole='Value'/>
+    </roles>
+  </vncls>
+  <vncls class='54.4' fnframe='Assessing'>
+    <roles>
+      <role fnrole='Assessor' vnrole='Agent'/>
+      <role fnrole='Feature' vnrole='Theme'/>
+      <role fnrole='Value' vnrole='Value'/>
+    </roles>
+  </vncls>
+  <vncls class='54.4' fnframe='Categorization'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Item' vnrole='Theme'/>
+      <role fnrole='Category' vnrole='Value'/>
+    </roles>
+  </vncls>
+  <vncls class='54.5' fnframe='Commerce_sell'>
+    <roles>
+      <role fnrole='Seller' vnrole='Agent'/>
+      <role fnrole='Goods' vnrole='Asset'/>
+    </roles>
+  </vncls>
+  <vncls class='55.1' fnframe='Activity_start'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Activity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='55.1' fnframe='Process_start'>
+    <roles>
+      <role fnrole='Event' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='55.1' fnframe='Process_resume'>
+    <roles>
+      <role fnrole='Process' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='55.1' fnframe='Activity_ongoing'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Activity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='55.1' fnframe='Process_continue'>
+    <roles>
+      <role fnrole='Event' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='55.1' fnframe='Process_stop'>
+    <roles>
+      <role fnrole='Process' vnrole='Theme'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+    </roles>
+  </vncls>
+  <vncls class='55.1' fnframe='Process_end'>
+    <roles>
+      <role fnrole='Process' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='55.1' fnframe='Activity_finish'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Activity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='55.2' fnframe='Process_stop'>
+    <roles>
+      <role fnrole='Process' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='55.4' fnframe='Activity_stop'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Activity' vnrole='Theme'/>
+      <role fnrole='Means' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='55.4' fnframe='Activity_finish'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Activity' vnrole='Theme'/>
+      <role fnrole='Means' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='55.4' fnframe='Killing'>
+    <roles>
+      <role fnrole='Killer' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Theme'/>
+      <role fnrole='Instrument' vnrole='Instrument'/>
+      <role fnrole='Means' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='55.4' fnframe='Firing'>
+    <roles>
+      <role fnrole='Employer' vnrole='Agent'/>
+      <role fnrole='Employee' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='55.4' fnframe='Halt'>
+    <roles>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Means' vnrole='Instrument'/>
+    </roles>
+  </vncls>
+  <vncls class='57' fnframe='Precipitation'>
+    <roles>
+      <role fnrole='Precipitation' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='57' fnframe='Weather'>
+    <roles>
+    </roles>
+  </vncls>
+  <vncls class='58.1' fnframe='Attempt_suasion'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+      <role fnrole='Content' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='58.1' fnframe='Suasion'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+      <role fnrole='Content' vnrole='Topic'/>
+      <role fnrole='Text' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='58.1' fnframe='Request'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='59' fnframe='Employing'>
+    <roles>
+      <role fnrole='Employer' vnrole='Agent'/>
+      <role fnrole='Employee' vnrole='Patient'/>
+      <role fnrole='Field' vnrole='Result'/>
+      <role fnrole='Position' vnrole='Result'/>
+      <role fnrole='Task' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='59' fnframe='Attempt_suasion'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Patient'/>
+      <role fnrole='Content' vnrole='Result'/>
+      <role fnrole='Topic' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='59' fnframe='Talking_into'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Patient'/>
+      <role fnrole='Content' vnrole='Result'/>
+      <role fnrole='Goods' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='59' fnframe='Hiring'>
+    <roles>
+      <role fnrole='Employer' vnrole='Agent'/>
+      <role fnrole='Employee' vnrole='Patient'/>
+      <role fnrole='Position' vnrole='Result'/>
+      <role fnrole='Task' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='59' fnframe='Daring'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Action' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='59' fnframe='Prevarication'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Patient'/>
+      <role fnrole='Topic' vnrole='Result'/>
+    </roles>
+  </vncls>
+  <vncls class='60' fnframe='Permitting'>
+    <roles>
+      <role fnrole='Principle' vnrole='Agent'/>
+      <role fnrole='State_of_affairs' vnrole='Recipient'/>
+      <role fnrole='State_of_affairs' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='60' fnframe='Grant_permission'>
+    <roles>
+      <role fnrole='Grantor' vnrole='Agent'/>
+      <role fnrole='Grantee' vnrole='Recipient'/>
+      <role fnrole='Action' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='60' fnframe='Request'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+      <role fnrole='Message' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='62' fnframe='Purpose'>
+    <roles>
+      <role fnrole='Agent' vnrole='Experiencer'/>
+      <role fnrole='Goal' vnrole='Theme'/>
+      <role fnrole='Attribute' vnrole='Theme'/>
+      <role fnrole='Value' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='62' fnframe='Expectation'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Experiencer'/>
+      <role fnrole='Phenomenon' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='64' fnframe='Permitting'>
+    <roles>
+      <role fnrole='Principle' vnrole='Agent'/>
+      <role fnrole='State_of_affairs' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='65' fnframe='Permitting'>
+    <roles>
+      <role fnrole='Principle' vnrole='Agent'/>
+      <role fnrole='State_of_affairs' vnrole='Theme'/>
+      <role fnrole='State_of_affairs' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='65' fnframe='Grant_permission'>
+    <roles>
+      <role fnrole='Grantor' vnrole='Agent'/>
+      <role fnrole='Grantee' vnrole='Theme'/>
+      <role fnrole='Action' vnrole='Location'/>
+      <role fnrole='Place' vnrole='Location'/>
+    </roles>
+  </vncls>
+  <vncls class='66' fnframe='Frugality'>
+    <roles>
+      <role fnrole='Resource_controller' vnrole='Agent'/>
+      <role fnrole='Resource' vnrole='Asset'/>
+      <role fnrole='Behavior' vnrole='Asset'/>
+    </roles>
+  </vncls>
+  <vncls class='67' fnframe='Prohibiting'>
+    <roles>
+      <role fnrole='Principle' vnrole='Agent'/>
+      <role fnrole='State_of_affairs' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='67' fnframe='Suasion'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Text' vnrole='Agent'/>
+      <role fnrole='Addressee' vnrole='Theme'/>
+      <role fnrole='Content' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='67' fnframe='Deny_permission'>
+    <roles>
+      <role fnrole='Authority' vnrole='Agent'/>
+      <role fnrole='Protagonist' vnrole='Theme'/>
+      <role fnrole='Action' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='67' fnframe='Preventing'>
+    <roles>
+      <role fnrole='Preventing_cause' vnrole='Agent'/>
+      <role fnrole='Event' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='67' fnframe='Thwarting'>
+    <roles>
+      <role fnrole='Preventing_cause' vnrole='Agent'/>
+      <role fnrole='Protagonist' vnrole='Theme'/>
+      <role fnrole='Action' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='68' fnframe='Frugality'>
+    <roles>
+      <role fnrole='Resource_controller' vnrole='Agent'/>
+      <role fnrole='Resource' vnrole='Asset'/>
+      <role fnrole='Behavior' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='69' fnframe='Process_stop'>
+    <roles>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Reason' vnrole='Agent'/>
+      <role fnrole='Process' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='69' fnframe='Avoiding'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Undesirable_situation' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='70' fnframe='Reliance'>
+    <roles>
+      <role fnrole='Protagonist' vnrole='Agent'/>
+      <role fnrole='Means' vnrole='Theme'/>
+      <role fnrole='Instrument' vnrole='Theme'/>
+      <role fnrole='Intermediary' vnrole='Theme'/>
+      <role fnrole='Benefit' vnrole='Theme'/>
+      <role fnrole='Purpose' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='71' fnframe='Collaboration'>
+    <roles>
+      <role fnrole='Partners' vnrole='Agent'/>
+      <role fnrole='Partner_1' vnrole='Agent'/>
+      <role fnrole='Partner_2' vnrole='Co-Agent'/>
+      <role fnrole='Undertaking' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='71' fnframe='Revenge'>
+    <roles>
+      <role fnrole='Avenger' vnrole='Agent'/>
+      <role fnrole='Offender' vnrole='Beneficiary'/>
+      <role fnrole='Injury' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='71' fnframe='Misdeed'>
+    <roles>
+      <role fnrole='Wrongdoer' vnrole='Agent'/>
+      <role fnrole='Injured_party' vnrole='Beneficiary'/>
+      <role fnrole='Misdeed' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='72' fnframe='Assistance'>
+    <roles>
+      <role fnrole='Helper' vnrole='Agent'/>
+      <role fnrole='Benefited_party' vnrole='Beneficiary'/>
+      <role fnrole='Goal' vnrole='Theme'/>
+      <role fnrole='Focal_entity' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='73' fnframe='Participation'>
+    <roles>
+      <role fnrole='Participants' vnrole='Agent'/>
+      <role fnrole='Participant_1' vnrole='Agent'/>
+      <role fnrole='Participant_2' vnrole='Co-Agent'/>
+      <role fnrole='Event' vnrole='Theme'/>
+      <role fnrole='Institution' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='76' fnframe='Inhibit_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Cause'/>
+      <role fnrole='Cause' vnrole='Cause'/>
+      <role fnrole='Theme' vnrole='Patient'/>
+      <role fnrole='Holding_location' vnrole='Goal'/>
+    </roles>
+  </vncls>
+  <vncls class='76' fnframe='Hindering'>
+    <roles>
+      <role fnrole='Hindrance' vnrole='Cause'/>
+      <role fnrole='Protagonist' vnrole='Patient'/>
+      <role fnrole='Action' vnrole='Patient'/>
+    </roles>
+  </vncls>
+  <vncls class='77' fnframe='Awareness'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='78' fnframe='Evidence'>
+    <roles>
+      <role fnrole='Support' vnrole='Cause'/>
+      <role fnrole='Cognizer' vnrole='Recipient'/>
+      <role fnrole='Proposition' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='78' fnframe='Communication'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Cause'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='78' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Cause'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+      <role fnrole='Message' vnrole='Topic'/>
+      <role fnrole='Topic' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='78' fnframe='Verification'>
+    <roles>
+      <role fnrole='Inspector' vnrole='Cause'/>
+      <role fnrole='Medium' vnrole='Cause'/>
+      <role fnrole='Unconfirmed_content' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='78' fnframe='Sign'>
+    <roles>
+      <role fnrole='Indicator' vnrole='Cause'/>
+      <role fnrole='Indicated' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='78' fnframe='Predicting'>
+    <roles>
+      <role fnrole='Evidence' vnrole='Cause'/>
+      <role fnrole='Speaker' vnrole='Cause'/>
+      <role fnrole='Eventuality' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='78' fnframe='Reasoning'>
+    <roles>
+      <role fnrole='Support' vnrole='Cause'/>
+      <role fnrole='Arguer' vnrole='Cause'/>
+      <role fnrole='Addressee' vnrole='Recipient'/>
+      <role fnrole='Content' vnrole='Topic'/>
+    </roles>
+  </vncls>
+  <vncls class='80' fnframe='Verdict'>
+    <roles>
+      <role fnrole='Judge' vnrole='Cause'/>
+      <role fnrole='Reason' vnrole='Cause'/>
+      <role fnrole='Defendant' vnrole='Source'/>
+      <role fnrole='Charges' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='81' fnframe='Notification_of_charges'>
+    <roles>
+      <role fnrole='Arraign_authority' vnrole='Agent'/>
+      <role fnrole='Accused' vnrole='Theme'/>
+      <role fnrole='Charges' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='81' fnframe='Judgment'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Evaluee' vnrole='Theme'/>
+      <role fnrole='Reason' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='81' fnframe='Judgment_communication'>
+    <roles>
+      <role fnrole='Communicator' vnrole='Agent'/>
+      <role fnrole='Evaluee' vnrole='Theme'/>
+      <role fnrole='Reason' vnrole='Attribute'/>
+      <role fnrole='Topic' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='82' fnframe='Quitting'>
+    <roles>
+      <role fnrole='Employee' vnrole='Agent'/>
+      <role fnrole='Position' vnrole='Source'/>
+      <role fnrole='Field' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='82' fnframe='Departing'>
+    <roles>
+      <role fnrole='Theme' vnrole='Agent'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='82' fnframe='Quitting_a_place'>
+    <roles>
+      <role fnrole='Self_mover' vnrole='Agent'/>
+      <role fnrole='Source' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='84' fnframe='Becoming_aware'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Phenomenon' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+      <role fnrole='Means' vnrole='Source'/>
+      <role fnrole='Instrument' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='84' fnframe='Coming_to_believe'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Content' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+      <role fnrole='Evidence' vnrole='Source'/>
+      <role fnrole='Means' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='84' fnframe='Education_teaching'>
+    <roles>
+      <role fnrole='Student' vnrole='Agent'/>
+      <role fnrole='Subject' vnrole='Theme'/>
+      <role fnrole='Skill' vnrole='Theme'/>
+      <role fnrole='Role' vnrole='Theme'/>
+      <role fnrole='Precept' vnrole='Theme'/>
+      <role fnrole='Fact' vnrole='Theme'/>
+      <role fnrole='Teacher' vnrole='Source'/>
+      <role fnrole='Institution' vnrole='Source'/>
+      <role fnrole='Course' vnrole='Source'/>
+      <role fnrole='Material' vnrole='Source'/>
+    </roles>
+  </vncls>
+  <vncls class='84' fnframe='Memorization'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Agent'/>
+      <role fnrole='Pattern' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='85' fnframe='Defend'>
+    <roles>
+      <role fnrole='Defender' vnrole='Agent'/>
+      <role fnrole='Victim' vnrole='Theme'/>
+      <role fnrole='Assailant' vnrole='Co-Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='85' fnframe='Justifying'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Act' vnrole='Theme'/>
+      <role fnrole='State_of_affairs' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='88.1' fnframe='Cogitation'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Experiencer'/>
+      <role fnrole='Topic' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='88.2' fnframe='Cogitation'>
+    <roles>
+      <role fnrole='Cognizer' vnrole='Experiencer'/>
+      <role fnrole='Topic' vnrole='Stimulus'/>
+    </roles>
+  </vncls>
+  <vncls class='89' fnframe='Compatibility'>
+    <roles>
+      <role fnrole='Item_1' vnrole='Agent'/>
+      <role fnrole='Items' vnrole='Agent'/>
+      <role fnrole='Item_2' vnrole='Co-Agent'/>
+      <role fnrole='Parameter' vnrole='Goal'/>
+    </roles>
+  </vncls>
+  <vncls class='90' fnframe='Surpassing'>
+    <roles>
+      <role fnrole='Profiled_item' vnrole='Theme'/>
+      <role fnrole='Standard_item' vnrole='Co-Theme'/>
+      <role fnrole='Attribute' vnrole='Attribute'/>
+      <role fnrole='Extent' vnrole='Attribute'/>
+      <role fnrole='Standard_attribute' vnrole='Attribute'/>
+      <role fnrole='Profiled_attribute' vnrole='Attribute'/>
+    </roles>
+  </vncls>
+  <vncls class='92' fnframe='Institutionalization'>
+    <roles>
+      <role fnrole='Authority' vnrole='Agent'/>
+      <role fnrole='Patient' vnrole='Theme'/>
+      <role fnrole='Facility' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='92' fnframe='Inhibit_movement'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Cause' vnrole='Agent'/>
+      <role fnrole='Theme' vnrole='Theme'/>
+      <role fnrole='Holding_location' vnrole='Destination'/>
+    </roles>
+  </vncls>
+  <vncls class='94' fnframe='Daring'>
+    <roles>
+      <role fnrole='Agent' vnrole='Agent'/>
+      <role fnrole='Action' vnrole='Theme'/>
+    </roles>
+  </vncls>
+  <vncls class='94' fnframe='Statement'>
+    <roles>
+      <role fnrole='Speaker' vnrole='Agent'/>
+      <role fnrole='Message' vnrole='Theme'/>
+      <role fnrole='Medium' vnrole='Theme'/>
+      <role fnrole='Topic' vnrole='Theme'/>
+    </roles>
+  </vncls>
+</verbnetRoles-framenetFEs_RoleMappingData>
+
