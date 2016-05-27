@@ -88,13 +88,13 @@ def boxer_local(tokenized, fol=False, drg=False):
                          '--semantics', 'fol']
     elif drg:
         boxer_options = ['--stdin',
-                         '--resolve', 'true',
+                         '--resolve', 'false',
                          '--integrate', 'true',
                          '--semantics', 'drg']
     else:
         boxer_options = ['--stdin',
                          '--instantiate', 'true',
-                         '--resolve', 'true',
+                         '--resolve', 'false',
                          '--semantics', 'pdrs',
                          '--format', 'xml']
         boxer_options.extend(get_boxer_options().split(' '))
