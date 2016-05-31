@@ -5,9 +5,15 @@ from framenet import frames, vn2fn_roles
 from candc import get_drg
 import logging as log
 from mappings import offset2wn
+import ConfigParser
+from os.path import dirname, join
+from uuid import uuid4
+
+# read configuration
+config = ConfigParser.ConfigParser()
+config.read(join(dirname(__file__),'../config/namespace.conf'))
 
 def get_frame_instances(variables, drs, thematic_roles):
-    instance_counter = dict()
     frame_instances = dict()
     for variable, senses in variables.iteritems():
         for sense in senses:
@@ -15,9 +21,7 @@ def get_frame_instances(variables, drs, thematic_roles):
             if synset in frames:
                 for frame in frames[synset]:
                     # create new frame instance
-                    if not frame in instance_counter:
-                        instance_counter[frame] = 0
-                    instance_id = "{0}_{1}".format(frame, instance_counter[frame])
+                    instance_id = "{0}_{1}".format(frame, uuid4())
                     frame_instances[instance_id] = dict()
                     frame_instances[instance_id]['frame'] = frame
                     frame_instances[instance_id]['synset'] = synset
@@ -31,20 +35,38 @@ def get_frame_instances(variables, drs, thematic_roles):
                                     if relation['symbol'] in vn2fn_roles[frame]:
                                         role = vn2fn_roles[frame][relation['symbol']]
                                     else:
-                                        role = "vn:{0}".format(relation['symbol'])
+                                        role = "vn-{0}".format(relation['symbol'])
                                     frame_instances[instance_id]['roles'][role] = (relation['arg2'], filler)
-                    instance_counter[frame] += 1
     return frame_instances
+
+def get_frame_triples(frame_instances):
+    triples = []
+    for frame_instance_id, frame_instance in frame_instances.iteritems():
+        if len(frame_instance['roles']) > 0:
+            try:
+                framebase_id = "{0}-{1}".format(frame_instance['frame'], offset2wn[frame_instance['synset']].split("#")[0].replace('-', '.'))
+            except:
+                log.info('No mapping found for synset {0}'.format(frame_instance['synset']))
+                continue
+            triple = ('<{0}/fi-{1}>'.format(config.get('namespace', 'frame'), frame_instance_id),
+                      '<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>',
+                      '<{0}/frame-{1}>'.format(config.get('namespace', 'frame'), framebase_id))
+            triples.append(triple)
+            for role, (variable, filler) in frame_instance['roles'].iteritems():
+                triple = ('<{0}/fi-{1}>'.format(config.get('namespace', 'frame'), frame_instance_id),
+                          '<{0}/fe-{1}>'.format(config.get('namespace', 'frame'), role),
+                          '<{0}>'.format(filler))
+                triples.append(triple)
+    return triples
 
 def get_aligned_frames_xml(tokenized, frame_instances, root):
     # read DRG
     tuples = get_drg(tokenized)
     drgparser = drg.DRGParser()
     d = drgparser.parse_tup_lines(tuples)
-    
+
     for instance_id, frame_instance in frame_instances.iteritems():
         if len(frame_instance['roles']) > 0:
-            # very brutal XML output
             try:
                 framebase_id = "{0}-{1}".format(frame_instance['frame'], offset2wn[frame_instance['synset']].split("#")[0].replace('-', '.'))
             except:

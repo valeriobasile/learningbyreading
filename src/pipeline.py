@@ -69,6 +69,7 @@ else:
     output_format = options.format
 
 triples = list()
+frame_instance_triples = list()
 root = objectify.Element("frameinstances")
 for filename in documents:
     # read file
@@ -128,12 +129,12 @@ for filename in documents:
 
     # extract frame instances
     frame_instances = get_frame_instances(variables, drs, thematic_roles)
+    frame_instance_triples.extend(get_frame_triples(frame_instances))
 
     # use DRG to get aligned frame instances
     aligned_frames_xml = get_aligned_frames_xml(tokenized, frame_instances, root)
 
     # scanning relations
-    #with open(options.output_file, "a") as f:
     for relation in drs['relations']:
         if (relation['arg1'] in variables and
             relation['arg2'] in variables):
@@ -160,7 +161,6 @@ for filename in documents:
                                               '<{0}#{1}>'.format(config.get('namespace', 'relation'), role),
                                               '<{0}#{1}>'.format(config.get('namespace', 'frame'), frame))
                                     triples.append(triple)
-                                    #f.write("{0} {1} {2} .\n".format(*triple))
                 else:
                     # other types of relations
                     if (entity2 != '' and entity1 != ''):
@@ -168,12 +168,11 @@ for filename in documents:
                                   '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol']),
                                   '<{0}>'.format(entity2))
                         triples.append(triple)
-                        #f.write("{0} {1} {2} .\n".format(*triple))
 
 log.info('writing output ({0}) on file {1}...'.format(output_format, options.output_file))
 with open(output_file, "w") as f:
     if output_format == 'triples':
-        for triple in triples:
+        for triple in frame_instance_triples:
             f.write("{0} {1} {2} .\n".format(*triple))
     elif output_format == 'xml':
         f.write(aligned_frames_xml)
