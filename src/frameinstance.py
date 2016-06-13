@@ -55,7 +55,7 @@ def get_frame_triples(frame_instances):
             for role, (variable, filler) in frame_instance['roles'].iteritems():
                 triple = ('<{0}/fi-{1}>'.format(config.get('namespace', 'frame'), frame_instance_id),
                           '<{0}/fe-{1}>'.format(config.get('namespace', 'frame'), role),
-                          '<{0}>'.format(filler))
+                          '<{0}>'.format(filler.encode('utf-8')))
                 triples.append(triple)
     return triples
 

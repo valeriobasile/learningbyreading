@@ -243,6 +243,8 @@ def get_all(tokenized):
         log.error("cannot read Boxer XML")
         return None
     token_ids = get_tokens(drs)
+    if not token_ids:
+        return None
     predicates = get_predicates(drs, token_ids)
     namedentities = get_named(drs, token_ids)
     relations = get_relations(drs)

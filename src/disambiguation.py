@@ -32,6 +32,8 @@ def disambiguation(tokenized, drs):
 	elif config.get('el', 'module') == 'spotlight':
 		log.info("Calling Spotlight")
 		disambiguated = spotlight(tokenized)
+		if not disambiguated:
+			return None, None
 		entities = disambiguated['entities']
 	elif config.get('el', 'module') == 'none':
 		log.info("No module selected for entity linking")

@@ -132,7 +132,8 @@ for filename in documents:
     frame_instance_triples.extend(get_frame_triples(frame_instances))
 
     # use DRG to get aligned frame instances
-    aligned_frames_xml = get_aligned_frames_xml(tokenized, frame_instances, root)
+    if output_format == 'xml':
+        aligned_frames_xml = get_aligned_frames_xml(tokenized, frame_instances, root)
 
     # scanning relations
     for relation in drs['relations']:
@@ -146,7 +147,7 @@ for filename in documents:
                     try:
                         framelist = frames[synset]
                     except:
-                        log.info('No frame found for synset {0}'.format(synset))
+                        log.info('No frame found for synset {0}'.format(synset.encode('utf-8')))
                         continue
 
                     for frame in framelist:
@@ -157,16 +158,16 @@ for filename in documents:
                                     role = vn2fn_roles[frame][vnrole]
                                 #else:
                                 #    role = "verbnet:{0}".format(vnrole)
-                                    triple = ('<{0}>'.format(entity2),
+                                    triple = ('<{0}>'.format(entity2.encode('utf-8')),
                                               '<{0}#{1}>'.format(config.get('namespace', 'relation'), role),
                                               '<{0}#{1}>'.format(config.get('namespace', 'frame'), frame))
                                     triples.append(triple)
                 else:
                     # other types of relations
                     if (entity2 != '' and entity1 != ''):
-                        triple = ('<{0}>'.format(entity1),
-                                  '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol']),
-                                  '<{0}>'.format(entity2))
+                        triple = ('<{0}>'.format(entity1.encode('utf-8')),
+                                  '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol'].encode('utf-8')),
+                                  '<{0}>'.format(entity2.encode('utf-8')))
                         triples.append(triple)
 
 log.info('writing output ({0}) on file {1}...'.format(output_format, options.output_file))
