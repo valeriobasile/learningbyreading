@@ -45,6 +45,11 @@ parser.add_option('-c',
                   action="store_true",
                   dest="comentions",
                   help="output co-mentions")
+parser.add_option('-t',
+                  '--tokenized',
+                  action="store_true",
+                  dest="tokenized",
+                  help="do not tokenize input")
 parser.add_option('-f',
                   '--format',
                   dest="format",
@@ -68,6 +73,7 @@ if (not options.format) or (not options.format in ['triples', 'xml']):
 else:
     output_format = options.format
 
+
 triples = list()
 frame_instance_triples = list()
 root = objectify.Element("frameinstances")
@@ -78,13 +84,16 @@ for filename in documents:
         text = f.read()
 
     # tokenization
-    log.info("Tokenization")
-    tokens = tokenize(text)
-    if not tokens:
-        log.error("error during tokenization of file '{0}', exiting".format(filename))
-        continue
+    if not options.tokenized:
+        log.info("Tokenization")
+        tokens = tokenize(text)
+        if not tokens:
+            log.error("error during tokenization of file '{0}', exiting".format(filename))
+            continue
+        tokenized = "\n".join([' '.join(sentence) for sentence in tokens[:-1]])
+    else:
+        tokenized = text
 
-    tokenized = "\n".join([' '.join(sentence) for sentence in tokens[:-1]])
 
     log.info("Parsing")
     drs = get_all(tokenized)
