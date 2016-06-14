@@ -64,7 +64,8 @@ def parse_soap(tokenized):
         # C&C writes info on the stderr, we want to ignore it
         if not err.startswith('#'):
             log.error('Parser error: {0}'.format(err))
-    parsed = out.decode('utf-8').encode("utf-8")
+    #parsed = out.decode('utf-8').encode("utf-8")
+    parsed = out
     return parsed
 
 def get_boxer_options():
@@ -240,6 +241,7 @@ def get_all(tokenized):
     try:
         drs = objectify.fromstring(boxer(tokenized))
     except:
+        print boxer(tokenized)
         log.error("cannot read Boxer XML")
         return None
     token_ids = get_tokens(drs)
