@@ -13,13 +13,12 @@ produce a unified, LOD-compliant abstract representation of meaning.
 KNEWS can produce several kinds of output:
 
 1. Frame instances, based on the [FrameBase](http://www.framebase.org/) scheme:
-
-```<http://framebase.org/ns/fi-Operate_vehicle_0059a98c-3870-49ed-87e1-f882e11a49f7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://framebase.org/ns/frame-Operate_vehicle-drive.v> .
+```
+<http://framebase.org/ns/fi-Operate_vehicle_0059a98c-3870-49ed-87e1-f882e11a49f7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://framebase.org/ns/frame-Operate_vehicle-drive.v> .
 <http://framebase.org/ns/fi-Operate_vehicle_0059a98c-3870-49ed-87e1-f882e11a49f7> <http://framebase.org/ns/fe-Driver> <http://dbpedia.org/resource/Robot> .
-<http://framebase.org/ns/fi-Operate_vehicle_0059a98c-3870-49ed-87e1-f882e11a49f7> <http://framebase.org/ns/fe-Vehicle> <http://wordnet-rdf.princeton.edu/wn31/02961779-n> .```
-
+<http://framebase.org/ns/fi-Operate_vehicle_0059a98c-3870-49ed-87e1-f882e11a49f7> <http://framebase.org/ns/fe-Vehicle> <http://wordnet-rdf.princeton.edu/wn31/02961779-n> .
+```
 2. Word-aligned semantics, based on [lexicalized Discourse Representation Graphs](http://www.rug.nl/research/portal/files/26252478/Complete_thesis.pdf):
-
 ```
 <frameinstances>
   <frameinstance id="Operate_vehicle_9a3fa55e-4d97-406a-ab0d-cf681e277296" type="Operate_vehicle-drive.v" internalvariable="e1">
@@ -40,9 +39,7 @@ KNEWS can produce several kinds of output:
   </frameinstance>
 </frameinstances>
 ```
-
 3. First-order logic formulae with WordNet synsets and DBpedia ids as symbols:
-
 ```
 fol(1,some(A,and(02961779-n(A),some(B,some(C,and(r1Theme(B,A),and(r1Agent(B,C),and(01934845-v(B),Robot(C))))))))).
 ```
