@@ -19,24 +19,28 @@ def get_frame_instances(variables, drs, thematic_roles):
         for sense in senses:
             synset = sense.split('/')[-1]
             if synset in frames:
-                for frame in frames[synset]:
-                    # create new frame instance
-                    instance_id = "{0}_{1}".format(frame, uuid4())
-                    frame_instances[instance_id] = dict()
-                    frame_instances[instance_id]['frame'] = frame
-                    frame_instances[instance_id]['synset'] = synset
-                    frame_instances[instance_id]['variable'] = variable
-                    frame_instances[instance_id]['roles'] = dict()
+                framelist = frames[synset]
+            else:
+                framelist = ['Unmapped']
+            for frame in framelist:
+                # create new frame instance
+                instance_id = "{0}_{1}".format(frame, uuid4())
+                frame_instances[instance_id] = dict()
+                frame_instances[instance_id]['frame'] = frame
+                frame_instances[instance_id]['synset'] = synset
+                frame_instances[instance_id]['variable'] = variable
+                frame_instances[instance_id]['roles'] = dict()
 
-                    for relation in drs['relations']:
-                        if relation['arg1'] == variable and relation['arg2'] in variables and relation['symbol'] in thematic_roles:
-                            for filler in variables[relation['arg2']]:
-                                if frame in vn2fn_roles:
-                                    if relation['symbol'] in vn2fn_roles[frame]:
-                                        role = vn2fn_roles[frame][relation['symbol']]
-                                    else:
-                                        role = "vn-{0}".format(relation['symbol'])
-                                    frame_instances[instance_id]['roles'][role] = (relation['arg2'], filler)
+                for relation in drs['relations']:
+                    if relation['arg1'] == variable and relation['arg2'] in variables and relation['symbol'] in thematic_roles:
+                        for filler in variables[relation['arg2']]:
+                            if frame in vn2fn_roles:
+                                if relation['symbol'] in vn2fn_roles[frame]:
+                                    role = vn2fn_roles[frame][relation['symbol']]
+                            else:
+                                role = "vn-{0}".format(relation['symbol'])
+
+                            frame_instances[instance_id]['roles'][role] = (relation['arg2'], filler)
     return frame_instances
 
 def get_frame_triples(frame_instances):
@@ -47,7 +51,7 @@ def get_frame_triples(frame_instances):
                 framebase_id = "{0}-{1}".format(frame_instance['frame'], offset2wn[frame_instance['synset']].split("#")[0].replace('-', '.'))
             except:
                 log.info('No mapping found for synset {0}'.format(frame_instance['synset']))
-                continue
+                framebase_id = "Unmapped-{1}".format(frame_instance['synset'])
             triple = ('<{0}/fi-{1}>'.format(config.get('namespace', 'frame'), frame_instance_id),
                       '<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>',
                       '<{0}/frame-{1}>'.format(config.get('namespace', 'frame'), framebase_id))
