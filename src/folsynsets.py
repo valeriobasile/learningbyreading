@@ -13,6 +13,7 @@ from collections import Counter
 from mappings import bn2offset
 import re
 from string import ascii_uppercase
+from disambiguation import disambiguation
 
 # log configuration
 log.basicConfig(level=log.INFO)
@@ -34,6 +35,16 @@ parser.add_option('-o',
                   dest="output_file",
                   help="write JSON to FILE",
                   metavar="FILE")
+parser.add_option('-t',
+                  '--tokenized',
+                  action="store_true",
+                  dest="tokenized",
+                  help="do not tokenize input")
+parser.add_option('-c',
+                  '--comentions',
+                  action="store_true",
+                  dest="comentions",
+                  help="output co-mentions")
 (options, args) = parser.parse_args()
 
 if options.input_file:
@@ -48,43 +59,55 @@ for filename in documents:
         text = f.read()
 
     # tokenization
-    log.info("calling tokenizer")
-    tokens = tokenize(text)
-    if not tokens:
-        log.error("error during tokenization of file '{0}', exiting".format(filename))
-        continue
-    tokenized = " ".join(tokens)
+    if not options.tokenized:
+        log.info("Tokenization")
+        tokens = tokenize(text)
+        if not tokens:
+            log.error("error during tokenization of file '{0}', exiting".format(filename))
+            continue
+        tokenized = "\n".join([' '.join(sentence) for sentence in tokens[:-1]])
+    else:
+        tokenized = text
 
-    # process the text
-    log.info("calling Boxer")
-    fol = get_fol(tokenized)
+
+    log.info("Parsing")
     drs = get_all(tokenized)
+    fol = get_fol(tokenized)
     if not drs:
         log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
         continue
+    log.info("Word sense disambiguation and entity linking")
+    synsets, entities = disambiguation(tokenized, drs)
+    if synsets==None or entities==None:
+		log.error("error during the disambiguation of file '{0}', exiting".format(filename))
+		continue
 
-    log.info("calling Babelfy")
-    babel = babelfy(tokenized)
-    if not babel:
-        log.error("error during the execution of Babelfy on file '{0}', exiting".format(filename))
-        continue
+    # extracting co-mentions
+    if options.comentions:
+        dbpedia_entities = set(map(lambda x: x['entity'], entities))
+        for entity1, entity2 in combinations(dbpedia_entities, 2):
+            if (entity1 != 'null' and
+                entity2 != 'null'):
+                triples.append(('<{0}>'.format(entity1), '<{0}#comention>', '<{2}>'.format(config.get('namespace', 'relation'), entity2)))
 
     # build dictionary of variables
     try:
         variables = dict()
-        for predicate in drs['predicates']:
+        for predicate in drs['predicates']+drs['namedentities']:
             if not predicate['variable'] in variables:
                 variables[predicate['variable']] = []
-            for entity in babel['entities']:
-                # baseline alignment
+            for synset in synsets:
+                # baseline sysnet alignment
                 # TODO: make this smarter
-                if predicate['token_start'] == entity['token_start'] and predicate['token_end'] == entity['token_end']:
-                    variables[predicate['variable']].append({
-                        'entity' : entity['entity'],
-                        'bn_url' : entity['synset'],
-                        'symbol' : predicate['symbol'],
-                        'sense' : predicate['sense'],
-                        'type' : predicate['type']})
+                if predicate['token_start'] == synset['token_start'] and predicate['token_end'] == synset['token_end']:
+                    if not synset['synset'] in variables[predicate['variable']]:
+                        variables[predicate['variable']].append(synset['synset'])
+            for entity in entities:
+                # baseline entity alignment
+                # TODO: make this smarter
+                if predicate['token_start'] == entity['token_start'] and predicate['token_end'] == entity['token_end'] and entity['entity'] != 'null':
+                    if not entity['entity'] in variables[predicate['variable']]:
+                        variables[predicate['variable']].append(entity['entity'])
     except:
         log.error("error during the alignment on file '{0}', exiting".format(filename))
         continue
@@ -100,17 +123,8 @@ for filename in documents:
     synsets = dict()
     for variable, predicates in variables.iteritems():
         for predicate in predicates:
-            if predicate['sense'] == '0':
-                sense = '1'
-            else:
-                sense = predicate['sense']
-            symbol = predicate['type']+sense+predicate['symbol']
-            bn_id = predicate['bn_url'].split('/')[-1]
-            if bn_id in bn2offset:
-                synset = bn2offset[bn_id]
-                synsets[prolog_variables[variable]] = synset
-            else:
-                log.error('cannot find mapping for BN synset {0}'.format(bn_id))
+            wn_id = predicate.split('/')[-1]
+            synsets[prolog_variables[variable]] = wn_id
 
     # replace synsets
     fol_predicates = ['all', 'some', 'and', 'or', 'not']

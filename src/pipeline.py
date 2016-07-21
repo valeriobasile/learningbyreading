@@ -157,7 +157,8 @@ for filename in documents:
                         framelist = frames[synset]
                     except:
                         log.info('No frame found for synset {0}'.format(synset.encode('utf-8')))
-                        continue
+                        framelist = [synset]
+#                        continue
 
                     for frame in framelist:
                         if (entity2 != '' and frame != ''):
@@ -165,12 +166,12 @@ for filename in documents:
                             if frame in vn2fn_roles:
                                 if vnrole in vn2fn_roles[frame]:
                                     role = vn2fn_roles[frame][vnrole]
-                                #else:
-                                #    role = "verbnet:{0}".format(vnrole)
-                                    triple = ('<{0}>'.format(entity2.encode('utf-8')),
-                                              '<{0}#{1}>'.format(config.get('namespace', 'relation'), role),
-                                              '<{0}#{1}>'.format(config.get('namespace', 'frame'), frame))
-                                    triples.append(triple)
+                            else:
+                                role = "verbnet:{0}".format(vnrole)
+                            triple = ('<{0}>'.format(entity2.encode('utf-8')),
+                                      '<{0}#{1}>'.format(config.get('namespace', 'relation'), role),
+                                      '<{0}#{1}>'.format(config.get('namespace', 'frame'), frame))
+                            triples.append(triple)
                 else:
                     # other types of relations
                     if (entity2 != '' and entity1 != ''):
