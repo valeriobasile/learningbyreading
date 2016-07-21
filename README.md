@@ -51,11 +51,16 @@ A demo of KNEWS is now available at [http://gingerbeard.alwaysdata.net/knews/](h
 
 # Installation and configuration
 
-After cloning the repository or otherwise downloaded the KNEWS source code, you must configure how to run the C&C tools. Open the file **config/boxer.conf** and select a value for **mode**:
+After cloning the repository or otherwise downloaded the KNEWS source code, you must instals the prerequisite Python packages listed in the file *requirements.txt*.
+With *pip*, this is done with:
 
- * **online** will access the [online API]. This is the easiest solution but is it unpractical if KNEWS is used to parse a large amount of text.
- * **local** will use a local installation of the C&C tools (see below for instructions on how to get this running).
- * **soap** will usa a local installation of the C&C tools with the SOAP-based client/server architecture, convenient for parsing many different files.
+    $ pip install -r requirements.txt
+
+Next, you must configure how to run the C&C tools. Open the file *config/boxer.conf* and select a value for *mode*:
+
+ * *online* will access the [online API]. This is the easiest solution but is it unpractical if KNEWS is used to parse a large amount of text.
+ * *local* will use a local installation of the C&C tools (see below for instructions on how to get this running).
+ * *soap* will usa a local installation of the C&C tools with the SOAP-based client/server architecture, convenient for parsing many different files.
 
 ## Installation of the C&C tools and Boxer
 
@@ -64,33 +69,33 @@ The C&C source code is included in the KNEWS repository (revision v2614). A shel
     $ cd ext/
     $ ./install_candc.sh
 
-*Please note*: you will need a working installation of [swi-prolog](http://www.swi-prolog.org/Download.html) in order to compile Boxer.
+**Please note**: you will need a working installation of [swi-prolog](http://www.swi-prolog.org/Download.html) in order to compile Boxer.
 
-To test that the installation has completed successfully run (from the **candc** directory):
+To test that the installation has completed successfully run (from the *candc/* directory):
 
     $ bin/candc --version
     $ candc v2614 (unix build on 19 April 2016, 11:35:31)
     $ bin/boxer --version
     $ boxer v2614 (unix build on 19 April 2016, 11:35:31)
 
-To use the SOAP client/server version of the C&C tools, run the server first with the following command line (from the **candc** directory):
+To use the SOAP client/server version of the C&C tools, run the server first with the following command line (from the *candc/* directory):
 
     $ bin/soap_server --server localhost:8888 --models models/boxer/ --candc-printer boxer
     $ waiting for connections on localhost:8888
 
 ## Configuration of the disambiguation tools
 
-You must configure which module to use for word sense disambiguation and entity linking. Open the file **config/disambiguation.conf** and set a value for wsd->module:
+You must configure which module to use for word sense disambiguation and entity linking. Open the file *config/disambiguation.conf* and set a value for wsd->module:
 
-  * **babelfy** uses the [Babelfy](http://babelfy.org/) online API. *Note*: a valid API key is needed. You must [request it](http://babelnet.org/register) and write it in the **config/babelfy.var.properties** file.
-  * **ukb** uses the [UKB](http://ixa2.si.ehu.es/ukb/) Word Sense Disambiguation system. A script is provided in the **ext/** directory to download and install it.
-  * **lesk* uses the [Enhanced Lesk WSD algorithm](https://github.com/pippokill/lesk-wsd-dsm) proposed by P. Basile et al. A script is provided in the **ext/** directory to download and install it.
+  * *babelfy* uses the [Babelfy](http://babelfy.org/) online API. **Note**: a valid API key is needed. You must [request it](http://babelnet.org/register) and write it in the *config/babelfy.var.properties* file.
+  * *ukb* uses the [UKB](http://ixa2.si.ehu.es/ukb/) Word Sense Disambiguation system. A script is provided in the **ext/** directory to download and install it.
+  * *lesk* uses the [Enhanced Lesk WSD algorithm](https://github.com/pippokill/lesk-wsd-dsm) proposed by P. Basile et al. A script is provided in the *ext/* directory to download and install it.
   
 You can also configure an entity linking module in the **config/disambiguation.conf* file:
 
-  * **babelfy** uses the [Babelfy](http://babelfy.org/) online API. *Note*: a valid API key is needed. You must [request it](http://babelnet.org/register) and write it in the **config/babelfy.var.properties** file.
-  * **spotlight** uses the 
-  * **none** makes KNEWS skip the entity linking step altogether.
+  * *babelfy* uses the [Babelfy](http://babelfy.org/) online API. *Note*: a valid API key is needed. You must [request it](http://babelnet.org/register) and write it in the *config/babelfy.var.properties* file.
+  * *spotlight* uses the [DBpedia Spotlight](https://github.com/dbpedia-spotlight/dbpedia-spotlight) online API.
+  * *none* makes KNEWS skip the entity linking step altogether.
 
 ## Test the installation
 
