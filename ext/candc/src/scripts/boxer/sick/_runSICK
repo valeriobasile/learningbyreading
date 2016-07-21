@@ -1,0 +1,157 @@
+#!/bin/bash
+
+mkdir -p working
+
+SICK=working/sick
+SICK=working/sicktest
+
+AXIOMS=working/sick_axioms.pl
+RUN=working/sickrun.BoxerHumanTest
+
+puncher()
+{
+    WORDNET="--wordnet true"
+    TIMELIM="--timelim 300"
+    OPTIONSA="--tp vampire --mb paradox ${TIMELIM} --contradiction false --copula false --x --info --resolve ${WORDNET} --soap --axioms ${AXIOMS}"
+    OPTIONS0="--tp vampire --mb paradox ${TIMELIM} --contradiction false --copula false --x --info --resolve ${WORDNET} --soap"
+    OPTIONS1="--tp vampire --mb paradox ${TIMELIM} --contradiction true  --copula true  --x --info --resolve ${WORDNET} --soap"
+    OPTIONS2="--tp vampire --mb paradox ${TIMELIM} --contradiction true  --copula false --x --info --resolve ${WORDNET} --soap"
+    bin/nc --dir $1 ${OPTIONS0}
+    if [ `cat $1/prediction.txt | grep word | wc -l` -gt 0 ]; then
+	# no proof was found, now try to find a contradiction with --copula true
+	bin/nc --dir $1 ${OPTIONS1}
+	if [ `cat $1/prediction.txt | grep contradiction | wc -l` -gt 0 ]; then
+	    # input contained contradiction, try to find a contradiction with --copula false 
+	    bin/nc --dir $1 ${OPTIONS2}
+	    if [ `cat $1/prediction.txt | grep contradiction | wc -l` -gt 0 ]; then
+		# input contained contradiction, back off to first results 		
+		bin/nc --dir $1 ${OPTIONS0}
+	    fi
+	fi
+    fi
+}
+
+startsoap()
+{
+    echo "killing any existing soap servers"
+    STARTUPTIME=40
+    killall soap_server
+    echo "start the soap server"
+    bin/soap_server --models models/boxer --server localhost:9000 --candc-printer boxer &
+    echo "give soap some ${STARTUPTIME} seconds to be ready"
+    sleep ${STARTUPTIME}
+}
+
+run()
+{
+    startsoap
+    for I in `ls ${SICK}`; do
+	if [ `ps -e | grep soap_server | wc -l` -lt 1 ]; then
+	    startsoap
+	fi
+	if [ -f ${SICK}/${I}/t ]; then
+	    rm -fr ${SICK}/${I}/PARAPHRASE
+	    puncher ${SICK}/${I}
+#	    if [ `cat ${SICK}/${I}/prediction.txt | grep word | wc -l` -gt 0 ]; then
+#		par ${I}
+#	    fi
+	fi	
+    done
+}
+
+init()
+{
+    for GRAM in 1 2 3 4; do
+	echo ${GRAM}
+	cat working/ppdb.${GRAM} | tr "\\" "@" \
+	    | tr -s " " \
+	    | sed "s/'/\\\'/g" \
+	    | sed "s/^| /p${GRAM}('/" \
+	    | sed "s/ ||| /',['/" \
+	    | sed "s/ |$/'])./" \
+	    | sed "s/ /','/g" > working/ppdb.${GRAM}.pl
+    done
+    swipl -c src/prolog/nutcracker/para.pl ${SICK}
+    axioms
+}
+
+axioms()
+{
+    rm -fr ${AXIOMS}
+    COL=`cat ${SICK}/*/t | grep -o "a [a-z]* of [a-z]*" | sort -u | tr " " "_"`
+    for C in ${COL}; do
+	echo ${C}
+	N1=`echo ${C} | cut -d"_" -f2`
+	N2=`echo ${C} | cut -d"_" -f4`
+	echo "imp(drs([X,Y],[pred(X,${N1},n,0),rel(X,Y,of,0),pred(Y,${N2},n,0)]),drs([],[pred(X,${N2},n,0)]))." >> ${AXIOMS}
+	echo "imp(drs([X,Y],[pred(X,${N2},n,0)]),drs([],[pred(X,${N1},n,0),rel(X,Y,of,0),pred(Y,${N2},n,0)]))." >> ${AXIOMS}
+    done
+}
+
+
+par()
+{
+    PARDIR=${SICK}/$1/PARAPHRASE
+    rm -fr ${PARDIR}
+    PARS=${SICK}/$1/paraphrases.txt
+    if [ -f ${PARS} ]; then
+	NPAR=`cat ${PARS} | grep . | wc -l`
+	if [ ${NPAR} -gt 0 ]; then
+	    mkdir -p ${PARDIR}
+	    echo "unknown (word)" > ${PARDIR}/prediction.txt
+	    cat ${SICK}/$1/h > ${PARDIR}/h
+	    for M in `seq 1 ${NPAR}`; do
+		if [ `cat ${PARDIR}/prediction.txt | grep word | wc -l` -gt 0 ]; then
+		    cat ${PARS} | grep . | head -${M} | tail -1 > ${PARDIR}/t
+		    puncher ${PARDIR}
+		elif [ `cat ${PARDIR}/prediction.txt | grep input | wc -l` -gt 0 ]; then
+		    cat ${PARS} | grep . | head -${M} | tail -1 > ${PARDIR}/t
+		    puncher ${PARDIR}
+		fi
+	    done
+	    if [ `cat ${PARDIR}/prediction.txt | grep proof | wc -l` -gt 0 ]; then
+		cp ${PARDIR}/prediction.txt ${SICK}/$1/prediction.txt
+	    fi
+	    if [ `cat ${PARDIR}/prediction.txt | grep inconsistency | wc -l` -gt 0 ]; then
+		cp ${PARDIR}/prediction.txt ${SICK}/$1/prediction.txt
+	    fi
+	fi
+    fi
+}
+
+createrun()
+{
+    echo -e "pair_ID\tentailment_judgment\trelatedness_score" > ${RUN}
+    for I in `ls ${SICK}`; do
+	echo -n -e "${I}\t" >> ${RUN}
+	if [ -f ${SICK}/${I}/modsizedif.txt ]; then
+	    DSD=`cat ${SICK}/${I}/modsizedif.txt | grep domain | cut -d" " -f1 | sed 's/.$//'`
+	    RSD=`cat ${SICK}/${I}/modsizedif.txt | grep relation | cut -d" " -f1 | sed 's/.$//'`
+	    WND=`cat ${SICK}/${I}/modsizedif.txt | grep wordnet | cut -d" " -f1 | sed 's/.$//'`
+	    OVE=`cat ${SICK}/${I}/modsizedif.txt | grep overlap | cut -d" " -f1 | sed 's/.$//'`
+	    RTE=`cat ${SICK}/${I}/prediction.txt | cut -d"." -f1`
+	    if [ `echo ${RTE} | grep proof | wc -l` -gt 0 ]; then
+		SIM=`echo "3 k -1.8889 ${DSD} * 1.8838 ${RSD} * -0.2259 ${OVE} * 4.8972 + + + p" | sed 's/-/_/g' | dc`
+		echo -n -e "ENTAILMENT\t" >> ${RUN}
+		echo "${SIM}" >> ${RUN}
+	    elif [ `echo ${RTE} | grep inconsisten | wc -l` -gt 0 ]; then
+		SIM=`echo "3 k 0.3875 ${OVE} * 3.3122 + p" | sed 's/-/_/g' | dc`
+		echo -n -e "CONTRADICTION\t" >> ${RUN}
+		echo "${SIM}" >> ${RUN}
+	    else
+		SIM=`echo "3 k 0.2753 ${RSD} * 0.6857 ${WND} * 1.5522 ${OVE} * 1.8168 + + + p" | sed 's/-/_/g' | dc`	      
+	      	echo -n -e "NEUTRAL\t" >> ${RUN}
+		echo "${SIM}" >> ${RUN}
+	    fi
+	else
+	    echo -n -e "NEUTRAL\t" >> ${RUN}
+	    echo "4" >> ${RUN}
+	fi	
+    done
+}
+
+#init
+run
+createrun
+#R --no-save --slave --vanilla --args ${RUN} working/SICK_all.txt < working/sick_evaluation.R 
+R --no-save --slave --vanilla --args ${RUN} working/SICK_test_annotated.txt < working/sick_evaluation.R 

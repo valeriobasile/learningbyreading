@@ -1,0 +1,20 @@
+
+BLACK="\033[0;30m" # Black 
+DGREY="\033[1;30m" # Dark Gray 
+DGRAY=DGREY
+RED="\033[0;31m" # Red 
+LRED="\033[1;31m" # Light Red 
+GREEN="\033[0;32m" # Green 
+LGREEN="\033[1;32m" # Light Green 
+BROWN="\033[0;33m" # Brown 
+YELLOW="\033[1;33m" # Yellow 
+BLUE="\033[0;34m" # Blue 
+LBLUE="\033[1;34m" # Light Blue 
+PURPLE="\033[0;35m" # Purple 
+LPURPLE="\033[1;35m" # Light Purple 
+CYAN="\033[0;36m" # Cyan 
+LCYAN="\033[1;36m" # Light 
+LGREY="\033[0;37m" # Light Gray
+LGRAY=LGREY
+WHITE="\033[1;37m" # White 
+OFF="\033[0m" # Neutral

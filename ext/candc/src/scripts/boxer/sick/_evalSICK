@@ -1,0 +1,134 @@
+#!/bin/bash
+
+WORKING=working
+OUTDIR=${WORKING}/sick
+RESULTS=${WORKING}/results.raw
+
+init()
+{
+    rm -f ${RESULTS}
+}
+
+eval()
+{
+    for I in `ls ${OUTDIR}`; do
+	if [ -f ${OUTDIR}/${I}/prediction.txt ]; then
+            echo -n "$I " >> ${RESULTS}
+            cat ${OUTDIR}/${I}/prediction.txt | tr "\n" " " >> ${RESULTS}
+    	    cat ${OUTDIR}/${I}/gold.rte >> ${RESULTS}
+	fi	
+    done
+    cat ${RESULTS} | cut -d" " -f2- | sort | uniq -c
+    C1=`cat ${RESULTS} | grep proof | grep ENTAILMENT | wc -l | tr -s " "`
+    P1=`cat ${RESULTS} | grep proof | wc -l | tr -s " "`
+    N1=`cat ${RESULTS} | grep ENTAILMENT | wc -l | tr -s " "`
+    C2=`cat ${RESULTS} | grep -v proof | grep -v inconsistency | grep NEUTRAL | wc -l | tr -s " " `
+    #P2=`cat ${RESULTS} | grep -v proof | grep -v inconsistency | wc -l | tr -s " " `
+    P2=`cat ${RESULTS} | grep word | wc -l | tr -s " " `
+    N2=`cat ${RESULTS} | grep NEUTRAL | wc -l | tr -s " "`
+    C3=`cat ${RESULTS} | grep inconsistency | grep CONTRADICTION | wc -l | tr -s " "`
+    P3=`cat ${RESULTS} | grep inconsistency | wc -l | tr -s " "`
+    N3=`cat ${RESULTS} | grep CONTRADICTION | wc -l | tr -s " "`
+    echo -n "ENTAILMENT    ($C1/$P1): P=0"; echo "3 k $C1 $P1 / p" | dc 
+    echo -n "ENTAILMENT    ($C1/$N1): R=0"; echo "3 k $C1 $N1 / p" | dc 
+    echo -n "CONTRADICTION ($C3/$P3): P=0"; echo "3 k $C3 $P3 / p" | dc 
+    echo -n "CONTRADICTION ($C3/$N3): R=0"; echo "3 k $C3 $N3 / p" | dc 
+    echo -n "NEUTRAL       ($C2/$P2): P=0"; echo "3 k $C2 $P2 / p" | dc 
+    echo -n "NEUTRAL       ($C2/$N2): R=0"; echo "3 k $C2 $N2 / p" | dc 
+    C=`echo $((C1+C2+C3)) | tr -s " "`
+    N=`echo $((N1+N2+N3)) | tr -s " "`
+    echo "* baseline: $N2 / $N = $((N2*10000/N)) %" | sed 's/.. %$/.\0/'
+    echo "* accuracy: $C / $N = $((C*10000/N)) %" | sed 's/.. %$/.\0/'
+}
+
+evalnowordnet()
+{
+    C1=`cat ${RESULTS} | grep "simple proof" | grep ENTAILMENT | wc -l | tr -s " "`
+    P1=`cat ${RESULTS} | grep "simple proof" | wc -l | tr -s " "`
+    N1=`cat ${RESULTS} | grep ENTAILMENT | wc -l | tr -s " "`
+    C2=`cat ${RESULTS} | grep -v proof | grep -v "simple inconsistency" | grep NEUTRAL | wc -l | tr -s " " `
+    #P2=`cat ${RESULTS} | grep -v proof | grep -v "simple inconsistency" | wc -l | tr -s " " `
+    P2=`cat ${RESULTS} | grep word | wc -l | tr -s " " `
+    N2=`cat ${RESULTS} | grep NEUTRAL | wc -l | tr -s " "`
+    C3=`cat ${RESULTS} | grep "simple inconsistency" | grep CONTRADICTION | wc -l | tr -s " "`
+    P3=`cat ${RESULTS} | grep "simple inconsistency" | wc -l | tr -s " "`
+    N3=`cat ${RESULTS} | grep CONTRADICTION | wc -l | tr -s " "`
+    echo -n "ENTAILMENT    ($C1/$P1): P=0"; echo "3 k $C1 $P1 / p" | dc 
+    echo -n "ENTAILMENT    ($C1/$N1): R=0"; echo "3 k $C1 $N1 / p" | dc 
+    echo -n "CONTRADICTION ($C3/$P3): P=0"; echo "3 k $C3 $P3 / p" | dc 
+    echo -n "CONTRADICTION ($C3/$N3): R=0"; echo "3 k $C3 $N3 / p" | dc 
+    echo -n "NEUTRAL       ($C2/$P2): P=0"; echo "3 k $C2 $P2 / p" | dc 
+    echo -n "NEUTRAL       ($C2/$N2): R=0"; echo "3 k $C2 $N2 / p" | dc 
+    C=`echo $((C1+C2+C3)) | tr -s " "`
+    N=`echo $((N1+N2+N3)) | tr -s " "`
+    echo "* baseline: $N2 / $N = $((N2*10000/N)) %" | sed 's/.. %$/.\0/'
+    echo "* accuracy (without WordNet): $C / $N = $((C*10000/N)) %" | sed 's/.. %$/.\0/'
+}
+
+
+
+falsenegatives()
+{
+    entailmentnotpredicted
+#    contradictionnotpredicted
+}
+
+entailmentnotpredicted()
+{
+    echo "false negatives (entailment not predicted)"
+    for I in `ls ${OUTDIR}`; do
+	if [ -f ${OUTDIR}/${I}/prediction.txt ]; then
+	    if [ `cat ${OUTDIR}/${I}/gold.rte | grep ENTAILMENT | wc -l` -gt 0 ]; then 
+		if [ `cat ${OUTDIR}/${I}/prediction.txt | grep word | wc -l` -gt 0 ]; then 
+	            echo -n "ENTAILMENT $I "; cat ${OUTDIR}/${I}/prediction.txt
+		    echo -n "T: "; cat ${OUTDIR}/${I}/t
+		    echo -n "H: "; cat ${OUTDIR}/${I}/h
+		    echo "---------------------------------------"
+		fi	
+	    fi
+	fi
+    done
+}
+
+contradictionnotpredicted()
+{
+    echo "false negatives (contradiction not predicted)"
+    for I in `ls ${OUTDIR}`; do
+	if [ -f ${OUTDIR}/${I}/prediction.txt ]; then
+	    if [ `cat ${OUTDIR}/${I}/gold.rte | grep CONTRADICT | wc -l` -gt 0 ]; then 
+		if [ `cat ${OUTDIR}/${I}/prediction.txt | grep word | wc -l` -gt 0 ]; then 
+	            echo -n "CONTRADICTION $I "; cat ${OUTDIR}/${I}/prediction.txt
+		    echo -n "T: "; cat ${OUTDIR}/${I}/t
+		    echo -n "H: "; cat ${OUTDIR}/${I}/h
+		    echo "---------------------------------------"
+		fi	
+	    fi
+	fi
+    done
+}
+
+test()
+{
+    TERM=into
+    echo "test ${TERM}"
+    for I in `ls ${OUTDIR}`; do
+	if [ -f ${OUTDIR}/${I}/prediction.txt ]; then
+	    if [ `cat ${OUTDIR}/${I}/t | grep "${TERM}" | wc -l` -gt 0 ]; then 
+		if [ `cat ${OUTDIR}/${I}/h | grep "${TERM}" | wc -l` -eq 0 ]; then 
+	            echo -n "$I "; cat ${OUTDIR}/${I}/gold.rte
+		    echo -n "T: "; cat ${OUTDIR}/${I}/t
+		    echo -n "H: "; cat ${OUTDIR}/${I}/h
+		    echo "---------------------------------------"
+		fi	
+	    fi
+	fi
+    done
+}
+
+
+#falsenegatives
+#test
+
+init
+eval
+evalnowordnet

@@ -1,0 +1,88 @@
+#!/bin/bash
+
+mkdir -p working
+ARFFRTE=working/rte.arff
+RUN=working/sick.run
+SICK=working/sick
+
+arffsim()
+{
+    ARFFSIM=working/sim$1.arff
+    echo "@RELATION sim$1" > ${ARFFSIM}
+    echo "" >> ${ARFFSIM}
+    echo "@ATTRIBUTE domsizedif NUMERIC"  >> ${ARFFSIM}
+    echo "@ATTRIBUTE relsizedif NUMERIC"  >> ${ARFFSIM}
+    echo "@ATTRIBUTE wordnetdif NUMERIC"  >> ${ARFFSIM}
+    echo "@ATTRIBUTE wordoverlap NUMERIC" >> ${ARFFSIM}
+    echo "@ATTRIBUTE similarity NUMERIC"  >> ${ARFFSIM}
+    echo "" >> ${ARFFSIM}
+    echo "@DATA" >> ${ARFFSIM}
+    for I in `ls ${SICK}`; do
+	case $1 in 
+	    ENTAILMENT)
+		if [ `cat ${SICK}/${I}/prediction.txt | grep proof | wc -l` -gt 0 ]; then
+		    if [ -f ${SICK}/${I}/modsizedif.txt ]; then
+			DSD=`cat ${SICK}/${I}/modsizedif.txt | grep domain | cut -d" " -f1 | sed 's/.$//'`
+			RSD=`cat ${SICK}/${I}/modsizedif.txt | grep relation | cut -d" " -f1 | sed 's/.$//'`
+			WND=`cat ${SICK}/${I}/modsizedif.txt | grep wordnet | cut -d" " -f1 | sed 's/.$//'`
+			OVE=`cat ${SICK}/${I}/modsizedif.txt | grep overlap | cut -d" " -f1 | sed 's/.$//'`
+			SIM=`cat ${SICK}/${I}/gold.sim`
+			echo "${DSD},${RSD},${WND},${OVE},${SIM}" >> ${ARFFSIM}
+		    fi	
+		fi;;
+	    CONTRADICTION)
+		if [ `cat ${SICK}/${I}/prediction.txt | grep inconsis | wc -l` -gt 0 ]; then
+		    if [ -f ${SICK}/${I}/modsizedif.txt ]; then
+			DSD=`cat ${SICK}/${I}/modsizedif.txt | grep domain | cut -d" " -f1 | sed 's/.$//'`
+			RSD=`cat ${SICK}/${I}/modsizedif.txt | grep relation | cut -d" " -f1 | sed 's/.$//'`
+			WND=`cat ${SICK}/${I}/modsizedif.txt | grep wordnet | cut -d" " -f1 | sed 's/.$//'`
+			OVE=`cat ${SICK}/${I}/modsizedif.txt | grep overlap | cut -d" " -f1 | sed 's/.$//'`
+			SIM=`cat ${SICK}/${I}/gold.sim`
+			echo "${DSD},${RSD},${WND},${OVE},${SIM}" >> ${ARFFSIM}
+		    fi	
+		fi;;
+	    NEUTRAL)
+		if [ `cat ${SICK}/${I}/prediction.txt | grep word | wc -l` -gt 0 ]; then
+		    if [ -f ${SICK}/${I}/modsizedif.txt ]; then
+			DSD=`cat ${SICK}/${I}/modsizedif.txt | grep domain | cut -d" " -f1 | sed 's/.$//'`
+			RSD=`cat ${SICK}/${I}/modsizedif.txt | grep relation | cut -d" " -f1 | sed 's/.$//'`
+			WND=`cat ${SICK}/${I}/modsizedif.txt | grep wordnet | cut -d" " -f1 | sed 's/.$//'`
+			OVE=`cat ${SICK}/${I}/modsizedif.txt | grep overlap | cut -d" " -f1 | sed 's/.$//'`
+			SIM=`cat ${SICK}/${I}/gold.sim`
+			echo "${DSD},${RSD},${WND},${OVE},${SIM}" >> ${ARFFSIM}
+		    fi	
+		fi;;
+	esac
+    done
+}
+
+arffrte()
+{
+    echo "@RELATION rte" > ${ARFFRTE}
+    echo "" >> ${ARFFRTE}
+    echo "@ATTRIBUTE wordoverlap NUMERIC" >> ${ARFFRTE}
+    echo "@ATTRIBUTE entailment {NEUTRAL,ENTAILMENT,CONTRADICTION}" >> ${ARFFRTE}
+    echo "" >> ${ARFFRTE}
+    echo "@DATA" >> ${ARFFRTE}
+    for I in `ls ${SICK}`; do
+	if [ `cat ${SICK}/${I}/prediction.txt | grep proof | wc -l` -gt 0 ]; then
+	    if [ `cat ${SICK}/${I}/prediction.txt | grep incon | wc -l` -gt 0 ]; then
+		if [ -f ${SICK}/${I}/modsizedif.txt ]; then
+		    OVE=`cat ${SICK}/${I}/modsizedif.txt | grep overlap | cut -d" " -f1 | sed 's/.$//'`
+		    RTE=`cat ${SICK}/${I}/gold.rte`
+		    echo "${OVE},${NC},${RTE}" >> ${ARFFRTE}
+		fi	
+	    fi
+	fi
+    done
+}
+
+
+
+arffrte
+
+#arffsim ENTAILMENT
+#arffsim CONTRADICTION
+#arffsim NEUTRAL
+
+

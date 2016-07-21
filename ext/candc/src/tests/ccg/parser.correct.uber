@@ -1,0 +1,1026 @@
+# FORWARD APPLICATION
+motor_1 (N{Y}/N{Y}<1>){_} 1 cars_2 0
+<c> motor|(N{X}/N{X}<973>){Y} cars|N{X}
+
+# END FORWARD APPLICATION
+# FORWARD APPLICATION CONJ CONSTRAINT
+# END FORWARD APPLICATION CONJ CONSTRAINT
+# BACKWARD APPLICATION
+runs_2 (S[dcl]{_}\NP{Y}<1>){_} 1 John_1 0
+<c> John|NP{X} runs|(S[dcl]{X}\NP{Y}<1007>){X}
+
+# END BACKWARD APPLICATION
+# BACKWARD APPLICATION CONJ CONSTRAINT
+# END BACKWARD APPLICATION CONJ CONSTRAINT
+# BACKWARD APPLICATION COMMA CONJ CONSTRAINT
+# END BACKWARD APPLICATION COMMA CONJ CONSTRAINT
+# FORWARD AND BACKWARD APPLICATION
+pays_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 3 Bill_3 0
+the_4 (NP[nb]{Y}/N{Y}<1>){_} 1 money_5 0
+pays_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 2 money_5 0
+pays_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 1 John_1 0
+<c> John|NP{X} pays|(((S[dcl]{X}\NP{Y}<379>){X}/NP{Z}<380>){X}/NP{W}<381>){X} Bill|NP{X} the|(NP[nb]{X}/N{X}<985>){Y} money|N{X}
+
+# END FORWARD AND BACKWARD APPLICATION
+# COORDINATION
+like_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Mary_5 0
+like_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 John_3 0
+like_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 I_1 0
+<c> I|NP{X} like|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} John|NP{X} and|conj{X} Mary|NP{X}
+
+# END COORDINATION
+# COORDINATION OF SUBJECT AND OBJECT
+like_4 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Jade_7 0
+like_4 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Sharon_5 0
+like_4 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Neal_3 0
+like_4 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Barry_1 0
+<c> Barry|NP{X} and|conj{X} Neal|NP{X} like|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} Sharon|NP{X} and|conj{X} Jade|NP{X}
+
+# END COORDINATION OF SUBJECT AND OBJECT
+# COORDINATION OF COMPLEX CATEGORIES
+hate_4 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Neal_5 0
+like_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Neal_5 0
+hate_4 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 I_1 0
+like_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 I_1 0
+<c> I|NP{X} like|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} and|conj{X} hate|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} Neal|NP{X}
+
+# END COORDINATION OF COMPLEX CATEGORIES
+# LEXRULE APPLIED TO COORDINATION OF COMPLEX CATEGORIES
+the_5 (NP[nb]{Y}/N{Y}<1>){_} 1 marathon_6 0
+organising_4 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 marathon_6 0
+running_2 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 marathon_6 0
+organising_4 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Chris_1 3
+running_2 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Chris_1 3
+old_9 (N{Y}/N{Y}<1>){_} 1 story_10 0
+an_8 (NP[nb]{Y}/N{Y}<1>){_} 1 story_10 0
+is_7 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 story_10 0
+is_7 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Chris_1 0
+<c> Chris|NP{X} running|((S[ng]{X}\NP{Y}<876>){X}/NP{Z}<877>){X} and|conj{X} organising|((S[ng]{X}\NP{Y}<876>){X}/NP{Z}<877>){X} the|(NP[nb]{X}/N{X}<985>){Y} marathon|N{X} is|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} an|(NP[nb]{X}/N{X}<985>){Y} old|(N{X}/N{X}<973>){Y} story|N{X}
+
+# END LEXRULE APPLIED TO COORDINATION OF COMPLEX CATEGORIES
+# LEXRULE APPLIED TO COORDINATION OF COMPLEX CATEGORIES 2
+to_2 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 2 slow_5 0
+to_2 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 2 stop_3 0
+slow_5 (S[b]{_}\NP{Y}<1>){_} 1 efforts_1 9 ((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X}
+stop_3 (S[b]{_}\NP{Y}<1>){_} 1 efforts_1 9 ((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X}
+to_2 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 1 efforts_1 9
+<c> efforts|N{X} to|((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X} stop|(S[b]{X}\NP{Y}<1003>){X} or|conj{X} slow|(S[b]{X}\NP{Y}<1003>){X}
+
+# END LEXRULE APPLIED TO COORDINATION OF COMPLEX CATEGORIES 2
+# LEXRULE APPLIED TO COORDINATION OF COMPLEX CATEGORIES 3
+down_7 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 slow_6 0
+the_8 (NP[nb]{Y}/N{Y}<1>){_} 1 subsidence_9 0
+slow_6 ((S[b]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 subsidence_9 0
+stop_4 ((S[b]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 subsidence_9 0
+to_3 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 2 slow_6 0
+to_3 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 2 stop_4 0
+to_3 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 1 efforts_2 7
+slow_6 ((S[b]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 efforts_2 7 ((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X}
+stop_4 ((S[b]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 efforts_2 7 ((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X}
+jeopardise_1 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 efforts_2 0
+<c> jeopardise|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} efforts|N{X} to|((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X} stop|((S[b]{X}\NP{Y}<768>){X}/NP{Z}<769>){X} or|conj{X} slow|((S[b]{X}\NP{Y}<768>){X}/NP{Z}<769>){X} down|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} the|(NP[nb]{X}/N{X}<985>){Y} subsidence|N{X}
+
+# END LEXRULE APPLIED TO COORDINATION OF COMPLEX CATEGORIES 3
+# COORDINATION CONJ CONSTRAINT (FUNNY CONJ MEANS CURRENTLY NO FAIL)
+likes_1 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 apples_5 0
+likes_1 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 pears_2 0
+<c> likes|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} pears|N{X} and|conj{X} and|conj{X} apples|N{X}
+
+# END COORDINATION CONJ CONSTRAINT (FUNNY CONJ MEANS CURRENTLY NO FAIL)
+# FORWARD COMPOSITION + TYPE RAISING
+likes_4 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Barry_3 0
+who_2 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>/NP{Y*}){Z}){_} 2 likes_4 0
+likes_4 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 John_1 0 ((NP{X}\NP{X}<654>){Y}/(S[dcl]{Z}<655>/NP{X*}){Z}){Y}
+who_2 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>/NP{Y*}){Z}){_} 1 John_1 0
+<c> John|NP{X} who|((NP{X}\NP{X}<654>){Y}/(S[dcl]{Z}<655>/NP{X*}){Z}){Y} Barry|NP{X} likes|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X}
+
+# END FORWARD COMPOSITION + TYPE RAISING
+# FORWARD COMPOSITION (EXTRA VERB ARGUMENT) + TYPE RAISING
+the_5 (NP[nb]{Y}/N{Y}<1>){_} 1 book_6 0
+gives_4 (((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 3 book_6 0
+gives_4 (((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 2 to_7 0
+gives_4 (((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 1 Barry_3 0
+who_2 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>/NP{Y*}){Z}){_} 2 gives_4 0
+to_7 (PP{_}/NP{Y}<1>){_} 1 John_1 0 ((NP{X}\NP{X}<654>){Y}/(S[dcl]{Z}<655>/NP{X*}){Z}){Y}
+who_2 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>/NP{Y*}){Z}){_} 1 John_1 0
+<c> John|NP{X} who|((NP{X}\NP{X}<654>){Y}/(S[dcl]{Z}<655>/NP{X*}){Z}){Y} Barry|NP{X} gives|(((S[dcl]{X}\NP{Y}<388>){X}/PP{Z}<389>){X}/NP{W}<390>){X} the|(NP[nb]{X}/N{X}<985>){Y} book|N{X} to|(PP{X}/NP{Y}<990>){X}
+
+# END FORWARD COMPOSITION (EXTRA VERB ARGUMENT) + TYPE RAISING
+# FORWARD COMPOSITION (TWO EXTRA VERB ARGUMENTS) + TYPE RAISING
+The_1 (NP[nb]{Y}/N{Y}<1>){_} 1 work_2 0
+the_7 (NP[nb]{Y}/N{Y}<1>){_} 1 man_8 0
+pay_6 ((((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_}/NP{V}<4>){_} 4 man_8 0
+5_9 (N{Y}/N{Y}<1>){_} 1 pounds_10 0
+pay_6 ((((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_}/NP{V}<4>){_} 3 pounds_10 0
+pay_6 ((((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_}/NP{V}<4>){_} 2 for_11 0
+will_5 ((S[dcl]{_}\NP{Y}<1>){_}/(S[b]{Z}<2>\NP{Y*}){Z}){_} 2 pay_6 0
+will_5 ((S[dcl]{_}\NP{Y}<1>){_}/(S[b]{Z}<2>\NP{Y*}){Z}){_} 1 they_4 0
+pay_6 ((((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_}/NP{V}<4>){_} 1 they_4 0 ((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X}
+which_3 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>/NP{Y*}){Z}){_} 2 will_5 0
+for_11 (PP{_}/NP{Y}<1>){_} 1 work_2 0 ((NP{X}\NP{X}<654>){Y}/(S[dcl]{Z}<655>/NP{X*}){Z}){Y}
+which_3 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>/NP{Y*}){Z}){_} 1 work_2 0
+<c> The|(NP[nb]{X}/N{X}<985>){Y} work|N{X} which|((NP{X}\NP{X}<654>){Y}/(S[dcl]{Z}<655>/NP{X*}){Z}){Y} they|NP{X} will|((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X} pay|((((S[b]{X}\NP{Y}<22>){X}/PP{Z}<23>){X}/NP{W}<24>){X}/NP{V}<25>){X} the|(NP[nb]{X}/N{X}<985>){Y} man|N{X} 5|(N{X}/N{X}<973>){Y} pounds|N{X} for|(PP{X}/NP{Y}<990>){X}
+
+# END FORWARD COMPOSITION (TWO EXTRA VERB ARGUMENTS) + TYPE RAISING
+# FORWARD COMPOSITION RECURSIVE + COORDINATION
+offered_2 (((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 1 I_1 0
+offered_5 (((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 1 she_4 0
+a_6 (NP[nb]{Y}/N{Y}<1>){_} 1 flower_7 0
+offered_5 (((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 3 flower_7 0
+offered_2 (((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 3 flower_7 0
+a_9 (NP[nb]{Y}/N{Y}<1>){_} 1 policeman_10 0
+to_8 (PP{_}/NP{Y}<1>){_} 1 policeman_10 0
+offered_5 (((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 2 to_8 0
+offered_2 (((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 2 to_8 0
+<c> I|NP{X} offered|(((S[dcl]{X}\NP{Y}<388>){X}/PP{Z}<389>){X}/NP{W}<390>){X} and|conj{X} she|NP{X} offered|(((S[dcl]{X}\NP{Y}<388>){X}/PP{Z}<389>){X}/NP{W}<390>){X} a|(NP[nb]{X}/N{X}<985>){Y} flower|N{X} to|(PP{X}/NP{Y}<990>){X} a|(NP[nb]{X}/N{X}<985>){Y} policeman|N{X}
+
+# END FORWARD COMPOSITION RECURSIVE + COORDINATION
+# FORWARD COMPOSITION VERB TYPE ANTI CONSTRAINT
+red_5 (N{Y}/N{Y}<1>){_} 1 apples_6 0
+all_4 (NP[nb]{Y}/N{Y}<1>){_} 1 apples_6 0
+all_1 (NP[nb]{Y}/N{Y}<1>){_} 1 apples_6 0
+green_2 (N{Y}/N{Y}<1>){_} 1 apples_6 0
+<c> all|(NP[nb]{X}/N{X}<985>){Y} green|(N{X}/N{X}<973>){Y} and|conj{X} all|(NP[nb]{X}/N{X}<985>){Y} red|(N{X}/N{X}<973>){Y} apples|N{X}
+
+# END FORWARD COMPOSITION VERB TYPE ANTI CONSTRAINT
+# FORWARD COMPOSITION RECURSIVE VERB TYPE CONSTRAINT
+# END FORWARD COMPOSITION RECURSIVE VERB TYPE CONSTRAINT
+# BACKWARD COMPOSITION + COORDINATION
+an_4 (NP[nb]{Y}/N{Y}<1>){_} 1 apple_5 0
+a_8 (NP[nb]{Y}/N{Y}<1>){_} 1 pear_9 0
+gave_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 3 Bill_7 0
+gave_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 3 John_3 0
+gave_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 2 pear_9 0
+gave_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 2 apple_5 0
+gave_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 1 I_1 0
+<c> I|NP{X} gave|(((S[dcl]{X}\NP{Y}<379>){X}/NP{Z}<380>){X}/NP{W}<381>){X} John|NP{X} an|(NP[nb]{X}/N{X}<985>){Y} apple|N{X} and|conj{X} Bill|NP{X} a|(NP[nb]{X}/N{X}<985>){Y} pear|N{X}
+
+# END BACKWARD COMPOSITION + COORDINATION
+# BACKWARD COMPOSITION CONJ CONSTRAINT
+# END BACKWARD COMPOSITION CONJ CONSTRAINT
+# BACKWARD COMPOSITION CONJ CONSTRAINT + FORWARD APPLICATION CONJ CONSTRAINT
+# END BACKWARD COMPOSITION CONJ CONSTRAINT + FORWARD APPLICATION CONJ CONSTRAINT
+# BACKWARD CROSSED COMPOSITION
+up_3 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 gave_2 0
+gave_2 ((S[dcl]{_}\NP{Y}<1>){_}/(S[ng]{Z}<2>\NP{Y*}){Z}){_} 2 trying_4 0
+trying_4 (S[ng]{_}\NP{Y}<1>){_} 1 I_1 0 ((S[dcl]{X}\NP{Y}<808>){X}/(S[ng]{Z}<809>\NP{Y*}){Z}){X}
+gave_2 ((S[dcl]{_}\NP{Y}<1>){_}/(S[ng]{Z}<2>\NP{Y*}){Z}){_} 1 I_1 0
+<c> I|NP{X} gave|((S[dcl]{X}\NP{Y}<808>){X}/(S[ng]{Z}<809>\NP{Y*}){Z}){X} up|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} trying|(S[ng]{X}\NP{Y}<1014>){X}
+
+# END BACKWARD CROSSED COMPOSITION
+# BACKWARD CROSSED COMPOSITION RECURSIVE
+up_3 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 gave_2 0
+the_4 (NP[nb]{Y}/N{Y}<1>){_} 1 money_5 0
+gave_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/PP{W}<3>){_} 2 money_5 0
+to_6 (PP{_}/NP{Y}<1>){_} 1 John_7 0
+gave_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/PP{W}<3>){_} 3 to_6 0
+gave_2 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/PP{W}<3>){_} 1 I_1 0
+<c> I|NP{X} gave|(((S[dcl]{X}\NP{Y}<382>){X}/NP{Z}<383>){X}/PP{W}<384>){X} up|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} the|(NP[nb]{X}/N{X}<985>){Y} money|N{X} to|(PP{X}/NP{Y}<990>){X} John|NP{X}
+
+# END BACKWARD CROSSED COMPOSITION RECURSIVE
+# BACKWARD CROSSED COMPOSITION RECURSIVE 2 LEVELS
+quickly_4 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 pay_3 0
+the_5 (NP[nb]{Y}/N{Y}<1>){_} 1 man_6 0
+pay_3 ((((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_}/NP{V}<4>){_} 4 man_6 0
+5_7 (N{Y}/N{Y}<1>){_} 1 pounds_8 0
+pay_3 ((((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_}/NP{V}<4>){_} 3 pounds_8 0
+the_10 (NP[nb]{Y}/N{Y}<1>){_} 1 work_11 0
+for_9 (PP{_}/NP{Y}<1>){_} 1 work_11 0
+pay_3 ((((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_}/NP{V}<4>){_} 2 for_9 0
+will_2 ((S[dcl]{_}\NP{Y}<1>){_}/(S[b]{Z}<2>\NP{Y*}){Z}){_} 2 pay_3 0
+will_2 ((S[dcl]{_}\NP{Y}<1>){_}/(S[b]{Z}<2>\NP{Y*}){Z}){_} 1 I_1 0
+pay_3 ((((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_}/NP{V}<4>){_} 1 I_1 0 ((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X}
+<c> I|NP{X} will|((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X} pay|((((S[b]{X}\NP{Y}<22>){X}/PP{Z}<23>){X}/NP{W}<24>){X}/NP{V}<25>){X} quickly|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} the|(NP[nb]{X}/N{X}<985>){Y} man|N{X} 5|(N{X}/N{X}<973>){Y} pounds|N{X} for|(PP{X}/NP{Y}<990>){X} the|(NP[nb]{X}/N{X}<985>){Y} work|N{X}
+
+# END BACKWARD CROSSED COMPOSITION RECURSIVE 2 LEVELS
+# BACKWARD CROSSED COMPOSITION VERB CONSTRAINT
+# END BACKWARD CROSSED COMPOSITION VERB CONSTRAINT
+# BACKWARD CROSSED COMPOSITION RECURSIVE VERB CONSTRAINT
+# END BACKWARD CROSSED COMPOSITION RECURSIVE VERB CONSTRAINT
+# COMMA COORDINATION SIMPLE
+like_1 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Neal_4 0
+like_1 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Trevor_2 0
+<c> like|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} Trevor|NP{X} ,|,{X} Neal|NP{X}
+
+# END COMMA COORDINATION SIMPLE
+# LEFT COMMA
+like_1 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 John_3 0
+<c> like|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} ,|,{X} John|NP{X}
+
+# END LEFT COMMA
+# LEFT COMMA COMPLEX
+soundly_3 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 sleeps_1 0
+<c> sleeps|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} ,|,{X} soundly|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z}
+
+# END LEFT COMMA COMPLEX
+# LEFT COLON
+sleeps_4 (S[dcl]{_}\NP{Y}<1>){_} 1 John_3 0
+that_1 (S[em]{_}/S[dcl]{Y}<1>){_} 1 sleeps_4 0
+<c> that|(S[em]{X}/S[dcl]{Y}<1010>){X} :|:{X} John|NP{X} sleeps|(S[dcl]{X}\NP{Y}<1007>){X}
+
+# END LEFT COLON
+# LEFT LRB
+without_3 (NP{Y}\NP{Y}<1>){_} 1 runs_1 0
+<c> runs|NP{X} -LRB-|LRB{X} without|(NP{X}\NP{X}<986>){Y}
+
+# END LEFT LRB
+# RIGHT COMMA COMPLEX + BACKWARD CROSSED COMPOSITION
+quickly_2 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 eats_1 0
+<c> eats|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} quickly|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} ,|,{X}
+
+# END RIGHT COMMA COMPLEX + BACKWARD CROSSED COMPOSITION
+# RIGHT COLON
+eating_1 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 these_2 0
+<c> eating|((S[ng]{X}\NP{Y}<876>){X}/NP{Z}<877>){X} these|NP{X} :|:{X}
+
+# END RIGHT COLON
+# RIGHT RRB COMPLEX + BACKWARD CROSSED COMPOSITION
+quickly_2 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 eats_1 0
+<c> eats|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} quickly|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} -RRB-|RRB{X}
+
+# END RIGHT RRB COMPLEX + BACKWARD CROSSED COMPOSITION
+# COMMA COORDINATION OF COMPLEX CATEGORIES
+eat_4 (S[dcl]{_}\NP{Y}<1>){_} 1 I_1 0
+sleep_2 (S[dcl]{_}\NP{Y}<1>){_} 1 I_1 0
+<c> I|NP{X} sleep|(S[dcl]{X}\NP{Y}<1007>){X} ,|,{X} eat|(S[dcl]{X}\NP{Y}<1007>){X}
+
+# END COMMA COORDINATION OF COMPLEX CATEGORIES
+# COORDINATION AND COMMA COORDINATION
+like_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Gary_7 0
+like_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Neal_5 0
+like_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Trevor_3 0
+like_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 I_1 0
+<c> I|NP{X} like|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} Trevor|NP{X} ,|,{X} Neal|NP{X} and|conj{X} Gary|NP{X}
+
+# END COORDINATION AND COMMA COORDINATION
+# COLON COORDINATION OF COMPLEX CATEGORIES
+eat_4 (S[dcl]{_}\NP{Y}<1>){_} 1 I_1 0
+sleep_2 (S[dcl]{_}\NP{Y}<1>){_} 1 I_1 0
+<c> I|NP{X} sleep|(S[dcl]{X}\NP{Y}<1007>){X} ;|;{X} eat|(S[dcl]{X}\NP{Y}<1007>){X}
+
+# END COLON COORDINATION OF COMPLEX CATEGORIES
+# FUNNY COORDINATION
+securities_1 (N{Y}/N{Y}<1>){_} 1 commission_3 0
+<c> securities|(N{X}/N{X}<973>){Y} and|conj{X} commission|N{X}
+
+# END FUNNY COORDINATION
+# VERY SHORT SENTENCE
+# END VERY SHORT SENTENCE
+# SHORT SENTENCE
+Hiroshi_1 (N{Y}/N{Y}<1>){_} 1 Asada_2 0
+<c> Hiroshi|(N{X}/N{X}<973>){Y} Asada|N{X}
+
+# END SHORT SENTENCE
+# VERY LONG SENTENCE
+her_2 (NP[nb]{Y}/N{Y}<1>){_} 1 wake_3 0
+In_1 ((S[X]{Y}/S[X]{Y}<1>){_}/NP{Z}<2>){_} 2 wake_3 0
+the_6 (NP[nb]{Y}/N{Y}<1>){_} 1 anger_9 0
+the_6 (NP[nb]{Y}/N{Y}<1>){_} 1 bitterness_7 0
+a_11 (NP[nb]{Y}/N{Y}<1>){_} 1 principal_12 0
+her_15 (NP[nb]{Y}/N{Y}<1>){_} 1 friend_16 0
+was_14 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 friend_16 0
+calls_19 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 3 her_20 0
+a_21 (NP[nb]{Y}/N{Y}<1>){_} 1 betrayer_22 0
+brought_29 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 3 them_30 0
+brought_29 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 2 shame_31 0
+brought_29 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 1 she_28 0
+say_27 ((S[dcl]{_}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 2 brought_29 0
+who_26 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 2 say_27 0
+say_27 ((S[dcl]{_}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 1 colleagues_25 0 ((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y}
+who_26 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 1 colleagues_25 0
+defended_38 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 her_39 0
+harshly_45 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 treated_44 0
+was_43 ((S[dcl]{_}\NP{Y}<1>){_}/(S[pss]{Z}<2>\NP{Y*}){Z}){_} 2 treated_44 0
+treated_44 (S[pss]{_}\NP{Y}<1>){_} 1 she_42 0 ((S[dcl]{X}\NP{Y}<810>){X}/(S[pss]{Z}<811>\NP{Y*}){Z}){X}
+was_43 ((S[dcl]{_}\NP{Y}<1>){_}/(S[pss]{Z}<2>\NP{Y*}){Z}){_} 1 she_42 0
+insist_41 ((S[dcl]{_}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 2 was_43 0
+who_37 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 2 insist_41 0
+who_37 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 2 defended_38 0
+insist_41 ((S[dcl]{_}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 1 parents_36 0 ((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y}
+insist_41 ((S[dcl]{_}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 1 students_34 0 ((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y}
+defended_38 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 parents_36 0 ((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y}
+defended_38 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 students_34 0 ((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y}
+who_37 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 1 parents_36 0
+who_37 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 1 students_34 0
+of_33 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 parents_36 0
+of_33 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 students_34 0
+of_33 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 colleagues_25 0
+of_24 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 colleagues_25 0
+of_24 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 betrayer_22 0
+calls_19 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 2 betrayer_22 0
+now_18 ((S[X]{Y}\NP{Z}){Y}/(S[X]{Y}<1>\NP{Z}){Y}){_} 1 calls_19 0
+who_13 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 2 calls_19 0
+who_13 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 2 was_14 0
+school-district_49 (N{Y}/N{Y}<1>){_} 1 officials_50 0
+bald-faced_55 (N{Y}/N{Y}<1>){_} 1 nature_56 0
+the_54 (NP[nb]{Y}/N{Y}<1>){_} 1 nature_56 0
+her_58 (NP[nb]{Y}/N{Y}<1>){_} 1 actions_59 0
+of_57 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 actions_59 0
+of_57 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 nature_56 0
+despite_53 ((S[X]{Y}/S[X]{Y}<1>){_}/NP{Z}<2>){_} 2 nature_56 0
+local_66 (N{Y}/N{Y}<1>){_} 1 martyr_67 0
+a_65 (NP[nb]{Y}/N{Y}<1>){_} 1 martyr_67 0
+of_64 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 martyr_67 0
+of_64 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 something_63 0
+became_62 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 something_63 0
+became_62 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 she_61 0
+despite_53 ((S[X]{Y}/S[X]{Y}<1>){_}/NP{Z}<2>){_} 1 became_62 0
+that_52 (S[em]{_}/S[dcl]{Y}<1>){_} 1 became_62 0
+stunned_51 ((S[adj]{_}\NP{Y}<1>){_}/S[em]{Z}<2>){_} 2 that_52 0
+stunned_51 ((S[adj]{_}\NP{Y}<1>){_}/S[em]{Z}<2>){_} 1 officials_50 6
+of_48 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 officials_50 0
+was_14 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 principal_12 0 ((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y}
+of_48 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 principal_12 0
+who_13 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 1 principal_12 0
+calls_19 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 1 principal_12 0 ((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y}
+of_10 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 principal_12 0
+of_10 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 anger_9 0
+of_10 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 bitterness_7 0
+left_5 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 anger_9 0
+left_5 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 bitterness_7 0
+left_5 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 she_4 0
+In_1 ((S[X]{Y}/S[X]{Y}<1>){_}/NP{Z}<2>){_} 1 left_5 0
+<c> In|((S[X]{X}/S[X]{X}<723>){Y}/NP{Z}<724>){Y} her|(NP[nb]{X}/N{X}<985>){Y} wake|N{X} she|NP{X} left|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} the|(NP[nb]{X}/N{X}<985>){Y} bitterness|N{X} and|conj{X} anger|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} a|(NP[nb]{X}/N{X}<985>){Y} principal|N{X} who|((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y} was|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} her|(NP[nb]{X}/N{X}<985>){Y} friend|N{X} and|conj{X} now|((S[X]{X}\NP{Y}){X}/(S[X]{X}<952>\NP{Y}){X}){Z} calls|(((S[dcl]{X}\NP{Y}<379>){X}/NP{Z}<380>){X}/NP{W}<381>){X} her|NP{X} a|(NP[nb]{X}/N{X}<985>){Y} betrayer|N{X} ;|:{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} colleagues|N{X} who|((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y} say|((S[dcl]{X}\NP{Y}<824>){X}/S[dcl]{Z}<825>){X} she|NP{X} brought|(((S[dcl]{X}\NP{Y}<379>){X}/NP{Z}<380>){X}/NP{W}<381>){X} them|NP{X} shame|N{X} ;|:{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} students|N{X} and|conj{X} parents|N{X} who|((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y} defended|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} her|NP{X} and|conj{X} insist|((S[dcl]{X}\NP{Y}<824>){X}/S[dcl]{Z}<825>){X} she|NP{X} was|((S[dcl]{X}\NP{Y}<810>){X}/(S[pss]{Z}<811>\NP{Y*}){Z}){X} treated|(S[pss]{X}\NP{Y}<1016>){X} harshly|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} ;|:{X} and|conj{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} school-district|(N{X}/N{X}<973>){Y} officials|N{X} stunned|((S[adj]{X}\NP{Y}<747>){X}/S[em]{Z}<748>){X} that|(S[em]{X}/S[dcl]{Y}<1010>){X} despite|((S[X]{X}/S[X]{X}<723>){Y}/NP{Z}<724>){Y} the|(NP[nb]{X}/N{X}<985>){Y} bald-faced|(N{X}/N{X}<973>){Y} nature|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} her|(NP[nb]{X}/N{X}<985>){Y} actions|N{X} ,|,{X} she|NP{X} became|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} something|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} a|(NP[nb]{X}/N{X}<985>){Y} local|(N{X}/N{X}<973>){Y} martyr|N{X} .|.{X}
+
+# END VERY LONG SENTENCE
+# NO SPANNING SENTENCE
+# END NO SPANNING SENTENCE
+# UNARY NP ADJECTIVAL MODIFIER SENTENCE
+Pierre_1 (N{Y}/N{Y}<1>){_} 1 Vinken_2 0
+61_4 (N{Y}/N{Y}<1>){_} 1 years_5 0
+old_6 ((S[adj]{_}\NP{Y}<1>){_}\NP{Z}<2>){_} 2 years_5 0
+old_6 ((S[adj]{_}\NP{Y}<1>){_}\NP{Z}<2>){_} 1 Vinken_2 6
+the_10 (NP[nb]{Y}/N{Y}<1>){_} 1 board_11 0
+join_9 (((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 3 board_11 0
+nonexecutive_14 (N{Y}/N{Y}<1>){_} 1 director_15 0
+a_13 (NP[nb]{Y}/N{Y}<1>){_} 1 director_15 0
+as_12 (PP{_}/NP{Y}<1>){_} 1 director_15 0
+join_9 (((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 2 as_12 0
+Nov._16 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/N{W}<2>){_} 2 29_17 0
+Nov._16 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/N{W}<2>){_} 1 join_9 0
+will_8 ((S[dcl]{_}\NP{Y}<1>){_}/(S[b]{Z}<2>\NP{Y*}){Z}){_} 2 join_9 0
+will_8 ((S[dcl]{_}\NP{Y}<1>){_}/(S[b]{Z}<2>\NP{Y*}){Z}){_} 1 Vinken_2 0
+join_9 (((S[b]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 1 Vinken_2 0 ((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X}
+<c> Pierre|(N{X}/N{X}<973>){Y} Vinken|N{X} ,|,{X} 61|(N{X}/N{X}<973>){Y} years|N{X} old|((S[adj]{X}\NP{Y}<754>){X}\NP{Z}<755>){X} ,|,{X} will|((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X} join|(((S[b]{X}\NP{Y}<316>){X}/PP{Z}<317>){X}/NP{W}<318>){X} the|(NP[nb]{X}/N{X}<985>){Y} board|N{X} as|(PP{X}/NP{Y}<990>){X} a|(NP[nb]{X}/N{X}<985>){Y} nonexecutive|(N{X}/N{X}<973>){Y} director|N{X} Nov.|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<592>\NP{Y}){X}){Z}/N{W}<593>){Z} 29|N{X} .|.{X}
+
+# END UNARY NP ADJECTIVAL MODIFIER SENTENCE
+# NOUN APPOSITION (COMMA AS CONJUNCTION) SENTENCE
+Mr._1 (N{Y}/N{Y}<1>){_} 1 Vinken_2 0
+Elsevier_6 (N{Y}/N{Y}<1>){_} 1 N.V._7 0
+publishing_11 (N{Y}/N{Y}<1>){_} 1 group_12 0
+Dutch_10 (N{Y}/N{Y}<1>){_} 1 group_12 0
+the_9 (NP[nb]{Y}/N{Y}<1>){_} 1 group_12 0
+of_5 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 group_12 0
+of_5 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 N.V._7 0
+of_5 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 chairman_4 0
+is_3 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 chairman_4 0
+is_3 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Vinken_2 0
+<c> Mr.|(N{X}/N{X}<973>){Y} Vinken|N{X} is|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} chairman|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} Elsevier|(N{X}/N{X}<973>){Y} N.V.|N{X} ,|,{X} the|(NP[nb]{X}/N{X}<985>){Y} Dutch|(N{X}/N{X}<973>){Y} publishing|(N{X}/N{X}<973>){Y} group|N{X} .|.{X}
+
+# END NOUN APPOSITION (COMMA AS CONJUNCTION) SENTENCE
+# EXPLODING SENTENCE
+In_1 ((S[X]{Y}/S[X]{Y}<1>){_}/NP{Z}<2>){_} 2 mid-October_2 0
+Time_4 (N{Y}/N{Y}<1>){_} 1 magazine_5 0
+rate_10 (N{Y}/N{Y}<1>){_} 1 base_11 0
+circulation_9 (N{Y}/N{Y}<1>){_} 1 base_11 0
+guaranteed_8 (N{Y}/N{Y}<1>){_} 1 base_11 0
+its_7 (NP[nb]{Y}/N{Y}<1>){_} 1 base_11 0
+for_12 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 1990_13 0
+for_12 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 base_11 0
+lowered_6 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 base_11 0
+not_15 ((S[X]{Y}\NP{Z}){Y}/(S[X]{Y}<1>\NP{Z}){Y}){_} 1 increasing_16 0
+page_18 (N{Y}/N{Y}<1>){_} 1 rates_19 0
+ad_17 (N{Y}/N{Y}<1>){_} 1 rates_19 0
+increasing_16 (((S[ng]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 3 rates_19 0
+circulation_24 (N{Y}/N{Y}<1>){_} 1 base_25 0
+lower_23 (N{Y}/N{Y}<1>){_} 1 base_25 0
+a_22 (NP[nb]{Y}/N{Y}<1>){_} 1 base_25 0
+with_21 (PP{_}/NP{Y}<1>){_} 1 base_25 0
+increasing_16 (((S[ng]{_}\NP{Y}<1>){_}/PP{Z}<2>){_}/NP{W}<3>){_} 2 with_21 0
+'s_28 ((NP[nb]{Y}/N{Y}<1>){_}\NP{Z}<2>){_} 2 Time_27 0
+ad_29 (N{Y}/N{Y}<1>){_} 1 rate_30 0
+'s_28 ((NP[nb]{Y}/N{Y}<1>){_}\NP{Z}<2>){_} 1 rate_30 0
+7.5_34 (N{Y}/N{Y}<1>){_} 1 %_35 0
+higher_36 ((S[adj]{_}\NP{Y}<1>){_}\NP{Z}<2>){_} 2 %_35 0
+effectively_33 ((S[X]{Y}\NP{Z}){Y}/(S[X]{Y}<1>\NP{Z}){Y}){_} 1 higher_36 0
+be_32 ((S[b]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 2 higher_36 0
+per_37 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 subscriber_38 0
+per_37 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 be_32 0
+will_31 ((S[dcl]{_}\NP{Y}<1>){_}/(S[b]{Z}<2>\NP{Y*}){Z}){_} 2 be_32 0
+will_31 ((S[dcl]{_}\NP{Y}<1>){_}/(S[b]{Z}<2>\NP{Y*}){Z}){_} 1 rate_30 0
+be_32 ((S[b]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 1 rate_30 0 ((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X}
+higher_36 ((S[adj]{_}\NP{Y}<1>){_}\NP{Z}<2>){_} 1 rate_30 0 ((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X}
+not_15 (S[X]{Y}/S[X]{Y}<1>){_} 1 will_31 5
+full_41 (N{Y}/N{Y}<1>){_} 1 page_42 0
+a_40 (NP[nb]{Y}/N{Y}<1>){_} 1 page_42 0
+in_43 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Time_44 0
+in_43 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 page_42 0
+about_46 (N{Y}/N{Y}<1>){_} 1 <DOLLARS>_47 0
+costs_45 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 <DOLLARS>_47 0
+costs_45 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 page_42 0
+while_14 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/S[dcl]{W}<2>){_} 2 costs_45 0
+while_14 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/S[dcl]{W}<2>){_} 2 will_31 0
+while_14 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/S[dcl]{W}<2>){_} 1 lowered_6 0
+lowered_6 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 magazine_5 0
+In_1 ((S[X]{Y}/S[X]{Y}<1>){_}/NP{Z}<2>){_} 1 lowered_6 0
+<c> In|((S[X]{X}/S[X]{X}<723>){Y}/NP{Z}<724>){Y} mid-October|N{X} ,|,{X} Time|(N{X}/N{X}<973>){Y} magazine|N{X} lowered|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} its|(NP[nb]{X}/N{X}<985>){Y} guaranteed|(N{X}/N{X}<973>){Y} circulation|(N{X}/N{X}<973>){Y} rate|(N{X}/N{X}<973>){Y} base|N{X} for|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} 1990|N{X} while|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<600>\NP{Y}){X}){Z}/S[dcl]{W}<601>){Z} not|((S[X]{X}\NP{Y}){X}/(S[X]{X}<952>\NP{Y}){X}){Z} increasing|(((S[ng]{X}\NP{Y}<490>){X}/PP{Z}<491>){X}/NP{W}<492>){X} ad|(N{X}/N{X}<973>){Y} page|(N{X}/N{X}<973>){Y} rates|N{X} ;|:{X} with|(PP{X}/NP{Y}<990>){X} a|(NP[nb]{X}/N{X}<985>){Y} lower|(N{X}/N{X}<973>){Y} circulation|(N{X}/N{X}<973>){Y} base|N{X} ,|,{X} Time|N{X} 's|((NP[nb]{X}/N{X}<647>){Y}\NP{Z}<648>){Y} ad|(N{X}/N{X}<973>){Y} rate|N{X} will|((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X} be|((S[b]{X}\NP{Y}<756>){X}/(S[adj]{Z}<757>\NP{Y*}){Z}){X} effectively|((S[X]{X}\NP{Y}){X}/(S[X]{X}<952>\NP{Y}){X}){Z} 7.5|(N{X}/N{X}<973>){Y} %|N{X} higher|((S[adj]{X}\NP{Y}<754>){X}\NP{Z}<755>){X} per|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} subscriber|N{X} ;|:{X} a|(NP[nb]{X}/N{X}<985>){Y} full|(N{X}/N{X}<973>){Y} page|N{X} in|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} Time|N{X} costs|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} about|(N{X}/N{X}<973>){Y} <DOLLARS>|N{X} .|.{X}
+
+# END EXPLODING SENTENCE
+# ADDITIONAL SENTENCE 1 (SECTION 00)
+Lorillard_1 (N{Y}/N{Y}<1>){_} 1 Inc._2 0
+the_4 (NP[nb]{Y}/N{Y}<1>){_} 1 unit_5 0
+New_7 ((N{Y}/N{Y}){Z}/(N{Y}/N{Y}){Z}<1>){_} 1 York-based_8 0
+Loews_9 (N{Y}/N{Y}<1>){_} 1 Corp._10 0
+York-based_8 (N{Y}/N{Y}<1>){_} 1 Corp._10 0
+of_6 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Corp._10 0
+of_6 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 unit_5 0
+Kent_13 (N{Y}/N{Y}<1>){_} 1 cigarettes_14 0
+makes_12 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 cigarettes_14 0
+that_11 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 2 makes_12 0
+makes_12 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 unit_5 0 ((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y}
+that_11 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 1 unit_5 0
+using_17 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 crocidolite_18 0
+cigarette_22 (N{Y}/N{Y}<1>){_} 1 filters_23 0
+Micronite_21 (N{Y}/N{Y}<1>){_} 1 filters_23 0
+its_20 (NP[nb]{Y}/N{Y}<1>){_} 1 filters_23 0
+in_19 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 filters_23 0
+in_19 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 using_17 0
+in_24 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 1956_25 0
+in_24 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 using_17 0
+stopped_16 ((S[dcl]{_}\NP{Y}<1>){_}/(S[ng]{Z}<2>\NP{Y*}){Z}){_} 2 using_17 0
+using_17 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 unit_5 0 ((S[dcl]{X}\NP{Y}<808>){X}/(S[ng]{Z}<809>\NP{Y*}){Z}){X}
+using_17 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Inc._2 0 ((S[dcl]{X}\NP{Y}<808>){X}/(S[ng]{Z}<809>\NP{Y*}){Z}){X}
+stopped_16 ((S[dcl]{_}\NP{Y}<1>){_}/(S[ng]{Z}<2>\NP{Y*}){Z}){_} 1 unit_5 0
+stopped_16 ((S[dcl]{_}\NP{Y}<1>){_}/(S[ng]{Z}<2>\NP{Y*}){Z}){_} 1 Inc._2 0
+<c> Lorillard|(N{X}/N{X}<973>){Y} Inc.|N{X} ,|,{X} the|(NP[nb]{X}/N{X}<985>){Y} unit|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} New|((N{X}/N{X}){Y}/(N{X}/N{X}){Y}<617>){Z} York-based|(N{X}/N{X}<973>){Y} Loews|(N{X}/N{X}<973>){Y} Corp.|N{X} that|((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y} makes|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} Kent|(N{X}/N{X}<973>){Y} cigarettes|N{X} ,|,{X} stopped|((S[dcl]{X}\NP{Y}<808>){X}/(S[ng]{Z}<809>\NP{Y*}){Z}){X} using|((S[ng]{X}\NP{Y}<876>){X}/NP{Z}<877>){X} crocidolite|N{X} in|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} its|(NP[nb]{X}/N{X}<985>){Y} Micronite|(N{X}/N{X}<973>){Y} cigarette|(N{X}/N{X}<973>){Y} filters|N{X} in|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} 1956|N{X} .|.{X}
+
+# END ADDITIONAL SENTENCE 1 (SECTION 00)
+# ADDITIONAL SENTENCE 2 (SECTION 00)
+Dr._1 (N{Y}/N{Y}<1>){_} 1 Talcott_2 0
+a_4 (NP[nb]{Y}/N{Y}<1>){_} 1 team_5 0
+Cancer_11 (N{Y}/N{Y}<1>){_} 1 Institute_12 0
+National_10 (N{Y}/N{Y}<1>){_} 1 Institute_12 0
+the_9 (NP[nb]{Y}/N{Y}<1>){_} 1 Institute_12 0
+from_8 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Institute_12 0
+from_8 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 researchers_7 0
+medical_15 (N{Y}/N{Y}<1>){_} 1 schools_16 0
+the_14 (NP[nb]{Y}/N{Y}<1>){_} 1 schools_16 0
+Harvard_18 (N{Y}/N{Y}<1>){_} 1 University_19 0
+Boston_21 (N{Y}/N{Y}<1>){_} 1 University_22 0
+of_17 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 University_22 0
+of_17 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 University_19 0
+of_17 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 schools_16 0
+of_6 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 schools_16 0
+of_6 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 researchers_7 0
+of_6 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 team_5 0
+led_3 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 team_5 0
+led_3 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Talcott_2 0
+<c> Dr.|(N{X}/N{X}<973>){Y} Talcott|N{X} led|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} a|(NP[nb]{X}/N{X}<985>){Y} team|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} researchers|N{X} from|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} the|(NP[nb]{X}/N{X}<985>){Y} National|(N{X}/N{X}<973>){Y} Cancer|(N{X}/N{X}<973>){Y} Institute|N{X} and|conj{X} the|(NP[nb]{X}/N{X}<985>){Y} medical|(N{X}/N{X}<973>){Y} schools|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} Harvard|(N{X}/N{X}<973>){Y} University|N{X} and|conj{X} Boston|(N{X}/N{X}<973>){Y} University|N{X} .|.{X}
+
+# END ADDITIONAL SENTENCE 2 (SECTION 00)
+# ADDITIONAL SENTENCE 3 (SECTION 00)
+This_1 ((S[X]{Y}/S[X]{Y}<1>){_}/N{Z}<2>){_} 2 time_2 0
+a_11 (NP[nb]{Y}/N{Y}<1>){_} 1 block_12 0
+away_13 ((NP{Y}\NP{Y}<1>){_}\NP{Z}<2>){_} 2 block_12 0
+away_13 ((NP{Y}\NP{Y}<1>){_}\NP{Z}<2>){_} 1 dancing_9 0
+for_6 (PP{_}/NP{Y}<1>){_} 1 dancing_9 0
+for_6 (PP{_}/NP{Y}<1>){_} 1 dinner_7 0
+was_5 ((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 2 for_6 0
+was_5 ((S[dcl]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 1 it_4 0
+This_1 ((S[X]{Y}/S[X]{Y}<1>){_}/N{Z}<2>){_} 1 was_5 0
+<c> This|((S[X]{X}/S[X]{X}<721>){Y}/N{Z}<722>){Y} time|N{X} ,|,{X} it|NP{X} was|((S[dcl]{X}\NP{Y}<818>){X}/PP{Z}<819>){X} for|(PP{X}/NP{Y}<990>){X} dinner|N{X} and|conj{X} dancing|N{X} --|:{X} a|(NP[nb]{X}/N{X}<985>){Y} block|N{X} away|((NP{X}\NP{X}<685>){Y}\NP{Z}<686>){Y} .|.{X}
+
+# END ADDITIONAL SENTENCE 3 (SECTION 00)
+# ADDITIONAL SENTENCE 4 (SECTION 00)
+The_1 (NP[nb]{Y}/N{Y}<1>){_} 1 government_2 0
+'s_3 ((NP[nb]{Y}/N{Y}<1>){_}\NP{Z}<2>){_} 2 government_2 0
+borrowing_4 (N{Y}/N{Y}<1>){_} 1 authority_5 0
+'s_3 ((NP[nb]{Y}/N{Y}<1>){_}\NP{Z}<2>){_} 1 authority_5 0
+at_7 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 midnight_8 0
+at_7 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 dropped_6 0
+Tuesday_9 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 dropped_6 0
+to_10 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 <DOLLARS>_11 0
+to_10 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 dropped_6 0
+from_12 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 <DOLLARS>_13 0
+from_12 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 dropped_6 0
+dropped_6 (S[dcl]{_}\NP{Y}<1>){_} 1 authority_5 0
+<c> The|(NP[nb]{X}/N{X}<985>){Y} government|N{X} 's|((NP[nb]{X}/N{X}<647>){Y}\NP{Z}<648>){Y} borrowing|(N{X}/N{X}<973>){Y} authority|N{X} dropped|(S[dcl]{X}\NP{Y}<1007>){X} at|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} midnight|N{X} Tuesday|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} to|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} <DOLLARS>|N{X} from|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} <DOLLARS>|N{X} .|.{X}
+
+# END ADDITIONAL SENTENCE 4 (SECTION 00)
+# ADDITIONAL SENTENCE 5 (SECTION 00)
+Japanese_1 (N{Y}/N{Y}<1>){_} 1 investors_2 0
+nearly_3 (((S[X]{Y}\NP{Z}){Y}/(S[X]{Y}\NP{Z}){Y}){W}/((S[X]{Y}\NP{Z}){Y}/(S[X]{Y}\NP{Z}){Y}){W}<1>){_} 1 single-handedly_4 0
+up_6 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 bought_5 0
+mutual_11 (N{Y}/N{Y}<1>){_} 1 funds_12 0
+securities-based_10 (N{Y}/N{Y}<1>){_} 1 funds_12 0
+mortgage_9 (N{Y}/N{Y}<1>){_} 1 funds_12 0
+new_8 (N{Y}/N{Y}<1>){_} 1 funds_12 0
+two_7 (N{Y}/N{Y}<1>){_} 1 funds_12 0
+totaling_13 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 <DOLLARS>_14 0
+totaling_13 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 funds_12 3
+bought_5 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 funds_12 0
+single-handedly_4 ((S[X]{Y}\NP{Z}){Y}/(S[X]{Y}<1>\NP{Z}){Y}){_} 1 bought_5 0
+bought_5 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 investors_2 0
+Mortgage_20 (N{Y}/N{Y}<1>){_} 1 Association_21 0
+National_19 (N{Y}/N{Y}<1>){_} 1 Association_21 0
+Federal_18 (N{Y}/N{Y}<1>){_} 1 Association_21 0
+U.S._17 (N{Y}/N{Y}<1>){_} 1 Association_21 0
+the_16 (NP[nb]{Y}/N{Y}<1>){_} 1 Association_21 0
+said_22 ((S[dcl]{_}\S[dcl]{Y}<1>){_}\NP{Z}<2>){_} 2 Association_21 0
+said_22 ((S[dcl]{_}\S[dcl]{Y}<1>){_}\NP{Z}<2>){_} 1 bought_5 0
+<c> Japanese|(N{X}/N{X}<973>){Y} investors|N{X} nearly|(((S[X]{X}\NP{Y}){X}/(S[X]{X}\NP{Y}){X}){Z}/((S[X]{X}\NP{Y}){X}/(S[X]{X}\NP{Y}){X}){Z}<553>){W} single-handedly|((S[X]{X}\NP{Y}){X}/(S[X]{X}<952>\NP{Y}){X}){Z} bought|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} up|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} two|(N{X}/N{X}<973>){Y} new|(N{X}/N{X}<973>){Y} mortgage|(N{X}/N{X}<973>){Y} securities-based|(N{X}/N{X}<973>){Y} mutual|(N{X}/N{X}<973>){Y} funds|N{X} totaling|((S[ng]{X}\NP{Y}<876>){X}/NP{Z}<877>){X} <DOLLARS>|N{X} ,|,{X} the|(NP[nb]{X}/N{X}<985>){Y} U.S.|(N{X}/N{X}<973>){Y} Federal|(N{X}/N{X}<973>){Y} National|(N{X}/N{X}<973>){Y} Mortgage|(N{X}/N{X}<973>){Y} Association|N{X} said|((S[dcl]{X}\S[dcl]{Y}<852>){X}\NP{Z}<853>){X} .|.{X}
+
+# END ADDITIONAL SENTENCE 5 (SECTION 00)
+# ADDITIONAL SENTENCE 6 (SECTION 00)
+the_2 (NP[nb]{Y}/N{Y}<1>){_} 1 way_3 0
+Along_1 ((S[X]{Y}/S[X]{Y}<1>){_}/NP{Z}<2>){_} 2 way_3 0
+Christian_9 (N{Y}/N{Y}<1>){_} 1 chauffeur_10 0
+solicitous_8 (N{Y}/N{Y}<1>){_} 1 chauffeur_10 0
+a_7 (NP[nb]{Y}/N{Y}<1>){_} 1 chauffeur_10 0
+the_13 (NP[nb]{Y}/N{Y}<1>){_} 1 hero_14 0
+offers_12 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 3 hero_14 0
+'s_16 ((NP[nb]{Y}/N{Y}<1>){_}\NP{Z}<2>){_} 2 God_15 0
+phone_17 (N{Y}/N{Y}<1>){_} 1 number_18 0
+'s_16 ((NP[nb]{Y}/N{Y}<1>){_}\NP{Z}<2>){_} 1 number_18 0
+offers_12 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 2 number_18 0
+who_11 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 2 offers_12 0
+who_11 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 1 chauffeur_10 0
+offers_12 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 1 chauffeur_10 0 ((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y}
+Sheep_22 (N{Y}/N{Y}<1>){_} 1 Man_23 0
+the_21 (NP[nb]{Y}/N{Y}<1>){_} 1 Man_23 0
+roughhewn_28 (N{Y}/N{Y}<1>){_} 1 figure_29 0
+sweet_26 (N{Y}/N{Y}<1>){_} 1 figure_29 0
+a_25 (NP[nb]{Y}/N{Y}<1>){_} 1 figure_29 0
+what_33 (NP{Y}/NP{Y}<1>){_} 1 else_34 0
+--_32 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 else_34 0
+--_32 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 wears_31 0
+a_36 (N{Y}/N{Y}<1>){_} 1 sheepskin_37 0
+wears_31 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 sheepskin_37 0
+who_30 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 2 wears_31 0
+wears_31 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 figure_29 0 ((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y}
+who_30 ((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{Y*}){Z}){_} 1 figure_29 0
+meets_6 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 figure_29 0
+meets_6 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Man_23 0
+meets_6 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 chauffeur_10 0
+meets_6 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 he_5 0
+Along_1 ((S[X]{Y}/S[X]{Y}<1>){_}/NP{Z}<2>){_} 1 meets_6 0
+<c> Along|((S[X]{X}/S[X]{X}<723>){Y}/NP{Z}<724>){Y} the|(NP[nb]{X}/N{X}<985>){Y} way|N{X} ,|,{X} he|NP{X} meets|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} a|(NP[nb]{X}/N{X}<985>){Y} solicitous|(N{X}/N{X}<973>){Y} Christian|(N{X}/N{X}<973>){Y} chauffeur|N{X} who|((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y} offers|(((S[dcl]{X}\NP{Y}<379>){X}/NP{Z}<380>){X}/NP{W}<381>){X} the|(NP[nb]{X}/N{X}<985>){Y} hero|N{X} God|N{X} 's|((NP[nb]{X}/N{X}<647>){Y}\NP{Z}<648>){Y} phone|(N{X}/N{X}<973>){Y} number|N{X} ;|:{X} and|conj{X} the|(NP[nb]{X}/N{X}<985>){Y} Sheep|(N{X}/N{X}<973>){Y} Man|N{X} ,|,{X} a|(NP[nb]{X}/N{X}<985>){Y} sweet|(N{X}/N{X}<973>){Y} ,|,{X} roughhewn|(N{X}/N{X}<973>){Y} figure|N{X} who|((NP{X}\NP{X}<656>){Y}/(S[dcl]{Z}<657>\NP{X*}){Z}){Y} wears|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} --|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} what|(NP{X}/NP{X}<983>){Y} else|N{X} --|:{X} a|(N{X}/N{X}<973>){Y} sheepskin|N{X} .|.{X}
+
+# END ADDITIONAL SENTENCE 6 (SECTION 00)
+# ADDITIONAL SENTENCE 7 (SECTION 00)
+more_2 ((N{Y}/N{Y}){Z}/(N{Y}/N{Y}){Z}<1>){_} 1 recent_3 0
+recent_3 (N{Y}/N{Y}<1>){_} 1 novel_4 0
+A_1 (NP[nb]{Y}/N{Y}<1>){_} 1 novel_4 0
+Norwegian_6 (N{Y}/N{Y}<1>){_} 1 Wood_7 0
+every_9 (NP[nb]{Y}/N{Y}<1>){_} 1 Japanese_10 0
+under_11 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 40_12 0
+under_11 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Japanese_10 0
+Beatles_18 (N{Y}/N{Y}<1>){_} 1 lyrics_19 0
+in_17 (PP{_}/NP{Y}<1>){_} 1 lyrics_19 0
+fluent_16 ((S[adj]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 2 in_17 0
+be_15 ((S[b]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 2 fluent_16 0
+to_14 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 2 be_15 0
+seems_13 ((S[dcl]{_}\NP{Y}<1>){_}/(S[to]{Z}<2>\NP{Y*}){Z}){_} 2 to_14 0
+to_14 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 1 Japanese_10 0 ((S[dcl]{X}\NP{Y}<814>){X}/(S[to]{Z}<815>\NP{Y*}){Z}){X}
+seems_13 ((S[dcl]{_}\NP{Y}<1>){_}/(S[to]{Z}<2>\NP{Y*}){Z}){_} 1 Japanese_10 0
+be_15 ((S[b]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 1 Japanese_10 0 ((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X}
+fluent_16 ((S[adj]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 1 Japanese_10 0 ((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X}
+-LRB-_8 ((NP{Y}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 2 seems_13 0
+-LRB-_8 ((NP{Y}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 1 Wood_7 0
+than_25 (((N{Y}/N{Y}){Z}/(N{Y}/N{Y}){Z}<1>){_}\(S[adj]{W}<2>\NP{V}){W}){_} 2 more_24 0
+four_26 ((N{Y}/N{Y}){Z}/(N{Y}/N{Y}){Z}<1>){_} 1 million_27 0
+than_25 (((N{Y}/N{Y}){Z}/(N{Y}/N{Y}){Z}<1>){_}\(S[adj]{W}<2>\NP{V}){W}){_} 1 million_27 0
+million_27 (N{Y}/N{Y}<1>){_} 1 copies_28 0
+sold_23 ((S[pt]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 copies_28 0
+published_31 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 it_32 0
+in_33 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 1987_34 0
+in_33 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 published_31 0
+published_31 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Kodansha_30 0
+since_29 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/S[dcl]{W}<2>){_} 2 published_31 0
+since_29 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/S[dcl]{W}<2>){_} 1 sold_23 0
+has_22 ((S[dcl]{_}\NP{Y}<1>){_}/(S[pt]{Z}<2>\NP{Y*}){Z}){_} 2 sold_23 0
+sold_23 ((S[pt]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Wood_7 0 ((S[dcl]{X}\NP{Y}<812>){X}/(S[pt]{Z}<813>\NP{Y*}){Z}){X}
+sold_23 ((S[pt]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 novel_4 0 ((S[dcl]{X}\NP{Y}<812>){X}/(S[pt]{Z}<813>\NP{Y*}){Z}){X}
+has_22 ((S[dcl]{_}\NP{Y}<1>){_}/(S[pt]{Z}<2>\NP{Y*}){Z}){_} 1 Wood_7 0
+has_22 ((S[dcl]{_}\NP{Y}<1>){_}/(S[pt]{Z}<2>\NP{Y*}){Z}){_} 1 novel_4 0
+<c> A|(NP[nb]{X}/N{X}<985>){Y} more|((N{X}/N{X}){Y}/(N{X}/N{X}){Y}<617>){Z} recent|(N{X}/N{X}<973>){Y} novel|N{X} ,|,{X} Norwegian|(N{X}/N{X}<973>){Y} Wood|N{X} -LRB-|((NP{X}\NP{X}<674>){Y}/S[dcl]{Z}<675>){Y} every|(NP[nb]{X}/N{X}<985>){Y} Japanese|N{X} under|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} 40|N{X} seems|((S[dcl]{X}\NP{Y}<814>){X}/(S[to]{Z}<815>\NP{Y*}){Z}){X} to|((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X} be|((S[b]{X}\NP{Y}<756>){X}/(S[adj]{Z}<757>\NP{Y*}){Z}){X} fluent|((S[adj]{X}\NP{Y}<743>){X}/PP{Z}<744>){X} in|(PP{X}/NP{Y}<990>){X} Beatles|(N{X}/N{X}<973>){Y} lyrics|N{X} -RRB-|RRB{X} ,|,{X} has|((S[dcl]{X}\NP{Y}<812>){X}/(S[pt]{Z}<813>\NP{Y*}){Z}){X} sold|((S[pt]{X}\NP{Y}<918>){X}/NP{Z}<919>){X} more|(S[adj]{X}\NP{Y}<1000>){X} than|(((N{X}/N{X}){Y}/(N{X}/N{X}){Y}<130>){Z}\(S[adj]{W}<131>\NP{V}){W}){Z} four|((N{X}/N{X}){Y}/(N{X}/N{X}){Y}<617>){Z} million|(N{X}/N{X}<973>){Y} copies|N{X} since|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<600>\NP{Y}){X}){Z}/S[dcl]{W}<601>){Z} Kodansha|N{X} published|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} it|NP{X} in|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} 1987|N{X} .|.{X}
+
+# END ADDITIONAL SENTENCE 7 (SECTION 00)
+# ADDITIONAL SENTENCE 8 (SECTION 00)
+The_1 (NP[nb]{Y}/N{Y}<1>){_} 1 compromise_2 0
+training_5 (N{Y}/N{Y}<1>){_} 1 wage_6 0
+the_4 (NP[nb]{Y}/N{Y}<1>){_} 1 wage_6 0
+sets_3 (((S[dcl]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{W*}){Z}){_}/NP{W}<3>){_} 3 wage_6 0
+an_9 (NP[nb]{Y}/N{Y}<1>){_} 1 hour_10 0
+<DOLLARS>_8 (NP{Y}/NP{Y}<1>){_} 1 hour_10 0
+next_11 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}\NP{Z}){Y}){W}/((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}\NP{Z}){Y}){W}<1>){_} 1 April_12 0
+an_17 (NP[nb]{Y}/N{Y}<1>){_} 1 hour_18 0
+<DOLLARS>_16 (NP{Y}/NP{Y}<1>){_} 1 hour_18 0
+at_15 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 hour_18 0
+85_21 (N{Y}/N{Y}<1>){_} 1 %_22 0
+minimum_25 (N{Y}/N{Y}<1>){_} 1 wage_26 0
+the_24 (NP[nb]{Y}/N{Y}<1>){_} 1 wage_26 0
+of_23 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 wage_26 0
+of_23 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 %_22 0
+1991_30 (N{Y}\N{Y}<1>){_} 1 April_29 0
+in_28 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 April_29 0
+April_12 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 at_7 0
+in_28 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 at_7 0
+at_15 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 at_7 0
+at_7 ((S[adj]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 %_22 0
+at_7 ((S[adj]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 hour_10 0
+at_7 ((S[adj]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 wage_6 0
+sets_3 (((S[dcl]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{W*}){Z}){_}/NP{W}<3>){_} 2 at_7 0
+sets_3 (((S[dcl]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{W*}){Z}){_}/NP{W}<3>){_} 1 compromise_2 0
+<c> The|(NP[nb]{X}/N{X}<985>){Y} compromise|N{X} sets|(((S[dcl]{X}\NP{Y}<346>){X}/(S[adj]{Z}<347>\NP{W*}){Z}){X}/NP{W}<348>){X} the|(NP[nb]{X}/N{X}<985>){Y} training|(N{X}/N{X}<973>){Y} wage|N{X} at|((S[adj]{X}\NP{Y}<741>){X}/NP{Z}<742>){X} <DOLLARS>|(NP{X}/NP{X}<983>){Y} an|(NP[nb]{X}/N{X}<985>){Y} hour|N{X} next|(((S[X]{X}\NP{Y}){X}\(S[X]{X}\NP{Y}){X}){Z}/((S[X]{X}\NP{Y}){X}\(S[X]{X}\NP{Y}){X}){Z}<575>){W} April|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} ,|,{X} and|conj{X} at|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} <DOLLARS>|(NP{X}/NP{X}<983>){Y} an|(NP[nb]{X}/N{X}<985>){Y} hour|N{X} ,|,{X} or|conj{X} 85|(N{X}/N{X}<973>){Y} %|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} the|(NP[nb]{X}/N{X}<985>){Y} minimum|(N{X}/N{X}<973>){Y} wage|N{X} ,|,{X} in|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} April|N{X} 1991|(N{X}\N{X}<987>){Y} .|.{X}
+
+# END ADDITIONAL SENTENCE 8 (SECTION 00)
+# ADDITIONAL SENTENCE 9 (SECTION 2-21)
+rigueur_5 (N{Y}/N{Y}<1>){_} 1 hour_6 0
+de_4 (N{Y}/N{Y}<1>){_} 1 hour_6 0
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 hour_6 0
+a.m._9 (N{Y}\N{Y}<1>){_} 1 6_8 0
+of_7 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 6_8 0
+of_7 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 hour_6 0
+at_2 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 hour_6 0
+at_2 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Ballooning_1 0
+the_12 (NP[nb]{Y}/N{Y}<1>){_} 1 attraction_13 0
+all_11 (NP{Y}/NP{Y}<1>){_} 1 attraction_13 0
+most_15 (N{Y}/N{Y}<1>){_} 1 people_16 0
+for_14 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 people_16 0
+for_14 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 attraction_13 0
+root-canal_19 (N{Y}/N{Y}<1>){_} 1 work_20 0
+sunrise_18 (N{Y}/N{Y}<1>){_} 1 work_20 0
+of_17 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 work_20 0
+of_17 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 attraction_13 0
+held_10 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 attraction_13 0
+held_10 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Ballooning_1 0
+<c> Ballooning|N{X} at|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} the|(NP[nb]{X}/N{X}<985>){Y} de|(N{X}/N{X}<973>){Y} rigueur|(N{X}/N{X}<973>){Y} hour|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} 6|N{X} a.m.|(N{X}\N{X}<987>){Y} held|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} all|(NP{X}/NP{X}<983>){Y} the|(NP[nb]{X}/N{X}<985>){Y} attraction|N{X} for|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} most|(N{X}/N{X}<973>){Y} people|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} sunrise|(N{X}/N{X}<973>){Y} root-canal|(N{X}/N{X}<973>){Y} work|N{X} .|.{X}
+
+# END ADDITIONAL SENTENCE 9 (SECTION 2-21)
+# ADDITIONAL SENTENCE 10 (SECTION 2-21)
+di_4 (N{Y}/N{Y}<1>){_} 1 Siena_5 0
+Paschi_3 (N{Y}/N{Y}<1>){_} 1 Siena_5 0
+dei_2 (N{Y}/N{Y}<1>){_} 1 Siena_5 0
+Monte_1 (N{Y}/N{Y}<1>){_} 1 Siena_5 0
+Singapore_7 (N{Y}/N{Y}<1>){_} 1 branch_8 0
+Italian_10 (N{Y}/N{Y}<1>){_} 1 parent_11 0
+-LRB-_9 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 parent_11 0
+-LRB-_9 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 branch_8 0
+Trust_18 (N{Y}/N{Y}<1>){_} 1 Corp._19 0
+Debenture_17 (N{Y}/N{Y}<1>){_} 1 Corp._19 0
+Law_16 (N{Y}/N{Y}<1>){_} 1 Corp._19 0
+the_15 (NP[nb]{Y}/N{Y}<1>){_} 1 Corp._19 0
+via_14 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Corp._19 0
+via_14 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 branch_8 0
+via_14 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Siena_5 0
+<c> Monte|(N{X}/N{X}<973>){Y} dei|(N{X}/N{X}<973>){Y} Paschi|(N{X}/N{X}<973>){Y} di|(N{X}/N{X}<973>){Y} Siena|N{X} ,|,{X} Singapore|(N{X}/N{X}<973>){Y} branch|N{X} -LRB-|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} Italian|(N{X}/N{X}<973>){Y} parent|N{X} -RRB-|RRB{X} ,|,{X} via|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} the|(NP[nb]{X}/N{X}<985>){Y} Law|(N{X}/N{X}<973>){Y} Debenture|(N{X}/N{X}<973>){Y} Trust|(N{X}/N{X}<973>){Y} Corp.|N{X} --|:{X}
+
+# END ADDITIONAL SENTENCE 10 (SECTION 2-21)
+# SUBPART OF VERY LONG SENTENCE
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 anger_6 0
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 bitterness_4 0
+a_8 (NP[nb]{Y}/N{Y}<1>){_} 1 principal_9 0
+of_7 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 principal_9 0
+of_7 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 anger_6 0
+of_7 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 bitterness_4 0
+left_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 anger_6 0
+left_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 bitterness_4 0
+left_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 she_1 0
+<c> she|NP{X} left|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} the|(NP[nb]{X}/N{X}<985>){Y} bitterness|N{X} and|conj{X} anger|N{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} a|(NP[nb]{X}/N{X}<985>){Y} principal|N{X}
+
+# END SUBPART OF VERY LONG SENTENCE
+# VP[pss] to NP\NP LEXICAL RULE
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 woman_4 0
+the_7 (NP[nb]{Y}/N{Y}<1>){_} 1 dog_8 0
+by_6 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 dog_8 0
+by_6 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 bit_5 0
+bit_5 (S[pss]{_}\NP{Y}<1>){_} 1 woman_4 2
+likes_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 woman_4 0
+likes_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 John_1 0
+<c> John|NP{X} likes|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} the|(NP[nb]{X}/N{X}<985>){Y} woman|N{X} bit|(S[pss]{X}\NP{Y}<1016>){X} by|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} the|(NP[nb]{X}/N{X}<985>){Y} dog|N{X}
+
+# END VP[pss] to NP\NP LEXICAL RULE
+# VP[ng] to NP\NP LEXICAL RULE
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 woman_4 0
+the_6 (NP[nb]{Y}/N{Y}<1>){_} 1 establishment_7 0
+running_5 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 establishment_7 0
+running_5 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 woman_4 3
+likes_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 woman_4 0
+likes_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 John_1 0
+<c> John|NP{X} likes|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} the|(NP[nb]{X}/N{X}<985>){Y} woman|N{X} running|((S[ng]{X}\NP{Y}<876>){X}/NP{Z}<877>){X} the|(NP[nb]{X}/N{X}<985>){Y} establishment|N{X}
+
+# END VP[ng] to NP\NP LEXICAL RULE
+# VP[ng] to VP\VP LEXICAL RULE
+the_4 (NP[nb]{Y}/N{Y}<1>){_} 1 trench_5 0
+digging_3 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 trench_5 0
+digging_3 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 died_2 4
+died_2 (S[dcl]{_}\NP{Y}<1>){_} 1 John_1 0
+<c> John|NP{X} died|(S[dcl]{X}\NP{Y}<1007>){X} digging|((S[ng]{X}\NP{Y}<876>){X}/NP{Z}<877>){X} the|(NP[nb]{X}/N{X}<985>){Y} trench|N{X}
+
+# END VP[ng] to VP\VP LEXICAL RULE
+# VP[ng] to S/S LEXICAL RULE
+the_2 (NP[nb]{Y}/N{Y}<1>){_} 1 trench_3 0
+Digging_1 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 trench_3 0
+died_6 (S[dcl]{_}\NP{Y}<1>){_} 1 John_5 0
+Digging_1 (S[X]{Y}/S[X]{Y}<1>){_} 1 died_6 5
+<c> Digging|((S[ng]{X}\NP{Y}<876>){X}/NP{Z}<877>){X} the|(NP[nb]{X}/N{X}<985>){Y} trench|N{X} ,|,{X} John|NP{X} died|(S[dcl]{X}\NP{Y}<1007>){X}
+
+# END VP[ng] to S/S LEXICAL RULE
+# VP[adj] to NP\NP LEXICAL RULE
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 woman_4 0
+the_7 (NP[nb]{Y}/N{Y}<1>){_} 1 terminal_8 0
+at_6 (PP{_}/NP{Y}<1>){_} 1 terminal_8 0
+busy_5 ((S[adj]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 2 at_6 0
+busy_5 ((S[adj]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 1 woman_4 6
+likes_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 woman_4 0
+likes_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 John_1 0
+<c> John|NP{X} likes|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} the|(NP[nb]{X}/N{X}<985>){Y} woman|N{X} busy|((S[adj]{X}\NP{Y}<743>){X}/PP{Z}<744>){X} at|(PP{X}/NP{Y}<990>){X} the|(NP[nb]{X}/N{X}<985>){Y} terminal|N{X}
+
+# END VP[adj] to NP\NP LEXICAL RULE
+# VP[adj] to VP\VP LEXICAL RULE
+the_5 (NP[nb]{Y}/N{Y}<1>){_} 1 terminal_6 0
+at_4 (PP{_}/NP{Y}<1>){_} 1 terminal_6 0
+busy_3 ((S[adj]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 2 at_4 0
+busy_3 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 slept_2 93
+slept_2 (S[dcl]{_}\NP{Y}<1>){_} 1 John_1 0
+<c> John|NP{X} slept|(S[dcl]{X}\NP{Y}<1007>){X} busy|((S[adj]{X}\NP{Y}<743>){X}/PP{Z}<744>){X} at|(PP{X}/NP{Y}<990>){X} the|(NP[nb]{X}/N{X}<985>){Y} terminal|N{X}
+
+# END VP[adj] to VP\VP LEXICAL RULE
+# VP[to] to NP\NP LEXICAL RULE
+The_1 (NP[nb]{Y}/N{Y}<1>){_} 1 woman_2 0
+the_5 (NP[nb]{Y}/N{Y}<1>){_} 1 trophy_6 0
+win_4 ((S[b]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 trophy_6 0
+to_3 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 2 win_4 0
+to_3 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 1 woman_2 7
+win_4 ((S[b]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 woman_2 7 ((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X}
+is_7 ((S[dcl]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 2 busy_8 0
+busy_8 (S[adj]{_}\NP{Y}<1>){_} 1 woman_2 0 ((S[dcl]{X}\NP{Y}<802>){X}/(S[adj]{Z}<803>\NP{Y*}){Z}){X}
+is_7 ((S[dcl]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 1 woman_2 0
+<c> The|(NP[nb]{X}/N{X}<985>){Y} woman|N{X} to|((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X} win|((S[b]{X}\NP{Y}<768>){X}/NP{Z}<769>){X} the|(NP[nb]{X}/N{X}<985>){Y} trophy|N{X} is|((S[dcl]{X}\NP{Y}<802>){X}/(S[adj]{Z}<803>\NP{Y*}){Z}){X} busy|(S[adj]{X}\NP{Y}<1000>){X}
+
+# END VP[to] to NP\NP LEXICAL RULE
+# VP[to] to VP\VP LEXICAL RULE
+the_5 (NP[nb]{Y}/N{Y}<1>){_} 1 trophy_6 0
+win_4 ((S[b]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 trophy_6 0
+to_3 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 2 win_4 0
+to_3 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 died_2 8
+died_2 (S[dcl]{_}\NP{Y}<1>){_} 1 John_1 0
+<c> John|NP{X} died|(S[dcl]{X}\NP{Y}<1007>){X} to|((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X} win|((S[b]{X}\NP{Y}<768>){X}/NP{Z}<769>){X} the|(NP[nb]{X}/N{X}<985>){Y} trophy|N{X}
+
+# END VP[to] to VP\VP LEXICAL RULE
+# S[dcl]/NP to NP\NP LEXICAL RULE
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 man_4 0
+hated_6 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 John_5 0
+hated_6 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 man_4 10
+likes_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 man_4 0
+likes_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Mary_1 0
+<c> Mary|NP{X} likes|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} the|(NP[nb]{X}/N{X}<985>){Y} man|N{X} John|NP{X} hated|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X}
+
+# END S[dcl]/NP to NP\NP LEXICAL RULE
+# NP to S/(S/NP) LEXICAL RULE
+an_5 (NP[nb]{Y}/N{Y}<1>){_} 1 interviewer_6 0
+told_4 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 3 interviewer_6 0
+told_4 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 1 she_3 0
+told_4 (((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_}/NP{W}<3>){_} 2 Nonsense_1 0
+<c> Nonsense|N{X} ,|,{X} she|NP{X} told|(((S[dcl]{X}\NP{Y}<379>){X}/NP{Z}<380>){X}/NP{W}<381>){X} an|(NP[nb]{X}/N{X}<985>){Y} interviewer|N{X}
+
+# END NP to S/(S/NP) LEXICAL RULE
+# NP to NP/(NP\NP) LEXICAL RULE (PIED PIPING)
+These_1 (NP[nb]{Y}/N{Y}<1>){_} 1 combines_2 0
+some_4 (NP{_}/(NP{Y}\NP{Y}){Z}<1>){_} 1 of_5 11
+which_6 (((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{W}){Z}){_}\(NP{V}/NP{V}){U}<3>){_} 3 some_4 0
+are_7 ((S[dcl]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 2 great_8 0
+which_6 (((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{W}){Z}){_}\(NP{V}/NP{V}){U}<3>){_} 2 are_7 0
+which_6 (((NP{Y}\NP{Y}<1>){_}/(S[dcl]{Z}<2>\NP{W}){Z}){_}\(NP{V}/NP{V}){U}<3>){_} 1 combines_2 0
+were_10 ((S[dcl]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 2 expensive_11 0
+expensive_11 (S[adj]{_}\NP{Y}<1>){_} 1 combines_2 0 ((S[dcl]{X}\NP{Y}<802>){X}/(S[adj]{Z}<803>\NP{Y*}){Z}){X}
+were_10 ((S[dcl]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 1 combines_2 0
+<c> These|(NP[nb]{X}/N{X}<985>){Y} combines|N{X} ,|,{X} some|NP{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} which|(((NP{X}\NP{X}<161>){Y}/(S[dcl]{Z}<162>\NP{W}){Z}){Y}\(NP{V}/NP{V}){U}<163>){Y} are|((S[dcl]{X}\NP{Y}<802>){X}/(S[adj]{Z}<803>\NP{Y*}){Z}){X} great|(S[adj]{X}\NP{Y}<1000>){X} ,|,{X} were|((S[dcl]{X}\NP{Y}<802>){X}/(S[adj]{Z}<803>\NP{Y*}){Z}){X} expensive|(S[adj]{X}\NP{Y}<1000>){X}
+
+# END NP to NP/(NP\NP) LEXICAL RULE (PIED PIPING)
+# S[dcl]\NP to NP\NP LEXICAL RULE
+bid_6 (S[dcl]{_}\NP{Y}<1>){_} 1 DOLLARS_5 12
+at_4 (PP{_}/NP{Y}<1>){_} 1 DOLLARS_5 0
+quoted_3 ((S[pss]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 2 at_4 0
+are_2 ((S[dcl]{_}\NP{Y}<1>){_}/(S[pss]{Z}<2>\NP{Y*}){Z}){_} 2 quoted_3 0
+quoted_3 ((S[pss]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 1 Seats_1 12 ((S[dcl]{X}\NP{Y}<810>){X}/(S[pss]{Z}<811>\NP{Y*}){Z}){X}
+are_2 ((S[dcl]{_}\NP{Y}<1>){_}/(S[pss]{Z}<2>\NP{Y*}){Z}){_} 1 Seats_1 12
+<c> Seats|N{X} are|((S[dcl]{X}\NP{Y}<810>){X}/(S[pss]{Z}<811>\NP{Y*}){Z}){X} quoted|((S[pss]{X}\NP{Y}<900>){X}/PP{Z}<901>){X} at|(PP{X}/NP{Y}<990>){X} DOLLARS|N{X} bid|(S[dcl]{X}\NP{Y}<1007>){X}
+
+# END S[dcl]\NP to NP\NP LEXICAL RULE
+# VP[pss] to S/S LEXICAL RULE
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 man_4 0
+by_2 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 man_4 0
+by_2 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 Kicked_1 0
+died_7 (S[dcl]{_}\NP{Y}<1>){_} 1 John_6 0
+Kicked_1 (S[X]{Y}/S[X]{Y}<1>){_} 1 died_7 13
+<c> Kicked|(S[pss]{X}\NP{Y}<1016>){X} by|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} the|(NP[nb]{X}/N{X}<985>){Y} man|N{X} ,|,{X} John|NP{X} died|(S[dcl]{X}\NP{Y}<1007>){X}
+
+# END VP[pss] to S/S LEXICAL RULE
+# VP[to] to S/S LEXICAL RULE
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 game_4 0
+win_2 ((S[b]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 game_4 0
+To_1 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 2 win_2 0
+died_7 (S[dcl]{_}\NP{Y}<1>){_} 1 John_6 0
+To_1 (S[X]{Y}/S[X]{Y}<1>){_} 1 died_7 14
+<c> To|((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X} win|((S[b]{X}\NP{Y}<768>){X}/NP{Z}<769>){X} the|(NP[nb]{X}/N{X}<985>){Y} game|N{X} ,|,{X} John|NP{X} died|(S[dcl]{X}\NP{Y}<1007>){X}
+
+# END VP[to] to S/S LEXICAL RULE
+# VP[adj] to S/S LEXICAL RULE
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 terminal_4 0
+by_2 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 terminal_4 0
+by_2 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 Asleep_1 0
+died_7 (S[dcl]{_}\NP{Y}<1>){_} 1 John_6 0
+Asleep_1 (S[X]{Y}/S[X]{Y}<1>){_} 1 died_7 15
+<c> Asleep|(S[adj]{X}\NP{Y}<1000>){X} by|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} the|(NP[nb]{X}/N{X}<985>){Y} terminal|N{X} ,|,{X} John|NP{X} died|(S[dcl]{X}\NP{Y}<1007>){X}
+
+# END VP[adj] to S/S LEXICAL RULE
+# VP[ng] to S\S LEXICAL RULE
+is_2 ((S[dcl]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 2 hot_3 0
+said_4 ((S[dcl]{_}\S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 2 Bob_5 0
+said_4 ((S[dcl]{_}\S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 1 is_2 0
+the_9 (NP[nb]{Y}/N{Y}<1>){_} 1 heat_10 0
+in_8 (PP{_}/NP{Y}<1>){_} 1 heat_10 0
+working_7 ((S[ng]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 2 in_8 0
+working_7 (S[X]{Y}\S[X]{Y}<1>){_} 1 said_4 16
+hot_3 (S[adj]{_}\NP{Y}<1>){_} 1 It_1 0 ((S[dcl]{X}\NP{Y}<802>){X}/(S[adj]{Z}<803>\NP{Y*}){Z}){X}
+is_2 ((S[dcl]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 1 It_1 0
+<c> It|NP{X} is|((S[dcl]{X}\NP{Y}<802>){X}/(S[adj]{Z}<803>\NP{Y*}){Z}){X} hot|(S[adj]{X}\NP{Y}<1000>){X} said|((S[dcl]{X}\S[dcl]{Y}<850>){X}/NP{Z}<851>){X} Bob|NP{X} ,|,{X} working|((S[ng]{X}\NP{Y}<878>){X}/PP{Z}<879>){X} in|(PP{X}/NP{Y}<990>){X} the|(NP[nb]{X}/N{X}<985>){Y} heat|N{X}
+
+# END VP[ng] to S\S LEXICAL RULE
+# VP[pss] to VP\VP LEXICAL RULE
+the_5 (NP[nb]{Y}/N{Y}<1>){_} 1 ball_6 0
+by_4 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 2 ball_6 0
+by_4 (((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_}/NP{W}<2>){_} 1 hit_3 0
+hit_3 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 died_2 17
+died_2 (S[dcl]{_}\NP{Y}<1>){_} 1 John_1 0
+<c> John|NP{X} died|(S[dcl]{X}\NP{Y}<1007>){X} hit|(S[pss]{X}\NP{Y}<1016>){X} by|(((S[X]{X}\NP{Y}){X}\(S[X]{X}<594>\NP{Y}){X}){Z}/NP{W}<595>){Z} the|(NP[nb]{X}/N{X}<985>){Y} ball|N{X}
+
+# END VP[pss] to VP\VP LEXICAL RULE
+# VP[ng] to VP/VP LEXICAL RULE
+to_4 (PP{_}/NP{Y}<1>){_} 1 criticism_5 0
+responding_3 ((S[ng]{_}\NP{Y}<1>){_}/PP{Z}<2>){_} 2 to_4 0
+renounced_8 ((S[pss]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 John_9 0
+has_7 ((S[dcl]{_}\NP{Y}<1>){_}/(S[pss]{Z}<2>\NP{Y*}){Z}){_} 2 renounced_8 0
+responding_3 ((S[X]{Y}\NP{Z}){Y}/(S[X]{Y}<1>\NP{Z}){Y}){_} 1 has_7 18
+renounced_8 ((S[pss]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Bob_1 0 ((S[dcl]{X}\NP{Y}<810>){X}/(S[pss]{Z}<811>\NP{Y*}){Z}){X}
+has_7 ((S[dcl]{_}\NP{Y}<1>){_}/(S[pss]{Z}<2>\NP{Y*}){Z}){_} 1 Bob_1 0
+<c> Bob|NP{X} ,|,{X} responding|((S[ng]{X}\NP{Y}<878>){X}/PP{Z}<879>){X} to|(PP{X}/NP{Y}<990>){X} criticism|NP{X} ,|,{X} has|((S[dcl]{X}\NP{Y}<810>){X}/(S[pss]{Z}<811>\NP{Y*}){Z}){X} renounced|((S[pss]{X}\NP{Y}<898>){X}/NP{Z}<899>){X} John|NP{X}
+
+# END VP[ng] to VP/VP LEXICAL RULE
+# VP[to]/NP to NP\NP LEXICAL RULE
+a_3 (NP[nb]{Y}/N{Y}<1>){_} 1 little_4 0
+to_5 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 2 say_6 0
+say_6 ((S[b]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 little_4 19
+had_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 little_4 0
+had_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Bob_1 0
+<c> Bob|NP{X} had|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} a|(NP[nb]{X}/N{X}<985>){Y} little|N{X} to|((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X} say|((S[b]{X}\NP{Y}<768>){X}/NP{Z}<769>){X}
+
+# END VP[to]/NP to NP\NP LEXICAL RULE
+# VP[ng] to NP LEXICAL RULE
+a_2 (NP[nb]{Y}/N{Y}<1>){_} 1 company_3 0
+Acquiring_1 ((S[ng]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 company_3 0
+be_5 ((S[b]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 2 expensive_6 0
+can_4 ((S[dcl]{_}\NP{Y}<1>){_}/(S[b]{Z}<2>\NP{Y*}){Z}){_} 2 be_5 0
+expensive_6 (S[adj]{_}\NP{Y}<1>){_} 1 Acquiring_1 0 ((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X}
+can_4 ((S[dcl]{_}\NP{Y}<1>){_}/(S[b]{Z}<2>\NP{Y*}){Z}){_} 1 Acquiring_1 0
+be_5 ((S[b]{_}\NP{Y}<1>){_}/(S[adj]{Z}<2>\NP{Y*}){Z}){_} 1 Acquiring_1 0 ((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X}
+<c> Acquiring|((S[ng]{X}\NP{Y}<876>){X}/NP{Z}<877>){X} a|(NP[nb]{X}/N{X}<985>){Y} company|N{X} can|((S[dcl]{X}\NP{Y}<804>){X}/(S[b]{Z}<805>\NP{Y*}){Z}){X} be|((S[b]{X}\NP{Y}<756>){X}/(S[adj]{Z}<757>\NP{Y*}){Z}){X} expensive|(S[adj]{X}\NP{Y}<1000>){X}
+
+# END VP[ng] to NP LEXICAL RULE
+# S[dcl] to NP\NP LEXICAL RULE
+The_1 (NP[nb]{Y}/N{Y}<1>){_} 1 way_2 0
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 world_4 0
+is_5 ((S[dcl]{_}\NP{Y}<1>){_}/(S[ng]{Z}<2>\NP{Y*}){Z}){_} 2 spinning_6 0
+spinning_6 (S[ng]{_}\NP{Y}<1>){_} 1 world_4 0 ((S[dcl]{X}\NP{Y}<808>){X}/(S[ng]{Z}<809>\NP{Y*}){Z}){X}
+is_5 ((S[dcl]{_}\NP{Y}<1>){_}/(S[ng]{Z}<2>\NP{Y*}){Z}){_} 1 world_4 0
+is_5 (NP{Y}\NP{Y}<1>){_} 1 way_2 21
+<c> The|(NP[nb]{X}/N{X}<985>){Y} way|N{X} the|(NP[nb]{X}/N{X}<985>){Y} world|N{X} is|((S[dcl]{X}\NP{Y}<808>){X}/(S[ng]{Z}<809>\NP{Y*}){Z}){X} spinning|(S[ng]{X}\NP{Y}<1014>){X}
+
+# END S[dcl] to NP\NP LEXICAL RULE
+# S[dcl] to S\S LEXICAL RULE
+n't_3 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 is_2 0
+is_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 news_4 0
+is_7 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 drama_8 0
+is_7 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 it_6 0
+is_7 (S[X]{Y}\S[X]{Y}<1>){_} 1 is_2 22
+is_2 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 It_1 0
+<c> It|NP{X} is|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} n't|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z} news|N{X} ,|,{X} it|NP{X} is|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} drama|N{X}
+
+# END S[dcl] to S\S LEXICAL RULE
+# NP/NP NP[nb]/N FORWARD COMPOSITION (FUNNY RULE)
+the_5 (NP[nb]{Y}/N{Y}<1>){_} 1 month_6 0
+a_2 (NP[nb]{Y}/N{Y}<1>){_} 1 month_6 0
+near_4 (NP{Y}/NP{Y}<1>){_} 1 month_6 0
+about_1 (NP{Y}/NP{Y}<1>){_} 1 month_6 0
+<c> about|(NP{X}/NP{X}<983>){Y} a|(NP[nb]{X}/N{X}<985>){Y} and|conj{X} near|(NP{X}/NP{X}<983>){Y} the|(NP[nb]{X}/N{X}<985>){Y} month|N{X}
+
+# END NP/NP NP[nb]/N FORWARD COMPOSITION (FUNNY RULE)
+# S[dcl]\NP[expl] (S\NP)\(S\NP) BACKWARD APPLICATION WITH NP & NP[expl]
+the_3 (NP[nb]{Y}/N{Y}<1>){_} 1 job_4 0
+seems_2 (((S[dcl]{_}\NP[expl]{Y}<1>){_}/(S[to]{Z}<2>\NP{W}){Z}){_}/NP{V}<3>){_} 3 job_4 0
+to_5 ((S[to]{_}\NP{Z}<1>){_}/(S[b]{Y}<2>\NP{Z*}){Y}){_} 2 do_6 0
+seems_2 (((S[dcl]{_}\NP[expl]{Y}<1>){_}/(S[to]{Z}<2>\NP{W}){Z}){_}/NP{V}<3>){_} 2 to_5 0
+seems_2 (((S[dcl]{_}\NP[expl]{Y}<1>){_}/(S[to]{Z}<2>\NP{W}){Z}){_}/NP{V}<3>){_} 1 It_1 0
+<c> It|NP{X} seems|(((S[dcl]{X}\NP[expl]{Y}<424>){X}/(S[to]{Z}<425>\NP{W}){Z}){X}/NP{V}<426>){X} the|(NP[nb]{X}/N{X}<985>){Y} job|N{X} to|((S[to]{X}\NP{Y}<948>){X}/(S[b]{Z}<949>\NP{Y*}){Z}){X} do|(S[b]{X}\NP{Y}<1003>){X}
+
+# END S[dcl]\NP[expl] (S\NP)\(S\NP) BACKWARD APPLICATION WITH NP & NP[expl]
+# , NP --> (S\NP)\(S\NP) LEFT COMMA TYPE CHANGING RULE
+Bill_3 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 slept_1 56
+<c> slept|(S[pt]{X}\NP{Y}<1017>){X} ,|,{X} Bill|NP{X}
+
+# END , NP --> (S\NP)\(S\NP) LEFT COMMA TYPE CHANGING RULE
+
+# NP , --> S/S RIGHT COMMA TYPE CHANGING RULE
+the_5 (NP[nb]{Y}/N{Y}<1>){_} 1 man_6 0
+is_4 ((S[q]{_}/NP{Y}<1>){_}/NP{Z}<2>){_} 2 man_6 0
+who_3 (S[wq]{_}/(S[q]{Y}<1>/NP{Z}){Y}){_} 1 is_4 0
+Bill_1 (S[X]{Y}/S[X]{Y}<1>){_} 1 who_3 55
+<c> Bill|NP{X} ,|,{X} who|(S[wq]{X}/(S[q]{Y}<1026>/NP{Z}){Y}){X} is|((S[q]{X}/NP{Y}<938>){X}/NP{Z}<939>){X} the|(NP[nb]{X}/N{X}<985>){Y} man|N{X}
+
+# END NP , --> S/S RIGHT COMMA TYPE CHANGING RULE
+# S[dcl]/S[dcl] , --> (S\NP)/(S\NP) RIGHT COMMA TYPE CHANGING RULE
+The_1 (NP[nb]{Y}/N{Y}<1>){_} 1 man_2 0
+said_5 ((S[dcl]{_}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 1 John_4 0
+a_8 (NP[nb]{Y}/N{Y}<1>){_} 1 fool_9 0
+is_7 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 fool_9 0
+said_5 ((S[dcl]{_}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 2 is_7 51
+is_7 ((S[dcl]{_}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 man_2 0
+<c> The|(NP[nb]{X}/N{X}<985>){Y} man|N{X} ,|,{X} John|NP{X} said|((S[dcl]{X}\NP{Y}<824>){X}/S[dcl]{Z}<825>){X} ,|,{X} is|((S[dcl]{X}\NP{Y}<816>){X}/NP{Z}<817>){X} a|(NP[nb]{X}/N{X}<985>){Y} fool|N{X}
+
+# END S[dcl]/S[dcl] , --> (S\NP)/(S\NP) RIGHT COMMA TYPE CHANGING RULE
+# S[dcl]\S[dcl] , --> S/S RIGHT COMMA TYPE CHANGING RULE
+Said_1 ((S[dcl]{_}\S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 2 John_2 0
+which_4 ((S[wq]{_}/(S[q]{Y}<1>/NP{Z*}){Y}){_}/N{Z}<2>){_} 2 man_5 0
+a_7 (NP[nb]{Y}/N{Y}<1>){_} 1 fool_8 0
+is_6 ((S[q]{_}/NP{Y}<1>){_}/NP{Z}<2>){_} 2 fool_8 0
+is_6 ((S[q]{_}/NP{Y}<1>){_}/NP{Z}<2>){_} 1 man_5 0 ((S[wq]{X}/(S[q]{Y}<950>/NP{Z*}){Y}){X}/N{Z}<951>){X}
+which_4 ((S[wq]{_}/(S[q]{Y}<1>/NP{Z*}){Y}){_}/N{Z}<2>){_} 1 is_6 0
+Said_1 ((S[dcl]{_}\S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 1 which_4 54
+<c> Said|((S[dcl]{X}\S[dcl]{Y}<850>){X}/NP{Z}<851>){X} John|NP{X} ,|,{X} which|((S[wq]{X}/(S[q]{Y}<950>/NP{Z*}){Y}){X}/N{Z}<951>){X} man|N{X} is|((S[q]{X}/NP{Y}<938>){X}/NP{Z}<939>){X} a|(NP[nb]{X}/N{X}<985>){Y} fool|N{X}
+
+# END S[dcl]\S[dcl] , --> S/S RIGHT COMMA TYPE CHANGING RULE
+# S[dcl]/S[dcl] , --> S/S RIGHT COMMA TYPE CHANGING RULE
+said_2 ((S[dcl]{_}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 1 John_1 0
+which_4 ((S[wq]{_}/(S[q]{Y}<1>/NP{Z*}){Y}){_}/N{Z}<2>){_} 2 man_5 0
+a_7 (NP[nb]{Y}/N{Y}<1>){_} 1 fool_8 0
+is_6 ((S[q]{_}/NP{Y}<1>){_}/NP{Z}<2>){_} 2 fool_8 0
+is_6 ((S[q]{_}/NP{Y}<1>){_}/NP{Z}<2>){_} 1 man_5 0 ((S[wq]{X}/(S[q]{Y}<950>/NP{Z*}){Y}){X}/N{Z}<951>){X}
+which_4 ((S[wq]{_}/(S[q]{Y}<1>/NP{Z*}){Y}){_}/N{Z}<2>){_} 1 is_6 0
+said_2 ((S[dcl]{_}\NP{Y}<1>){_}/S[dcl]{Z}<2>){_} 2 which_4 50
+<c> John|NP{X} said|((S[dcl]{X}\NP{Y}<824>){X}/S[dcl]{Z}<825>){X} ,|,{X} which|((S[wq]{X}/(S[q]{Y}<950>/NP{Z*}){Y}){X}/N{Z}<951>){X} man|N{X} is|((S[q]{X}/NP{Y}<938>){X}/NP{Z}<939>){X} a|(NP[nb]{X}/N{X}<985>){Y} fool|N{X}
+
+# END S[dcl]/S[dcl] , --> S/S RIGHT COMMA TYPE CHANGING RULE
+# S[dcl]/S[dcl] , --> (S\NP)\(S\NP) RIGHT COMMA TYPE CHANGING RULE
+said_2 ((S[dcl]{_}/S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 2 John_3 0
+said_2 ((S[dcl]{_}/S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 1 slept_1 52
+<c> slept|(S[pt]{X}\NP{Y}<1017>){X} said|((S[dcl]{X}/S[dcl]{Y}<788>){X}/NP{Z}<789>){X} John|NP{X} ,|,{X}
+
+# END S[dcl]/S[dcl] , --> (S\NP)\(S\NP) RIGHT COMMA TYPE CHANGING RULE
+# S[dcl]/S[dcl] , --> S\S RIGHT COMMA TYPE CHANGING RULE
+said_2 ((S[dcl]{_}/S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 2 John_3 0
+said_2 ((S[dcl]{_}/S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 1 Hello_1 53
+<c> Hello|S[dcl]{X} said|((S[dcl]{X}/S[dcl]{Y}<788>){X}/NP{Z}<789>){X} John|NP{X} ,|,{X}
+
+# END S[dcl]/S[dcl] , --> S\S RIGHT COMMA TYPE CHANGING RULE
+# NP NP --> NP APPOSITION RULE
+of_3 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Hearts_4 0
+of_3 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Queen_2 0
+yesterday_6 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 visited_5 0
+visited_5 (S[dcl]{_}\NP{Y}<1>){_} 1 Queen_2 0
+visited_5 (S[dcl]{_}\NP{Y}<1>){_} 1 Diana_1 0
+<c> Diana|NP{X} Queen|NP{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} Hearts|NP{X} visited|(S[dcl]{X}\NP{Y}<1007>){X} yesterday|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z}
+
+# END NP NP --> NP APPOSITION RULE
+# NP NP --> NP APPOSITION RULE
+of_5 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Hearts_6 0
+of_5 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Queen_4 0
+of_9 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 2 Scots_10 0
+of_9 ((NP{Y}\NP{Y}<1>){_}/NP{Z}<2>){_} 1 Queen_8 0
+yesterday_12 ((S[X]{Y}\NP{Z}){Y}\(S[X]{Y}<1>\NP{Z}){Y}){_} 1 visited_11 0
+visited_11 (S[dcl]{_}\NP{Y}<1>){_} 1 Queen_8 0
+visited_11 (S[dcl]{_}\NP{Y}<1>){_} 1 Queen_4 0
+visited_11 (S[dcl]{_}\NP{Y}<1>){_} 1 Mary_3 0
+visited_11 (S[dcl]{_}\NP{Y}<1>){_} 1 Diana_1 0
+<c> Diana|NP{X} and|conj{X} Mary|NP{X} Queen|NP{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} Hearts|NP{X} and|conj{X} Queen|NP{X} of|((NP{X}\NP{X}<666>){Y}/NP{Z}<667>){Y} Scots|NP{X} visited|(S[dcl]{X}\NP{Y}<1007>){X} yesterday|((S[X]{X}\NP{Y}){X}\(S[X]{X}<955>\NP{Y}){X}){Z}
+
+# END NP NP --> NP APPOSITION RULE
+# S[dcl] S[dcl] --> S[dcl] APPOSITION RULE
+sat_2 (S[dcl]{_}\NP{Y}<1>){_} 1 John_1 0
+ran_4 (S[dcl]{_}\NP{Y}<1>){_} 1 Bob_3 0
+said_5 ((S[dcl]{_}\S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 2 Mike_6 0
+said_5 ((S[dcl]{_}\S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 1 ran_4 0
+said_5 ((S[dcl]{_}\S[dcl]{Y}<1>){_}/NP{Z}<2>){_} 1 sat_2 0
+<c> John|NP{X} sat|(S[dcl]{X}\NP{Y}<1007>){X} Bob|NP{X} ran|(S[dcl]{X}\NP{Y}<1007>){X} said|((S[dcl]{X}\S[dcl]{Y}<850>){X}/NP{Z}<851>){X} Mike|NP{X}
+
+# END S[dcl] S[dcl] --> S[dcl] APPOSITION RULE
+# (S[dcl]\S[dcl])\NP S\S --> (S[dcl]\S[dcl])\NP GENERALISED BACKWARD COMPOSITION
+yesterday_3 (S[X]{Y}\S[X]{Y}<1>){_} 1 said_2 0
+reiterated_5 ((S[dcl]{_}\S[dcl]{Y}<1>){_}\NP{Z}<2>){_} 2 John_1 0
+said_2 ((S[dcl]{_}\S[dcl]{Y}<1>){_}\NP{Z}<2>){_} 1 John_1 0
+today_6 (S[X]{Y}\S[X]{Y}<1>){_} 1 reiterated_5 0
+today_6 (S[X]{Y}\S[X]{Y}<1>){_} 1 said_2 0
+<c> John|NP{X} said|((S[dcl]{X}\S[dcl]{Y}<852>){X}\NP{Z}<853>){X} yesterday|(S[X]{X}\S[X]{X}<1030>){Y} and|conj{X} reiterated|((S[dcl]{X}\S[dcl]{Y}<852>){X}\NP{Z}<853>){X} today|(S[X]{X}\S[X]{X}<1030>){Y}
+
+# END (S[dcl]\S[dcl])\NP S\S --> (S[dcl]\S[dcl])\NP GENERALISED BACKWARD COMPOSITION

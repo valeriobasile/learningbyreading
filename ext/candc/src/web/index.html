@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chart Visualiser</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/chart.css" />
+    <script src="/static/js/prototype.js"></script>
+    <script src="/static/js/raphael.js"></script>
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/ccg.js"></script>
+    <script src="/static/js/chart.js"></script>
+    <script src="/static/js/parse.js"></script>
+    <script>
+      document.observe("dom:loaded", function(){
+        $('parse_form').observe('submit', function(event) {
+          this.request({ onComplete: parse2html });
+          event.stop()
+        });
+      })
+    </script>
+  </head>
+  <body>
+    <form id="parse_form" method="POST" action="/parse/">
+      <div class="form_row">
+        <label for="sentence">Input:</label> 
+        <input type="text" name="sentence" id="sentence" value="{{ value }}"/>
+      </div>
+      <div class="form_row">
+        <label for="ifmt">Input format:</label> 
+        <select name="ifmt" id="ifmt">
+          <option selected value="%w \n">Token ("%w \n")</option>
+          <option value="%w|%p \n">Token|POS ("%w|%p \n")</option>
+          <option value="%w|%p|%s \n">Token|POS|Super ("%w|%p|%s \n")</option>
+        </select>
+      </div>
+      <div class="form_row">
+        <label for="oracle">Oracle?: </label> 
+        <input type="checkbox" name="oracle" id="oracle" />
+      </div>
+      <div class="form_row">
+        <label for="parse"></label> 
+        <input type="submit" id="parse" value="Parse!"/>
+      </div>
+    </form>
+
+    <div id="actions">
+      <a href="#" id="unhide">unhide rest</a>
+      <a href="#" id="toggle_detail">details</a>
+      <a href="#" id="toggle_unused">unused</a>
+      |
+      <a href='#' id='pop_shell'>console</a>
+    </div>
+
+    <div id="tokens"></div>
+
+    <table id="chart" class="chart">
+      <tbody id="chart_body"></tbody>
+    </table>
+
+  </body>
+</html>

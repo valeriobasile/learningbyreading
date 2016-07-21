@@ -1,0 +1,7 @@
+(S[X]{Y}/(S[X]{Y}\NP{_}){Y}){Y} +
+((S[X]{Y}\NP{Z}){Y}\((S[X]{Y}\NP{Z}){Y}/NP{_}){Y}){Y} +
+(((S[X]{Y}\NP{Z}){Y}/NP{W}){Y}\(((S[X]{Y}\NP{Z}){Y}/NP{W}){Y}/NP{_}){Y}){Y} +
+(((S[X]{Y}\NP{Z}){Y}/(S[to]{W}\NP{_}){W}){Y}\(((S[X]{Y}\NP{Z}){Y}/(S[to]{W}\NP{_}){W}){Y}/NP{_}){Y}){Y} +
+(((S[X]{Y}\NP{Z}){Y}/PP{W}){Y}\(((S[X]{Y}\NP{Z}){Y}/PP{W}){Y}/NP{_}){Y}){Y} +
+(((S[X]{Y}\NP{Z}){Y}/(S[adj]{W}\NP{_}){W}){Y}\(((S[X]{Y}\NP{Z}){Y}/(S[adj]{W}\NP{_}){W}){Y}/NP{_}){Y}){Y} +
+(S[X]{Y}/(S[X]{Y}/NP{_}){Y}){Y} +

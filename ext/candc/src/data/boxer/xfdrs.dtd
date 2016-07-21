@@ -1,0 +1,127 @@
+<!ELEMENT xfdrs-output (xfdrs+)>
+<!ATTLIST xfdrs-output  
+          version CDATA #REQUIRED >
+
+<!ELEMENT xfdrs (words,postags,netags,cons)>
+<!ATTLIST xfdrs
+          xml:id ID #IMPLIED >
+
+<!ELEMENT words (word+)>
+<!ELEMENT word (#PCDATA)>
+<!ATTLIST word
+          xml:id ID #REQUIRED >
+
+<!ELEMENT postags (postag+)>
+<!ELEMENT postag (#PCDATA)>
+<!ATTLIST postag
+          index IDREF #REQUIRED >
+
+<!ELEMENT netags (netag*)>
+<!ELEMENT netag (#PCDATA)>
+<!ATTLIST netag
+          index IDREF #REQUIRED >
+
+
+<!ELEMENT index (#PCDATA)>
+<!ATTLIST index
+          pos CDATA #REQUIRED >
+
+
+<!ELEMENT cons ((drs|alfa|smerge|merge|timex|named|pred|card|rel|eq|prop|not|pos|nec|or|imp|whq)*)>
+
+<!ELEMENT drs (dr*,label*)>
+<!ATTLIST drs
+          label CDATA #REQUIRED >
+
+<!ELEMENT merge (label,label)>
+<!ATTLIST merge
+          label CDATA #REQUIRED >
+
+<!ELEMENT smerge (label,label)>
+<!ATTLIST smerge
+          label CDATA #REQUIRED >
+
+<!ELEMENT alfa (label,label)>
+<!ATTLIST alfa
+          label CDATA #REQUIRED
+          type CDATA #REQUIRED >
+
+<!ELEMENT label (#PCDATA)>
+
+<!ELEMENT dr (index*)>
+<!ATTLIST dr
+          name CDATA #REQUIRED >
+
+<!ELEMENT not (label,index*)>
+<!ATTLIST not
+          label CDATA #REQUIRED >
+
+<!ELEMENT nec (label,index*)>
+<!ATTLIST nec
+          label CDATA #REQUIRED >
+
+<!ELEMENT pos (label,index*)>
+<!ATTLIST pos
+          label CDATA #REQUIRED >
+
+<!ELEMENT or (label,label,index*)>
+<!ATTLIST or
+          label CDATA #REQUIRED >
+
+<!ELEMENT imp (label,label,index*)>
+<!ATTLIST imp
+          label CDATA #REQUIRED >
+
+<!ELEMENT whq (label,label,index*)>
+<!ATTLIST whq
+          label CDATA #REQUIRED >
+
+<!ELEMENT prop (label,index*)>
+<!ATTLIST prop
+          label CDATA #REQUIRED
+          argument CDATA #REQUIRED >
+
+<!ELEMENT pred (index*)>
+<!ATTLIST pred
+          label CDATA #REQUIRED
+          sense CDATA #REQUIRED
+          type CDATA #REQUIRED
+          symbol CDATA #REQUIRED
+          arg CDATA #REQUIRED >
+
+<!ELEMENT named (index*)>
+<!ATTLIST named
+          label CDATA #REQUIRED
+          type CDATA #REQUIRED
+          symbol CDATA #REQUIRED
+          arg CDATA #REQUIRED >
+
+<!ELEMENT timex ((date|time),index*)>
+<!ATTLIST timex
+          label CDATA #REQUIRED
+          arg CDATA #REQUIRED >
+
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+
+<!ELEMENT rel (index*)>
+<!ATTLIST rel
+          label CDATA #REQUIRED
+          sense CDATA #REQUIRED
+          symbol CDATA #REQUIRED
+          arg1 CDATA #REQUIRED 
+          arg2 CDATA #REQUIRED >
+
+<!ELEMENT eq (index*)>
+<!ATTLIST eq
+          label CDATA #REQUIRED
+          arg1 CDATA #REQUIRED 
+          arg2 CDATA #REQUIRED >
+
+<!ELEMENT card (index*)>
+<!ATTLIST card
+          label CDATA #REQUIRED
+          arg CDATA #REQUIRED 
+          value CDATA #REQUIRED 
+          type CDATA #REQUIRED >
+

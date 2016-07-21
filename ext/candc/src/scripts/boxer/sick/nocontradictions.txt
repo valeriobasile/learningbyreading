@@ -1,0 +1,48 @@
+---------------------------------------
+CONTRADICTION 1236 informative (wordnet novelty)
+T: A woman is dancing and singing alone
+H: A woman is dancing and singing with other women
+---------------------------------------
+CONTRADICTION 2972 entailed (word overlap)
+T: A large green ball is hitting a potato
+H: A big green ball is missing a potato
+---------------------------------------
+CONTRADICTION 3711 entailed (word overlap)
+T: A toy train is striking a toy car
+H: A toy train is missing a toy car
+---------------------------------------
+CONTRADICTION 4831 entailed (word overlap)
+T: A man is slicing a potato into pieces
+H: A man is not cutting a potato
+---------------------------------------
+CONTRADICTION 4852 entailed (word overlap)
+T: A band is not playing some instruments
+H: A band is playing some instruments
+---------------------------------------
+CONTRADICTION 5454 entailed (word overlap)
+T: A man is playing a flute
+H: A man is not playing a flute
+---------------------------------------
+CONTRADICTION 592 entailed (word overlap)
+T: A woman is taking off a cloak, which is very large, and revealing an extravagant dress
+H: A woman is putting on a cloak, which is very large, and concealing an extravagant dress
+---------------------------------------
+CONTRADICTION 717 entailed (word overlap)
+T: A few men in a competition are running outside
+H: A few men in a competition are running indoors
+---------------------------------------
+CONTRADICTION 7772 entailed (word overlap)
+T: A surfer is riding a big wave across dark green water
+H: The surfer is riding a small wave
+---------------------------------------
+CONTRADICTION 8263 entailed (word overlap)
+T: Some people and vehicles are on a crowded street
+H: Some people and vehicles are on a almost empty street
+---------------------------------------
+CONTRADICTION 9014 informative (wordnet novelty)
+T: A blond child is going down a slide and throwing up his arms
+H: A child with dark hair is going down a slide and throwing up his arms
+---------------------------------------
+CONTRADICTION 9706 entailed (word overlap)
+T: A black and white dog with a large branch is standing in the field
+H: A black and white dog with a large branch is running in the field

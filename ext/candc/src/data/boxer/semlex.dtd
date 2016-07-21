@@ -1,0 +1,120 @@
+<!ENTITY % drsexp "(var|app|drs|smerge|merge|alfa)">
+
+<!ELEMENT lexicon (semlex+)>
+<!ATTLIST lexicon  
+          version CDATA #REQUIRED >
+
+<!ELEMENT semlex (cat,type,pos,drsexp,entries)>
+
+<!ELEMENT cat (#PCDATA)>
+
+<!ELEMENT type (basetype|complextype)>
+
+<!ELEMENT basetype (e|t)>
+
+<!ELEMENT complextype (type,type)>
+
+<!ELEMENT pos (#PCDATA)>
+
+<!ELEMENT entries (entry+)>
+
+<!ELEMENT entry>
+<!ATTLIST freq CDATA #REQUIRED 
+          sentenceid CDATA #REQUIRED 
+          token CDATA #REQUIRED >
+
+<!ELEMENT drs (dr*,(timex|named|pred|card|eq|rel|prop|not|nec|pos|or|imp|whq)*)>
+
+<!ELEMENT merge (%drsexp;,%drsexp;)>
+
+<!ELEMENT smerge (%drsexp;,%drsexp;)>
+
+<!ELEMENT lam ((var,%drsexp;)|(var,lam)|var)>
+
+<!ELEMENT app (lam,%drsexp;)>
+
+<!ELEMENT alfa (%drsexp;,%drsexp;)>
+<!ATTLIST alfa
+          type CDATA #REQUIRED >
+
+<!ELEMENT index (#PCDATA)>
+<!ATTLIST index
+          pos CDATA #REQUIRED >
+
+<!ELEMENT var>
+<!ATTLIST var
+          name CDATA #REQUIRED
+          type CDATA #REQUIRED >
+
+<!ELEMENT dr (index*)>
+<!ATTLIST dr
+          name CDATA #REQUIRED >
+
+<!ELEMENT pred (index*)>
+<!ATTLIST pred
+          arg CDATA #REQUIRED 
+          symbol CDATA #REQUIRED 
+          type CDATA #REQUIRED 
+          sense CDATA #REQUIRED >
+
+<!ELEMENT named (index*)>
+<!ATTLIST named
+          arg CDATA #REQUIRED 
+          symbol CDATA #REQUIRED 
+          type CDATA #REQUIRED >
+
+<!ELEMENT rel (index*)>
+<!ATTLIST rel
+          arg1 CDATA #REQUIRED 
+          arg2 CDATA #REQUIRED 
+          symbol CDATA #REQUIRED 
+          sense CDATA #REQUIRED >
+
+<!ELEMENT eq (index*)>
+<!ATTLIST eq
+          arg1 CDATA #REQUIRED 
+          arg2 CDATA #REQUIRED >
+
+<!ELEMENT card (index*)>
+<!ATTLIST card
+          arg CDATA #REQUIRED 
+          value CDATA #REQUIRED 
+          type CDATA #REQUIRED >
+
+<!ELEMENT not (index*,%drsexp;)>
+
+<!ELEMENT pos (index*,%drsexp;)>
+
+<!ELEMENT nec (index*,%drsexp;)>
+
+<!ELEMENT or (index*,(%drsexp;,%drsexp;))>
+
+<!ELEMENT imp (index*,(%drsexp;,%drsexp;))>
+
+<!ELEMENT whq (index*,(%drsexp;,%drsexp;))>
+
+<!ELEMENT prop (index*,%drsexp;)>
+<!ATTLIST prop
+          argument CDATA #REQUIRED >
+
+<!ELEMENT timex (index*,(date|time))>
+<!ATTLIST timex
+          arg CDATA #REQUIRED >
+
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+
+<!ELEMENT words (word+)>
+<!ELEMENT word (#PCDATA)>
+<!ATTLIST word
+          xml:id ID #REQUIRED >
+
+<!ELEMENT postags (postag+)>
+<!ELEMENT postag (#PCDATA)>
+<!ATTLIST postag
+          index IDREF #REQUIRED >
+
+<!ELEMENT netags (netag*)>
+<!ELEMENT netag (#PCDATA)>
+<!ATTLIST netag
+          index IDREF #REQUIRED >

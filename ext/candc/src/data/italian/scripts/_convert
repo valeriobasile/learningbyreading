@@ -1,0 +1,39 @@
+#!/bin/bash
+
+INFILE=$1
+OUTFILE=$2
+
+
+
+cat $INFILE \
+    | sed "s_/(_/-LRB-_g" \
+    | sed "s_/)_/-RRB-_g" \
+    | sed "s/@/THEATSYMBOL/g" \
+    | sed 's/^$/@/' \
+    | tr "\n" " " \
+    | tr -s " " \
+    | tr "@" "\n" \
+    | sed "s/THEATSYMBOL/@/g" \
+    | sed 's/^ ( //' \
+    | sed 's/(/tree(/g' \
+    | tr -s " " \
+    | sed 's/ )/)/g' \
+    | sed 's/^ //' \
+    | sed "s/'/\\\'/g" \
+    | sed "s/ /','/g" \
+    | sed "s/(/('/g" \
+    | sed "s/\()*\)'/'\1/g" \
+    | sed "s/'Htree(/h:tree(/g" \
+    | sed "s/'Atree(/a:tree(/g" \
+    | sed "s/'Mtree(/m:tree(/g" \
+    | sed "s/^\*/tut(' /" \
+    | sed "s/,'$/./" \
+    | sed "s/*'\./*',/" \
+    | sed "s/,'')/)/g" \
+    | sed "s/^Mtree(/m:tree(/" \
+    | sed "s/^Atree(/a:tree(/" \
+    | sed "s/^Htree(/h:tree(/" \
+    | sed "s_-LRB-_(_g" \
+    | sed "s_-RRB-_)_g" \
+    > $OUTFILE
+

@@ -1,0 +1,49 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: #000000;
+  margin: 0;
+  font-family: monospace;
+  font-size: 12pt;
+  height: 100%;
+}
+
+#out_container {
+  height: 95%;
+  background: #cccccc;
+  overflow: scroll;
+}
+  #output {
+    font-family: monospace;
+    font-size: 12pt;
+  }
+    #output .line {
+      white-space: pre-wrap;
+    }
+    #output .cmd {
+      color: #000000;
+      font-weight: bold;
+    }
+    #output .stdout {
+      color: #111111;
+    }
+    #output .traceback {
+      color: #ff0000;
+    }
+
+#in_container {
+  height: 5%;
+  background: #000000;
+  color: #ffff00;
+}
+  #input {
+    font-family: monospace;
+    font-size: 12pt;
+    width: 90%;
+    background: #000000;
+    color: #ffffff;
+    border: 0;
+  }
+

@@ -1,0 +1,29 @@
+The DT 1 NP[nb]/N
+declaration NN 1 N
+by IN 2 ((S\NP)\(S\NP))/NP (NP\NP)/NP
+Economy NNP 1 N/N
+Minister NNP 1 N/N
+Nestor NNP 1 N/N
+Rapanelli NNP 1 N
+is VBZ 1 (S[dcl]\NP)/(S[pss]\NP)
+believed VBN 1 (S[pss]\NP)/(S[to]\NP)
+to TO 1 (S[to]\NP)/(S[b]\NP)
+be VB 1 (S[b]\NP)/NP
+the DT 1 NP[nb]/N
+first JJ 1 N/N
+time NN 1 N
+such PDT 1 NP/NP
+an DT 1 NP[nb]/N
+action NN 1 N
+has VBZ 1 (S[dcl]\NP)/(S[pt]\NP)
+been VBN 1 (S[pt]\NP)/(S[pss]\NP)
+called VBN 1 (S[pss]\NP)/(PP/NP)
+for IN 5 PP/NP ((S\NP)\(S\NP))/((S\NP)\(S\NP)) ((S\NP)\(S\NP))/NP PP/(S[ng]\NP) (S\NP)\(S\NP)
+by IN 3 ((S\NP)\(S\NP))/NP (S/S)/NP PP/NP
+an DT 1 NP[nb]/N
+Argentine JJ 1 N/N
+official NN 1 N
+of IN 1 (NP\NP)/NP
+such JJ 2 NP/NP (NP\NP)/(NP\NP)
+stature NN 1 N
+. . 1 .

@@ -1,0 +1,48 @@
+In IN 1 (S/S)/NP
+mid-October NNP 1 N
+, , 1 ,
+Time NNP 1 N/N
+magazine NN 1 N
+lowered VBD 1 (S[dcl]\NP)/NP
+its PRP$ 1 NP[nb]/N
+guaranteed VBN 1 N/N
+circulation NN 1 N/N
+rate NN 1 N/N
+base NN 1 N
+for IN 2 ((S\NP)\(S\NP))/NP (NP\NP)/NP
+1990 CD 1 N
+while IN 1 ((S\NP)\(S\NP))/(S[ng]\NP)
+not RB 1 (S\NP)/(S\NP)
+increasing VBG 3 (S[ng]\NP)/NP ((S[ng]\NP)/PP)/NP N/N
+ad NN 1 N/N
+page NN 2 N N/N
+rates NNS 1 N
+; : 1 :
+with IN 7 (NP\NP)/NP ((S/S)/(S[ng]\NP))/NP (((S\NP)\(S\NP))/(S[ng]\NP))/NP ((S\NP)\(S\NP))/NP (((S\NP)\(S\NP))/(S[pss]\NP))/NP PP/NP (S/S)/NP
+a DT 1 NP[nb]/N
+lower JJR 2 (N/N)/(N/N) N/N
+circulation NN 1 N/N
+base NN 1 N
+, , 1 ,
+Time NNP 1 N
+'s POS 1 (NP[nb]/N)\NP
+ad NN 1 N/N
+rate NN 1 N
+will MD 1 (S[dcl]\NP)/(S[b]\NP)
+be VB 6 (S[b]\NP)/(S[adj]\NP) (S[b]\NP)/NP (S[b]\NP)/PP (S[b]\NP)/(S[ng]\NP) (S[b]\NP)/(S[b]\NP) (S[b]\NP)/(S[pss]\NP)
+effectively RB 2 (S\NP)/(S\NP) (S\NP)\(S\NP)
+7.5 CD 5 ((N/N)/(N/N))/((N/N)/(N/N)) (N/N)/(N/N) N/N ((S[adj]\NP)/(S[adj]\NP))/((S[adj]\NP)/(S[adj]\NP)) ((S[adj]\NP)\(S[adj]\NP))/((S[adj]\NP)\(S[adj]\NP))
+% NN 4 N/N (S[adj]\NP)\(S[adj]\NP) N (S[adj]\NP)/(S[adj]\NP)
+higher JJR 4 S[adj]\NP ((S\NP)\(S\NP))\NP (S[adj]\NP)\NP N
+per IN 3 (NP\NP)/NP ((S\NP)\(S\NP))/NP PP/NP
+subscriber NN 1 N
+; : 1 :
+a DT 1 NP[nb]/N
+full JJ 1 N/N
+page NN 1 N
+in IN 1 (NP\NP)/NP
+Time NNP 1 N
+costs VBZ 1 (S[dcl]\NP)/NP
+about IN 4 (NP\NP)/NP N/N PP/NP ((S\NP)\(S\NP))/NP
+<DOLLARS> NN 1 N
+. . 1 .

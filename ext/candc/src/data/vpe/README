@@ -1,0 +1,25 @@
+VPE Version 1.0 (August 2010)
+
+This is version 1.0 of the verb phrase ellipsis annotation for the
+Wall Street Journal (WSJ) sections of the Penn Treebank (PTB version
+3.0). The stand-off annotations are provided in 25 files named after
+the section numbers of the WSJ and come with the extension
+".ann". Each occurrence of VPE found in the corpus is listed on a
+separate line. Information for a VPE is organised in columns, which
+are indicated by spaces, organised by the following schema:
+
+<FILENAME> <EB> <EE> <AB> <AE> <TR> <STA> <STP> ....
+
+where <FILENAME> is the raw filename as distributed with the PTB, <EB> and <EE> are
+character positions marking the beginning and end of the ellipsis, and <AB> and <AE> the
+character positions marking the start and end of the antecedent.
+Column <TR> holds the trigger type, <STA> the syntactic type of the
+antecedent, and <STP> source-target pattern of the ellipsis.
+
+Johan Bos
+University of Groningen
+bos@meaningfactory.com
+
+Jennifer Spenader
+University of Groningen
+j.spenader@ai.rug.com

@@ -1,0 +1,88 @@
+TOKENISATION PROBLEMS
+
+* there are no quotes in CCGbank
+* colons have been replaced with ::[0-9]+_ in DepBank560 (the example.trans.grtext)
+  (e.g. ::13_) this is probably an artifact of lisp?
+
+These two problems have been solved by creating example.trans.noquotes
+which has the quotes filtered and the colons fixed.
+
+The other mismatches were resolved by modifying CCGbank:
+
+* hyphens at the beginning of sentences have been removed from DepBank560
+  and sentence terminating hyphens have been changed to periods in DepBank560
+* many sets of parentheses have been removed from DepBank560
+* abbreviations ending sentences have an additional period, e.g.:
+  Sachs & Co. -> Sachs & Co. . (Depbank560) but Sachs & Co . (CCGbank)
+* some capitalisation of tokens has changed in Depbank560
+* additional periods have been added to terminate sentences in Depbank560
+  which don't appear in CCGbank
+* decimal places ending in 0 have been changed in DepBank560 (e.g. 1.70 -> 1.7)
+* PTB/CCGbank escapes slash / as \/
+* -based in New York-based is a separate token in DepBank560
+* some other miscellaneous tokenisation variations have been changed
+
+* there are several sentences where whole clauses have been removed from
+  DepBank560, the best example being:
+
+CCGbank:
+The best moments in the show occur at the beginning and the end -LRB-
+and occasionally in the middle -RRB- , when Mr. Mason slips into his
+standup mode and starts meting out that old-fashioned Jewish mischief
+to other people as well as to himself .
+
+DepBank560:
+The best moments in the show occur at the beginning and the end -LRB-
+and occasionally in the middle -RRB- .
+
+All of these changes have been made to the CCGbank tokenisation (and
+in the case of removed tokens the CCGbank derivation) to match
+DepBank560 (the example.trans.noquotes file). In general we have
+tried not to fix any noise in the CCGbank derivations in the process.
+
+The result is 51 sentences have been changed in some way or other.
+
+There are three remaining sentences that don't match in tokenisation:
+
+* one DepBank560 sentence wsj_2343.19 is missing from CCGbank:
+
+    Maybe Lily became so obsessed with where people slept and how
+    because her own arrangements kept shifting .
+
+  it has been replaced with the single token sentence:
+
+    __PLACEHOLDER_wsj2343.19__
+
+* two sentences in DepBank560 have words added:
+
+the second comma after 'bad' in wsj_2381.21:
+
+The last crash taught institutional investors that they have to be
+long-term holders , and that they ca n't react to short-term events ,
+good or bad , , said Stephen L. Nesbitt , senior vice president for
+the pension consultants Wilshire Associates in Santa Monica , Calif .
+
+the 'it' after 'yet' in wsj_2387.16:
+
+Atari Corp. 's Portfolio , introduced in Europe two months ago and in
+the U.S. in early September , weighs less than a pound , costs a mere
+$ 400 and runs on three AA batteries , yet it has the power to run
+some spreadsheets and word processing programs .
+
+These last two are just too hard to fix without changing the derivations
+too much.
+
+The resulting depbank560.retok.auto file is the 559 CCGbank sentences
+from the CCGbank1.2 AUTO files + the placeholder. The unmodified 559
+sentences + placeholder are in depbank560.auto.
+ 
+CREATING GOLD STANDARD GRs
+
+To create the gold standard we run the parser over the *.auto files forcing
+the parser to choose the gold standard derivation, and then extract the
+dependencies.  23 sentences out of 560 fail to parse (coverage 95.89%)
+because the gold standard derivations contain (noisy) rules not implemented
+in the parser.
+
+We then use a post processing script to improve the mapping from the
+fine-grained CCGbank dependencies to Briscoe and Carroll GRs.

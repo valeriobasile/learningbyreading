@@ -1,0 +1,30 @@
+diff -U 3 prolog/wn_hyp.pl PrologWordNet/wn_hyp.pl
+--- prolog/wn_hyp.pl	2007-01-24 08:49:05.000000000 +1100
++++ PrologWordNet/wn_hyp.pl	2007-04-10 23:02:18.000000000 +1000
+@@ -87554,7 +87554,8 @@
+ hyp(202422663,202423762).
+ hyp(202422967,202423762).
+ hyp(202423513,202423183).
+-hyp(202423762,202422663).
++% causes a cycle in hypernyms for restrain
++% hyp(202423762,202422663).
+ hyp(202423999,202423762).
+ hyp(202424128,202424652).
+ hyp(202424533,202496816).
+diff -U 3 prolog/wn_s.pl PrologWordNet/wn_s.pl
+--- prolog/wn_s.pl	2007-01-24 08:49:05.000000000 +1100
++++ PrologWordNet/wn_s.pl	2007-04-10 23:03:41.000000000 +1000
+@@ -184581,9 +184581,11 @@
+ s(301379988,1,'lamented',a,1,0).
+ s(301380127,1,'unlamented',a,1,0).
+ s(301380127,2,'unmourned',a,1,0).
+-s(301380267,1,'aerial',s).
++% added two extra arguments 1,0
++s(301380267,1,'aerial',s,1,0).
+ s(301380571,1,'free-flying',s,1,0).
+-s(301380721,1,'marine',s).
++% added two extra arguments 1,0
++s(301380721,1,'marine',s,1,0).
+ s(301380926,1,'deep-sea',s,1,0).
+ s(301381074,1,'oceangoing',s,1,0).
+ s(301381074,2,'seafaring',s,1,0).

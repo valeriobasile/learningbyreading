@@ -1,0 +1,26 @@
+
+PROGRAM=`basename $0`
+
+if [ ! $# == 3 ]; then
+  (
+    echo "$PROGRAM: incorrect number of command line arguments"
+    echo "usage: $PROGRAM <base> <nnodes> <work>"
+    echo "where: <base> is the base directory of the C&C distribution"
+    echo "       <nnodes> is the number of cluster nodes to be used for training"
+    echo "       <work> is where the data should be stored"
+  ) > /dev/stderr;
+    exit 1;
+fi
+
+BASE=$1
+NNODES=$2
+WORK=$3
+
+BIN=bin
+SCRIPTS=src/scripts/ccg
+DATA=src/data/ccg
+CCGBANK=gold/CCGbank
+
+SUPER=$WORK/super
+GOLD=$WORK/gold
+GEN=$WORK/generated

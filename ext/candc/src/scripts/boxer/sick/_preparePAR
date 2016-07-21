@@ -1,0 +1,27 @@
+#!/bin/bash
+
+init()
+{
+    rm -f working/ppdb.?
+}
+
+download()
+{
+    mkdir -p working
+    curl http://www.cis.upenn.edu/~ccb/ppdb/release-1.0/$1.gz > working/$1.gz
+    cd working
+    gzip -f -d $1.gz
+    cat $1 | cut -d"|" -f3-8 | grep "^| [a-z]* |" | sort -u >> ppdb.1
+    cat $1 | cut -d"|" -f3-8 | grep "^| [a-z]* [a-z]* |" | sort -u >> ppdb.2
+    cat $1 | cut -d"|" -f3-8 | grep "^| [a-z]* [a-z]* [a-z]* |" | sort -u >> ppdb.3
+    cat $1 | cut -d"|" -f3-8 | grep "^| [a-z]* [a-z]* [a-z]* [a-z]* |" | sort -u >> ppdb.4
+    rm -f $1
+    cd ..
+}
+
+init
+SIZE="xl"
+download "ppdb-1.0-${SIZE}-o2m"
+download "ppdb-1.0-${SIZE}-m2o"
+download "ppdb-1.0-${SIZE}-phrasal"
+download "ppdb-1.0-${SIZE}-lexical"

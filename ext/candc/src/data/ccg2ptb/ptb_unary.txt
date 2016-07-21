@@ -1,0 +1,32 @@
+# header
+
+N NP l
+NP S/(S\NP) (S l)
+NP S/(S/NP) l
+S[adj]\NP (S\NP)\((S\NP)/(S[adj]\NP)) (S l)
+S[adj]\NP NP\NP l
+S[pss]\NP NP\NP l
+S[to]\NP NP\NP (SBAR l)
+S[ng]\NP NP\NP l
+S[dcl]\NP NP\NP l
+S[dcl]/NP NP\NP (SBAR l)
+S[to]\NP (S\NP)\(S\NP) l
+S[ng]\NP (S\NP)\(S\NP) (S l)
+S[adj]\NP (S\NP)\(S\NP) (S l)
+S[pss]\NP (S\NP)\(S\NP) (S l)
+S[ng]\NP (S\NP)/(S\NP) (S l)
+S[to]\NP N\N l
+PP (S\NP)\((S\NP)/PP) l
+S[pss]\NP S/S (S l)
+S[ng]\NP NP (S l)
+S[dcl] NP\NP (SBAR l)
+S[ng]\NP S/S (SBAR l)
+S[to]\NP S/S l
+NP (S\NP)\((S\NP)/NP) (S l)
+(S[to]\NP)/NP NP\NP (SBAR (S l))
+S[dcl] S\S (S l)
+S[adj]\NP S/S l
+NP NP/(NP\NP) l
+S[ng]\NP S\S (S l)
+S[to]\NP (S\NP)\((S\NP)/(S[to]\NP)) l
+S[pss]\NP (S\NP)/(S\NP) (S l)

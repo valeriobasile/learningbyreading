@@ -1,0 +1,109 @@
+=== What you need to install ===
+Vampire (ext/bin/vampire)
+Paradox (ext/bin/paradox)
+Mace (ext/bin/mace)
+SWI Prolog
+
+=== What you need to download ===
+sick_train.zip
+
+=== Preparation ===
+cd candc
+make bin/nc
+make bin/boxer
+make -p working
+cd working
+mv ~/Downloads/sick_train.zip .
+cd working
+unzip sick_train
+cd ..
+src/scripts/boxer/sick/_prepareSICK
+src/scripts/boxer/sick/_preparePAR
+src/scripts/boxer/sick/_runSICK
+src/scripts/boxer/sick/_evalSICK
+
+
+====================================================
+ Commands for Ubuntu 13.10 64bit (Rob van der Goot)
+====================================================
+
+sudo apt-get install subversion
+svn co http://svn.ask.it.usyd.edu.au/candc/trunk candc
+first enter wrong password, then authenticate
+cd candc
+wget http://svn.ask.it.usyd.edu.au/download/candc/models-1.02.tgz --http-user=[user] --http-password=[password]
+tar -xvzf models-1.02.tgz 
+ln -s Makefile.unix Makefile
+sudo apt-get install swi-prolog
+make bin/nc
+make bin/boxer
+make bin/tokkie
+make ext/bin/bliksem
+make ext/bin/mace
+cd ext/otter-3.3f
+make all
+cd ../
+wget http://downloads.sourceforge.net/project/gsoap2/gSOAP/gsoap_2.8.17.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fgsoap2%2Ffiles%2FgSOAP%2F&ts=1394902772&use_mirror=garr -O gsoap_2.8.17.zip
+unzip gsoap_2.8.17.zip
+cd gsoap-2.8/
+./configure --prefix=/home/rob/candc/ext/
+sudo apt-get install byacc
+sudo apt-get install flex
+make
+make install
+cp gsoap/bin/linux386/soapcpp2 ../bin
+cd ../../
+make soap
+cp ext/otter-3.3f/bin/mace2 ext/bin/mace
+cp ext/otter-3.3f/bin/otter ext/bin/otter
+
+----paradox 
+cp ~/Downloads/paradox3 ext/bin/paradox
+http://packages.ubuntu.com/quantal/libgmp3c2
+wget http://nl.archive.ubuntu.com/ubuntu/pool/universe/g/gmp4/libgmp3c2_4.3.2+dfsg-2ubuntu1_amd64.deb
+sudo dpkg -i libgmp3c2_4.3.2+dfsg-2ubuntu1_amd64.deb 
+----
+----vampire
+cp ~/Downloads/vampire ext/bin/vampire
+----
+
+chmod 777 ext/bin/*
+make -p working
+cd working
+wget http://alt.qcri.org/semeval2014/task1/data/uploads/sick_trial.zip http://alt.qcri.org/semeval2014/task1/data/uploads/sick_train.zip http://alt.qcri.org/semeval2014/task1/data/uploads/sick_evaluation.zip http://alt.qcri.org/semeval2014/task1/data/uploads/sick_test.zip
+unzip '*.zip'
+cp SICK_train.txt SICK_all.txt
+tail -500 SICK_trial.txt >> SICK_all.txt 
+
+----_prepareSICK
+change value of infile to sick_all.txt
+----
+src/scripts/boxer/sick/_prepareSICK
+src/scripts/boxer/sick/_preparePAR
+src/scripts/boxer/sick/_runSICK
+src/scripts/boxer/sick/_evalSICK
+---- github
+make repository public?
+----
+cd ../
+sudo apt-get install git
+git clone git@github.com:bjerva/semeval-relatedness.git
+cd semeval-relatedness
+git checkout refactoring
+git pull
+sudo apt-get install python-nltk 
+sudo apt-get install python-requests
+sudo apt-get install python-numpy
+sudo apt-get install python-scipy
+git clone git@github.com:scikit-learn/scikit-learn.git
+cd scikit-learn
+python setup.py build
+sudo python setup.py install
+make
+----Add to ~/.bashrc
+export PYTHONPATH="/home/rob/semeval-relatedness/scikit-learn";
+----
+sudo apt-get install r-base
+python src/_prepareSICK2.py
+python src/_runSICK2
+python src/semeval_task1.py

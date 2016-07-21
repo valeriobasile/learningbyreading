@@ -1,0 +1,64 @@
+#!/bin/bash
+# C&C NLP tools
+# Copyright (c) Universities of Edinburgh, Oxford and Sydney
+# Copyright (c) James R. Curran
+#
+# This software is covered by a non-commercial use licence.
+# See LICENCE.txt for the full text of the licence.
+#
+# If LICENCE.txt is not included in this distribution
+# please email candc@it.usyd.edu.au to obtain a copy.
+
+THRESH=0.999
+
+NNODES=18
+
+SCRIPTS=src/scripts/ccg
+WORK=working/ccg
+GOLD=$WORK/gold
+GENERATED=$WORK/generated
+MODEL=$WORK/model_deps_partial
+CATS=src/data/ccg/cats
+
+PARTIAL=$WORK/partial/deps_insideout
+
+mkdir -p $PARTIAL
+
+cat <<EOF > $PARTIAL/README
+This directory was created automatically using 
+$SCRIPTS/create_partial_data
+EOF
+
+echo "generating dependencies with derivation counts for training data. Assumes that params file in $MODEL is set appropriately: no normal form; no eisner constraints; no rule constraints; constant zero weights file"
+
+#bin/oracle $MODEL $CATS $CATS/markedup $GOLD/wsj02-21.stagged $PARTIAL/wsj02-21.scores deps_count
+
+echo
+
+echo 'now applying threshold to dependencies'
+
+$SCRIPTS/partial_deps.pl $PARTIAL/wsj02-21.scores.out $GENERATED/wsj02-21.markedup_deps $THRESH > $PARTIAL/wsj02-21.deps.$THRESH
+
+TRAIN_NSENTS=`grep '^$' $PARTIAL/wsj02-21.deps.$THRESH | wc -l | sed 's/^ *//g'`
+TRAIN_NSENTS=$[$TRAIN_NSENTS - 1]
+TRAIN_NFAILS=`gawk 'BEGIN { end = 0; } /^$/ { if(end) print "failed"; end = 1; next; } { end = 0; }' < $PARTIAL/wsj02-21.deps.$THRESH | wc -l | sed 's/^ *//g'`
+
+echo
+
+echo 'number of training sentences' $TRAIN_NSENTS
+echo 'number of training parse failures' $TRAIN_NFAILS
+
+echo
+
+echo "splitting dependencies into $NNODES files in $PARTIAL/deps"
+
+mkdir -p $PARTIAL/deps
+
+$SCRIPTS/distribute $TRAIN_NSENTS $NNODES '^$' $PARTIAL/deps $PARTIAL/wsj02-21.deps.$THRESH
+
+echo
+
+echo "copying $WORK/feats which is required by forests"
+
+cp -r $WORK/feats $PARTIAL/feats
+

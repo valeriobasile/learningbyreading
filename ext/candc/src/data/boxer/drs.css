@@ -1,0 +1,10 @@
+html, body { background-color: #ffffff; 
+             margin: 0;
+             padding: 0;
+             height: 100% }
+
+table { border-collapse: collapse }
+tr#dom { border: 1px solid black }
+tr#con { border: 1px solid black }
+td { padding: 5px }
+caption { caption-side: top }

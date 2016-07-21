@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+
+import re
+import sys
+
+PTBANK = sys.argv[1]
+CCGBANK = sys.argv[2]
+PREFIX = sys.argv[3]
+
+def skip_id(iter):
+  for line in iter:
+    if line.startswith('ID='):
+      continue
+    yield line
+
+# (<L N/N VBG VBG publishing N_119/N_119>)
+CCG_LEAVES = re.compile(r'\(<L [^ ]+ ([^ ]+) [^ ]+ ([^ ]+) [^ >]+>\)')
+CCG = []
+for i, line in enumerate(skip_id(open(CCGBANK))):
+  line = line.strip()
+  leaves = [(x[1], x[0]) for x in CCG_LEAVES.findall(line)]
+  sentence = ' '.join([x[0] for x in leaves])
+  CCG.append((sentence, line))
+
+PTB_IGNORE = set(["``", "''", "-NONE-"])
+PTB_EXCEPT = set(["non-``"])
+PTB_LEAVES = re.compile(r'\(([^) ]+) ([^) ]+)\)')
+
+def ptb_keep((p, w)):
+  if p in PTB_IGNORE:
+    return w in PTB_EXCEPT
+  return True
+
+PTB = []
+for i, line in enumerate(open(PTBANK)):
+  line = line.strip()
+  leaves = [(x[1], x[0]) for x in PTB_LEAVES.findall(line) if ptb_keep(x)]
+  full = [(x[1], x[0]) for x in PTB_LEAVES.findall(line) if x[0] != '-NONE-']
+  plain_txt = ' '.join([x[0] for x in leaves])
+  full_txt = ' '.join([x[0] for x in full])
+  plain_pos = ' '.join(['%s|%s' % x for x in leaves])
+  full_pos = ' '.join(['%s|%s' % x for x in full])
+  PTB.append((plain_txt, line, full_txt, plain_pos, full_pos))
+
+join = []
+nskipped = 0
+while CCG and PTB:
+  if CCG[0][0] == PTB[0][0]:
+    join.append((CCG[0], PTB[0]))
+    CCG.pop(0)
+    PTB.pop(0)
+  else:
+    print >> sys.stderr, 'PTB', PTB[0][0]
+    nskipped += 1
+    PTB.pop(0)
+
+print 'nskipped =', nskipped
+
+PTBOUT = PREFIX + '.ptb'
+CCGOUT = PREFIX + '.ccg'
+POSOUT = PREFIX + '.pos'
+TXTOUT = PREFIX + '.txt'
+POSQUO = PREFIX + '.qpos'
+TXTQUO = PREFIX + '.qtxt'
+
+txtout = open(TXTOUT, 'w')
+ptbout = open(PTBOUT, 'w')
+ccgout = open(CCGOUT, 'w')
+txtquo = open(TXTQUO, 'w')
+posout = open(POSOUT, 'w')
+posquo = open(POSQUO, 'w')
+for ccg, ptb in join:
+  print >> txtout, ptb[0]
+  print >> ptbout, ptb[1]
+  print >> ccgout, ccg[1]
+  print >> txtquo, ptb[2]
+  print >> posout, ptb[3]
+  print >> posquo, ptb[4]

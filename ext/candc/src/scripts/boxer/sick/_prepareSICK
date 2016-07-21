@@ -1,0 +1,23 @@
+#!/bin/bash
+
+WORKING=working
+#INFILE=${WORKING}/SICK_train.txt
+#INFILE=${WORKING}/SICK_trial.txt
+INFILE=${WORKING}/SICK_test_annotated.txt
+OUTDIR=${WORKING}/sicktest
+
+N=`cat ${INFILE} | wc -l`
+
+for I in `seq 2 ${N}`; do
+    F1=`cat ${INFILE} | head -${I} | tail -1 | cut -f1`
+    mkdir -p ${OUTDIR}/${F1}
+    F2=`cat ${INFILE} | head -${I} | tail -1 | cut -f2`
+    echo ${F2} > ${OUTDIR}/${F1}/t
+    F3=`cat ${INFILE} | head -${I} | tail -1 | cut -f3`
+    echo ${F3} > ${OUTDIR}/${F1}/h
+    F4=`cat ${INFILE} | head -${I} | tail -1 | cut -f4`
+    echo ${F4} > ${OUTDIR}/${F1}/gold.sim
+    F5=`cat ${INFILE} | head -${I} | tail -1 | cut -f5`
+    echo ${F5} > ${OUTDIR}/${F1}/gold.rte
+done
+ 

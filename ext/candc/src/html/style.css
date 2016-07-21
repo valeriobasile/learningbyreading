@@ -1,0 +1,49 @@
+body {
+  font-size: 14px;
+  margin: 20px 0px 0px 30px;
+  font-family: Helvetica;
+}
+
+table.parseTree td, th {
+  vertical-align: middle;
+  padding-right: 15px;
+  text-align: center;
+  color: #222;
+}
+
+table.parseTree td {
+  min-width: 100px;
+}
+
+table.parseTree th {
+  color: #999;
+  font-weight: bold;
+}
+
+table.parseTree div {
+  border-top: 0.15ex solid black;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 1px;
+  position: relative;
+}
+
+table.parseTree div.extra {
+  background-color: white;
+  float: right;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: none;
+  font-size: 11px;
+  padding-left: 0px;
+  margin: -1.5ex 0px 0px 0px;
+}
+
+table.parseTree p {
+  margin: 0px;
+}
+
+table.parseTree sub {
+  font-size: 0.7em;
+}

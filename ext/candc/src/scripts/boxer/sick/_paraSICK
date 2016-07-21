@@ -1,0 +1,40 @@
+#!/bin/bash
+
+GRAM=4
+OUTDIR=../../../working/sicktrial/sick
+PARFILE=/Users/johanbos/Downloads/ppdb-slim.${GRAM}
+
+for I in `ls ${OUTDIR}`; do
+    T=${OUTDIR}/${I}/t
+    H=${OUTDIR}/${I}/h
+    GOLD=${OUTDIR}/${I}/gold.rte
+    if [ -f ${T} ]; then
+	if [ `cat ${GOLD} | grep UNKNOWN | wc -l` -gt 0 ]; then
+	    LEN=`cat ${T} | tr -s " " | tr " " "\n" | wc -l`
+	    for J in `seq 1 $((1+LEN-GRAM))`; do
+		SRC=`cat ${T} | tr "A-Z" "a-z" | tr -s " " | cut -d" " -f${J}-$((J+GRAM-1))`
+		grep "^| ${SRC} |" ${PARFILE} | sort -u > par.tmp
+		NPAR=`cat par.tmp | grep . | wc -l`
+		if [ ${NPAR} -gt 0 ]; then
+		    for M in `seq 1 ${NPAR}`; do
+			TGT=`cat par.tmp | head -${M} | tail -1 | cut -d"|" -f5- | cut -d"|" -f1`
+			if [ ! `echo ${TGT} | grep "\." | wc -l` -gt 0 ]; then 
+			    if [ `cat ${T} | grep "${TGT}" | wc -l` -eq 0 ]; then 
+				MATCHES=`cat ${H} | grep "${TGT}" | wc -l`
+				if [ ${MATCHES} -gt 0 ]; then
+				    echo -n "${I} "; cat ${GOLD}   
+				    echo -n "T: "; cat ${T}
+				    echo -n "H: "; cat ${H}
+				    echo "P: [${SRC}] -> [${TGT}]"
+				    echo "----------------"
+				fi
+			    fi
+			fi
+		    done
+		fi   
+	    done
+	fi
+    fi	
+done
+
+#		    TGT=`cat par.tmp | head -${M} | tail -1 | cut -d"|" -f5- | cut -d"|" -f1 | sed 's/ $//' | sed 's/^ //'`

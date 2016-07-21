@@ -1,0 +1,29 @@
+The DT 2 (NP\NP)/N NP[nb]/N
+declaration NN 3 N N/N N/S[em]
+by IN 8 ((S\NP)\(S\NP))/NP ((S[adj]\NP)\(S[adj]\NP))/NP (S/S)/NP (((S\NP)\(S\NP))\((S\NP)\(S\NP)))/NP (NP\NP)/NP ((S\NP)\(S\NP))/(S[ng]\NP) ((NP\NP)\(NP\NP))/NP PP/NP
+Economy NNP 1 N/N
+Minister NNP 8 , N/N (NP\NP)/NP ((S\NP)\(S\NP))/NP NP/NP (NP[nb]/N)\NP PP/NP conj
+Nestor NNP 2 N N/N
+Rapanelli NNP 2 N NP\NP
+is VBZ 1 (S[dcl]\NP)/(S[pss]\NP)
+believed VBN 5 (S[adj]\NP)/(S[to]\NP) (S[ng]\NP)/(S[to]\NP) (S[pt]\NP)/(S[to]\NP) (S[pss]\NP)/(S[to]\NP) (S[dcl]\NP)/(S[to]\NP)
+to TO 1 (S[to]\NP)/(S[b]\NP)
+be VB 2 (S[b]\NP)/NP ((S[b]\NP)/PP)/NP
+the DT 1 NP[nb]/N
+first JJ 3 N S[adj]\NP N/N
+time NN 1 N
+such PDT 1 NP/NP
+an DT 1 NP[nb]/N
+action NN 1 N
+has VBZ 1 (S[dcl]\NP)/(S[pt]\NP)
+been VBN 4 (S[pt]\NP)/(S[adj]\NP) (S[dcl]\NP)/(S[pss]\NP) (S[pt]\NP)/(S[ng]\NP) (S[pt]\NP)/(S[pss]\NP)
+called VBN 2 S[pss]\NP (S[pss]\NP)/(PP/NP)
+for IN 17 PP/NP PP/S[qem] ((S\NP)\(S\NP))/(S[ng]\NP) ((NP\NP)/(S[to]\NP))/NP (S[for]/(S[to]\NP))/NP ((S\NP)\(S\NP))/((S\NP)\(S\NP)) ((S\NP)\(S\NP))/NP ((S\NP)\(S\NP))/PP ((S\NP)\(S\NP))/(S[adj]\NP) (((S\NP)\(S\NP))/(S[to]\NP))/NP (NP\NP)/(S[ng]\NP) (NP/NP)/NP PP/(S[ng]\NP) (((S\NP)\(S\NP))/((S\NP)\(S\NP)))/NP (NP\NP)/S[qem] ((S\NP)\(S\NP))/S[dcl] (S\NP)\(S\NP)
+by IN 11 (N/N)/(N/N) ((S\NP)\(S\NP))/NP ((S\NP)/(S\NP))/NP ((S[adj]\NP)\(S[adj]\NP))/NP (S/S)/NP (((S\NP)\(S\NP))\((S\NP)\(S\NP)))/NP (S\S)/NP (NP\NP)/NP ((S\NP)\(S\NP))/(S[ng]\NP) ((NP\NP)\(NP\NP))/NP PP/NP
+an DT 2 NP[nb]/N (NP\NP)/N
+Argentine JJ 1 N/N
+official NN 1 N
+of IN 2 PP/NP (NP\NP)/NP
+such JJ 4 NP/NP (NP\NP)/(NP\NP) N/N ((S\NP)\(S\NP))/((S\NP)\(S\NP))
+stature NN 1 N
+. . 1 .

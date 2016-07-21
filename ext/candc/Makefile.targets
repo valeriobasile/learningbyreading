@@ -1,0 +1,725 @@
+# -*- Mode: Makefile; -*-
+# C&C NLP tools
+# Copyright (c) Universities of Edinburgh, Oxford and Sydney
+# Copyright (c) James R. Curran
+#
+# This software is covered by a non-commercial use licence.
+# See LICENCE.txt for the full text of the licence.
+#
+# If LICENCE.txt is not included in this distribution
+# please email candc@it.usyd.edu.au to obtain a copy.
+
+# for SunOS make implicit rules
+CCC = $(CXX)
+CCFLAGS = $(CFLAGS)
+
+LFLAGS=-Cfa -8 -p -v -s -b -B
+LFLAGS_MORPH=-Cfe -8 -p -v -s
+
+DEPEND_INC = $(INC) $(SOAP_INC) $(PY_INC)
+
+PROGRAMS = dirs bin/pos bin/mpos bin/chunk bin/mchunk bin/ner bin/mner bin/super bin/msuper \
+  bin/train_pos bin/train_chunk bin/train_ner bin/train_super bin/parser bin/candc \
+  bin/reestimate
+# bin/train_class (not tested or documented yet)
+
+SOAP_PROGRAMS = bin/soap_server bin/soap_client
+TRAIN_PROGRAMS = bin/generate bin/forests bin/count_rules bin/tree_gis bin/mpi_train_super
+
+BASE_OBJS = src/lib/base.o $(PORT_OBJS) src/lib/timer.o \
+  src/lib/input.o src/lib/word.o src/lib/version.o \
+  src/lib/licence.o src/lib/tagset.o src/lib/lexicon.o
+
+CONFIG_OBJS = src/lib/utils/escape.o src/lib/config/node.o src/lib/config/option.o \
+  src/lib/config/config.o src/lib/io/format.o
+
+MAXENT_OBJS = src/lib/maxent/gis.o src/lib/maxent/bfgs.o src/lib/maxent/perceptron.o
+
+TAG_OBJS = src/lib/tagger/tagdict.o src/lib/tagger/tagsetdict.o src/lib/tagger/_baseimpl.o \
+  src/lib/tagger/tagger.o src/lib/tagger/taghist.o
+
+FEATURE_OBJS = src/lib/gazetteers.o src/lib/tagger/taghist.o src/lib/tagger/unigram.o
+
+EXT_OBJS = src/lib/extract/_baseimpl.o src/lib/extract/attributes.o \
+  src/lib/extract/contexts.o
+
+MODEL_OBJS = src/lib/model/types.o src/lib/model/registry.o src/lib/model/affix.o \
+  src/lib/model/unigram.o src/lib/model/bigram.o src/lib/model/trigram.o src/lib/model/model.o src/lib/model/cache.o
+
+IO_OBJS = src/lib/io/stream.o src/lib/io/reader.o src/lib/io/reader_group.o \
+  src/lib/io/reader_horiz.o \
+  src/lib/io/reader_multi_horiz.o src/lib/io/reader_factory.o \
+  src/lib/io/writer.o src/lib/io/writer_stream.o src/lib/io/writer_group.o \
+  src/lib/io/writer_horiz.o src/lib/io/writer_multi_horiz.o \
+  src/lib/io/writer_vert.o src/lib/io/writer_multi_vert.o \
+  src/lib/io/writer_format.o src/lib/io/writer_factory.o
+
+CCG_OBJS = src/lib/parser/atom.o src/lib/parser/feature.o src/lib/parser/varid.o src/lib/parser/category.o \
+  src/lib/parser/markedup.o src/lib/parser/categories.o src/lib/parser/gr.o \
+  src/lib/parser/gr_constraints.o \
+  src/lib/parser/relations.o src/lib/parser/supercat.o src/lib/parser/equiv.o \
+  src/lib/parser/chart.o src/lib/parser/unify.o src/lib/parser/treebank.o \
+  src/lib/parser/variable.o src/lib/parser/rule.o \
+  src/lib/tree/catvalue.o src/lib/tree/dependency.o src/lib/tree/distance.o \
+  src/lib/tree/rule.o src/lib/tree/depdist.o src/lib/tree/genrule.o \
+  src/lib/parser/rule_instances.o src/lib/lexicon.o \
+  src/lib/parser/parser.o src/lib/parser/depscore.o src/lib/parser/canonical.o \
+  src/lib/parser/generator.o src/lib/parser/constraint.o \
+  src/lib/parser/print_deps.o src/lib/parser/print_prolog.o \
+  src/lib/parser/print_boxer.o src/lib/parser/print_ccgbank.o \
+  src/lib/parser/print_grs.o src/lib/parser/print_xml.o \
+  src/lib/parser/print_debug.o src/lib/parser/print_js.o \
+  src/lib/parser/print_latex.o src/lib/parser/print_factory.o \
+  src/lib/parser/decoder.o \
+  src/lib/parser/decoder_derivs.o src/lib/parser/decoder_derivs_random.o \
+  src/lib/parser/decoder_deps_recall.o src/lib/parser/decoder_factory.o \
+  src/lib/parser/beam.o src/lib/parser/count_rules.o \
+  src/lib/parser/print_forest.o src/lib/parser/inside_outside.o \
+  src/lib/parser/feature_root.o src/lib/parser/feature_rule.o \
+  src/lib/parser/feature_rule_head.o \
+  src/lib/parser/feature_dep.o src/lib/parser/feature_dep_dist.o \
+  src/lib/parser/feature_rule_dep.o src/lib/parser/feature_rule_dep_dist.o \
+  src/lib/parser/feature_genrule.o src/lib/parser/integration.o
+
+TREE_OBJS = src/lib/tree/options.o src/lib/tree/forest.o src/lib/tree/gis.o \
+  src/lib/tree/bfgs.o src/lib/tree/perceptron.o src/lib/input.o
+
+TAGGER_OBJS = $(BASE_OBJS) $(CONFIG_OBJS) $(IO_OBJS) $(TAG_OBJS) $(MODEL_OBJS) $(FEATURE_OBJS)
+TRAIN_OBJS = $(TAGGER_OBJS) $(MAXENT_OBJS) $(EXT_OBJS) $(FEATURE_OBJS)
+CANDC_LIB = $(TRAIN_OBJS) $(CCG_OBJS) src/lib/tagger/pos.o src/lib/tagger/chunk.o \
+  src/lib/tagger/ner.o src/lib/tagger/super.o src/lib/relations/morpha.o \
+  src/lib/candc.o src/lib/cluster_no_mpi.o
+
+all: $(PROGRAMS)
+soap: ext/bin/soapcpp2 $(SOAP_PROGRAMS)
+train: $(TRAIN_PROGRAMS)
+reg: ccg-regression
+
+clean:
+	rm -f `find . -name '*.o' -o -name '*.il' -o -name '*.h.gch'`
+	rm -f src/api/soap/*binding* src/api/soap/soap* src/api/soap/ns1*
+	rm -f src/api/nlp/*.pyc src/api/nlp/*.so src/api/python/*.pyc
+	rm -f lib/*.a* lib/*.so*
+	rm -f src/prolog/boxer/*.pl~
+	rm -f src/prolog/lib/*.pl~
+	rm -f src/prolog/nutcracker/*.pl~
+	rm -f core core.*
+
+depends:
+	src/scripts/depends '$(DEPEND) $(DEPEND_INC) -MM' \
+	`find src/lib src/main src/api src/tests \
+	-name '*.c?' -and -not -name '*.svn*'` > Makefile.deps
+
+wc:
+	wc `find src -name '*.h' -o -name '*.cc'`
+
+dirs: .FORCE
+	@mkdir -p bin lib working
+
+# configuration tools:
+
+bin/test_readers: src/tests/test_readers.o $(IO_OBJS)
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/test_options: $(COFIG_OBJS) src/tests/test_options.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/test_offset_vector: src/tests/test_offset_vector.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/test_pipe: $(BASE_OBJS) $(TAG_OBJS) $(EXT_OBJS) $(MODEL_OBJS) src/lib/tagger/pos.o src/tests/test_pipe.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/test_format: src/tests/test_format.o $(BASE_OBJS) $(CONFIG_OBJS) $(IO_OBJS)
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/test_categories: src/tests/test_categories.o $(BASE_OBJS) $(CONFIG_OBJS) $(CCG_OBJS) $(IO_OBJS)
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+# tokeniser:
+
+src/lib/tokeniser/tokeniser.c: src/lib/tokeniser/tokeniser.l
+	$(LEX) $(LFLAGS) -osrc/lib/tokeniser/tokeniser.c src/lib/tokeniser/tokeniser.l
+	mv lex.backup src/lib/tokeniser/tokeniser.backup
+
+bin/tokeniser: src/lib/tokeniser/tokeniser.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+# n-gram bootstrap code
+
+bin/bootstrap: $(BASE_OBJS) src/lib/bootstrap/bootstrap.o src/main/bootstrap.o \
+	src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+# Johan Bos' boxer Prolog code
+
+BOXER = src/prolog/boxer/alphaConversionDRT.pl \
+        src/prolog/boxer/betaConversionDRT.pl \
+        src/prolog/boxer/bindingViolation.pl \
+        src/prolog/boxer/boxer.pl \
+        src/prolog/boxer/categories.pl \
+        src/prolog/boxer/ccg2drs.pl \
+        src/prolog/boxer/coordination.pl \
+        src/prolog/boxer/drs2fdrs.pl \
+        src/prolog/boxer/freeVarCheck.pl \
+        src/prolog/boxer/lexicon.pl \
+        src/prolog/boxer/mergeDRT.pl \
+        src/prolog/boxer/input.pl \
+        src/prolog/boxer/output.pl \
+        src/prolog/boxer/evaluation.pl \
+        src/prolog/boxer/noncomp.pl \
+        src/prolog/boxer/morpha.pl \
+        src/prolog/boxer/resolveDRT.pl \
+        src/prolog/boxer/presupDRT.pl \
+        src/prolog/boxer/printDrs.pl \
+        src/prolog/boxer/printCCG.pl \
+        src/prolog/boxer/sortalCheck.pl \
+        src/prolog/boxer/string2digit.pl \
+        src/prolog/boxer/sdrt.pl \
+        src/prolog/boxer/tuples.pl \
+        src/prolog/boxer/closure.pl \
+        src/prolog/boxer/transform.pl \
+        src/prolog/boxer/relation.pl \
+        src/prolog/boxer/xdrs2xml.pl \
+        src/prolog/boxer/typechange.pl \
+        src/prolog/boxer/vpe.pl \
+        src/prolog/boxer/version.pl \
+        src/prolog/lib/errors.pl \
+        src/prolog/lib/drs2fol.pl \
+        src/prolog/lib/pdrs2drs.pl \
+        src/prolog/lib/options.pl \
+        src/prolog/lib/drs2tacitus.pl \
+        src/prolog/lib/drs2amr.pl \
+        src/prolog/boxer/knowledge/antecedent.pl \
+        src/prolog/boxer/knowledge/ontology.pl \
+        src/prolog/boxer/knowledge/relations.pl \
+        src/prolog/boxer/knowledge/title.pl \
+        src/prolog/boxer/knowledge/ne.pl \
+        src/prolog/boxer/knowledge/dates.pl \
+        src/prolog/boxer/knowledge/punctuation.pl \
+        src/prolog/boxer/lex/determiners.pl \
+        src/prolog/boxer/lex/pp.pl \
+        src/prolog/boxer/lex/n.pl \
+        src/prolog/boxer/lex/tense.pl \
+        src/prolog/boxer/lex/verbs.pl
+
+bin/boxer: $(BOXER)
+	@mkdir -p bin working
+	$(PROLOG) -g "['src/prolog/boxer/boxer'], qsave_program('bin/boxer',[global=128000,local=128000,goal=start,stand_alone=true]), halt."
+
+FETCH = wget
+
+# VerbNet
+
+KNOW_VERBNET = working/verbnet
+VERBNET_VER = 3.2
+VERBNET_TAR = verbnet-$(VERBNET_VER).tar.gz
+VERBNET_URL = http://verbs.colorado.edu/verb-index/vn/$(VERBNET_TAR)
+VERBNET_EXT = ext/VerbNet
+VERBNET_DEPS = src/prolog/lib/verbnet2boxer.pl \
+               src/prolog/lib/verbnet2gmb.pl
+
+ext/$(VERBNET_TAR):
+	@mkdir -p ext
+	@cd ext; $(FETCH) $(VERBNET_URL)
+	@cd ext; tar -mxvzf $(VERBNET_TAR)
+	@mkdir -p $(VERBNET_EXT)
+	@mv ext/verbnet-$(VERBNET_VER)/* $(VERBNET_EXT)
+	@rmdir ext/verbnet-$(VERBNET_VER)
+	@chmod 644 $(VERBNET_EXT)/*
+
+src/prolog/boxer/lex/verbnet.pl: $(VERBNET_DEPS) ext/$(VERBNET_TAR)
+	$(PROLOG) -c src/prolog/lib/verbnet2boxer.pl > src/prolog/boxer/lex/verbnet.pl
+	$(PROLOG) -c src/prolog/lib/verbnet2gmb.pl > $(KNOW_VERBNET)/roles.pl
+	@cp $(KNOW_VERBNET)/roles.pl src/data/boxer/verbnet
+
+# WordNet
+
+KNOW_WORDNET = working/wordnet
+WNPROLOG_VER = 3.0
+WNPROLOG_TAR = WNprolog-$(WNPROLOG_VER).tar.gz
+WNPROLOG_URL = http://wordnetcode.princeton.edu/$(WNPROLOG_VER)/$(WNPROLOG_TAR)
+WNPROLOG_EXT = ext/PrologWordNet
+WNPROLOG_DEPS = $(WNPROLOG_EXT)/wn_s.pl \
+                $(WNPROLOG_EXT)/wn_hyp.pl \
+                src/prolog/lib/gen-wordnet.pl
+
+
+$(WNPROLOG_DEPS): ext/$(WNPROLOG_TAR)
+	@mkdir -p $(WNPROLOG_EXT)
+	cd ext; tar -mxvzf $(WNPROLOG_TAR)
+	@mv ext/prolog/* $(WNPROLOG_EXT)
+	@rmdir ext/prolog
+	@chmod 644 $(WNPROLOG_EXT)/*
+	cd $(WNPROLOG_EXT); patch -p1 < ../../src/data/PrologWordNet3.0.patch
+
+ext/$(WNPROLOG_TAR):
+	@mkdir -p ext
+	cd ext; $(FETCH) $(WNPROLOG_URL)
+
+$(KNOW_WORDNET)/isa.pl $(KNOW_WORDNET)/wordnet.pl: $(WNPROLOG_DEPS)
+	@mkdir -p $(KNOW_WORDNET)
+	$(PROLOG) -c src/prolog/lib/gen-wordnet.pl
+	sort -u $(KNOW_WORDNET)/isa.pl -o $(KNOW_WORDNET)/wordnet.pl
+
+
+
+# Bliksem, theorem prover for FOL
+
+BLIKSEM_TAR = bliksemsource.tar.gz
+BLIKSEM_URL = http://www.ii.uni.wroc.pl/~nivelle/software/bliksem/bliksemsource.tar.gz
+BLIKSEM_EXT = ext/bliksem
+
+ext/bin/CPULimitedRun: ext/$(BLIKSEM_TAR)
+	@mkdir -p $(BLIKSEM_EXT)
+	cd ext; tar -mxvzf $(BLIKSEM_TAR)
+	@mv ext/source/* $(BLIKSEM_EXT)
+	@rmdir ext/source
+	cd $(BLIKSEM_EXT); make CPULimitedRun
+	@mkdir -p ext/bin
+	@mv $(BLIKSEM_EXT)/CPULimitedRun ext/bin/CPULimitedRun
+
+ext/bin/bliksem: ext/$(BLIKSEM_TAR)
+	@mkdir -p $(BLIKSEM_EXT)
+	cd ext; tar -mxvzf $(BLIKSEM_TAR)
+	@mv ext/source/* $(BLIKSEM_EXT)
+	@rmdir ext/source
+	cd $(BLIKSEM_EXT); make; touch inoutput.c; make
+	@mkdir -p ext/bin
+	@mv $(BLIKSEM_EXT)/bliksem ext/bin/bliksem
+
+ext/$(BLIKSEM_TAR):
+	@mkdir -p ext
+	cd ext; $(FETCH) $(BLIKSEM_URL)
+
+# Paradox 1.0, model builder for FOL
+
+PARADOX1_TAR = paradox1-0.gz
+PARADOX1_URL = http://www.cs.chalmers.se/~koen/folkung/linux/paradox1-0.gz
+
+ext/bin/paradox1: ext/$(PARADOX1_TAR)
+	cd ext; gzip -fd $(PARADOX1_TAR)
+	@mkdir -p ext/bin
+	@mv ext/paradox1-0 ext/bin/paradox1
+	@chmod 755 ext/bin/paradox1
+
+ext/$(PARADOX1_TAR):
+	@mkdir -p ext
+	cd ext; $(FETCH) $(PARADOX1_URL)
+
+# Paradox 2.3, model builder for FOL
+
+PARADOX2_TAR = paradox2-3.gz
+PARADOX2_URL = http://www.cs.chalmers.se/~koen/folkung/linux/paradox2-3.gz
+
+ext/bin/paradox2: ext/$(PARADOX2_TAR)
+	cd ext; gzip -fd $(PARADOX2_TAR)
+	@mkdir -p ext/bin
+	@mv ext/paradox2-3 ext/bin/paradox2
+	@chmod 755 ext/bin/paradox2
+
+ext/$(PARADOX2_TAR):
+	@mkdir -p ext
+	cd ext; $(FETCH) $(PARADOX2_URL)
+
+# Paradox 3.0, model builder for FOL
+
+PARADOX3_URL = http://www.cs.chalmers.se/~koen/folkung/linux/paradox3
+
+ext/bin/paradox3:
+	@mkdir -p ext/bin
+	cd ext/bin; $(FETCH) $(PARADOX3_URL)
+	@chmod 755 ext/bin/paradox3
+
+# MACE, model builder for FOL
+
+MACE_VER = otter-3.3f
+MACE_TAR = $(MACE_VER).tar.gz
+MACE_URL = http://www.cs.unm.edu/~mccune/otter/$(MACE_VER).tar.gz
+MACE_EXT = ext/$(MACE_VER)
+
+ext/bin/mace: ext/$(MACE_TAR)
+	cd ext; tar -mxvzf $(MACE_TAR)
+	cd $(MACE_EXT); make install
+	@mkdir -p ext/bin
+	@mv $(MACE_EXT)/bin/mace2 ext/bin/mace
+
+ext/$(MACE_TAR):
+	@mkdir -p ext
+	cd ext; $(FETCH) $(MACE_URL)
+
+
+# Johan Bos's Nutcracker (nc)
+
+NC = src/prolog/nutcracker/nutcracker.pl \
+     src/prolog/nutcracker/miniWordNet.pl \
+     src/prolog/nutcracker/miniFrameNet.pl \
+     src/prolog/nutcracker/input.pl \
+     src/prolog/lib/drs2fol.pl \
+     src/prolog/lib/options.pl \
+     src/prolog/lib/errors.pl \
+     src/prolog/nutcracker/counting.pl \
+     src/prolog/nutcracker/fol2bliksem.pl \
+     src/prolog/nutcracker/fol2otter.pl \
+     src/prolog/nutcracker/callInference.pl \
+     src/prolog/nutcracker/fol2tptp.pl
+
+bin/nc: $(NC) $(KNOW_WORDNET)/wordnet.pl
+	@mkdir -p bin working
+	$(PROLOG) -g "['src/prolog/nutcracker/nutcracker'], qsave_program('bin/nc',[global=128000,local=128000,goal=start,stand_alone=true]), halt."
+
+
+# Johan Bos's Tokkie
+
+TOKKIE = src/prolog/nutcracker/tokkie.pl \
+         src/prolog/lib/options.pl \
+         src/prolog/boxer/version.pl \
+         src/prolog/lib/errors.pl
+
+bin/tokkie: $(TOKKIE)
+	@mkdir -p bin
+	$(PROLOG) -g "['src/prolog/nutcracker/tokkie'], qsave_program('bin/tokkie',[goal=start,stand_alone=true]), halt."
+
+NTOKKIE = src/prolog/nutcracker/ntokkie.pl \
+          src/prolog/lib/abbreviations.pl \
+          src/prolog/lib/options.pl \
+          src/prolog/lib/errors.pl
+
+bin/t: $(NTOKKIE)
+	@mkdir -p bin
+	$(PROLOG) -g "['src/prolog/nutcracker/ntokkie'], qsave_program('bin/t',[goal=start,stand_alone=true]), halt."
+
+
+# library
+
+libcandc: lib/libcandc.$(SHAREDLIB)
+lib/libcandc.$(SHAREDLIB): $(CANDC_LIB)
+	$(LD) $(LIB_LDFLAGS) -o $@ $^ $(LIBS)
+
+# parser:
+
+bin/forests: $(BASE_OBJS) $(IO_OBJS) $(CONFIG_OBJS) $(EXT_OBJS) $(TAG_OBJS) $(MODEL_OBJS) \
+  $(CCG_OBJS) src/lib/tagger/super.o src/main/forests.o src/lib/cluster_mpi.o
+	$(MPIXX) $(LDFLAGS) -o $@ $^ $(MPI_LIBS)
+
+bin/count_rules: $(BASE_OBJS) $(IO_OBJS) $(CONFIG_OBJS) $(EXT_OBJS) $(TAG_OBJS) $(MODEL_OBJS) \
+  $(CCG_OBJS) src/lib/tagger/super.o src/main/count_rules.o src/lib/cluster_mpi.o
+	$(MPIXX) $(LDFLAGS) -o $@ $^ $(MPI_LIBS)
+
+src/main/mpi_train_super.o: src/main/mpi_train_super.cc
+	$(MPIXX) $(MPI_CXXFLAGS) -c -o $@ $<
+
+src/main/mpi_reestimate.o: src/main/mpi_reestimate.cc
+	$(MPIXX) $(MPI_CXXFLAGS) -c -o $@ $<
+
+src/main/tree_gis.o: src/main/tree_gis.cc
+	$(MPIXX) $(MPI_CXXFLAGS) -c -o $@ $<
+
+bin/tree_gis: $(BASE_OBJS) $(TREE_OBJS) src/lib/cluster_mpi.o src/main/tree_gis.o
+	$(MPIXX) $(LDFLAGS) -o $@ $^ $(MPI_LIBS)
+
+bin/generate: $(BASE_OBJS) $(IO_OBJS) $(CONFIG_OBJS) $(EXT_OBJS) $(TAG_OBJS) \
+  $(MODEL_OBJS) $(CCG_OBJS) src/lib/tagger/super.o src/main/generate.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/gendeps: $(CCG_OBJS) src/main/gendeps.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/parser: $(BASE_OBJS) $(IO_OBJS) $(CONFIG_OBJS) $(TAG_OBJS) \
+  $(MODEL_OBJS) $(CCG_OBJS) src/lib/tagger/super.o src/main/parser.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/candc: src/lib/candc.o src/main/candc.o $(TAGGER_OBJS) $(CCG_OBJS) \
+  src/lib/tagger/pos.o src/lib/tagger/chunk.o src/lib/tagger/ner.o \
+  src/lib/tagger/super.o src/lib/relations/morpha.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/parser_reverse: $(CCG_OBJS) src/main/parser_reverse.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/regression: $(BASE_OBJS) $(CCG_OBJS) src/main/regression.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+src/lib/cluster_mpi.o: src/lib/cluster_mpi.cc
+	$(MPIXX) $(MPI_CXXFLAGS) -c -o $@ src/lib/cluster_mpi.cc
+
+src/lib/tree/gis.o: src/lib/tree/gis.cc
+	$(MPIXX) $(MPI_CXXFLAGS) -c -o $@ src/lib/tree/gis.cc
+
+src/lib/tree/bfgs.o: src/lib/tree/bfgs.cc
+	$(MPIXX) $(MPI_CXXFLAGS) -c -o $@ src/lib/tree/bfgs.cc
+
+src/lib/tree/perceptron.o: src/lib/tree/perceptron.cc
+	$(MPIXX) $(MPI_CXXFLAGS) -c -o $@ src/lib/tree/perceptron.cc
+
+TESTS_PARSER = src/tests/ccg/parser.regression src/tests/ccg/parser.correct \
+  src/tests/ccg/parser.explode0 src/tests/ccg/parser.explode1 src/tests/ccg/parser.explode2 \
+  src/tests/ccg/parser.explode3 src/tests/ccg/parser.nospan0 src/tests/ccg/parser.nospan1 \
+  src/tests/ccg/parser.nospan2 src/tests/ccg/parser.nospan3
+
+ccg-regression-files: src/tests/parser.regression
+	cd src/tests/ccg; ../../scripts/ccg/build_tests parser.regression 0 3
+
+ccg-regression: bin/regression src/scripts/ccg/compare src/scripts/ccg/build_tests $(TESTS_PARSER)
+	@mkdir -p working/ccg.final/regression
+	@bin/regression working/ccg.final/model.reg /tmp/regression.out /tmp/regression.log
+	@src/scripts/ccg/compare src/tests/ccg/parser.correct /tmp/regression.out | \
+  tee working/ccg.final/regression/`date +%Y-%m-%d-%H-%M`
+
+# repository version and licencing information
+
+src/lib/version.cc src/prolog/boxer/version.pl: src/scripts/version .FORCE
+	src/scripts/version $(PORT)
+
+src/lib/licence.cc: LICENCE.txt
+	@echo 'namespace NLP {' > $@
+	@echo '  const char *LICENCE = ' >> $@
+	@sed 's/\"/\\\"/g; s/^/    \"/; s/$$/\\n\"/' < $^ >> $@
+	@echo '  ;' >> $@
+	@echo '}' >> $@
+
+# miscellaneous counting:
+
+bin/lexicon: $(BASE_OBJS) src/lib/huge.o src/main/lexicon.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/collect_grs: $(BASE_OBJS) src/lib/huge.o src/main/collect_grs.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/collect_ngrams: $(BASE_OBJS) src/lib/huge.o src/main/collect_ngrams.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/count: src/lib/huge.o src/main/count.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+# tagging:
+
+bin/pos: $(TAGGER_OBJS) src/lib/tagger/pos.o src/main/pos.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/mpos: $(TAGGER_OBJS) src/lib/tagger/pos.o src/main/mpos.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/chunk: $(TAGGER_OBJS) src/lib/tagger/chunk.o src/main/chunk.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/mchunk: $(TAGGER_OBJS) src/lib/tagger/chunk.o src/main/mchunk.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/super: $(TAGGER_OBJS) src/lib/tagger/super.o src/main/super.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/msuper: $(TAGGER_OBJS) src/lib/tagger/super.o src/main/msuper.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/ner: $(TAGGER_OBJS) src/lib/tagger/ner.o src/main/ner.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/mner: $(TAGGER_OBJS) src/lib/tagger/ner.o src/main/mner.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/train_pos: $(TRAIN_OBJS) src/lib/extract/tagger.o src/lib/extract/pos.o \
+  src/lib/tagger/pos.o src/main/train_pos.o src/lib/maxent/gis.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/train_chunk: $(TRAIN_OBJS) src/lib/extract/tagger.o src/lib/extract/chunk.o \
+  src/lib/tagger/chunk.o src/main/train_chunk.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/train_super: $(TRAIN_OBJS) src/lib/extract/tagger.o src/lib/extract/super.o \
+  src/lib/tagger/super.o src/main/train_super.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/mpi_train_super: $(BASE_OBJS) $(TRAIN_OBJS) \
+  src/lib/extract/tagger.o src/lib/extract/super.o \
+  src/lib/tagger/super.o src/main/mpi_train_super.o \
+  src/lib/cluster_mpi.o
+	$(MPIXX) $(LDFLAGS) -o $@ $^ $(MPI_LIBS)
+
+bin/train_ner: $(TRAIN_OBJS) src/lib/extract/tagger.o src/lib/extract/ner.o \
+  src/lib/tagger/ner.o src/main/train_ner.o \
+  src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/train_class: $(TRAIN_OBJS) src/lib/classifier.o src/lib/extract/classifier.o \
+  src/main/train_class.o src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/reestimate: $(TRAIN_OBJS) src/main/reestimate.o src/lib/cluster_no_mpi.o
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+bin/mpi_reestimate: $(BASE_OBJS) $(TRAIN_OBJS) \
+  src/lib/cluster_mpi.o src/main/mpi_reestimate.o
+	$(MPIXX) $(LDFLAGS) -o $@ $^ $(MPI_LIBS)
+
+bin/distribute: $(BASE_OBJS) $(CONFIG_OBJS) src/main/distribute.o \
+  src/lib/cluster_mpi.o
+	$(MPIXX) $(LDFLAGS) -o $@ $^ $(LIBS) -lmrmpi -lboost_mpi-gcc41-mt-1_39 \
+	-lboost_filesystem-gcc41-mt-1_39 -lboost_iostreams-gcc41-mt-1_39
+
+# python interfaces:
+
+py_candc: src/api/nlp/base.so src/api/nlp/config.so src/api/nlp/io.so \
+  src/api/nlp/model.so src/api/nlp/tagger.so src/api/nlp/ccg.so
+
+src/api/python/common.o:
+	$(CXX) $(PY_CXXFLAGS) -c -o $@ src/api/python/common.cc
+
+libpycandc: lib/libpycandc.$(SHAREDLIB)
+lib/libpycandc.$(SHAREDLIB): src/api/python/common.o libcandc
+	$(LD) $(LIB_LDFLAGS) -o $@ src/api/python/common.o $(PY_LIBS)
+
+src/api/python/base.o:
+	$(CXX) $(PY_CXXFLAGS) -c -o $@ src/api/python/base.cc
+
+src/api/nlp/base.so: src/api/python/base.o libpycandc
+	$(LD) $(PY_LDFLAGS) -o $@ src/api/python/base.o -lpycandc $(PY_LIBS)
+
+src/api/python/config.o:
+	$(CXX) $(PY_CXXFLAGS) -c -o $@ src/api/python/config.cc
+
+src/api/nlp/config.so: src/api/python/config.o libpycandc
+	$(LD) $(PY_LDFLAGS) -o $@ src/api/python/config.o -lpycandc $(PY_LIBS)
+
+src/api/python/io.o:
+	$(CXX) $(PY_CXXFLAGS) -c -o $@ src/api/python/io.cc
+
+src/api/nlp/io.so: src/api/python/io.o libpycandc
+	$(LD) $(PY_LDFLAGS) -o $@ src/api/python/io.o -lpycandc $(PY_LIBS)
+
+src/api/python/model.o:
+	$(CXX) $(PY_CXXFLAGS) -c -o $@ src/api/python/model.cc
+
+src/api/nlp/model.so: src/api/python/model.o libpycandc
+	$(LD) $(PY_LDFLAGS) -o $@ src/api/python/model.o -lpycandc $(PY_LIBS)
+
+src/api/python/tagger.o:
+	$(CXX) $(PY_CXXFLAGS) -c -o $@ src/api/python/tagger.cc
+
+src/api/nlp/tagger.so: src/api/python/tagger.o libpycandc
+	$(LD) $(PY_LDFLAGS) -o $@ src/api/python/tagger.o -lpycandc $(PY_LIBS)
+
+src/api/python/print_python.o:
+	$(CXX) $(PY_CXXFLAGS) -c -o $@ src/api/python/print_python.cc
+
+src/api/python/ccg.o:
+	$(CXX) $(PY_CXXFLAGS) -c -o $@ src/api/python/ccg.cc
+
+src/api/nlp/ccg.so: src/api/python/ccg.o src/api/python/print_python.o libpycandc
+	$(LD) $(PY_LDFLAGS) -o $@ src/api/python/ccg.o src/api/python/print_python.o -lpycandc $(PY_LIBS)
+
+src/lib/relations/morpha.o: src/lib/relations/morpha.c
+	$(CC) $(CFLAGS) -w -c -o $@ $<
+
+morph-lex: src/lib/relations/morpha.lex
+	$(LEX) -i $(LFLAGS_MORPH) -Pmorph -o$@ $<
+
+THESAURUS = src/lib/thesaurus/options.o src/lib/thesaurus/type.o src/lib/thesaurus/types.o \
+  src/lib/thesaurus/attribute.o src/lib/thesaurus/attributes.o \
+  src/lib/thesaurus/relation.o \
+  src/lib/thesaurus/object.o src/lib/thesaurus/objects.o \
+  src/lib/thesaurus/measure.o \
+  src/lib/thesaurus/extractor.o
+
+MEASURES = src/lib/thesaurus/measures/cosine.o src/lib/thesaurus/measures/bincosine.o \
+  src/lib/thesaurus/measures/dice.o src/lib/thesaurus/measures/dice2.o \
+  src/lib/thesaurus/measures/bindice.o \
+  src/lib/thesaurus/measures/jaccard.o src/lib/thesaurus/measures/jaccard2.o \
+  src/lib/thesaurus/measures/binjaccard.o \
+  src/lib/thesaurus/measures/lin.o src/lib/thesaurus/measures/lin2.o \
+  src/lib/thesaurus/measures/manhattan.o src/lib/thesaurus/measures/euclidean.o \
+  src/lib/thesaurus/measures/skew.o src/lib/thesaurus/measures/js.o
+
+INTERFACE = src/lib/thesaurus/answer.o src/main/thesaurus.o
+
+lib/libframework.a: $(THESAURUS)
+	ar cr lib/libframework.a $(THESAURUS)
+	ranlib lib/libframework.a
+
+# the thesaurus tools are not included in the C&C 1.0 release
+# include src/lib/thesaurus/weights/Makefile.gen
+
+lib/libweights.a: $(WEIGHTS) src/lib/thesaurus/weights/weights.o
+	ar cr lib/libweights.a $(WEIGHTS) src/lib/thesaurus/weights/weights.o
+	ranlib lib/libweights.a
+
+lib/libmeasures.a: $(MEASURES) src/lib/thesaurus/measures/measures.o
+	ar cr lib/libmeasures.a $(MEASURES) src/lib/thesaurus/measures/measures.o
+	ranlib lib/libmeasures.a
+
+bin/thesaurus: lib/libframework.a lib/libweights.a lib/libmeasures.a $(INTERFACE)
+	$(LD) $(CXXFLAGS) $(LIBS) -o $@ $(INTERFACE) -lframework -lweights -lmeasures
+
+# soap
+
+SOAP_CANDC = src/api/soap
+
+SOAP_CANDC_DEPS = $(SOAP_CANDC)/soapC.cpp $(SOAP_CANDC)/soapServer.cpp \
+  $(SOAP_CANDC)/candc.binding.nsmap $(SOAP_CANDC)/soapClient.cpp
+
+$(SOAP_CANDC_DEPS): $(SOAP_CANDC)/candc_soap.h
+	$(SOAP_CPP) -d $(SOAP_CANDC) -I $(SOAP_CANDC) $<
+
+$(SOAP_CANDC)/soapC.o: $(SOAP_CANDC)/soapC.cpp
+	$(CXX) $(SOAP_CXXFLAGS) -c -o $@ $<
+
+$(SOAP_CANDC)/soapServer.o: $(SOAP_CANDC)/soapServer.cpp
+	$(CXX) $(SOAP_CXXFLAGS) -c -o $@ $<
+
+$(SOAP_CANDC)/soapClient.o: $(SOAP_CANDC)/soapClient.cpp
+	$(CXX) $(SOAP_CXXFLAGS) -c -o $@ $<
+
+$(SOAP_CANDC)/server.o: $(SOAP_CANDC)/server.cc
+	$(CXX) $(SOAP_CXXFLAGS) -c -o $@ $<
+
+$(SOAP_CANDC)/client.o: $(SOAP_CANDC)/client.cc
+	$(CXX) $(SOAP_CXXFLAGS) -c -o $@ $<
+
+bin/soap_server: src/lib/candc.o $(SOAP_CANDC)/soapC.o $(SOAP_CANDC)/soapServer.o \
+  $(SOAP_CANDC)/server.o $(TAGGER_OBJS) $(CCG_OBJS) \
+  src/lib/tagger/pos.o src/lib/tagger/chunk.o src/lib/tagger/ner.o src/lib/tagger/super.o \
+  src/lib/relations/morpha.o src/lib/cluster_no_mpi.o
+	$(LD) $(SOAP_LDFLAGS) -o $@ $^ $(SOAP_LIBS)
+
+bin/soap_client: $(SOAP_CANDC)/soapC.o $(SOAP_CANDC)/soapClient.o $(SOAP_CANDC)/client.o \
+  $(BASE_OBJS) $(CONFIG_OBJS) $(IO_OBJS) src/lib/cluster_no_mpi.o
+	$(LD) $(SOAP_LDFLAGS) -o $@ $^ $(SOAP_LIBS)
+
+# relation extraction:
+
+relations: bin/relations bin/combine bin/filter bin/lexicon bin/frequencies bin/morphtest
+
+RELATIONS = src/lib/relations/morpha.o
+
+bin/relations: src/main/relations.o $(RELATIONS)
+	$(CCC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+bin/combine: bin/combine.o $(RELATIONS)
+	$(CCC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+bin/filter: bin/filter.o
+	$(CCC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+bin/frequencies: bin/frequencies.o
+	$(CCC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+bin/morphtest: bin/morphtest.o $(RELATIONS)
+	$(CCC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+.FORCE:
+
+include Makefile.deps

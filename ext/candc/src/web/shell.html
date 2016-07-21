@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python Shell</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/shell.css" />
+    <script src="/static/js/prototype.js"></script>
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/shell.js"></script>
+    <script>
+      document.observe("dom:loaded", function(){
+        var input = $('input');
+        input.observe('keypress', shellKeypress);
+        input.value = '';
+        input.focus();
+      })
+    </script>
+  </head>
+  <body>
+    <div id='out_container'>
+      <div id='output'></div>
+    </div>
+    <div id='in_container'>
+      &gt;&gt;&gt;
+      <input type='textbox' id='input' value=''>
+    </div>
+  </body>
+</html>

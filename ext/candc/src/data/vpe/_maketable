@@ -1,0 +1,152 @@
+#!/bin/bash
+
+
+maketable()
+{
+    echo "\\begin{table}"
+    echo "\\tabcolsep 1.5pt"
+    echo "\\centering"
+    echo "\\caption{Distribution... \\label{table:dis}}"
+    echo "\\begin{tabular}{|r|rrrrrrrrrrrrrrrrrrrrrrrrr|r|}"
+    echo "\\hline"
+    
+    echo -n "  "
+    for s in `seq 100 124 | cut -c2,3`; do
+	echo -n "& $s "
+    done
+    echo "& Total \\\\"
+    
+    echo "\\hline"
+    echo "\\hline"
+    
+    for i in `cat src/data/vpe/wsj/?? | cut -d" " -f${field} | sort | uniq -c | sort -n -r | tr -s " " | cut -d" " -f3`; do 
+	echo -n "$i "
+	for s in `seq 100 124 | cut -c2,3`; do
+	    n=`cat src/data/vpe/wsj/$s | cut -d" " -f${field} | grep "^$i$" | wc -l | tr -s " "`
+	    echo -n "& $n "
+	done
+	tot=`cat src/data/vpe/wsj/?? | cut -d" " -f${field} | grep "^$i$" | wc -l | tr -s " "`
+	echo "& $tot \\\\"
+    done
+    
+    echo "\\hline"
+    
+    echo -n "  "
+    for s in `seq 100 124 | cut -c2,3`; do
+	n=`cat src/data/vpe/wsj/$s | wc -l | tr -s " "`
+	echo -n "& $n "
+    done
+    tot=`cat src/data/vpe/wsj/?? | wc -l`
+    echo "& $tot \\\\"
+    
+    echo "\\hline"
+    echo "\\end{tabular}"
+    echo "\\end{table}"
+}
+
+
+crosstable()
+{
+    echo ""
+    echo "\\begin{table}"
+    echo "\\tabcolsep 1.5pt"
+    echo "\\centering"
+    echo "\\caption{Distribution... \\label{table:dis}}"
+    echo -n "\\begin{tabular}{|r|"
+    for s in `cat src/data/vpe/wsj/?? | cut -d" " -f${field1} | sort | uniq -c | sort -n -r | tr -s " " | cut -d" " -f3`; do 
+	echo -n "r"
+    done
+    echo "|r|}"
+    echo "\\hline"
+    
+    echo -n "  "
+    for s in `cat src/data/vpe/wsj/?? | cut -d" " -f${field1} | sort | uniq -c | sort -n -r | tr -s " " | cut -d" " -f3`; do 
+	if [ $field1 == "10" ]; then
+	    DESCRIPTION=`cat src/data/vpe/type.pl | grep "^ct($s" | cut -d"'" -f2`
+	else
+	    DESCRIPTION=$s
+	fi
+	echo -n "& \\rotatebox{90}{$DESCRIPTION} "
+    done
+    echo "& Total \\\\"
+    
+    echo "\\hline"
+    echo "\\hline"
+    
+    for i in `cat src/data/vpe/wsj/?? | cut -d" " -f${field2} | sort | uniq -c | sort -n -r | tr -s " " | cut -d" " -f3`; do 
+	echo -n "$i "
+	for s in `cat src/data/vpe/wsj/?? | cut -d" " -f${field1} | sort | uniq -c | sort -n -r | tr -s " " | cut -d" " -f3`; do 
+	    n=`cat src/data/vpe/wsj/?? | cut -d" " -f7-11 | grep " $i " | grep " $s " | wc -l | tr -s " "`
+	    echo -n "& $n "
+	done
+	tot=`cat src/data/vpe/wsj/?? | cut -d" " -f7-11 | grep " $i " | wc -l | tr -s " "`
+	echo "& $tot \\\\"
+    done
+    
+    echo "\\hline"
+    
+    echo -n "  "
+    for s in `cat src/data/vpe/wsj/?? | cut -d" " -f${field1} | sort | uniq -c | sort -n -r | tr -s " " | cut -d" " -f3`; do 
+	n=`cat src/data/vpe/wsj/?? | cut -d" " -f7-11 | grep " $s " | wc -l | tr -s " "`
+	echo -n "& $n "
+    done
+    tot=`cat src/data/vpe/wsj/?? | wc -l`
+    echo "& $tot \\\\"
+    
+    echo "\\hline"
+    echo "\\end{tabular}"
+    echo "\\end{table}"
+}
+
+
+appendix()
+{
+    echo ""
+    echo "\\begin{enumerate}"
+    echo "\\setlength{\\itemsep}{8pt}"
+    echo ""
+    for s in `cat src/data/vpe/wsj/?? | cut -d" " -f10 | sort | uniq -c | sort -n -r | tr -s " " | cut -d" " -f3`; do 
+	DESCRIPTION=`cat src/data/vpe/type.pl | grep "^ct($s" | cut -d"'" -f2`
+	n=`cat src/data/vpe/wsj/?? | cut -d" " -f7-11 | grep " $s " | wc -l | tr -d " "`
+	if [ $n -ge 2 ]; then
+	    echo "\\item \\texttt{$DESCRIPTION} ($n cases)\\\\"
+	else
+	    echo "\\item \\texttt{$DESCRIPTION} ($n case)\\\\"
+	fi
+        echo ""
+    done
+    echo "\\end{enumerate}"
+}
+
+field="8"
+maketable
+field="9"
+maketable
+field="10"
+maketable
+
+field1="8"
+field2="9"
+crosstable
+
+field1="9"
+field2="8"
+crosstable
+
+field1="9"
+field2="10"
+crosstable
+
+field1="10"
+field2="9"
+crosstable
+
+field1="8"
+field2="10"
+crosstable
+
+field1="10"
+field2="8"
+crosstable
+
+appendix

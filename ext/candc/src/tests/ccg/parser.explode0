@@ -1,0 +1,48 @@
+In IN 6 (S/S)/(S[ng]\NP) ((S\NP)/(S\NP))/NP PP/NP (NP\NP)/NP (S/S)/(S[adj]\NP) (S/S)/NP
+mid-October NNP 1 N
+, , 1 ,
+Time NNP 5 N (NP\NP)/N N/N ((S\NP)/(S\NP))/((S\NP)/(S\NP)) NP[nb]/N
+magazine NN 1 N
+lowered VBD 16 , (S[dcl]\NP)/S[dcl] ((S[dcl]\NP)/(S[adj]\NP))/NP (S[dcl]\NP)/NP (S[dcl]\NP)/(S[pt]\NP) S[pss]\NP (NP\NP)/NP ((S\NP)\(S\NP))/NP (((S[dcl]\NP)/PP)/PP)/NP (S[pt]\NP)/NP ((S[dcl]\NP)/(S[to]\NP))/NP ((S[dcl]\NP)/PP)/NP (S[dcl]\NP)/(S[pss]\NP) S[dcl]\NP PP/NP conj
+its PRP$ 2 NP\NP NP[nb]/N
+guaranteed VBN 2 (N/N)/(N/N) N/N
+circulation NN 7 N (N/N)/(N/N) N/N NP/NP (S\NP)\(S\NP) NP[nb]/N (N/N)\(N/N)
+rate NN 2 N N/N
+base NN 7 (S[pss]\NP)/PP N (S[b]\NP)/PP (S[dcl]\NP)/PP S[adj]\NP (NP\NP)/PP N/S[for]
+for IN 5 PP/NP ((NP\NP)/(S[to]\NP))/NP ((S\NP)\(S\NP))/NP ((NP\NP)\(NP\NP))/NP (NP\NP)/NP
+1990 CD 1 N
+while IN 4 ((S\NP)\(S\NP))/S[dcl] ((S\NP)/(S\NP))/(S[adj]\NP) ((S\NP)\(S\NP))/NP ((S\NP)\(S\NP))/(S[ng]\NP)
+not RB 12 (S\NP)/(S\NP) NP/NP ((S\NP)\(S\NP))\((S\NP)\(S\NP)) conj/conj (S\NP)\(S\NP) (NP/NP)/(NP/NP) (N/N)/(N/N) N/N conj\conj S\S N (((S\NP)\(S\NP))/((S\NP)\(S\NP)))/(((S\NP)\(S\NP))/((S\NP)\(S\NP)))
+increasing VBG 6 N/N (S[ng]\NP)/NP ((S[ng]\NP)/PP)/NP S[ng]\NP NP[nb]/N (N/N)\(N/N)
+ad NN 1 N/N
+page NN 4 (NP\NP)/(NP\NP) N N/N ((S\NP)\(S\NP))/((S\NP)\(S\NP))
+rates NNS 1 N
+; : 1 :
+with IN 15 (NP\NP)/NP ((S/S)/(S[ng]\NP))/NP ((S[adj]\NP)\(S[adj]\NP))/NP (((S\NP)\(S\NP))/(S[ng]\NP))/NP ((S\NP)\(S\NP))/S[ng] PP/(S[ng]\NP) ((S\NP)\(S\NP))/NP ((S\NP)/(S\NP))/NP (((S\NP)\(S\NP))/(S[pt]\NP))/NP (((S\NP)\(S\NP))/(S[pss]\NP))/NP PP/NP ((S/S)\(S/S))/NP conj (S/S)/NP (S\S)/NP
+a DT 2 NP[nb]/N (N/N)/(N/N)
+lower JJR 2 (N/N)/(N/N) N/N
+circulation NN 2 N N/N
+base NN 1 N
+, , 1 ,
+Time NNP 1 N
+'s POS 2 N/N (NP[nb]/N)\NP
+ad NN 2 N/N N
+rate NN 1 N
+will MD 1 (S[dcl]\NP)/(S[b]\NP)
+be VB 17 (S[b]\NP)/(S[to]\NP) (S[dcl]\NP)/(S[adj]\NP) ((S[b]\NP)/S[for])/(S[adj]\NP) ((S[b]\NP)/(S[ng]\NP))/NP (S[b]\NP)/(S[adj]\NP) (S[b]\NP)/S[qem] ((S[b]\NP)/(S[adj]\NP))/NP ((S[b]\NP)/(S[to]\NP))/(S[adj]\NP) (S[b]\NP)/NP (S[b]\NP)/PP ((S[b]\NP)/(S[to]\NP))/NP ((S[b]\NP)/(S[to]\NP))/PP (S[b]\NP)/(S[ng]\NP) (S[b]\NP)/(S[b]\NP) (S[b]\NP)/(S[pss]\NP) S[b]\NP ((S[b]\NP)/PP)/NP
+effectively RB 25 (S[pss]\NP)/PP ((N/N)/(N/N))/((N/N)/(N/N)) , (((S\NP)\(S\NP))/PP)/NP (N/N)/(N/N) S[pss]\NP N/N (S[ng]\NP)/NP ((S\NP)\(S\NP))/NP S[b]\NP ((S\NP)\(S\NP))/((S\NP)\(S\NP)) S[adj]\NP ((NP\NP)/PP)/NP (S[adj]\NP)/(S[adj]\NP) NP/NP (((S\NP)\(S\NP))/((S\NP)\(S\NP)))/(((S\NP)\(S\NP))/((S\NP)\(S\NP))) (S\NP)\(S\NP) S[ng]\NP ((S[adj]\NP)/PP)/NP NP[nb]/N PP/NP (S[pss]\NP)/NP S[pt]\NP PP/PP (S\NP)/(S\NP)
+7.5 CD 6 ((N/N)/(N/N))/((N/N)/(N/N)) (N/N)/(N/N) N/N ((S[adj]\NP)/(S[adj]\NP))/((S[adj]\NP)/(S[adj]\NP)) ((S[adj]\NP)\(S[adj]\NP))/((S[adj]\NP)\(S[adj]\NP)) (N/N)\(N/N)
+% NN 11 N/N (S[adj]\NP)\(S[adj]\NP) ((S\NP)\(S\NP))\((S\NP)\(S\NP)) NP[nb]/N N S[adj]\NP (S[adj]\NP)/(S[adj]\NP) ((S\NP)\(S\NP))/((S\NP)\(S\NP)) (NP\NP)\(NP\NP) (S\NP)\(S\NP) NP\NP
+higher JJR 9 S[adj]\NP (N/N)\(N/N) (S\NP)\(S\NP) (S[adj]\NP)\(S[adj]\NP) N/N (S[adj]\NP)/PP ((S\NP)\(S\NP))\NP (S[adj]\NP)\NP N
+per IN 7 ((S[adj]\NP)\(S[adj]\NP))/NP N/N (NP\NP)/NP ((S\NP)\(S\NP))/NP ((NP\NP)\(NP\NP))/((NP\NP)\(NP\NP)) ((S\NP)\(S\NP))/((S\NP)\(S\NP)) PP/NP
+subscriber NN 1 N
+; : 1 :
+a DT 4 ((S[adj]\NP)/(S[adj]\NP))/N (NP\NP)/N NP[nb]/N NP/NP
+full JJ 1 N/N
+page NN 1 N
+in IN 3 ((S\NP)\(S\NP))/NP ((S\NP)/(S\NP))/NP (NP\NP)/NP
+Time NNP 2 N N/N
+costs VBZ 4 ((S[dcl]\NP)/PP)/NP N (S[dcl]\NP)/NP S[dcl]\NP
+about IN 4 (NP\NP)/NP N/N PP/NP ((S\NP)\(S\NP))/NP
+<DOLLARS> NN 2 (NP\NP)\(NP\NP) N
+. . 1 .

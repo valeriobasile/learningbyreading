@@ -1,0 +1,971 @@
+<s> FORWARD APPLICATION
+motor NN 1 N/N
+cars NNS 1 N
+</s>
+<s> FORWARD APPLICATION CONJ CONSTRAINT
+Fred NNP 1 (NP\NP)/(NP\NP)
+and CC 1 conj
+cars NNS 1 NP
+</s>
+<s> BACKWARD APPLICATION
+John NNP 1 NP
+runs VBZ 1 S[dcl]\NP
+</s>
+<s> BACKWARD APPLICATION CONJ CONSTRAINT
+and CC 1 conj
+Freedom NN 1 NP
+now RB 1 (NP\NP)\(NP\NP)
+</s>
+<s> BACKWARD APPLICATION COMMA CONJ CONSTRAINT
+, , 1 ,
+Freedom NN 1 NP
+now RB 1 (NP\NP)\(NP\NP)
+</s>
+<s> FORWARD AND BACKWARD APPLICATION
+John NNP 1 NP
+pays VBZ 1 ((S[dcl]\NP)/NP)/NP
+Bill NNP 1 NP
+the DT 1 NP[nb]/N
+money NN 1 N
+</s>
+<s> COORDINATION
+I PRP 1 NP
+like VBP 1 (S[dcl]\NP)/NP
+John NP 1 NP
+and CC 1 conj
+Mary NP 1 NP
+</s>
+<s> COORDINATION OF SUBJECT AND OBJECT
+Barry NP 1 NP
+and CC 1 conj
+Neal NP 1 NP
+like VBP 1 (S[dcl]\NP)/NP
+Sharon NP 1 NP
+and CC 1 conj
+Jade NP 1 NP
+</s>
+<s> COORDINATION OF COMPLEX CATEGORIES
+I PRP 1 NP
+like VBP 1 (S[dcl]\NP)/NP
+and CC 1 conj
+hate VBP 1 (S[dcl]\NP)/NP
+Neal NP 1 NP
+</s>
+<s> LEXRULE APPLIED TO COORDINATION OF COMPLEX CATEGORIES
+Chris NP 1 NP
+running VBG 1 (S[ng]\NP)/NP
+and CC 1 conj
+organising VBG 1 (S[ng]\NP)/NP
+the DT 1 NP[nb]/N
+marathon NN 1 N
+is VBZ 1 (S[dcl]\NP)/NP 
+an DT 1 NP[nb]/N
+old JJ 1 N/N 
+story NN 1 N
+</s>
+<s> LEXRULE APPLIED TO COORDINATION OF COMPLEX CATEGORIES 2
+efforts NNS 1 N
+to TO 1 (S[to]\NP)/(S[b]\NP)
+stop VB 1 S[b]\NP
+or CC 1 conj
+slow VB 1 S[b]\NP
+</s>
+<s> LEXRULE APPLIED TO COORDINATION OF COMPLEX CATEGORIES 3
+jeopardise VB 1 (S[dcl]\NP)/NP
+efforts NNS 1 N
+to TO 1 (S[to]\NP)/(S[b]\NP)
+stop VB 1 (S[b]\NP)/NP
+or CC 1 conj
+slow VB 1 (S[b]\NP)/NP
+down RP 1 (S\NP)\(S\NP)
+the DT 1 NP[nb]/N
+subsidence NN 1 N
+</s>
+<s> COORDINATION CONJ CONSTRAINT (FUNNY CONJ MEANS CURRENTLY NO FAIL)
+likes VBZ 1 (S[dcl]\NP)/NP
+pears NNS 1 N
+and CC 1 conj
+and CC 1 conj
+apples NNS 1 N
+</s>
+<s> FORWARD COMPOSITION + TYPE RAISING
+John NNP 1 NP
+who WP 1 (NP\NP)/(S[dcl]/NP)
+Barry NNP 1 NP
+likes VBZ 1 (S[dcl]\NP)/NP
+</s>
+<s> FORWARD COMPOSITION (EXTRA VERB ARGUMENT) + TYPE RAISING
+John NNP 1 NP
+who WP 1 (NP\NP)/(S[dcl]/NP)
+Barry NNP 1 NP
+gives VBZ 1 ((S[dcl]\NP)/PP)/NP
+the DT 1 NP[nb]/N
+book NN 1 N
+to TO 1 PP/NP
+</s>
+<s> FORWARD COMPOSITION (TWO EXTRA VERB ARGUMENTS) + TYPE RAISING
+The DT 1 NP[nb]/N
+work NN 1 N
+which WDT 1 (NP\NP)/(S[dcl]/NP)
+they PRP 1 NP
+will MD 1 (S[dcl]\NP)/(S[b]\NP)
+pay VB 1 (((S[b]\NP)/PP)/NP)/NP
+the DT 1 NP[nb]/N
+man NN 1 N
+5 CD 1 N/N
+pounds NNS 1 N
+for IN 1 PP/NP
+</s>
+<s> FORWARD COMPOSITION RECURSIVE + COORDINATION
+I PRP 1 NP
+offered VBD 1 ((S[dcl]\NP)/PP)/NP
+and CC 1 conj
+she PRP 1 NP
+offered VBD 1 ((S[dcl]\NP)/PP)/NP
+a DT 1 NP[nb]/N
+flower NN 1 N
+to TO 1 PP/NP
+a DT 1 NP[nb]/N
+policeman NN 1 N
+</s>
+<s> FORWARD COMPOSITION VERB TYPE ANTI CONSTRAINT
+all DT 1 NP[nb]/N 
+green JJ 1 N/N
+and CC 1 conj
+all DT 1 NP[nb]/N
+red JJ 1 N/N
+apples NNS 1 N
+</s>
+<s> FORWARD COMPOSITION RECURSIVE VERB TYPE CONSTRAINT
+all DT 1 NP[nb]/N 
+the DT 1 (N/N)/N
+</s>
+<s> BACKWARD COMPOSITION + COORDINATION
+I PRP 1 NP
+gave VBD 1 ((S[dcl]\NP)/NP)/NP
+John NNP 1 NP
+an DT 1 NP[nb]/N
+apple NN 1 N
+and CC 1 conj
+Bill NNP 1 NP
+a DT 1 NP[nb]/N
+pear NN 1 N
+</s>
+<s> BACKWARD COMPOSITION CONJ CONSTRAINT
+else RB 1 N\N
+and CC 1 conj
+apples NNS 1 N
+</s>
+<s> BACKWARD COMPOSITION CONJ CONSTRAINT + FORWARD APPLICATION CONJ CONSTRAINT
+particularly RB 1 (N\N)/(N\N)
+and CC 1 conj
+apples NNS 1 N
+etc FW 1 N\N
+</s>
+<s> BACKWARD CROSSED COMPOSITION
+I PRP 1 NP
+gave VBD 1 (S[dcl]\NP)/(S[ng]\NP)
+up RP 1 (S\NP)\(S\NP)
+trying VBG 1 S[ng]\NP
+</s>
+<s> BACKWARD CROSSED COMPOSITION RECURSIVE
+I PRP 1 NP
+gave VBD 1 ((S[dcl]\NP)/NP)/PP
+up RP 1 (S\NP)\(S\NP)
+the DT 1 NP[nb]/N
+money NN 1 N
+to TO 1 PP/NP
+John NNP 1 NP
+</s>
+<s> BACKWARD CROSSED COMPOSITION RECURSIVE 2 LEVELS
+I PRP 1 NP
+will MD 1 (S[dcl]\NP)/(S[b]\NP)
+pay VB 1 (((S[b]\NP)/PP)/NP)/NP
+quickly RB 1 (S\NP)\(S\NP)
+the DT 1 NP[nb]/N
+man NN 1 N
+5 CD 1 N/N
+pounds NNS 1 N
+for IN 1 PP/NP
+the DT 1 NP[nb]/N
+work NN 1 N
+</s>
+<s> BACKWARD CROSSED COMPOSITION VERB CONSTRAINT
+Orwellian JJ 1 N/N
+himself PRP 1 N\N
+</s>
+<s> BACKWARD CROSSED COMPOSITION RECURSIVE VERB CONSTRAINT
+Orwellian JJ 1 (N/N)/N
+himself PRP 1 N\N
+</s>
+<s> COMMA COORDINATION SIMPLE
+like VBP 1 (S[dcl]\NP)/NP
+Trevor NP 1 NP
+, , 1 ,
+Neal NP 1 NP
+</s>
+<s> LEFT COMMA
+like VBP 1 (S[dcl]\NP)/NP
+, , 1 ,
+John NNP 1 NP
+</s>
+<s> LEFT COMMA COMPLEX
+sleeps VBZ 1 (S[dcl]\NP)/NP
+, , 1 ,
+soundly RB 1 (S\NP)\(S\NP)
+</s>
+<s> LEFT COLON
+that IN 1 S[em]/S[dcl]
+: : 1 :
+John NNP 1 NP
+sleeps VBZ 1 S[dcl]\NP
+</s>
+<s> LEFT LRB
+runs NNS 1 NP
+-LRB- -LRB- 1 LRB
+without IN 1 NP\NP
+</s>
+<s> RIGHT COMMA COMPLEX + BACKWARD CROSSED COMPOSITION
+eats VBZ 1 (S[dcl]\NP)/NP
+quickly RB 1 (S\NP)\(S\NP)
+, , 1 ,
+</s>
+<s> RIGHT COLON
+eating VBG 1 (S[ng]\NP)/NP
+these DT 1 NP
+: : 1 :
+</s>
+<s> RIGHT RRB COMPLEX + BACKWARD CROSSED COMPOSITION
+eats VBZ 1 (S[dcl]\NP)/NP
+quickly RB 1 (S\NP)\(S\NP)
+-RRB- -RRB- 1 RRB
+</s>
+<s> COMMA COORDINATION OF COMPLEX CATEGORIES
+I PRP 1 NP
+sleep VBP 1 S[dcl]\NP
+, , 1 ,
+eat VBP 1 S[dcl]\NP
+</s>
+<s> COORDINATION AND COMMA COORDINATION
+I PRP 1 NP
+like VBP 1 (S[dcl]\NP)/NP
+Trevor NP 1 NP
+, , 1 ,
+Neal NP 1 NP
+and CC 1 conj
+Gary NP 1 NP
+</s>
+<s> COLON COORDINATION OF COMPLEX CATEGORIES
+I PRP 1 NP
+sleep VBP 1 S[dcl]\NP
+; ; 1 ;
+eat VBP 1 S[dcl]\NP
+</s>
+<s> FUNNY COORDINATION
+securities NNS 1 N/N
+and CC 1 conj 
+commission NN 1 N
+</s>
+<s> VERY SHORT SENTENCE
+@ PRP 1 NP
+</s>
+<s> SHORT SENTENCE
+Hiroshi NNP 1 N/N
+Asada NNP 1 N
+</s>
+<s> VERY LONG SENTENCE
+In IN 1 (S/S)/NP
+her PRP$ 1 NP[nb]/N
+wake NN 1 N
+she PRP 1 NP
+left VBD 1 (S[dcl]\NP)/NP
+the DT 1 NP[nb]/N
+bitterness NN 1 N
+and CC 1 conj
+anger NN 1 N
+of IN 1 (NP\NP)/NP
+a DT 1 NP[nb]/N
+principal NN 1 N
+who WP 1 (NP\NP)/(S[dcl]\NP)
+was VBD 1 (S[dcl]\NP)/NP
+her PRP$ 1 NP[nb]/N
+friend NN 1 N
+and CC 1 conj
+now RB 1 (S\NP)/(S\NP)
+calls VBZ 1 ((S[dcl]\NP)/NP)/NP
+her PRP 1 NP
+a DT 1 NP[nb]/N
+betrayer NN 1 N
+; : 1 :
+of IN 1 (NP\NP)/NP
+colleagues NNS 1 N
+who WP 1 (NP\NP)/(S[dcl]\NP)
+say VBP 1 (S[dcl]\NP)/S[dcl]
+she PRP 1 NP
+brought VBD 1 ((S[dcl]\NP)/NP)/NP
+them PRP 1 NP
+shame NN 1 N
+; : 1 :
+of IN 1 (NP\NP)/NP
+students NNS 1 N
+and CC 1 conj
+parents NNS 1 N
+who WP 1 (NP\NP)/(S[dcl]\NP)
+defended VBD 1 (S[dcl]\NP)/NP
+her PRP$ 1 NP
+and CC 1 conj
+insist VBP 1 (S[dcl]\NP)/S[dcl]
+she PRP 1 NP
+was VBD 1 (S[dcl]\NP)/(S[pss]\NP)
+treated VBN 1 S[pss]\NP
+harshly RB 1 (S\NP)\(S\NP)
+; : 1 :
+and CC 1 conj
+of IN 1 (NP\NP)/NP
+school-district NN 1 N/N
+officials NNS 1 N
+stunned VBD 1 (S[adj]\NP)/S[em]
+that IN 1 S[em]/S[dcl]
+despite IN 1 (S/S)/NP
+the DT 1 NP[nb]/N
+bald-faced JJ 1 N/N
+nature NN 1 N
+of IN 1 (NP\NP)/NP
+her PRP$ 1 NP[nb]/N
+actions NNS 1 N
+, , 1 ,
+she PRP 1 NP
+became VBD 1 (S[dcl]\NP)/NP
+something NN 1 N
+of IN 1 (NP\NP)/NP
+a DT 1 NP[nb]/N
+local JJ 1 N/N
+martyr NN 1 N
+. . 1 .
+</s>
+<s> NO SPANNING SENTENCE
+<include src="parser.nospan">
+</s>
+<s> UNARY NP ADJECTIVAL MODIFIER SENTENCE
+Pierre NNP 3 (NP\NP)/(NP\NP) (N/N)/(N/N) N/N
+Vinken NNP 8 N (N/N)/(N/N) NP\NP S/S N/N S[adj]\NP (NP\NP)\(NP\NP) (S\NP)\(S\NP)
+, , 1 ,
+61 CD 1 N/N
+years NNS 3 (S[adj]\NP)/(S[adj]\NP) N (S\NP)\(S\NP)
+old JJ 4 N/N (S[adj]\NP)\NP N S[adj]\NP
+, , 1 ,
+will MD 3 (S[dcl]\NP)/(S[b]\NP) (S[b]\NP)/(S[b]\NP) (S[q]/(S[b]\NP))/NP
+join VB 4 (S[b]\NP)/NP S[b]\NP ((S[b]\NP)/(S[to]\NP))/NP ((S[b]\NP)/PP)/NP
+the DT 2 NP[nb]/N ((S\NP)\(S\NP))/N
+board NN 1 N
+as IN 4 PP/NP (NP\NP)/NP ((S\NP)\(S\NP))/NP ((S\NP)\(S\NP))/S[dcl]
+a DT 1 NP[nb]/N
+nonexecutive JJ 1 N/N
+director NN 2 N N/N
+Nov. NNP 4 (NP\NP)/N ((S\NP)\(S\NP))/N N N/N
+29 CD 3 N N\N (NP\NP)\(NP\NP)
+. . 1 .
+</s>
+<s> NOUN APPOSITION (COMMA AS CONJUNCTION) SENTENCE
+Mr. NNP 1 N/N
+Vinken NNP 1 N
+is VBZ 1 (S[dcl]\NP)/NP
+chairman NN 2 N N/N
+of IN 4 ((NP\NP)\(NP\NP))/NP PP/NP (NP\NP)/NP ((N/N)\(N/N))/NP
+Elsevier NNP 1 N/N
+N.V. NNP 3 N NP\NP (S\NP)\(S\NP)
+, , 1 ,
+the DT 3 NP[nb]/N ((S\NP)\(S\NP))/N (NP\NP)/N
+Dutch JJ 1 N/N
+publishing NN 1 N/N
+group NN 1 N
+. . 1 .
+</s>
+<s> EXPLODING SENTENCE
+<include src="parser.explode">
+</s>
+<s> ADDITIONAL SENTENCE 1 (SECTION 00)
+Lorillard NNP 1 N/N
+Inc. NNP 2 N NP\NP
+, , 1 ,
+the DT 1 NP[nb]/N
+unit NN 1 N
+of IN 5 ((NP\NP)\(NP\NP))/NP (((S\NP)\(S\NP))\((S\NP)\(S\NP)))/NP PP/NP ((S\NP)\(S\NP))/NP (NP\NP)/NP
+New NNP 3 N N/N (N/N)/(N/N)
+York-based JJ 1 N/N
+Loews NNP 1 N/N
+Corp. NNP 1 N
+that WDT 8 N NP (NP\NP)/(S[dcl]\NP) S[em]/S[dcl] (NP\NP)/S[dcl] ((S\NP)\(S\NP))/(S[dcl]\NP) S[em]/(S[dcl]\NP) (NP\NP)/(S[dcl]/NP)
+makes VBZ 5 ((S[dcl]\NP)/NP)/NP ((S[dcl]\NP)/(S[b]\NP))/NP ((S[dcl]\NP)/(S[adj]\NP))/NP (S[dcl]\NP)/S[dcl] (S[dcl]\NP)/NP
+Kent NNP 1 N/N
+cigarettes NNS 1 N
+, , 1 ,
+stopped VBD 3 (S[dcl]\NP)/NP (S[pt]\NP)/(S[ng]\NP) (S[dcl]\NP)/(S[ng]\NP)
+using VBG 3 (S[ng]\NP)/NP ((S[ng]\NP)/PP)/NP ((S[ng]\NP)/(S[to]\NP))/NP
+crocidolite NN 4 N S[adj]\NP N/S[em] (S\NP)\(S\NP)
+in IN 9 ((S[adj]\NP)\(S[adj]\NP))/NP ((S\NP)\(S\NP))/NP ((S\NP)/(S\NP))/NP PP/NP (S[ng]\NP)/NP (S/S)/NP (NP\NP)/NP (S\S)/NP ((NP\NP)\(NP\NP))/NP
+its PRP$ 2 NP[nb]/N NP/NP
+Micronite NNP 3 N (N/N)/(N/N) N/N
+cigarette NN 1 N/N
+filters NNS 4 N NP\NP S[adj]\NP (S\NP)\(S\NP)
+in IN 9 (((S\NP)\(S\NP))\((S\NP)\(S\NP)))/NP (PP\PP)/NP ((S[adj]\NP)\(S[adj]\NP))/NP ((S\NP)\(S\NP))/NP ((S\NP)/(S\NP))/NP PP/NP (NP\NP)/NP (NP\NP)/(S[adj]\NP) ((NP\NP)\(NP\NP))/NP
+1956 CD 4 N ((S\NP)\(S\NP))\((S\NP)\(S\NP)) (NP\NP)\(NP\NP) (S\NP)\(S\NP)
+. . 1 .
+</s>
+<s> ADDITIONAL SENTENCE 2 (SECTION 00)
+Dr. NNP 1 N/N
+Talcott NNP 1 N
+led VBD 5 ((S[dcl]\NP)/PP)/NP ((S[dcl]\NP)/(S[to]\NP))/NP S[dcl]\NP (S[pt]\NP)/NP (S[dcl]\NP)/NP
+a DT 1 NP[nb]/N
+team NN 1 N
+of IN 5 (((S\NP)\(S\NP))\((S\NP)\(S\NP)))/NP PP/NP (N\N)/NP N/N (NP\NP)/NP
+researchers NNS 1 N
+from IN 6 (NP\NP)/NP ((S[adj]\NP)\(S[adj]\NP))/NP (((S\NP)\(S\NP))/((S\NP)\(S\NP)))/NP PP/NP ((S\NP)\(S\NP))/NP ((NP\NP)/(NP\NP))/NP
+the DT 1 NP[nb]/N
+National NNP 1 N/N
+Cancer NNP 1 N/N
+Institute NNP 1 N
+and CC 3 conj N S/S
+the DT 5 NP[nb]/N ((S\NP)\(S\NP))/N ((S/S)/S[dcl])/(S[adj]\NP) (S/S)/N (S/S)/(S[adj]\NP)
+medical JJ 1 N/N
+schools NNS 1 N
+of IN 4 PP/NP ((S\NP)\(S\NP))/NP (NP\NP)/NP ((N/N)\(N/N))/NP
+Harvard NNP 1 N/N
+University NNP 2 N N/N
+and CC 4 conj (NP\NP)/NP N/N S/S
+Boston NNP 1 N/N
+University NNP 3 NP\NP N N/N
+. . 1 .
+</s>
+<s> ADDITIONAL SENTENCE 3 (SECTION 00)
+This DT 2 (S/S)/N NP[nb]/N
+time NN 1 N
+, , 1 ,
+it PRP 1 NP
+was VBD 11 (S[dcl]\NP)/(S[ng]\NP) ((S[dcl]\NP)/S[em])/(S[adj]\NP) (S[dcl]\NP)/S[em] ((S[dcl]\NP)/(S[to]\NP))/(S[adj]\NP) ((S[dcl]\NP)/(S[to]\NP))/PP ((S[dcl]\NP)/S[em])/NP ((S[dcl]\NP)/S[em])/PP (S[dcl]\NP)/NP (S[dcl]\NP)/PP (S[dcl]\NP)/(S[pss]\NP) (S[dcl]\NP)/(S[adj]\NP)
+for IN 10 PP/NP ((NP\NP)/(S[to]\NP))/NP (S[for]/(S[to]\NP))/NP ((S\NP)\(S\NP))/((S\NP)\(S\NP)) ((S\NP)\(S\NP))/NP ((S\NP)\(S\NP))/(S[adj]\NP) (((S\NP)\(S\NP))/(S[to]\NP))/NP N/N (NP\NP)/NP (S\NP)\(S\NP)
+dinner NN 3 N N/N S[adj]\NP
+and CC 2 conj N/N
+dancing NN 6 N NP\NP N\N S[adj]\NP (S\NP)\(S\NP) S[dcl]\NP
+-- : 9 (NP\NP)/(S[pss]\NP) ((S\NP)\(S\NP))/NP (NP\NP)/S[dcl] (NP\NP)/NP (S\S)/S[dcl] ((S\NP)\(S\NP))/(S[adj]\NP) (S\S)/(S[dcl]\NP) ((S\NP)\(S\NP))/S[dcl] :
+a DT 1 NP[nb]/N
+block NN 2 N/N N
+away RB 6 (NP\NP)\NP (S\NP)\(S\NP) ((S\NP)\(S\NP))\NP (S[adj]\NP)\NP S[adj]\NP N\N
+. . 1 .
+</s>
+<s> ADDITIONAL SENTENCE 4 (SECTION 00)
+The DT 1 NP[nb]/N
+government NN 2 N/N N
+'s POS 4 N/N (NP[nb]/N)\NP (S[dcl]\NP)/NP N
+borrowing NN 1 N/N
+authority NN 1 N
+dropped VBD 6 S[pt]\NP (S[pss]\NP)/PP (S[pt]\NP)/PP (S[dcl]\NP)/PP S[dcl]\NP S[pss]\NP
+at IN 15 ((NP\NP)\(NP\NP))/NP (PP\PP)/NP (S/S)/(S[adj]\NP) (S/S)/NP ((S\NP)/(S\NP))/(S[asup]\NP) ((S\NP)\(S\NP))/((S\NP)\(S\NP)) (((S\NP)\(S\NP))/((S\NP)\(S\NP)))/(S[asup]\NP) ((S[adj]\NP)\(S[adj]\NP))/NP PP/NP (S\S)/NP (NP\NP)/NP (S\NP)\(S\NP) ((S\NP)\(S\NP))/NP ((S\NP)\(S\NP))/(S[adj]\NP) ((S\NP)/(S\NP))/NP
+midnight NN 2 N N/N
+Tuesday NNP 4 N NP\NP (S\NP)\(S\NP) N/N
+to TO 9 (S[b]\NP)/(S[b]\NP) S[to]\NP N/N ((S\NP)\(S\NP))/NP (N\N)/N (NP\NP)/NP ((N/N)\(N/N))/N PP/NP (S[to]\NP)/(S[b]\NP)
+<DOLLARS> NNP 1 N
+from IN 3 (NP\NP)/NP PP/NP ((S\NP)\(S\NP))/NP
+<DOLLARS> NNP 1 N
+. . 1 .
+</s>
+<s> ADDITIONAL SENTENCE 5 (SECTION 00)
+Japanese JJ 1 N/N
+investors NNS 1 N
+nearly RB 13 (S\NP)/(S\NP) (NP/NP)/(NP/NP) (NP\NP)/(NP\NP) (((S\NP)\(S\NP))/((S\NP)\(S\NP)))/(((S\NP)\(S\NP))/((S\NP)\(S\NP))) ((N/N)/(N/N))/((N/N)/(N/N)) ((S\NP)/(S\NP))/((S\NP)/(S\NP)) (S[adj]\NP)/(S[adj]\NP) (S\NP)\(S\NP) ((S\NP)\(S\NP))/((S\NP)\(S\NP)) N/N ((S[adj]\NP)/(S[adj]\NP))/((S[adj]\NP)/(S[adj]\NP)) (N/N)/(N/N) NP/NP
+single-handedly RB 5 N (N/N)/(N/N) (S[adj]\NP)\(S[adj]\NP) (S\NP)\(S\NP) (S\NP)/(S\NP)
+bought VBN 8 (S[dcl]\NP)/NP (S[pss]\NP)/(S[adj]\NP) (S[pss]\NP)/PP (S[pt]\NP)/NP (S[pt]\NP)/PP S[dcl]\NP ((S[dcl]\NP)/PP)/NP S[pss]\NP
+up RP 11 (S[dcl]\NP)/NP (S\NP)\(S\NP) ((S\NP)\(S\NP))/NP PP/NP PP/PP NP[nb]/N (NP\NP)/NP (NP\NP)/(NP\NP) (N/N)/(N/N) S[adj]\NP N
+two CD 2 (N/N)/(N/N) N/N
+new JJ 2 N/N (N/N)/(N/N)
+mortgage NN 2 N/N N
+securities-based JJ 1 N/N
+mutual JJ 1 N/N
+funds NNS 1 N
+totaling VBG 1 (S[ng]\NP)/NP
+<DOLLARS> NNP 2 (S\NP)\(S\NP) N
+, , 1 ,
+the DT 1 NP[nb]/N
+U.S. NNP 2 N N/N
+Federal NNP 1 N/N
+National NNP 1 N/N
+Mortgage NNP 1 N/N
+Association NNP 1 N
+said VBD 1 (S[dcl]\S[dcl])\NP
+. . 1 .
+</s>
+<s> ADDITIONAL SENTENCE 6 (SECTION 00)
+Along IN 1 (S/S)/NP
+the DT 1 NP[nb]/N
+way NN 1 N
+, , 1 ,
+he PRP 1 NP
+meets VBZ 1 (S[dcl]\NP)/NP
+a DT 1 NP[nb]/N
+solicitous JJ 1 N/N
+Christian JJ 1 N/N
+chauffeur NN 1 N
+who WP 1 (NP\NP)/(S[dcl]\NP)
+offers VBZ 1 ((S[dcl]\NP)/NP)/NP
+the DT 1 NP[nb]/N
+hero NN 1 N
+God NNP 1 N
+'s POS 1 (NP[nb]/N)\NP
+phone NN 1 N/N
+number NN 1 N
+; : 1 :
+and CC 1 conj
+the DT 1 NP[nb]/N
+Sheep NNP 1 N/N
+Man NN 1 N
+, , 1 ,
+a DT 1 NP[nb]/N
+sweet JJ 1 N/N
+, , 1 ,
+roughhewn JJ 1 N/N
+figure NN 1 N
+who WP 1 (NP\NP)/(S[dcl]\NP)
+wears VBZ 1 (S[dcl]\NP)/NP
+-- : 1 ((S\NP)\(S\NP))/NP
+what WP 1 NP/NP
+else RB 1 N
+-- : 1 :
+a DT 1 N/N
+sheepskin NN 1 N
+. . 1 .
+</s>
+<s> ADDITIONAL SENTENCE 7 (SECTION 00)
+A DT 1 NP[nb]/N
+more JJR 1 (N/N)/(N/N)
+recent JJ 1 N/N
+novel NN 1 N
+, , 1 ,
+Norwegian NNP 1 N/N
+Wood NNP 1 N
+-LRB- -LRB- 1 (NP\NP)/S[dcl]
+every DT 1 NP[nb]/N
+Japanese JJ 1 N
+under IN 1 (NP\NP)/NP
+40 CD 1 N
+seems VBZ 1 (S[dcl]\NP)/(S[to]\NP)
+to TO 1 (S[to]\NP)/(S[b]\NP)
+be VB 1 (S[b]\NP)/(S[adj]\NP)
+fluent JJ 1 (S[adj]\NP)/PP
+in IN 1 PP/NP
+Beatles NNP 1 N/N
+lyrics NNS 1 N
+-RRB- -RRB- 1 RRB
+, , 1 ,
+has VBZ 1 (S[dcl]\NP)/(S[pt]\NP)
+sold VBN 1 (S[pt]\NP)/NP
+more JJR 1 S[adj]\NP
+than IN 1 ((N/N)/(N/N))\(S[adj]\NP)
+four CD 1 (N/N)/(N/N)
+million CD 1 N/N
+copies NNS 1 N
+since IN 1 ((S\NP)\(S\NP))/S[dcl]
+Kodansha NNP 1 N
+published VBD 1 (S[dcl]\NP)/NP
+it PRP 1 NP
+in IN 1 ((S\NP)\(S\NP))/NP
+1987 CD 1 N
+. . 1 .
+</s>
+<s> ADDITIONAL SENTENCE 8 (SECTION 00)
+The DT 2 NP[nb]/N ((S\NP)/(S\NP))/N
+compromise NN 2 N/N N
+sets VBZ 3 ((S[dcl]\NP)/(S[adj]\NP))/NP ((S[dcl]\NP)/PP)/NP (S[dcl]\NP)/NP
+the DT 1 NP[nb]/N
+training NN 1 N/N
+wage NN 1 N
+at IN 6 ((NP\NP)\(NP\NP))/NP (S[adj]\NP)/NP PP/NP (S\S)/NP (NP\NP)/NP ((S\NP)\(S\NP))/NP
+<DOLLARS> DT 6 (N/N)/(N/N) S[adj]\NP (NP\NP)\(NP\NP) N NP/NP PP/NP
+an DT 2 NP[nb]/N (NP\NP)/N
+hour NN 1 N
+next IN 9 ((S\NP)\(S\NP))/NP ((S\NP)\(S\NP))/PP (S\NP)\(S\NP) (NP\NP)/NP (NP\NP)/(NP\NP) (N/N)/(N/N) ((S\NP)\(S\NP))/((S\NP)\(S\NP)) (S/S)/(S/S) N/N
+April NNP 2 N (S\NP)\(S\NP)
+, , 1 ,
+and CC 6 NP\NP (NP\NP)/(NP\NP) conj N S[adj]\NP S/S
+at IN 5 (S/S)/NP PP/NP (NP\NP)/NP ((S\NP)\(S\NP))/NP ((S\NP)/(S\NP))/NP
+<DOLLARS> DT 4 S[adj]\NP N NP/NP PP/NP
+an DT 2 NP[nb]/N (NP\NP)/N
+hour NN 1 N
+, , 1 ,
+or CC 3 (NP\NP)/(NP\NP) (N/N)/(N/N) conj
+85 CD 3 N/N ((S\NP)\(S\NP))/((S\NP)\(S\NP)) (NP\NP)/(NP\NP)
+% NN 1 N
+of IN 9 ((NP\NP)\(NP\NP))/NP (S/S)/NP (((S\NP)\(S\NP))\((S\NP)\(S\NP)))/NP PP/NP (N\N)/NP ((S[adj]\NP)\(S[adj]\NP))/NP (PP\PP)/NP ((S\NP)\(S\NP))/NP (NP\NP)/NP
+the DT 1 NP[nb]/N
+minimum JJ 1 N/N
+wage NN 1 N
+, , 1 ,
+in IN 5 ((S\NP)\(S\NP))/NP ((S\NP)/(S\NP))/NP (S/S)/NP (NP\NP)/NP (S\S)/NP
+April NNP 2 N N/N
+1991 CD 2 N\N N
+. . 1 .
+</s>
+<s> ADDITIONAL SENTENCE 9 (SECTION 2-21)
+Ballooning VBG 5 N (S[ng]\NP)/PP (S[ng]\NP)/S[qem] ((S[ng]\NP)/PP)/PP S[ng]\NP
+at IN 6 (PP\PP)/NP (S/S)/NP PP/NP (NP\NP)/NP ((S\NP)\(S\NP))/NP ((S\NP)/(S\NP))/NP
+the DT 3 NP[nb]/N (PP\PP)/N ((S/S)/S[dcl])/(S[adj]\NP)
+de FW 1 N/N
+rigueur FW 2 N/N NP[nb]/N
+hour NN 1 N
+of IN 7 ((NP\NP)\(NP\NP))/NP (((S\NP)\(S\NP))\((S\NP)\(S\NP)))/NP (N\N)/NP ((S\NP)\(S\NP))/(S[adj]\NP) ((S\NP)\(S\NP))/NP (NP\NP)/NP ((N/N)\(N/N))/NP
+6 CD 2 ((N/N)/(N/N))/((N/N)/(N/N)) N
+a.m. RB 3 N N/N N\N
+held VBN 5 (S[dcl]\NP)/NP S[pss]\NP (S[pt]\NP)/NP N/N (S[pss]\NP)/(S[adj]\NP)
+all PDT 1 NP/NP
+the DT 1 NP[nb]/N
+attraction NN 1 N
+for IN 5 PP/NP ((NP\NP)/(S[to]\NP))/NP (S[for]/(S[to]\NP))/NP ((S\NP)\(S\NP))/NP (NP\NP)/NP
+most JJS 1 N/N
+people NNS 1 N
+of IN 1 (NP\NP)/NP
+sunrise NN 1 N/N
+root-canal NN 3 N/N (NP\NP)/NP PP/NP
+work NN 3 S[dcl]\NP S[b]\NP N
+. . 1 .
+</s>
+<s> ADDITIONAL SENTENCE 10 (SECTION 2-21)
+Monte NNP 1 N/N
+dei FW 1 N/N
+Paschi NNP 2 N N/N
+di FW 2 , N/N
+Siena NNP 1 N
+, , 1 ,
+Singapore NNP 1 N/N
+branch NN 2 N N/N
+-LRB- -LRB- 2 LRB (NP\NP)/NP
+Italian JJ 1 N/N
+parent NN 1 N
+-RRB- -RRB- 1 RRB
+, , 1 ,
+via IN 2 ((S\NP)\(S\NP))/NP (NP\NP)/NP
+the DT 1 NP[nb]/N
+Law NNP 1 N/N
+Debenture NNP 1 N/N
+Trust NNP 1 N/N
+Corp. NNP 1 N
+-- : 1 :
+</s>
+<s> SUBPART OF VERY LONG SENTENCE
+she PRP 1 NP
+left VBD 1 (S[dcl]\NP)/NP
+the DT 1 NP[nb]/N
+bitterness NN 1 N
+and CC 1 conj
+anger NN 1 N
+of IN 1 (NP\NP)/NP
+a DT 1 NP[nb]/N
+principal NN 1 N
+</s>
+<s> VP[pss] to NP\NP LEXICAL RULE
+John NNP 1 NP
+likes VBZ 1 (S[dcl]\NP)/NP
+the DT 1 NP[nb]/N
+woman NN 1 N
+bit VBN 1 S[pss]\NP
+by IN 1 ((S\NP)\(S\NP))/NP
+the DT 1 NP[nb]/N
+dog NN 1 N
+</s>
+<s> VP[ng] to NP\NP LEXICAL RULE
+John NNP 1 NP
+likes VBZ 1 (S[dcl]\NP)/NP
+the DT 1 NP[nb]/N
+woman NN 1 N
+running VBG 1 (S[ng]\NP)/NP
+the DT 1 NP[nb]/N
+establishment NN 1 N
+</s>
+<s> VP[ng] to VP\VP LEXICAL RULE
+John NNP 1 NP
+died VBD 1 S[dcl]\NP
+digging VBG 1 (S[ng]\NP)/NP
+the DT 1 NP[nb]/N
+trench NN 1 N
+</s>
+<s> VP[ng] to S/S LEXICAL RULE
+Digging VBG 1 (S[ng]\NP)/NP
+the DT 1 NP[nb]/N
+trench NN 1 N
+, , 1 ,
+John NNP 1 NP
+died VBD 1 S[dcl]\NP
+</s>
+<s> VP[adj] to NP\NP LEXICAL RULE
+John NNP 1 NP
+likes VBZ 1 (S[dcl]\NP)/NP
+the DT 1 NP[nb]/N
+woman NN 1 N
+busy JJ 1 (S[adj]\NP)/PP
+at IN 1 PP/NP
+the DT 1 NP[nb]/N
+terminal NN 1 N
+</s>
+<s> VP[adj] to VP\VP LEXICAL RULE
+John NNP 1 NP
+slept VBD 1 S[dcl]\NP
+busy VBG 1 (S[adj]\NP)/PP
+at IN 1 PP/NP
+the DT 1 NP[nb]/N
+terminal NN 1 N
+</s>
+<s> VP[to] to NP\NP LEXICAL RULE
+The DT 1 NP[nb]/N
+woman NN 1 N
+to TO 1 (S[to]\NP)/(S[b]\NP)
+win VB 1 (S[b]\NP)/NP
+the DT 1 NP[nb]/N
+trophy NN 1 N
+is VBZ 1 (S[dcl]\NP)/(S[adj]\NP)
+busy JJ 1 S[adj]\NP
+</s>
+<s> VP[to] to VP\VP LEXICAL RULE
+John NNP 1 NP
+died VBZ 1 S[dcl]\NP
+to TO 1 (S[to]\NP)/(S[b]\NP)
+win VB 1 (S[b]\NP)/NP
+the DT 1 NP[nb]/N
+trophy NN 1 N
+</s>
+<s> S[dcl]/NP to NP\NP LEXICAL RULE
+Mary NNP 1 NP
+likes VBZ 1 (S[dcl]\NP)/NP
+the DT 1 NP[nb]/N
+man NN 1 N
+John NNP 1 NP
+hated VBD 1 (S[dcl]\NP)/NP
+</s>
+<s> NP to S/(S/NP) LEXICAL RULE
+Nonsense NN 1 N
+, , 1 ,
+she PRP 1 NP
+told VBD 1 ((S[dcl]\NP)/NP)/NP
+an DT 1 NP[nb]/N
+interviewer NN 1 N
+</s>
+<s> NP to NP/(NP\NP) LEXICAL RULE (PIED PIPING)
+These DT 1 NP[nb]/N
+combines NNS 1 N
+, , 1 ,
+some DT 1 NP
+of IN 1 (NP\NP)/NP
+which WDT 1 ((NP\NP)/(S[dcl]\NP))\(NP/NP)
+are VBP 1 (S[dcl]\NP)/(S[adj]\NP)
+great JJ 1 S[adj]\NP
+, , 1 ,
+were VBD 1 (S[dcl]\NP)/(S[adj]\NP)
+expensive JJ 1 S[adj]\NP
+</s>
+<s> S[dcl]\NP to NP\NP LEXICAL RULE
+Seats NNS 1 N
+are VBP 1 (S[dcl]\NP)/(S[pss]\NP)
+quoted VBN 1 (S[pss]\NP)/PP
+at IN 1 PP/NP
+DOLLARS NNS 1 N
+bid VBD 1 S[dcl]\NP
+</s>
+<s> VP[pss] to S/S LEXICAL RULE
+Kicked VBN 1 S[pss]\NP
+by IN 1 ((S\NP)\(S\NP))/NP
+the DT 1 NP[nb]/N
+man NN 1 N
+, , 1 ,
+John NNP 1 NP
+died VBD 1 S[dcl]\NP
+</s>
+<s> VP[to] to S/S LEXICAL RULE
+To TO 1 (S[to]\NP)/(S[b]\NP)
+win VB 1 (S[b]\NP)/NP
+the DT 1 NP[nb]/N
+game NN 1 N
+, , 1 ,
+John NNP 1 NP
+died VBD 1 S[dcl]\NP
+</s>
+<s> VP[adj] to S/S LEXICAL RULE
+Asleep JJ 1 S[adj]\NP
+by IN 1 ((S\NP)\(S\NP))/NP
+the DT 1 NP[nb]/N
+terminal NN 1 N
+, , 1 ,
+John NNP 1 NP
+died VBD 1 S[dcl]\NP
+</s>
+<s> VP[ng] to S\S LEXICAL RULE
+It PRP 1 NP
+is VBZ 1 (S[dcl]\NP)/(S[adj]\NP)
+hot JJ 1 S[adj]\NP
+said VBZ 1 (S[dcl]\S[dcl])/NP
+Bob NNP 1 NP
+, , 1 ,
+working VBG 1 (S[ng]\NP)/PP
+in IN 1 PP/NP
+the DT 1 NP[nb]/N
+heat NN 1 N
+</s>
+<s> VP[pss] to VP\VP LEXICAL RULE
+John NNP 1 NP
+died VBD 1 S[dcl]\NP
+hit VBN 1 S[pss]\NP
+by IN 1 ((S\NP)\(S\NP))/NP
+the DT 1 NP[nb]/N
+ball NN 1 N
+</s>
+<s> VP[ng] to VP/VP LEXICAL RULE
+Bob NNP 1 NP
+, , 1 ,
+responding VBG 1 (S[ng]\NP)/PP
+to IN 1 PP/NP
+criticism NN 1 NP
+, , 1 ,
+has VBZ 1 (S[dcl]\NP)/(S[pss]\NP)
+renounced VBN 1 (S[pss]\NP)/NP
+John NNP 1 NP
+</s>
+<s> VP[to]/NP to NP\NP LEXICAL RULE
+Bob NNP 1 NP
+had VBD 1 (S[dcl]\NP)/NP
+a DT 1 NP[nb]/N
+little NN 1 N
+to TO 1 (S[to]\NP)/(S[b]\NP)
+say VB 1 (S[b]\NP)/NP
+</s>
+<s> VP[ng] to NP LEXICAL RULE
+Acquiring VBG 1 (S[ng]\NP)/NP
+a DT 1 NP[nb]/N
+company NN 1 N
+can MD 1 (S[dcl]\NP)/(S[b]\NP)
+be VB 1 (S[b]\NP)/(S[adj]\NP)
+expensive JJ 1 S[adj]\NP
+</s>
+<s> S[dcl] to NP\NP LEXICAL RULE
+The DT 1 NP[nb]/N
+way NN 1 N
+the DT 1 NP[nb]/N
+world NN 1 N
+is VBZ 1 (S[dcl]\NP)/(S[ng]\NP)
+spinning VBG 1 S[ng]\NP
+</s>
+<s> S[dcl] to S\S LEXICAL RULE
+It PRP 1 NP
+is VBZ 1 (S[dcl]\NP)/NP
+n't RB 1 (S\NP)\(S\NP)
+news NN 1 N
+, , 1 ,
+it PRP 1 NP
+is VBZ 1 (S[dcl]\NP)/NP
+drama NN 1 N
+</s>
+<s> NP/NP NP[nb]/N FORWARD COMPOSITION (FUNNY RULE)
+about IN 1 NP/NP
+a DT 1 NP[nb]/N
+and CC 1 conj
+near IN 1 NP/NP
+the DT 1 NP[nb]/N
+month NN 1 N
+</s>
+<s> S[dcl]\NP[expl] (S\NP)\(S\NP) BACKWARD APPLICATION WITH NP & NP[expl]
+It PRP 1 NP
+seems VBZ 1 ((S[dcl]\NP[expl])/(S[to]\NP))/NP
+the DT 1 NP[nb]/N
+job NN 1 N
+to TO 1 (S[to]\NP)/(S[b]\NP)
+do VB 1 S[b]\NP
+</s>
+<s> , NP --> (S\NP)\(S\NP) LEFT COMMA TYPE CHANGING RULE
+slept VBN 1 S[pt]\NP
+, , 1 ,
+Bill NNP 1 NP
+</s>
+<s> NP , --> S/S RIGHT COMMA TYPE CHANGING RULE
+Bill NNP 1 NP
+, , 1 ,
+who WDT 1 S[wq]/(S[q]/NP)
+is VBZ 1 (S[q]/NP)/NP
+the DT 1 NP[nb]/N
+man NN 1 N
+</s>
+<s> S[dcl]/S[dcl] , --> (S\NP)/(S\NP) RIGHT COMMA TYPE CHANGING RULE
+The DT 1 NP[nb]/N
+man NN 1 N
+, , 1 ,
+John NNP 1 NP
+said VBZ 1 (S[dcl]\NP)/S[dcl]
+, , 1 ,
+is VBZ 1 (S[dcl]\NP)/NP
+a DT 1 NP[nb]/N
+fool NN 1 N
+</s>
+<s> S[dcl]\S[dcl] , --> S/S RIGHT COMMA TYPE CHANGING RULE
+Said VBZ 1 (S[dcl]\S[dcl])/NP
+John NNP 1 NP
+, , 1 ,
+which WDT 1 (S[wq]/(S[q]/NP))/N
+man NN 1 N
+is VBZ 1 (S[q]/NP)/NP
+a DT 1 NP[nb]/N
+fool NN 1 N
+</s>
+<s> S[dcl]/S[dcl] , --> S/S RIGHT COMMA TYPE CHANGING RULE
+John NNP 1 NP
+said VBZ 1 (S[dcl]\NP)/S[dcl]
+, , 1 ,
+which WDT 1 (S[wq]/(S[q]/NP))/N
+man NN 1 N
+is VBZ 1 (S[q]/NP)/NP
+a DT 1 NP[nb]/N
+fool NN 1 N
+</s>
+<s> S[dcl]/S[dcl] , --> (S\NP)\(S\NP) RIGHT COMMA TYPE CHANGING RULE
+slept VBN 1 S[pt]\NP
+said VBD 1 (S[dcl]/S[dcl])/NP
+John NNP 1 NP
+, , 1 ,
+</s>
+<s> S[dcl]/S[dcl] , --> S\S RIGHT COMMA TYPE CHANGING RULE
+Hello NN 1 S[dcl]
+said VBD 1 (S[dcl]/S[dcl])/NP
+John NNP 1 NP
+, , 1 ,
+</s>
+<s> NP NP --> NP APPOSITION RULE
+Diana NNP 1 NP
+Queen NNP 1 NP
+of IN 1 (NP\NP)/NP
+Hearts NNP 1 NP
+visited VBD 1 S[dcl]\NP
+yesterday RB 1 (S\NP)\(S\NP)
+</s>
+<s> NP NP --> NP APPOSITION RULE
+Diana NNP 1 NP
+and CC 1 conj
+Mary NNP 1 NP
+Queen NNP 1 NP
+of IN 1 (NP\NP)/NP
+Hearts NNP 1 NP
+and CC 1 conj
+Queen NNP 1 NP
+of IN 1 (NP\NP)/NP
+Scots NNP 1 NP
+visited VBD 1 S[dcl]\NP
+yesterday RB 1 (S\NP)\(S\NP)
+</s>
+<s> S[dcl] S[dcl] --> S[dcl] APPOSITION RULE
+John NNP 1 NP
+sat VBD 1 S[dcl]\NP
+Bob NNP 1 NP
+ran VBD 1 S[dcl]\NP
+said VBD 1 (S[dcl]\S[dcl])/NP
+Mike NNP 1 NP
+</s>
+<s> (S[dcl]\S[dcl])\NP S\S --> (S[dcl]\S[dcl])\NP GENERALISED BACKWARD COMPOSITION
+John NNP 1 NP
+said VBD 1 (S[dcl]\S[dcl])\NP
+yesterday RB 1 S\S
+and CC 1 conj
+reiterated VBD 1 (S[dcl]\S[dcl])\NP
+today RB 1 S\S
+</s>

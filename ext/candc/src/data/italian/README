@@ -1,0 +1,69 @@
+README for src/data/italian (Italian CCGbank)
+
+(1) Put the ctu files in the directory data (or create symbolic links), with these names:
+
+    newspaper.ctu
+    civil_law.ctu
+    jrc_acquis.ctu
+
+(2) Type: make ccgbank
+
+(3) Alternatively, "manually". 
+    Converting TUT-Constut format into Prolog format
+
+    scripts/_convert data/<FILE>.ctu data/newspaper.pl 
+
+    Generating CCG derivations (with SWI Prolog)
+
+    swipl -c prolog/tut2ccg.pl data/newspaper.pl > data/newspaper.ccg
+
+
+TO DO LIST
+ * redirect error messages to a specific file
+ * apposition (all cases need to be checked)
+ * check punctuation (e.g. comma should modify previous constituent (?)) 
+ * check with Cristina analyis of V-502 (relative clause with pro-drop)
+ * check with Cristina analyis of EVALITA-NEWSPAPER-90 (head should be arg?)
+ * Interrogative pronouns require type raising. (Example: ALB-154)
+   ccg(leaf(Pos,Ind,Tok), a, Cat, t(Cat,Pos,Ind,Tok)):- intpro(Pos), Cat = (s:whq/(s:dcl\np)).
+ * Sometimes special characters, sometimes quotes (Example: ALB-271)
+ * Check analysis of CHIAM-17 (Doctor J)
+ * Open Parenth. without closing (A-12)
+ * Check with Cristina: There are three cases for ..-CONTIN+NUM (see prolog/binarise.pl). 
+   Is this supposed to be like this?
+ * Type raising for past participles? (ALB-26)
+
+INTERESTING CASES (still to be done)
+ * V-301
+   Vediamo  cosa                 si            puo`                  fare
+   (s\np)/s s:whq/(s:dcl/np)     np            (s:dcl\np)/(s:inf\np) (s:inf\np)/np
+                                               ----------------------------------B>
+                                               (s:dcl\np)/np
+                                --------
+                                s:X/(s:X\np)
+                                -------------------------------------------------B>
+                                s:dcl/np
+           ----------------------------------------------------------------------B>
+           s:whq
+
+   Vediamo  cosa                 si            puo`                  fare
+   (s\np)/s s:whq/(s:ynq/np)     np            (s:q/(s:inf\np))\np (s:inf\np)/np
+                                 ---------------------------------<
+                                 s:ynq/(s:inf\np)
+                                 -------------------------------------------------B>
+                                 s:ynq/np
+           ----------------------------------------------------------------------B>
+           s:whq
+
+
+* Extraposition (CHIAM-49)
+  I wonder extraposed subjects should be dealt with by crossed type-raising, as in:
+
+  comincio` l'attesa
+  s\np      np
+            --------Tx 
+            s\(s\np)
+  ------------------<
+  s
+
+  

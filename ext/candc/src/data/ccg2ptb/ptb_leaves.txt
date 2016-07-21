@@ -1,0 +1,585 @@
+# preface
+
+,
+.
+:
+;
+LRB
+N NP
+NP NP
+NP[expl] NP
+PP
+RRB
+S
+S[dcl]
+S[frg]
+S[intj]
+S[wq]
+conj
+N[num] NP
+NP[thr] NP
+N/N
+NP[nb]/N
+(NP\NP)/NP special_pp_prn
+((S\NP)\(S\NP))/NP special_pp_prn
+PP/NP PP
+(S[dcl]\NP)/NP VP
+(S\NP)\(S\NP) special_SbNPbSbNP
+(S[b]\NP)/NP VP
+(S[to]\NP)/(S[b]\NP) VP
+(S[dcl]\NP)/(S[b]\NP) VP
+(NP[nb]/N)\NP
+S[adj]\NP ? RB ADVP ADJP
+S[pss]\NP VP
+(N/N)/(N/N) ADJP
+(S[ng]\NP)/NP VP
+(S\NP)/(S\NP) ADVP
+(S[dcl]\NP)/S[dcl] VP
+S[dcl]\NP VP
+(S[dcl]\NP)/(S[pt]\NP) VP
+S/S sfs
+(NP\NP)/(S[dcl]\NP) WHNP
+(S/S)/NP PP
+(S[dcl]\NP)/(S[adj]\NP) VP
+(S[dcl]\NP)/(S[pss]\NP) VP
+S[em]/S[dcl] SBAR
+((S\NP)\(S\NP))/((S\NP)\(S\NP))
+(S[dcl]\NP)/(S[ng]\NP) VP
+((S\NP)\(S\NP))/S[dcl] ? WRB WHADVP
+(S[dcl]\NP)/PP VP
+(S[dcl]\NP)/(S[to]\NP) VP
+S[b]\NP VP
+NP\NP
+(S[pt]\NP)/NP VP
+(S[pss]\NP)/PP VP
+(S[dcl]\NP)/S[em] VP
+(S[adj]\NP)/(S[adj]\NP)
+NP/NP
+(S/S)/S[dcl] ? WRB WHADVP
+(S[dcl]\S[dcl])\NP VP
+(S[b]\NP)/(S[pss]\NP) VP
+(NP\NP)/(NP\NP)
+(S[b]\NP)/PP VP
+(NP\NP)/N
+S[ng]\NP VP
+((S[dcl]\NP)/PP)/NP VP
+N\N
+(S[adj]\NP)/PP ADJP
+((S[b]\NP)/PP)/NP VP
+(S[dcl]\S[dcl])/NP VP
+((S\NP)\(S\NP))/PP special_fPP
+(S[b]\NP)/(S[adj]\NP) VP
+(S[ng]\NP)/PP VP
+(S[pss]\NP)/(S[to]\NP) VP
+((S\NP)\(S\NP))/(S[ng]\NP) PP
+((S\NP)\(S\NP))/N
+(NP\NP)/S[dcl] ? WRB WHADVP
+(S[adj]\NP)/(S[to]\NP) ADJP
+PP/(S[ng]\NP) PP
+(NP\NP)/(S[ng]\NP) PP
+((S[adj]\NP)\(S[adj]\NP))/NP PP
+S[pt]\NP VP
+(S[ng]\NP)/(S[to]\NP) VP
+(S/S)/(S/S)
+(S[b]\NP)/(S[to]\NP)
+((S[ng]\NP)/PP)/NP VP
+((S[dcl]\NP)/(S[to]\NP))/NP VP
+(S[pt]\NP)/(S[pss]\NP)
+S[qem]/S[dcl] SBAR
+((S\NP)/(S\NP))/NP
+N/S[em] NP
+(S[pss]\NP)/NP VP
+(S[adj]\NP)/NP VP
+(S[b]\NP)/(S[pt]\NP) VP
+(S[b]\NP)/(S[ng]\NP) VP
+(NP\NP)/(S[dcl]/NP) WHNP
+(S[pt]\NP)/PP VP
+PP/PP ADVP
+((S[b]\NP)/(S[to]\NP))/NP VP
+(NP\NP)/PP ? RB ADVP PP
+(S[pt]\NP)/(S[ng]\NP) VP
+(S/S)/PP special_fPP
+(S[pt]\NP)/(S[adj]\NP) VP
+(S[ng]\NP)/(S[pss]\NP) VP
+conj/conj CONJP
+(S[adj]\NP)\NP ? JJ ADJP ADVP
+(((S\NP)\(S\NP))\((S\NP)\(S\NP)))/NP PP
+((S[dcl]\NP)/NP)/NP VP
+(S\S)/S[dcl]
+(S[pt]\NP)/(S[to]\NP) VP
+((S[pt]\NP)/PP)/NP VP
+S[asup]\NP
+((N/N)/(N/N))\(S[adj]\NP)
+((NP\NP)/S[dcl])\((NP\NP)/NP) WHNP
+(S[b]\NP)/S[em] VP
+((S[b]\NP)/NP)/NP VP
+((S\NP)/(S\NP))/((S\NP)/(S\NP))
+NP/(S[dcl]/NP) WHNP
+(S[ng]\NP)/S[em] VP
+(S[b]\NP)/S[dcl] VP
+(S[b]\NP)/S[qem] VP
+((S\NP)\(S\NP))\NP ADVP
+S\S
+((S[ng]\NP)/(S[to]\NP))/NP
+((S[b]\NP)/(S[adj]\NP))/NP
+(S[pss]\NP)/(S[adj]\NP) VP
+(N\N)/N
+((S[dcl]\NP)/(S[adj]\NP))/NP VP
+(S[ng]\NP)/(S[adj]\NP) VP
+(S/S)/(S[ng]\NP)
+(S/S)/N
+((S\NP)\(S\NP))/(S[adj]\NP) PP
+(S[adj]\NP)\(S[adj]\NP)
+((S\NP)\(S\NP))\((S\NP)\(S\NP))
+(S[for]/(S[to]\NP))/NP
+(S[dcl]\NP)/S[qem] VP
+(N\N)/NP PP
+((S[b]\NP)/(S[b]\NP))/NP
+(N/N)\(N/N)
+(N/N)\(S[adj]\NP)
+((N/N)/(N/N))/((N/N)/(N/N))
+NP/(S[dcl]\NP) WHNP
+(S[ng]\NP)/S[dcl] VP
+((NP\NP)/(S[dcl]\NP))/N
+(S[pt]\NP)/S[em] VP
+(S/S)\NP
+(S[q]/(S[b]\NP))/NP SQ
+((NP\NP)\(NP\NP))/NP PP
+PP/(S[adj]\NP) PP
+((N/N)\(N/N))/NP
+(S[b]\NP)/(S[b]\NP)
+(S\S)/NP PP
+(NP\NP)\NP
+((S[adj]\NP)/(S[adj]\NP))/((S[adj]\NP)/(S[adj]\NP))
+((S[dcl]\NP[expl])/(S[to]\NP))/(S[adj]\NP)
+(N/PP)/(S[adj]\NP)
+(NP\NP)\(NP\NP)
+(((S\NP)\(S\NP))/((S\NP)\(S\NP)))/NP
+(((S\NP)\(S\NP))/((S\NP)\(S\NP)))/(((S\NP)\(S\NP))/((S\NP)\(S\NP)))
+(((S\NP)\(S\NP))\((S\NP)\(S\NP)))\NP
+((S\NP)\(S\NP))/(S[dcl]\NP) WHNP
+(S[pt]\NP)/S[dcl]
+(NP/NP)/(NP/NP)
+((S[dcl]\NP)/(S[b]\NP))/NP VP
+((N/N)/(N/N))/(S[asup]\NP) QP
+S[em]/S[b]
+((S[dcl]\NP)/(S[ng]\NP))/NP
+(NP\NP)/S[qem] PP
+(NP\NP)/(S[adj]\NP) PP
+(((S\NP)\(S\NP))/(S[ng]\NP))/NP PP
+((N/N)\(N/N))/(N/N) QP
+(((S\NP)\(S\NP))\((S\NP)\(S\NP)))/S[dcl]
+((S[adj]\NP)\(S[adj]\NP))/S[dcl]
+((S[dcl]\NP)/S[em])/NP
+(S[adj]\NP)/S[em]
+((S[ng]\NP)/(S[adj]\NP))/NP
+((S[pt]\NP)/(S[to]\NP))/NP
+((S[ng]\NP)/NP)/NP VP
+((S[dcl]\NP)/NP)/(S[dcl]\NP)
+PP/S[qem]
+(S[adj]\NP)/S[dcl] VP
+(((S\NP)\(S\NP))\((S\NP)\(S\NP)))/N
+S[dcl]/NP VP
+(NP\NP)/(S[pss]\NP)
+(S/S)/(S[adj]\NP) PP
+S[qem]/(S[to]\NP) WHADVP
+((S[pss]\NP)/(S[to]\NP))/PP
+((S[dcl]\NP[expl])/S[em])/(S[adj]\NP)
+(S[pss]\NP)/S[em] VP
+((S[dcl]\NP)/PP)/(S[adj]\NP)
+((NP\NP)\(NP\NP))/((NP\NP)\(NP\NP))
+PP\PP
+(S[dcl]\NP[expl])/(S[b]\NP)
+((S[b]\NP)/(S[ng]\NP))/NP
+(PP\PP)\NP ADVP
+(S[dcl]\PP)/NP VP
+S[dcl]/S[dcl]
+S[wq]/S[q] WHADJP
+S/S[dcl]
+(S[dcl]\(S[adj]\NP))/NP VP
+((S\NP)\(S\NP))/(S[pss]\NP)
+((S\NP)/(S\NP))/N
+((NP\NP)/(S[dcl]\NP))\(NP/NP) WHNP
+(((NP\NP)/(NP\NP))\((NP\NP)/(NP\NP)))/((NP\NP)/(NP\NP))
+((NP\NP)/(NP\NP))/NP
+S[wq]/(S[dcl]\NP)
+NP/S[dcl]
+(PP\PP)/NP PP
+((S[dcl]\NP)/S[dcl])/NP VP
+((S\NP)/(S\NP))/S[dcl]
+(S[adj]\NP)/((S[to]\NP)/NP)
+((S[adj]\NP)/PP)/NP ADVP
+(((S\NP)\(S\NP))/PP)/NP
+N/S[dcl]
+(((S[b]\NP)/PP)/PP)/NP
+((S[adj]\NP)/S[em])/(S[adj]\NP)
+((NP\NP)/PP)/NP
+((S\NP)/(S\NP))/PP
+(S[ng]\NP)/(S[pt]\NP) VP
+(PP/PP)/NP
+(S[ng]\NP)/S[qem] VP
+S[inv]/NP VP
+((S[pt]\NP)/NP)/NP VP
+((S[dcl]\NP)/PP)/PP VP
+(N/N)/N
+(((S\NP)\(S\NP))\((S\NP)\(S\NP)))/(((S\NP)\(S\NP))\((S\NP)\(S\NP)))
+((S[ng]\NP)/(S[b]\NP))/NP
+(NP\NP)/(S[b]\NP)
+((S/S)/(S[ng]\NP))/NP
+(S[dcl]\NP)/(S[dcl]\NP) VP
+(S[qem]/S[dcl])/(S[adj]\NP)
+(S[dcl]\NP)/S[for]
+((S[b]\NP)/NP)/(S[adj]\NP)
+((S[dcl]\NP)/NP)/PP
+(S/S)/(S[pss]\NP)
+((S[adj]\NP)\(S[adj]\NP))/PP
+(PP\NP)/NP
+(S[qem]/(S[dcl]/NP))/N
+(((S\NP)\(S\NP))\NP)/NP
+(PP\PP)/(PP\PP)
+(S[dcl]/S[dcl])/NP VP
+(PP/(S[ng]\NP))/NP
+S[qem]/(S[dcl]\NP) WHADVP
+S[poss]/S[dcl]
+((S\NP)\(S\NP))/S[em]
+(N/N)/(S[asup]\NP) QP
+conj\conj
+((NP\NP)/(S[ng]\NP))/NP
+((S[adj]\NP)\(S[adj]\NP))/(S[adj]\NP) PP
+((S[dcl]\NP[expl])/(NP\NP))/NP
+(NP/NP)/NP
+((S[pt]\NP)/(S[adj]\NP))/NP VP
+((S\NP)\(S\NP))/(S[to]\NP)
+(S[dcl]\NP)/S
+(S/S)\(S/S)
+(((S\NP)\(S\NP))\NP)/S[dcl]
+((S[adj]\NP)/(S[to]\NP))/(S[adj]\NP)
+(N/N)/NP
+(S[ng]\NP)/(S[ng]\NP)
+(((S[dcl]\NP)/PP)/PP)/NP
+((S[dcl]\NP)/NP)/(S[adj]\NP)
+((S[b]\NP)/NP)/PP VP
+S[qem]/(S[dcl]/NP)
+(S[pss]\NP)/(PP/NP)
+(((S\NP)\(S\NP))/(S[to]\NP))/N
+(S[dcl]\(S[ng]\NP))/NP VP
+((S[dcl]\NP[expl])/S[qem])/(S[adj]\NP)
+((S\NP)/(S\NP))/(S[adj]\NP)
+((S[dcl]\NP[expl])/(S[to]\NP))/NP VP
+((S[b]\NP)/PP)/(S[adj]\NP) VP
+((NP/NP)/(NP/NP))\(S[adj]\NP)
+(S[qem]/(S[dcl]/(S[adj]\NP)))/(S[adj]\NP)
+((S\NP)/(S\NP))/(S[ng]\NP)
+((S\NP)/(S\NP))\(S[adj]\NP)
+((S[adj]\NP)\(S[adj]\NP))/(S[ng]\NP)
+((S\NP)\(S\NP))/S[qem]
+((S[adj]\NP)\(S[adj]\NP))/((S[adj]\NP)\(S[adj]\NP))
+(S[dcl]/(S[b]\NP))/NP VP
+S[to]\NP VP
+(S[q]/NP)/NP
+((S[dcl]\S[dcl])\NP)/NP
+((NP\NP)/(S[to]\NP))/NP
+(S/S)/(S[dcl]\NP)
+((S[b]\NP)/PP)/PP VP
+(N/N)/(S[adj]\NP)
+(((S\NP)\(S\NP))/((S\NP)\(S\NP)))/(S[asup]\NP)
+((S\NP)\(S\NP))/(S[dcl]/NP)
+(NP/NP)/(S[asup]\NP)
+((NP\NP)/(NP\NP))/((NP\NP)/(NP\NP))
+((N/N)\(N/N))/N
+((S[dcl]\NP)/(S[pss]\NP))/NP VP
+((S[dcl]\NP[expl])/S[for])/(S[adj]\NP)
+(NP/NP)\(S[adj]\NP)
+S[wq]/(S[q]/NP) WHNP
+((S/S)\(S/S))/S[dcl]
+((S/S)\(S/S))/NP PP
+(S[qem]/(S[dcl]\NP))/N
+((S[pss]\NP)/PP)/PP VP
+((S\NP)/(S\NP))/(S[pss]\NP)
+((S\NP)\(S\NP))/S[inv]
+(((S\NP)\(S\NP))/(S[b]\NP))/NP
+((S\NP)\(S\NP))/(S[b]\NP)
+((S[ng]\NP)/(S[ng]\NP))/NP
+((S[ng]\NP)/PP)/PP VP
+((S[dcl]\NP)/(S[to]\NP))/PP VP
+((S[adj]\NP)/PP)/PP
+(S\S)/(S\S)
+(((S\NP)\(S\NP))/(S[to]\NP))/NP
+((((S\NP)\(S\NP))/((S\NP)\(S\NP)))/(((S\NP)\(S\NP))/((S\NP)\(S\NP))))\(S[adj]\NP)
+((S[b]\NP)/(S[pss]\NP))/NP VP
+((S[adj]\NP)/(S[adj]\NP))/N
+N/S[for]
+(S\S)/PP
+(((S\NP)\(S\NP))/(S[pt]\NP))/NP
+((S[dcl]\NP)/(S[adj]\NP))/PP
+((S[b]\NP)/(S[to]\NP))/(S[adj]\NP)
+(S/S)/(S[asup]\NP)
+(S[q]/(S[ng]\NP))/NP
+((S[pt]\NP)/(S[b]\NP))/NP VP
+(S[dcl]\(S[pss]\NP))/NP VP
+(((S[dcl]\NP)/(S[to]\NP))/(S[adj]\NP))/NP[expl]
+(PP/PP)/(PP/PP)
+((NP\NP)\NP)/NP
+(S[q]/(S[adj]\NP))/NP
+((S[pt]\NP)/(S[ng]\NP))/NP
+(((S\NP)\(S\NP))\((S\NP)\(S\NP)))/PP
+S\NP
+((S[b]\NP)/S[qem])/NP
+((S[b]\NP)/S[em])/NP
+(S[adj]\NP)/(S[ng]\NP)
+(NP/(S[dcl]/NP))/N
+((NP\NP)\(NP\NP))/(S[dcl]\NP)
+((NP[nb]/N)\(NP[nb]/N))/(NP[nb]/N)
+(N/N)\NP
+((N/N)\(N/N))/(S[adj]\NP)
+(S[pt]\NP)/(S[b]\NP)
+(S[pss]\NP)/S[dcl]
+((S\NP)\(S\NP))/S[poss]
+(((S\NP)\(S\NP))\((S\NP)\(S\NP)))/((S\NP)\(S\NP))
+((S[dcl]\NP)/S[qem])/NP
+PP/S[dcl]
+(S[pss]\NP)/S[qem]
+(((S\NP)\(S\NP))/(S[pss]\NP))/NP
+(S[ng]\NP)/S[for]
+(S[ng]\NP)/(S[b]\NP)
+(S[dcl]\NP)/S[wq]
+((S[dcl]\NP)\NP)/(S[b]\NP)
+(S[dcl]/NP)/NP
+((NP\NP)\(NP\NP))/S[dcl]
+((S/S)/(S[pt]\NP))/NP
+((S[ng]\NP)/PP)/(S[adj]\NP)
+(S[dcl]\(S[b]\NP))/NP
+((S[dcl]\NP)/(S[to]\NP))/(S[adj]\NP)
+((S[b]\NP)/(S[pt]\NP))/NP
+((S[b]\NP)/S[for])/(S[adj]\NP)
+((S/S)/(S[adj]\NP))/NP
+(S[pss]\NP)/(S[ng]\NP)
+(((S\NP)\(S\NP))\((S\NP)\(S\NP)))/(S[adj]\NP)
+((S[dcl]\NP[expl])/S[em])/NP
+((S/S)/(S/S))/NP PP
+(S\S)/S[q]
+((S/S)/(S[b]\NP))/NP
+((S/S)\NP)/NP
+(S[pt]\NP)/S[qem]
+(S[pss]\NP)/(S[pss]\NP) VP
+(S[dcl]\NP[expl])/(S[pt]\NP)
+((S[dcl]\NP[expl])/S[em])/PP
+((S[b]\NP)/S[dcl])/NP
+(S[adj]\NP)/S[for]
+((S[adj]\NP)\NP)/PP
+(PP\PP)/N
+((NP\NP)\(NP\NP))\NP
+(S[wq]/(S[q]/NP))/N
+((S/S)\NP)/S[dcl]
+((S[qem]/(S[dcl]\NP))/N)/(S[adj]\NP)
+((S\NP)\(S\NP))/S
+((S[ng]\NP)/NP)/PP
+S[dcl]/S[inv]
+(((S[b]\NP)/S[for])/(S[adj]\NP))/NP[expl]
+(((S[adj]\NP)/(S[adj]\NP))/((S[adj]\NP)/(S[adj]\NP)))/(((S[adj]\NP)/(S[adj]\NP))/((S[adj]\NP)/(S[adj]\NP)))
+NP/((S[to]\NP)/NP)
+(NP/(S[dcl]\NP))/N
+(NP/NP)/(S[adj]\NP)
+((NP[nb]/N)/PP)/(S[adj]\NP)
+(N\N)/(N\N)
+(S\S)/(S[ng]\NP)
+((S/S)/PP)/NP
+((S[qem]/(S[dcl]/NP))/N)/(S[adj]\NP)
+((S\NP)\(S\NP))/S[ng]
+(((S\NP)\(S\NP))/NP)/NP
+((S\NP)/(S\NP))\NP
+(S\NP)/NP
+((S[ng]\NP)/(S[pss]\NP))/NP
+S[frg]/NP FRAG
+(S[dcl]\S[wq])/NP
+((S[b]\NP)/(S[to]\NP))/PP
+((S[adj]\NP)\(S[adj]\NP))/(S[pss]\NP)
+(NP\NP)/(S[to]\NP)
+((S/S)/S[dcl])/(S[adj]\NP)
+(S\S)/(S[dcl]\NP)
+((S[pss]\NP)/PP)/(S[adj]\NP)
+(((S\NP)\(S\NP))\((S\NP)\(S\NP)))/(S[pss]\NP)
+((((S\NP)\(S\NP))/((S\NP)\(S\NP)))/(((S\NP)\(S\NP))/((S\NP)\(S\NP))))/(S[asup]\NP)
+((S\NP)/(S\NP))\((S\NP)/(S\NP))
+((S\NP)/(S\NP))/(S[asup]\NP)
+((S[ng]\NP)/S[em])/NP
+((S[ng]\NP)/NP)/(S[adj]\NP)
+(S[dcl]/(S[pt]\NP))/NP
+(((S[dcl]\NP)/S[em])/(S[adj]\NP))/NP[expl]
+(S[dcl]\NP[expl])/(S[pss]\NP)
+(((S[b]\NP)/(S[to]\NP))/(S[adj]\NP))/NP[expl]
+S[adj]/S[adj]
+(PP\PP)/S[dcl]
+(NP\NP)/S[inv]
+(NP\NP)/S
+N/NP
+((S/S)/(S[to]\NP))/NP
+(S\S)/(S[b]\NP)
+(S\S)/N
+((S[pt]\NP)/S[em])/NP
+(((S\NP)/(S\NP))\((S\NP)/(S\NP)))/NP
+((S[ng]\NP)/(S[to]\NP))/PP
+(S[dcl]\(S[b]\NP))\NP
+(S[dcl]\S[b])\NP
+((S[dcl]\NP)/(S[pt]\NP))/NP
+((S[dcl]\NP)/S[em])/PP
+((S[dcl]\NP[expl])/(S[to]\NP))/PP
+((S[adj]\NP)/S[dcl])/(S[adj]\NP)
+(NP\NP)/S[q]
+((NP\NP)\(NP\NP))/(NP\NP)
+S[wq]/(S[b]\NP)
+((S/S)/(S[pss]\NP))/NP
+S/(S[dcl]\NP)
+(((S\NP)\(S\NP))/(S[adj]\NP))/NP
+(((S\NP)\(S\NP))/PP)/(S[adj]\NP)
+(((S[ng]\NP)/PP)/PP)/NP
+(S[dcl]\S[wq])\NP
+(S[dcl]\NP)/S[q]
+((S[dcl]\NP[expl])/S[dcl])/(S[adj]\NP)
+((S[b]\NP)/S[for])/NP
+((S[adj]\NP)/(S[to]\NP))/PP
+(S[adj]\NP)/S[qem]
+(((S[adj]\NP)\(S[adj]\NP))/((S[adj]\NP)\(S[adj]\NP)))/NP
+N/S[qem]
+(NP\NP)/S[wq]
+((NP[nb]/N)/(NP[nb]/N))/(S[asup]\NP)
+((N/N)/(N/N))/N
+(S/S)/S[em]
+((S[pt]\NP)/NP)/(S[adj]\NP)
+((S[ng]\NP)/S[dcl])/NP
+S/N
+((S[dcl]\S[dcl])\NP)/(S[pt]\NP)
+((S[dcl]\NP)\NP)/NP
+(S[b]\NP)/S[for]
+(((S[b]\NP)/PP)/NP)/NP
+((S[adj]\NP)/(S[adj]\NP))/(S[asup]\NP)
+N/PP
+((NP\NP)/((S[to]\NP)/NP))/NP
+((NP\NP)\NP)/PP
+((NP\NP)\(NP\NP))/N
+(NP/N)/(NP/N)
+(((N/N)/(N/N))\((N/N)/(N/N)))/((N/N)/(N/N))
+S[wq]/S[poss]
+((S/S)/(S/S))/((S/S)/(S/S))
+((S\S)\(S\S))/NP
+(S/S)/(S[b]\NP)
+(S[q]/(S[pt]\NP))/NP
+(S[q]/(S[dcl]\NP))/NP
+S[q]/NP
+((S[qem]/S[dcl])\((NP\NP)/NP))/N
+((S[pt]\NP)/(S[to]\NP))/(S[adj]\NP)
+((S[pt]\NP)/(S[pss]\NP))/NP
+(((S\NP)\(S\NP))\((S\NP)\(S\NP)))/(S[dcl]\NP)
+(((S\NP)\(S\NP))/((S\NP)\(S\NP)))/N
+((S\NP)\(S\NP))/(S[asup]\NP)
+(((S\NP)\(S\NP))\NP)/PP
+((S[ng]\NP)/S[qem])/NP
+((S[ng]\NP)/(S[pt]\NP))/NP
+(((S[ng]\NP)/S[for])/(S[adj]\NP))/NP[expl]
+S[frg]/(S[adj]\NP)
+S[em]/(S[dcl]\NP)
+(S[dcl]\S[qem])/PP
+(S[dcl]\S[qem])/NP
+((S[dcl]\S[dcl])\NP)/PP
+(S[dcl]\(S[dcl]\NP))/NP
+(((S[dcl]\NP)/S[for])/(S[adj]\NP))/NP[expl]
+((S[dcl]\NP)/S[em])/(S[adj]\NP)
+((S[dcl]\NP)/S[dcl])/PP
+(S[dcl]\NP)/S[b]
+(S[dcl]\NP)\NP
+(S[dcl]\NP[expl])/(S[to]\NP)
+(S[b]\NP)/S[wq]
+((S[b]\NP)/S[em])/PP
+(((S[b]\NP)/PP)/(S[adj]\NP))/NP
+((S[b]\NP)\NP)/(S[b]\NP)
+((S[b]\NP)\NP)/NP
+S[as]/S[poss]
+((S[adj]\NP)/((S[to]\NP)/NP))/(S[adj]\NP)
+((S[adj]\NP)\(S[adj]\NP))/S[inv]
+(NP\NP)/S[b]
+((((NP\NP)\(NP\NP))/((NP\NP)\(NP\NP)))\(((NP\NP)\(NP\NP))/((NP\NP)\(NP\NP))))/(((NP\NP)\(NP\NP))/((NP\NP)\(NP\NP)))
+((NP\NP)\(NP\NP))\((NP\NP)\(NP\NP))
+((NP\NP)/N)\NP
+((N\N)\(N\N))/NP
+N/N[num]
+(N/N)/N[num]
+S[bem]/S[b]
+(S[dcl]\NP[thr])/(S[b]\NP) VP
+(S[dcl]\NP[thr])/(S[pt]\NP) VP
+(S[dcl]\NP)/S[bem] VP
+NP/(NP\NP)
+((S\NP)\(S\NP))/N[num] NP
+(S[ng]\NP)/S[bem]
+(S/S)/S[inv]
+(S[dcl]\NP[thr])/NP VP
+(S[adj]\NP)/N[num]
+(NP\NP)/N[num]
+((S[wq]/(S[q]/NP))/N)\(S[wq]/(S[q]/NP))
+((S[wq]/(S[dcl]\NP))/N)\(S[wq]/(S[dcl]\NP))
+(S[wq]/(S[q]/NP))/NP
+((S[wq]/(S[dcl]\NP))/N)/(NP/N)
+((S[wq]/S[q])\(S[wq]/S[q]))/NP
+(S[wq]\S[wq])/NP
+(S[wq]\(S[dcl]/NP))/N
+(S[wq]/(S[dcl]\NP))/NP
+((NP\NP)/(S[pss]\NP))/NP
+((S[pss]\NP)/PP)/NP
+(((S[q]/NP)/PP)/(((S[b]\NP)/PP)/NP))/NP
+((S[q]/PP)/NP)/NP
+((S[q]/PP)/PP)/NP
+(((S[wq]/NP)/((S[q]/NP)/NP))/N)/(NP/N)
+(((S[wq]/PP)/((S[q]/PP)/NP))/N)/(NP/N)
+((S[wq]/PP)/((S[q]/PP)/(S[adj]\NP)))/(S[adj]\NP)
+(S[wq]\(S[dcl]/PP))/(S[wq]\(S[dcl]/NP))
+(((S[wq]/(S[pss]\NP))/((S[q]/(S[pss]\NP))/NP))/N)/(NP/N)
+(S[wq]/(S[q]/NP))/(S[wq]/(S[q]/NP))
+(S[wq]/(S[q]/PP))/N
+((S[wq]/(S[q]/PP))/N)/(NP/N)
+S[wq]\S[wq]
+(S[wq]\S[wq])/(S[dcl]\NP)
+S[wq]/(S[q]/PP)
+(S[wq]/(S[q]/PP))/(S[wq]/(S[q]/(S[adj]\NP)))
+((S[q]/PP)/(S[adj]\NP))/NP
+(S[wq]/(S[q]/(S[adj]\NP)))/(S[adj]\NP)
+S[wq]\(S[dcl]/NP)
+(S[wq]\(S[dcl]/PP))/N
+(S[wq]\S[wq])/S[dcl]
+(((S[q]/PP)/PP)/(S[adj]\NP))/NP
+((S[pss]\NP)/NP)/PP VP
+NP/N
+(S[wq]/(S[q]/PP))/(S[wq]/(S[q]/NP))
+((S[wq]/(S[q]/PP))\(S[wq]/(S[q]/PP)))/NP
+((S[wq]/(S[q]/NP))/N)/(NP/N)
+((S[wq]/PP)/N)/(NP/N)
+(S[wq]\(S[dcl]/PP))/(S[wq]\(S[dcl]/PP))
+LQU
+RQU
+(((S[b]\NP)/NP)/PP)/NP
+((S[pss]\NP)/NP)/NP VP
+(N/N)\N
+(S[q]/(S[pss]\NP))/NP
+(S[q]/PP)/NP
+(S[wq]/(S[dcl]\NP))/N WHNP
+NP/PP
+((S[q]/NP)/NP)/NP
+(((S[dcl]\NP)/PP)/PP)/PP
+PP/N[num]
+PP/N
+((S[pt]\NP)/PP)/PP
+((PP/PP)/(PP/PP))\(S[adj]\NP)
+((S[pt]\NP)/NP)/PP
+(((S[pt]\NP)/PP)/PP)/PP
+PP/(S[dcl]\NP)
+(PP\PP)/((S\NP)\(S\NP))
+(((S[pt]\NP)/PP)/PP)/NP
+(((S[dcl]\NP)/PP)/NP)/PP
+((S[dcl]\NP)/(S[ng]\NP))/PP
+(((S[b]\NP)/PP)/NP)/PP
+(((S[dcl]\NP)/(S[to]\NP))/PP)/PP
+(((S[ng]\NP)/PP)/NP)/PP
+((S[b]\NP)/(S[ng]\NP))/PP
+NP/N[num]
+(((S[dcl]\NP)/(S[to]\NP))/PP)/NP
+((NP\NP)/(NP\NP))/N[num] ADJP
+(S[dcl]\(S[adj]\NP))\NP VP
+

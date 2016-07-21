@@ -1,0 +1,79 @@
+
+- Download and install the PPDB with _preparePAR
+  Within this script you can select the size of the PPDB (s, m, l, xl, etc)
+
+- Boxer should be run with the --x option (within bin/nc)
+  Two specific SemEval hacks should be commented in:
+
+  %trans(t(A,B,people,C,D,E),N,Tok,M,Tags):- 
+  %   option('--x',true), !, % SemEval-2014
+  %   trans(t(A,B,person,C,D,E),N,Tok,M,Tags).
+
+  %trans(t(A,B,C,'NNP',D,E),N,Tok,M,Tags):- 
+  %   option('--x',true), !, % SemEval-2014
+  %   trans(t(A,B,C,'NN',D,E),N,Tok,M,Tags).
+
+
+- Preparing data from Ellie: src/scripts/boxer/sick/_prepareKB
+  This puts all relations in the file working/wordnet/ellie.pl, 
+  in the same format as the working/wordnet/wordnet.pl file.
+
+- To run with/without wordnet, change WORDNET variable in the _runSICK script
+
+- To use Ellie's relations instead of WordNet, make the following change in 
+  the file src/prolog/nutcracker/miniWordNet.pl
+
+  %:- [working/wordnet/wordnet].
+  :- [working/wordnet/ellie].
+
+- Running the data in the SemEval-2014 data:
+
+  src/scripts/boxer/sick/_runSICK
+
+- To run with PPDB preprocessing, comment in these lines of the _runSICK script:
+
+  #           if [ `cat ${SICK}/${I}/prediction.txt | grep word | wc -l` -gt 0 ]; then
+  #               par ${I}
+  #           fi
+
+  
+
+Use Mcneamar test for stat. sign.?
+
+Here are the results on the trainingdata of SemEval 2014 Task 1 (5,000 instances), ran without and with WordNet.
+Shown figures are accuracy as computed by the R script provided by SemEval-2014 Task 1.
+It took a bit longer than expected (fighting with the size of XXXL...).
+
+Baseline MFC = 55.36
+
+                             &  --WN --EN  &   +WN        & +EN    & +WN +EN \\ 
+ 
+Boxer                        &    74.82!   &    77.62     & 78.58  & 79.14   \\
+PPDB S + Boxer               &    74.90    &    77.80     &        & \\
+PPDB M + Boxer               &    75.18    &    78.14     &        & \\
+PPDB L + Boxer               &    75.84    &    78.88     &        & \\
+PPDB XL + Boxer              &    76.30    &    79.50     &        & 80.10  \\
+PPDB XXL + Boxer             &    75.12    &    78.32     &        & \\
+PPDB XXXL + Boxer            &    74.50    &    77.00     & 77.36  & 77.62  \\
+
+Here the PPDB paraphrases are applied in a pre-processing step.
+XL gives the best result (increase of 1.84%). 
+Using XXXL yields worse results than not using it.
+
+              & train & test \\
+Boxer         & 74.82 & 74.82
+
+Boxer + S     & 74.82 & 76.86 (on train)  \\
+Boxer + M     & 75.46 & 77.12 (?) \\
+Boxer + L     & 76.18 & 77.13 
+Boxer + XL    & 77.82 & 77.00 / 77.27
+Boxer + XXL   & 76.84 & 
+Boxer + XXXL  & 76.80 & 
+
+Boxer + WN    & 77.62 & 77.53
+Boxer + E-KB  & 78.58 (new 77.84) & 75.42
+Boxer + WN+E  & 79.14 &
+
+Boxer + Juman &       & 75.58 \\
+
+

@@ -1,0 +1,5 @@
+12/01/04 SC
+
+forests is created using the first 20 sentences of the training data, and is used to make sure any 
+changes to the parser code doesn't mess up the forest creation.
+
