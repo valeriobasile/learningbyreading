@@ -1,5 +1,5 @@
 #!/bin/sh
-tar -xjvf candc.tar.bz2
+
 cd candc
 ln -s Makefile.unix Makefile
 BASEDIR=`pwd`
