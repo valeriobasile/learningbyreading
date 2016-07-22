@@ -51,7 +51,7 @@ def get_frame_triples(frame_instances):
                 framebase_id = "{0}-{1}".format(frame_instance['frame'], offset2wn[frame_instance['synset']].split("#")[0].replace('-', '.'))
             except:
                 log.info('No mapping found for synset {0}'.format(frame_instance['synset']))
-                framebase_id = "Unmapped-{1}".format(frame_instance['synset'])
+                framebase_id = "Unmapped-{0}".format(frame_instance['synset'])
             triple = ('<{0}/fi-{1}>'.format(config.get('namespace', 'frame'), frame_instance_id),
                       '<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>',
                       '<{0}/frame-{1}>'.format(config.get('namespace', 'frame'), framebase_id))
