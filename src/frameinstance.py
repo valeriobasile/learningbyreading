@@ -102,14 +102,14 @@ def get_aligned_frames_xml(tokenized, frame_instances, root):
                             # composed lexicalization
                             surface = unboxer.generate_from_relation(d, reificated_frame_var, reificated_role_var)
                             if surface != None:
-                                tag_roleexicalization = objectify.SubElement(tag_frameelement, "roleexicalization")
-                                tag_roleexicalization[0] = surface
+                                tag_rolelexicalization = objectify.SubElement(tag_frameelement, "rolelexicalization")
+                                tag_rolelexicalization[0] = surface
 
                                 # complete surface forms
                                 surface = []
                                 unboxer.generate_from_referent(d, reificated_role_var, surface, complete=True)
                                 tag_conceptlexicalization = objectify.SubElement(tag_frameelement, "conceptlexicalization")
-                                tag_conceptlexicalization = ' '.join(surface)
+                                tag_conceptlexicalization[0] = ' '.join(surface)
                     except:
                         log.error("error with DRG reification: {0}".format(variable))
 
