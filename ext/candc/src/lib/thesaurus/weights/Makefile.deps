@@ -1,0 +1,102 @@
+identity.o: identity.cc ../base.h ../../common/utils.h \
+  ../../common/aux_heap.h ../../common/index_heap.h ../../common/hash.h \
+  ../../common/error.h ../../common/io.h ../../common/readbuffer.h \
+  ../../common/aux_strings.h ../../common/timer.h ../../common/pool.h \
+  ../bitsig.h ../options.h ../../common/lexeme.h ../../common/lexicon.h \
+  ../type.h ../attribute.h ../relation.h ../object.h ../weights.h
+zero.o: zero.cc ../base.h ../../common/utils.h ../../common/aux_heap.h \
+  ../../common/index_heap.h ../../common/hash.h ../../common/error.h \
+  ../../common/io.h ../../common/readbuffer.h ../../common/aux_strings.h \
+  ../../common/timer.h ../../common/pool.h ../bitsig.h ../options.h \
+  ../../common/lexeme.h ../../common/lexicon.h ../type.h ../attribute.h \
+  ../relation.h ../object.h ../weights.h
+mi.o: mi.cc ../base.h ../../common/utils.h ../../common/aux_heap.h \
+  ../../common/index_heap.h ../../common/hash.h ../../common/error.h \
+  ../../common/io.h ../../common/readbuffer.h ../../common/aux_strings.h \
+  ../../common/timer.h ../../common/pool.h ../bitsig.h ../options.h \
+  ../../common/lexeme.h ../../common/lexicon.h ../type.h ../attribute.h \
+  ../relation.h ../object.h ../weights.h
+chi2.o: chi2.cc ../base.h ../../common/utils.h ../../common/aux_heap.h \
+  ../../common/index_heap.h ../../common/hash.h ../../common/error.h \
+  ../../common/io.h ../../common/readbuffer.h ../../common/aux_strings.h \
+  ../../common/timer.h ../../common/pool.h ../bitsig.h ../options.h \
+  ../../common/lexeme.h ../../common/lexicon.h ../type.h ../attribute.h \
+  ../relation.h ../object.h ../weights.h
+grefenstette.o: grefenstette.cc ../base.h ../../common/utils.h \
+  ../../common/aux_heap.h ../../common/index_heap.h ../../common/hash.h \
+  ../../common/error.h ../../common/io.h ../../common/readbuffer.h \
+  ../../common/aux_strings.h ../../common/timer.h ../../common/pool.h \
+  ../bitsig.h ../options.h ../../common/lexeme.h ../../common/lexicon.h \
+  ../type.h ../attribute.h ../relation.h ../object.h ../weights.h
+ttest.o: ttest.cc ../base.h ../../common/utils.h ../../common/aux_heap.h \
+  ../../common/index_heap.h ../../common/hash.h ../../common/error.h \
+  ../../common/io.h ../../common/readbuffer.h ../../common/aux_strings.h \
+  ../../common/timer.h ../../common/pool.h ../bitsig.h ../options.h \
+  ../../common/lexeme.h ../../common/lexicon.h ../type.h ../attribute.h \
+  ../relation.h ../object.h ../weights.h
+ttestlog.o: ttestlog.cc ../base.h ../../common/utils.h \
+  ../../common/aux_heap.h ../../common/index_heap.h ../../common/hash.h \
+  ../../common/error.h ../../common/io.h ../../common/readbuffer.h \
+  ../../common/aux_strings.h ../../common/timer.h ../../common/pool.h \
+  ../bitsig.h ../options.h ../../common/lexeme.h ../../common/lexicon.h \
+  ../type.h ../attribute.h ../relation.h ../object.h ../weights.h
+lr.o: lr.cc ../base.h ../../common/utils.h ../../common/aux_heap.h \
+  ../../common/index_heap.h ../../common/hash.h ../../common/error.h \
+  ../../common/io.h ../../common/readbuffer.h ../../common/aux_strings.h \
+  ../../common/timer.h ../../common/pool.h ../bitsig.h ../options.h \
+  ../../common/lexeme.h ../../common/lexicon.h ../type.h ../attribute.h \
+  ../relation.h ../object.h ../weights.h
+lin.o: lin.cc ../base.h ../../common/utils.h ../../common/aux_heap.h \
+  ../../common/index_heap.h ../../common/hash.h ../../common/error.h \
+  ../../common/io.h ../../common/readbuffer.h ../../common/aux_strings.h \
+  ../../common/timer.h ../../common/pool.h ../bitsig.h ../options.h \
+  ../../common/lexeme.h ../../common/lexicon.h ../type.h ../attribute.h \
+  ../relation.h ../object.h ../weights.h
+dice.o: dice.cc ../base.h ../../common/utils.h ../../common/aux_heap.h \
+  ../../common/index_heap.h ../../common/hash.h ../../common/error.h \
+  ../../common/io.h ../../common/readbuffer.h ../../common/aux_strings.h \
+  ../../common/timer.h ../../common/pool.h ../bitsig.h ../options.h \
+  ../../common/lexeme.h ../../common/lexicon.h ../type.h ../attribute.h \
+  ../relation.h ../object.h ../weights.h
+milog.o: milog.cc ../base.h ../../common/utils.h ../../common/aux_heap.h \
+  ../../common/index_heap.h ../../common/hash.h ../../common/error.h \
+  ../../common/io.h ../../common/readbuffer.h ../../common/aux_strings.h \
+  ../../common/timer.h ../../common/pool.h ../bitsig.h ../options.h \
+  ../../common/lexeme.h ../../common/lexicon.h ../type.h ../attribute.h \
+  ../relation.h ../object.h ../weights.h
+dicelog.o: dicelog.cc ../base.h ../../common/utils.h \
+  ../../common/aux_heap.h ../../common/index_heap.h ../../common/hash.h \
+  ../../common/error.h ../../common/io.h ../../common/readbuffer.h \
+  ../../common/aux_strings.h ../../common/timer.h ../../common/pool.h \
+  ../bitsig.h ../options.h ../../common/lexeme.h ../../common/lexicon.h \
+  ../type.h ../attribute.h ../relation.h ../object.h ../weights.h
+micut.o: micut.cc ../base.h ../../common/utils.h ../../common/aux_heap.h \
+  ../../common/index_heap.h ../../common/hash.h ../../common/error.h \
+  ../../common/io.h ../../common/readbuffer.h ../../common/aux_strings.h \
+  ../../common/timer.h ../../common/pool.h ../bitsig.h ../options.h \
+  ../../common/lexeme.h ../../common/lexicon.h ../type.h ../attribute.h \
+  ../relation.h ../object.h ../weights.h
+ttestcut.o: ttestcut.cc ../base.h ../../common/utils.h \
+  ../../common/aux_heap.h ../../common/index_heap.h ../../common/hash.h \
+  ../../common/error.h ../../common/io.h ../../common/readbuffer.h \
+  ../../common/aux_strings.h ../../common/timer.h ../../common/pool.h \
+  ../bitsig.h ../options.h ../../common/lexeme.h ../../common/lexicon.h \
+  ../type.h ../attribute.h ../relation.h ../object.h ../weights.h
+ttestcutlog.o: ttestcutlog.cc ../base.h ../../common/utils.h \
+  ../../common/aux_heap.h ../../common/index_heap.h ../../common/hash.h \
+  ../../common/error.h ../../common/io.h ../../common/readbuffer.h \
+  ../../common/aux_strings.h ../../common/timer.h ../../common/pool.h \
+  ../bitsig.h ../options.h ../../common/lexeme.h ../../common/lexicon.h \
+  ../type.h ../attribute.h ../relation.h ../object.h ../weights.h
+micutlog.o: micutlog.cc ../base.h ../../common/utils.h \
+  ../../common/aux_heap.h ../../common/index_heap.h ../../common/hash.h \
+  ../../common/error.h ../../common/io.h ../../common/readbuffer.h \
+  ../../common/aux_strings.h ../../common/timer.h ../../common/pool.h \
+  ../bitsig.h ../options.h ../../common/lexeme.h ../../common/lexicon.h \
+  ../type.h ../attribute.h ../relation.h ../object.h ../weights.h
+weights.o: weights.cc ../base.h ../../common/utils.h \
+  ../../common/aux_heap.h ../../common/index_heap.h ../../common/hash.h \
+  ../../common/error.h ../../common/io.h ../../common/readbuffer.h \
+  ../../common/aux_strings.h ../../common/timer.h ../../common/pool.h \
+  ../bitsig.h ../options.h ../../common/lexeme.h ../../common/lexicon.h \
+  ../type.h ../attribute.h ../relation.h ../object.h ../weights.h

@@ -1,0 +1,169 @@
+#!/usr/bin/perl -w
+
+@header = ();
+@register = ();
+
+sub generate_cc($$$$){
+  my ($name, $filename, $code, $formula) = @_;
+  open(OUT, "> $filename.cc") || die "could not open $filename.cc for writing";
+
+print OUT <<CCFILE;
+
+#include <cmath>
+#include <string>
+#include <vector>
+
+#include <iostream>
+#include <iomanip>
+#include <stdexcept>
+
+using namespace std;
+
+#include "except.h"
+#include "utils.h"
+#include "utils/io.h"
+
+#include "hash.h"
+#include "pool.h"
+
+#include "hashtable/entry.h"
+
+#include "thesaurus/options.h"
+#include "thesaurus/type.h"
+#include "thesaurus/types.h"
+#include "thesaurus/attribute.h"
+#include "thesaurus/attributes.h"
+#include "thesaurus/weight.h"
+#include "thesaurus/relation.h"
+#include "thesaurus/object.h"
+#include "thesaurus/objects.h"
+#include "thesaurus/weights/utils.h"
+
+namespace NLP { namespace Thesaurus {
+
+class W$name: public Weight {
+public:
+  W$name(void): Weight("$filename.cc", "$name", "$formula") {};
+  ~W$name(void) {};
+
+  float operator()(const Object *o, const Attribute *a, const Relation *r) const;
+};
+
+float
+W$name\:\:operator()(const Object *o, const Attribute *a, const Relation *r) const {
+  return $code;
+}
+
+} }
+CCFILE
+
+  close(OUT);
+}
+
+sub generate_auto_register($$$){
+  my ($name, $filename, $formula) = @_;
+
+  push @header, <<HEADER;
+
+namespace NLP {
+  namespace Thesaurus {
+
+    class W$name: public Weight {
+    public:
+      W$name(void): Weight("$filename", "$name", "$formula") {};
+      ~W$name(void) {};
+
+      float operator()(const Object *o, const Attribute *a, const Relation *r) const;
+    };
+
+  }
+}
+HEADER
+
+  push @register, "      install(new W$name);";
+}
+
+sub generate_manual_register($$$){
+  my ($name, $filename, $formula) = @_;
+  push @header, "#include \"thesaurus/weights/$filename.h\"\n";
+  push @register, "      install(new W$name);";
+}
+
+while(<>){
+  next if(/^#/);
+  chomp;
+
+  ($name, $filename, $code, $formula) = split /:/;
+  $filename = lc $name if(!$filename);
+  $formula = $code if(!$formula);
+
+  if($code ne '*'){
+    print "generating $name [$filename.cc]: $formula\n";
+    generate_cc($name, $filename, $code, $formula);
+    generate_auto_register($name, $filename, $formula);
+  }else{
+    print "skipping $name [$filename.cc $filename.h] see code (manually generated)\n";
+    generate_manual_register($name, $filename, "see code (manually generated)");
+  }
+
+  push @generated, "src/lib/thesaurus/weights/$filename.o";
+}
+
+open(MAKEFILE, "> Makefile.gen") || die "could not open Makefile.gen for writing\n";
+print "generating Makefile.gen\n";
+print MAKEFILE "WEIGHTS = @generated\n";
+close(MAKEFILE);
+
+$" = "\n";
+
+open(WEIGHTS, "> weights.cc") || die "could not open weights.cc for writing\n";
+print "generating weights.cc\n";
+print WEIGHTS <<WEIGHTSFILE;
+
+// automatically generated weight registration
+
+#include <cmath>
+#include <string>
+#include <vector>
+
+#include <iostream>
+#include <iomanip>
+#include <stdexcept>
+
+using namespace std;
+
+#include "except.h"
+#include "utils.h"
+#include "utils/io.h"
+
+#include "hash.h"
+#include "pool.h"
+
+#include "hashtable/entry.h"
+
+#include "thesaurus/options.h"
+#include "thesaurus/type.h"
+#include "thesaurus/types.h"
+#include "thesaurus/attribute.h"
+#include "thesaurus/attributes.h"
+#include "thesaurus/weight.h"
+#include "thesaurus/relation.h"
+#include "thesaurus/object.h"
+#include "thesaurus/objects.h"
+#include "thesaurus/weights.h"
+
+@header
+
+namespace NLP { namespace Thesaurus {
+
+WeightRegistry::WeightRegistry(void){
+@register
+}
+
+WeightRegistry weights;
+
+} }
+
+WEIGHTSFILE
+
+close(WEIGHTS);

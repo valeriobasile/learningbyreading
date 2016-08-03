@@ -1,0 +1,22 @@
+Identity::1.0:
+Zero::0.0:
+Freq::f(r):
+RelFreq::f(r)/f(o):
+Chi2::*:
+LR::*:
+Lin98b::*:
+Lin98c::*:
+Dice::2*p(r)/(p(o) + p(a)):
+DiceLog::2*log2(f(r) + 1)*p(r)/(p(o) + p(a)):
+Grefenstette::log2(f(r) + 1)/log2(n(a) + 1):
+MI::log2(p(r)/(p(o)*p(a))):
+MILog::log2(f(r) + 1)*log2(p(r)/(p(o)*p(a))):
+MICut::cut(log2(p(r)/(p(o)*p(a))), 0):
+MICutLog::cut(log2(p(r)/(p(o)*p(a))), 0)*log2(f(r) + 1):
+TTest::(p(r) - p(a)*p(o))/sqrt(p(a)*p(o)):
+TTestLog::log2(f(r) + 1)*(p(r) - p(a)*p(o))/sqrt(p(a)*p(o)):
+TTestCut::cut(p(r) - p(a)*p(o), 0)/sqrt(p(a)*p(o)):
+TTestCutLog::cut(p(r) - p(a)*p(o), 0)*log2(f(r) + 1)/sqrt(p(a)*p(o)):
+RelWeight::*:
+TFIDF::f(r)/n(a):
+TFIDF2::log2(f(r) + 1)/log2(1 + 1/q(a)):
