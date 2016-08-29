@@ -1,3 +1,5 @@
 lxml==3.4.4
+nltk==3.1
+python-graph-core==1.8.2
 requests==2.8.0
 simplejson==3.8.0
