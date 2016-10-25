@@ -150,7 +150,9 @@ for filename in documents:
             relation['arg2'] in variables):
             for entity1, entity2 in product(variables[relation['arg1']],
                                          variables[relation['arg2']]):
-                if relation['symbol'] in thematic_roles:
+                entity1 = unicode(entity1, 'utf-8')                                  
+		entity2 = unicode(entity2, 'utf-8')
+		if relation['symbol'] in thematic_roles:
                     # thematic roles
                     synset = entity1.split('/')[-1]
                     try:
@@ -161,6 +163,7 @@ for filename in documents:
 #                        continue
 
                     for frame in framelist:
+			role = None             #declaring role
                         if (entity2 != '' and frame != ''):
                             vnrole = relation['symbol']
                             if frame in vn2fn_roles:
