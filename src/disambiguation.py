@@ -12,13 +12,15 @@ config.read(join(dirname(__file__),'../config/disambiguation.conf'))
 
 def disambiguation(tokenized, drs):
 	# Word Sense Disambiguation
+	entities = []
 	if config.get('wsd', 'module') == 'babelfy':
 		log.info("Calling Babelfy")
 		disambiguated = babelfy(tokenized)
 		synsets = disambiguated['synsets']
 		if config.get('el', 'module') == 'babelfy':
 			log.info("Using Babelfy also for entities")
-			entities = disambiguated['entities']
+			if(disambiguated != None):
+				entities = disambiguated['entities']
 	elif config.get('wsd', 'module') == 'ukb':
 			log.info("Calling UKB")
 			disambiguated = wsd(drs['predicates'])
@@ -28,13 +30,15 @@ def disambiguation(tokenized, drs):
 	if config.get('el', 'module') == 'babelfy' and config.get('wsd', 'module') != 'babelfy':
 		log.info("Calling Babelfy")
 		disambiguated = babelfy(tokenized)
-		entities = disambiguated['entities']
+		if(disambiguated != None):
+			entities = disambiguated['entities']
 	elif config.get('el', 'module') == 'spotlight':
 		log.info("Calling Spotlight")
 		disambiguated = spotlight(tokenized)
 		if not disambiguated:
 			return None, None
-		entities = disambiguated['entities']
+		if(disambiguated != None):
+			entities = disambiguated['entities']
 	elif config.get('el', 'module') == 'none':
 		log.info("No module selected for entity linking")
 		entities = []
