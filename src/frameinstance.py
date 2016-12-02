@@ -47,7 +47,8 @@ def get_frame_triples(frame_instances):
     for frame_instance_id, frame_instance in frame_instances.iteritems():
         if len(frame_instance['roles']) > 0:
             try:
-                framebase_id = "{0}-{1}".format(frame_instance['frame'], offset2wn[frame_instance['synset']].split("#")[0].replace('-', '.'))
+                #framebase_id = "{0}-{1}".format(frame_instance['frame'], offset2wn[frame_instance['synset']].split("#")[0].replace('-', '.'))
+		framebase_id = "{0}-{1}".format(frame_instance['frame'], frame_instance['synset'])
             except:
                 log.info('No mapping found for synset {0}'.format(frame_instance['synset']))
                 framebase_id = "Unmapped-{0}".format(frame_instance['synset'])
