@@ -1,0 +1,3 @@
+<http://framebase.org/ns/fi-Ingestion_967dd93c-38e3-4403-b7dd-c2e027559a1a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://framebase.org/ns/frame-Ingestion-01170802-v> .
+<http://framebase.org/ns/fi-Ingestion_967dd93c-38e3-4403-b7dd-c2e027559a1a> <http://framebase.org/ns/fe-Ingestibles> <http://wordnet-rdf.princeton.edu/wn31/07783823-n> .
+<http://framebase.org/ns/fi-Ingestion_967dd93c-38e3-4403-b7dd-c2e027559a1a> <http://framebase.org/ns/fe-Ingestor> <http://wordnet-rdf.princeton.edu/wn31/10149362-n> .

@@ -1,0 +1,32 @@
+Instructions:
+1. script: Code works for any of the following scripts, given as partially or fully.
+'src.py -i <inputfile> -I <outputfile> -a <alpha value> -t <Frame_similarity_Algo> -e <element_similarity_Algo> -r <true,false>'
+
+'src.py --ifile1 <inputfile> --ifile2 <outputfile> --alpha <alpha value> --F_Sim_Algo <Frame_sim_Algo> --E_sim_Algo <element_similarity_Algo> --role <true,false>'
+
+Parameters values:
+1. -i or --inputfile1 : 
+default : F_instance1.nt
+
+2. -I or --inputfile2 :
+default : F_instance2.nt
+
+3. -a or --alpha :
+default : 0.5
+
+4. -t or --F_Sim_Algo :
+default : WUP
+
+5. -e or --E_sim_Algo :
+default : WUP
+
+6. -r or --role :
+default : false
+
+
+*Test input files are run from the folder named "frame_files"
+*Any similarity calculating algorithm can be implemented instead of WUP for either between frame_types or frame_elements. Just add the module and call that similarity. Comments are mentioned in the code at place where new algo can be called.
+*Necessary comments are mentioned in the code. 
+*For analysing results at each level of calculation, uncomment the print statements and run.
+*Data structures like list, dictionary and tuples are used so that the code can be easily used for multiple frames if require at some point.
+ 
