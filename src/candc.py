@@ -37,7 +37,7 @@ def tokenize_local(text):
 def parse_local(tokenized):
     parser_options = ['--models', join(dirname(__file__),'../{0}/models/boxer'.format(config.get('local', 'base_dir'))),
                       '--candc-printer', 'boxer']
-    parser = '{0}/bin/candc'.format(config.get('local', 'base_dir'))
+    parser = join(dirname(__file__), '../{0}/bin/candc'.format(config.get('local', 'base_dir')))
     process = subprocess.Popen([parser] + parser_options,
                            shell=False,
                            stdin=subprocess.PIPE,
