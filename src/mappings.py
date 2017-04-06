@@ -1,5 +1,6 @@
 import logging as log
 import os
+import re
 
 # builds a dictionary of frame names indexed by wordnet synset id
 offset2bn = dict()
@@ -18,6 +19,8 @@ dbpedia2bn = dict()
 with open(os.path.join(os.path.dirname(__file__), '../resources/bn35-wn31.map')) as f:
     for line in f:
         bn_id, wn_id, wn_offset = line.rstrip().split(' ')
+        if wn_offset.endswith("-s"): wn_offset = wn_offset.replace("-s", "-a")# To use only the tag "a" for adjetives
+        if wn_id.endswith("-s"): wn_id = re.sub("(-s)(#\d+)(-s)", "-a\\2-a", wn_id)# To use only the tag "a" for adjetives
         offset2bn[wn_offset[1:]] = bn_id
         bn2offset[bn_id] = wn_offset[1:]
         offset2wn[wn_offset[1:]] = wn_id

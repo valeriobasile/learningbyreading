@@ -46,11 +46,12 @@ def get_frame_triples(frame_instances):
     triples = []
     for frame_instance_id, frame_instance in frame_instances.iteritems():
         if len(frame_instance['roles']) > 0:
-            try:
+            if frame_instance['frame'] != "Unmapped":
                 framebase_id = "{0}-{1}".format(frame_instance['frame'], offset2wn[frame_instance['synset']].split("#")[0].replace('-', '.'))
-            except:
+            else:
                 log.info('No mapping found for synset {0}'.format(frame_instance['synset']))
-                framebase_id = "Unmapped-{0}".format(frame_instance['synset'])
+                framebase_id = "{0}-{1}".format(frame_instance['frame'], frame_instance['synset'])
+
             triple = ('<{0}/fi-{1}>'.format(config.get('namespace', 'frame'), frame_instance_id),
                       '<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>',
                       '<{0}/frame-{1}>'.format(config.get('namespace', 'frame'), framebase_id))
@@ -71,9 +72,9 @@ def get_aligned_frames_xml(tokenized, frame_instances, root):
 
     for instance_id, frame_instance in frame_instances.iteritems():
         if len(frame_instance['roles']) > 0:
-            try:
+            if frame_instance['frame'] != "Unmapped":
                 framebase_id = "{0}-{1}".format(frame_instance['frame'], offset2wn[frame_instance['synset']].split("#")[0].replace('-', '.'))
-            except:
+            else:
                 log.info('No mapping found for synset {0}'.format(frame_instance['synset']))
                 continue
             tag_frameinstance = objectify.SubElement(root, "frameinstance")
