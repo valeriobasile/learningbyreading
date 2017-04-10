@@ -35,7 +35,7 @@ def get_frame_instances(variables, drs, thematic_roles):
                     if relation['arg1'] == variable and relation['arg2'] in variables and relation['symbol'] in thematic_roles:
                         for filler in variables[relation['arg2']]:
                             if frame in vn2fn_roles and relation['symbol'] in vn2fn_roles[frame]:
-                                    role = vn2fn_roles[frame][relation['symbol']]
+                                role = vn2fn_roles[frame][relation['symbol']]
                             else:
                                 role = "vn-{0}".format(relation['symbol'])
 
