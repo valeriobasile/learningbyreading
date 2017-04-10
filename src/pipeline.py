@@ -103,8 +103,8 @@ for filename in documents:
     log.info("Word sense disambiguation and entity linking")
     synsets, entities = disambiguation(tokenized, drs)
     if synsets==None or entities==None:
-		log.error("error during the disambiguation of file '{0}', exiting".format(filename))
-		continue
+        log.error("error during the disambiguation of file '{0}', exiting".format(filename))
+        continue
 
     # extracting co-mentions
     if options.comentions:
@@ -151,8 +151,8 @@ for filename in documents:
             for entity1, entity2 in product(variables[relation['arg1']],
                                          variables[relation['arg2']]):
                 entity1 = unicode(entity1, 'utf-8')                                  
-		entity2 = unicode(entity2, 'utf-8')
-		if relation['symbol'] in thematic_roles:
+                entity2 = unicode(entity2, 'utf-8')
+                if relation['symbol'] in thematic_roles:
                     # thematic roles
                     synset = entity1.split('/')[-1]
                     try:
@@ -163,7 +163,7 @@ for filename in documents:
 #                        continue
 
                     for frame in framelist:
-			role = None             #declaring role
+                        role = None             #declaring role
                         if (entity2 != '' and frame != ''):
                             vnrole = relation['symbol']
                             if frame in vn2fn_roles:
