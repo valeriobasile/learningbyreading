@@ -2,7 +2,6 @@ import subprocess
 import simplejson as json
 from requests import get
 import logging as log
-from mappings import bn2offset
 import os
 from os.path import join, dirname
 
@@ -40,17 +39,6 @@ def babelfy(text):
                                   lines)
     except:
         log.error("babelfy(): error processing Babelfy output")
-        return None
-
-    try:
-        for synset in synsets:
-            bn_id = synset['synset'].split('/')[-1]
-            if bn_id in bn2offset:
-                synset['synset'] = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(bn2offset[bn_id])
-            else:
-                synset['synset'] = ''
-    except:
-        log.error("babelfy(): error linking to WordNet output")
         return None
 
     return {'synsets' : synsets, 'entities' : entities}

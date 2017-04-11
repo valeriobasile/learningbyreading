@@ -1,15 +1,14 @@
 #!/usr/bin/env python
+import simplejson as json
+import logging as log
+import ConfigParser
 from optparse import OptionParser
 from disambiguation import disambiguation
 from candc import tokenize, get_all, get_fol
-import simplejson as json
-import logging as log
 from os import listdir
 from os.path import isfile, join, dirname
 from itertools import product, combinations
 from collections import Counter
-from mappings import bn2offset
-import ConfigParser
 from frameinstance import *
 from lxml import objectify
 
@@ -97,14 +96,15 @@ for filename in documents:
 
     log.info("Parsing")
     drs = get_all(tokenized)
+
     if not drs:
         log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
         continue
     log.info("Word sense disambiguation and entity linking")
     synsets, entities = disambiguation(tokenized, drs)
     if synsets==None or entities==None:
-		log.error("error during the disambiguation of file '{0}', exiting".format(filename))
-		continue
+        log.error("error during the disambiguation of file '{0}', exiting".format(filename))
+        continue
 
     # extracting co-mentions
     if options.comentions:
@@ -151,8 +151,9 @@ for filename in documents:
             for entity1, entity2 in product(variables[relation['arg1']],
                                          variables[relation['arg2']]):
                 entity1 = unicode(entity1, 'utf-8')                                  
-		entity2 = unicode(entity2, 'utf-8')
-		if relation['symbol'] in thematic_roles:
+                entity2 = unicode(entity2, 'utf-8')
+
+                if relation['symbol'] in thematic_roles:
                     # thematic roles
                     synset = entity1.split('/')[-1]
                     try:
@@ -163,7 +164,7 @@ for filename in documents:
 #                        continue
 
                     for frame in framelist:
-			role = None             #declaring role
+                        role = None             #declaring role
                         if (entity2 != '' and frame != ''):
                             vnrole = relation['symbol']
                             if frame in vn2fn_roles:

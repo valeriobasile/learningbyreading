@@ -4,7 +4,7 @@ import re
 from framenet import frames, vn2fn_roles
 from candc import get_drg
 import logging as log
-from mappings import offset2wn
+from mappings import offset2wn, bn2wn
 import ConfigParser
 from os.path import dirname, join
 from uuid import uuid4
@@ -12,6 +12,13 @@ from uuid import uuid4
 # read configuration
 config = ConfigParser.ConfigParser()
 config.read(join(dirname(__file__),'../config/namespace.conf'))
+config_mapping = ConfigParser.ConfigParser()
+config_mapping.read(join(dirname(__file__),'../config/mapping.conf'))
+
+if config_mapping.get('net', 'module') == 'wordnet':
+    mapping_net = offset2wn
+elif config_mapping.get('net', 'module') == 'babelnet':
+    mapping_net = bn2wn
 
 def get_frame_instances(variables, drs, thematic_roles):
     frame_instances = dict()
@@ -35,11 +42,12 @@ def get_frame_instances(variables, drs, thematic_roles):
                     if relation['arg1'] == variable and relation['arg2'] in variables and relation['symbol'] in thematic_roles:
                         for filler in variables[relation['arg2']]:
                             if frame in vn2fn_roles and relation['symbol'] in vn2fn_roles[frame]:
-                                    role = vn2fn_roles[frame][relation['symbol']]
+                                role = vn2fn_roles[frame][relation['symbol']]
                             else:
                                 role = "vn-{0}".format(relation['symbol'])
 
                             frame_instances[instance_id]['roles'][role] = (relation['arg2'], filler)
+
     return frame_instances
 
 def get_frame_triples(frame_instances):
@@ -47,7 +55,7 @@ def get_frame_triples(frame_instances):
     for frame_instance_id, frame_instance in frame_instances.iteritems():
         if len(frame_instance['roles']) > 0:
             if frame_instance['frame'] != "Unmapped":
-                framebase_id = "{0}-{1}".format(frame_instance['frame'], offset2wn[frame_instance['synset']].split("#")[0].replace('-', '.'))
+                framebase_id = "{0}-{1}".format(frame_instance['frame'], mapping_net[frame_instance['synset']].split("#")[0].replace('-', '.'))
             else:
                 log.info('No mapping found for synset {0}'.format(frame_instance['synset']))
                 framebase_id = "{0}-{1}".format(frame_instance['frame'], frame_instance['synset'])
@@ -73,7 +81,7 @@ def get_aligned_frames_xml(tokenized, frame_instances, root):
     for instance_id, frame_instance in frame_instances.iteritems():
         if len(frame_instance['roles']) > 0:
             if frame_instance['frame'] != "Unmapped":
-                framebase_id = "{0}-{1}".format(frame_instance['frame'], offset2wn[frame_instance['synset']].split("#")[0].replace('-', '.'))
+                framebase_id = "{0}-{1}".format(frame_instance['frame'], mapping_net[frame_instance['synset']].split("#")[0].replace('-', '.'))
             else:
                 log.info('No mapping found for synset {0}'.format(frame_instance['synset']))
                 continue

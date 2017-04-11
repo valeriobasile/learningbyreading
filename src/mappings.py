@@ -42,4 +42,4 @@ with open(os.path.join(os.path.dirname(__file__), '../resources/bn-dbpedia')) as
     for line in f:
         bn_id, dbpedia_id = line.rstrip().split(' ')
         dbpedia2bn[dbpedia_id] = bn_id
-        bn2dbpedia[bn_id] = dbpedia_id
+bn2dbpedia[bn_id] = dbpedia_id
