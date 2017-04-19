@@ -96,15 +96,20 @@ for filename in documents:
 
 
     log.info("Parsing")
-    drs = get_all(tokenized)
+    semantics = get_all(tokenized)
     if not drs:
         log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
         continue
+
+    print semantics
+
     log.info("Word sense disambiguation and entity linking")
     synsets, entities = disambiguation(tokenized, drs)
     if synsets==None or entities==None:
         log.error("error during the disambiguation of file '{0}', exiting".format(filename))
         continue
+
+
 
     # extracting co-mentions
     if options.comentions:
@@ -150,7 +155,7 @@ for filename in documents:
             relation['arg2'] in variables):
             for entity1, entity2 in product(variables[relation['arg1']],
                                          variables[relation['arg2']]):
-                entity1 = unicode(entity1, 'utf-8')                                  
+                entity1 = unicode(entity1, 'utf-8')
                 entity2 = unicode(entity2, 'utf-8')
                 if relation['symbol'] in thematic_roles:
                     # thematic roles
