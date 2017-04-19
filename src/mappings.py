@@ -44,4 +44,4 @@ for i in range(4):
         for line in f:
             bn_id, dbpedia_id = line.rstrip().split(' ')
             dbpedia2bn[dbpedia_id] = bn_id
-            bn2dbpedia[bn_id] = dbpedia_id
+bn2dbpedia[bn_id] = dbpedia_id

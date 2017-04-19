@@ -1,15 +1,14 @@
 #!/usr/bin/env python
+import simplejson as json
+import logging as log
+import ConfigParser
 from optparse import OptionParser
 from disambiguation import disambiguation
 from candc import tokenize, get_all, get_fol
-import simplejson as json
-import logging as log
 from os import listdir
 from os.path import isfile, join, dirname
 from itertools import product, combinations
 from collections import Counter
-from mappings import bn2offset
-import ConfigParser
 from frameinstance import *
 from lxml import objectify
 
@@ -96,7 +95,7 @@ for filename in documents:
 
 
     log.info("Parsing")
-    semantics = get_all(tokenized)
+    drs = get_all(tokenized)
     if not drs:
         log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
         continue
