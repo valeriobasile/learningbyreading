@@ -101,6 +101,7 @@ def boxer_local(tokenized, fol=False, drg=False):
         boxer_options.extend(get_boxer_options().split(' '))
 
     boxer = join(dirname(__file__),'../{0}/bin/boxer'.format(config.get('local', 'base_dir')))
+
     process = subprocess.Popen([boxer] + boxer_options,
                            shell=False,
                            stdin=subprocess.PIPE,
@@ -113,6 +114,7 @@ def boxer_local(tokenized, fol=False, drg=False):
         if not "No source location" in err:
             log.error('Boxer error: {0}'.format(err))
     boxed = out.decode('utf-8').encode("utf-8")
+
     return boxed
 
 def tokenize_online(text):
@@ -138,7 +140,7 @@ def boxer_online(tokenized, fol=False, drg=False):
         return None
     return r.text.decode('utf-8').encode("utf-8")
 
-def get_predicates(drs, token_ids):
+def get_predicates(drs, token_ids): 
     predicates = []
     try:
         preds = drs.findall('.//pred')
@@ -147,6 +149,7 @@ def get_predicates(drs, token_ids):
                 poslist = map(lambda x: token_ids.index(x.text), pred['indexlist']['index'])
             except:
                 poslist = [-1]
+
             predicate = {'token_start' : poslist[0],
                          'token_end' : poslist[-1],
                          'symbol' : pred.attrib['symbol'],
@@ -244,9 +247,11 @@ def get_all(tokenized):
         print boxer(tokenized)
         log.error("cannot read Boxer XML")
         return None
+
     token_ids = get_tokens(drs)
     if not token_ids:
         return None
+    drs = coreference_replacements(drs)
     predicates = get_predicates(drs, token_ids)
     namedentities = get_named(drs, token_ids)
     relations = get_relations(drs)
@@ -256,3 +261,21 @@ def get_all(tokenized):
             "namedentities" : namedentities,
             "relations" : relations,
             "identities" : identities}
+
+def coreference_replacements(tree):
+    attributes_dict = {}
+
+    for cond in tree.findall('.//cond'):
+        for child in cond.getchildren():
+            if child.tag in ['pred', 'named']:
+                id_arg = child.get('arg')
+                if id_arg in attributes_dict:
+                    child.tag = attributes_dict[id_arg]['tag']# changing values
+                    child.attrib['symbol'] = attributes_dict[id_arg]['symbol']
+                    child.attrib['type'] = attributes_dict[id_arg]['type']
+                    if attributes_dict[id_arg]['class'] is not None: child.attrib['class'] = attributes_dict[id_arg]['class']
+                    if attributes_dict[id_arg]['sense'] is not None: child.attrib['sense'] = attributes_dict[id_arg]['sense']
+                else:
+                    attributes_dict[id_arg] = {'tag':child.tag, 'symbol':child.get('symbol'), 'type':child.get('type'), 'class':child.get('class'), 'sense':child.get('sense')}
+
+    return tree
