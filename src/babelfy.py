@@ -8,7 +8,7 @@ from os.path import join, dirname
 
 with open(join(dirname(__file__),'../config/babelfy.var.properties')) as f:
     babelnet_key = f.readlines()[0][:-1].split('=')[1]
-
+    
 def babelfy(text):
     try:
         libs = [join(dirname(__file__),'../libs/babelfy-aloof/babelfy-aloof.jar'),join(dirname(__file__),'../libs/babelfy-aloof/libs/*'), join(dirname(__file__),'../config')]
