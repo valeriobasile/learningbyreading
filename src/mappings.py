@@ -1,7 +1,6 @@
 import logging as log
 import os
 import re
-import gzip
 
 # builds a dictionary of frame names indexed by wordnet synset id
 offset2bn = dict()
@@ -39,15 +38,10 @@ with open(os.path.join(os.path.dirname(__file__), '../resources/wn30-31')) as f:
 
 # Mapping BabelNet-DBpedia
 # s00000006n Dodecanol
-#f = gzip.open(os.path.join(os.path.dirname(__file__), '../resources/bn-dbpedia.gz'),'rb')
-with open(os.path.join(os.path.dirname(__file__), '../resources/bn-dbpedia1')) as f:
-    for line in f:
-        bn_id, dbpedia_id = line.rstrip().split(' ')
-        dbpedia2bn[dbpedia_id] = bn_id
-        bn2dbpedia[bn_id] = dbpedia_id
-with open(os.path.join(os.path.dirname(__file__), '../resources/bn-dbpedia2')) as f:
-    for line in f:
-        bn_id, dbpedia_id = line.rstrip().split(' ')
-        dbpedia2bn[dbpedia_id] = bn_id
-        bn2dbpedia[bn_id] = dbpedia_id
-#f.close()
+for i in range(4):
+    filename = os.path.join(os.path.dirname(__file__), '../resources/bn-dbpedia{0}'.format(i+1))
+    with open(filename) as f:
+        for line in f:
+            bn_id, dbpedia_id = line.rstrip().split(' ')
+            dbpedia2bn[dbpedia_id] = bn_id
+            bn2dbpedia[bn_id] = dbpedia_id
