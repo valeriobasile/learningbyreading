@@ -97,8 +97,7 @@ def boxer_local(tokenized, fol=False, drg=False):
                          '--instantiate', 'true',
                          '--resolve', 'false',
                          '--semantics', 'pdrs',
-                         '--format', 'xml']#,
-        #                 '--box', 'true']
+                         '--format', 'xml']
         boxer_options.extend(get_boxer_options().split(' '))
 
     boxer = join(dirname(__file__),'../{0}/bin/boxer'.format(config.get('local', 'base_dir')))
@@ -109,7 +108,7 @@ def boxer_local(tokenized, fol=False, drg=False):
                            stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE)
     out, err = process.communicate(parsed)
-    #print out
+
     if err:
         # Boxer throws a silly error every time (a bug), we want to ignore it
         if not "No source location" in err:
@@ -252,7 +251,7 @@ def get_all(tokenized):
     token_ids = get_tokens(drs)
     if not token_ids:
         return None
-    #drs = modify_xml(drs)
+    drs = coreference_replacements(drs)
     predicates = get_predicates(drs, token_ids)
     namedentities = get_named(drs, token_ids)
     relations = get_relations(drs)
@@ -263,7 +262,7 @@ def get_all(tokenized):
             "relations" : relations,
             "identities" : identities}
 
-def modify_xml(tree):
+def coreference_replacements(tree):
     attributes_dict = {}
 
     for cond in tree.findall('.//cond'):
