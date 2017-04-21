@@ -23,24 +23,24 @@ elif config_mapping.get('net', 'module') == 'babelnet':
 
 def get_frame_instances(variables, semantics, thematic_roles):
     frame_instances = dict()
-    for variable, senses in variables.iteritems():
-        for sense in senses:
-            synset = sense.split('/')[-1]
-            if synset in frames:
-                framelist = frames[synset]
-            else:
-                framelist = ['Unmapped']
-            for frame in framelist:
-                # create new frame instance
-                instance_id = "{0}_{1}".format(frame, uuid4())
-                frame_instances[instance_id] = dict()
-                frame_instances[instance_id]['frame'] = frame
-                frame_instances[instance_id]['synset'] = synset
-                frame_instances[instance_id]['variable'] = variable
-                frame_instances[instance_id]['roles'] = dict()
+    if config.get('semantics', 'module') == 'boxer':
+        for variable, senses in variables.iteritems():
+            for sense in senses:
+                synset = sense.split('/')[-1]
+                if synset in frames:
+                    framelist = frames[synset]
+                else:
+                    framelist = ['Unmapped']
+                for frame in framelist:
+                    # create new frame instance
+                    instance_id = "{0}_{1}".format(frame, uuid4())
+                    frame_instances[instance_id] = dict()
+                    frame_instances[instance_id]['frame'] = frame
+                    frame_instances[instance_id]['synset'] = synset
+                    frame_instances[instance_id]['variable'] = variable
+                    frame_instances[instance_id]['roles'] = dict()
 
-                for relation in semantics['relations']:
-                    if config.get('semantics', 'module') == 'boxer':
+                    for relation in semantics['relations']:
                         if relation['arg1'] == variable and relation['arg2'] in variables and relation['symbol'] in thematic_roles:
                             for filler in variables[relation['arg2']]:
                                 if frame in vn2fn_roles and relation['symbol'] in vn2fn_roles[frame]:
@@ -48,9 +48,21 @@ def get_frame_instances(variables, semantics, thematic_roles):
                                 else:
                                     role = "vn-{0}".format(relation['symbol'])
                                 frame_instances[instance_id]['roles'][role] = (relation['arg2'], filler)
-                    elif config.get('semantics', 'module') == 'semafor':
-                        for filler in variables[relation['arg2']]:
-                            frame_instances[instance_id]['roles'][relation['symbol']] = (relation['arg2'], filler)
+
+
+    elif config.get('semantics', 'module') == 'semafor':
+        for variable, frame in semantics['frames'].iteritems():
+            # create new frame instance
+            instance_id = "{0}_{1}".format(frame, uuid4())
+            frame_instances[instance_id] = dict()
+            frame_instances[instance_id]['frame'] = frame
+            frame_instances[instance_id]['synset'] = ''
+            frame_instances[instance_id]['variable'] = variable
+            frame_instances[instance_id]['roles'] = dict()
+            for relation in semantics['relations']:
+                if relation['arg1'] == variable and relation['arg2'] in variables:
+                    for filler in variables[relation['arg2']]:
+                        frame_instances[instance_id]['roles'][relation['symbol']] = (relation['arg2'], filler)
 
     return frame_instances
 
@@ -58,12 +70,15 @@ def get_frame_triples(frame_instances):
     triples = []
     for frame_instance_id, frame_instance in frame_instances.iteritems():
         if len(frame_instance['roles']) > 0:
+            framebase_id = frame_instance['frame']
+            # maybe now we don't need the synset in the frame type anymore?
+            '''
             if frame_instance['frame'] != "Unmapped":
                 framebase_id = "{0}-{1}".format(frame_instance['frame'], mapping_net[frame_instance['synset']].split("#")[0].replace('-', '.'))
             else:
                 log.info('No mapping found for synset {0}'.format(frame_instance['synset']))
                 framebase_id = "{0}-{1}".format(frame_instance['frame'], frame_instance['synset'])
-
+            '''
             triple = ('<{0}/fi-{1}>'.format(config.get('namespace', 'frame'), frame_instance_id),
                       '<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>',
                       '<{0}/frame-{1}>'.format(config.get('namespace', 'frame'), framebase_id))

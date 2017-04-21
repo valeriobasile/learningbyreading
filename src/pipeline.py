@@ -135,15 +135,16 @@ for filename in documents:
             for synset in synsets:
                 # baseline sysnet alignment
                 # TODO: make this smarter
-                if predicate['token_start'] == synset['token_start'] and predicate['token_end'] == synset['token_end']:
+                if predicate['token_start'] <= synset['token_start'] and predicate['token_end'] >= synset['token_end']:
                     if not synset['synset'] in variables[predicate['variable']]:
                         variables[predicate['variable']].append(synset['synset'])
             for entity in entities:
                 # baseline entity alignment
                 # TODO: make this smarter
-                if predicate['token_start'] == entity['token_start'] and predicate['token_end'] == entity['token_end'] and entity['entity'] != 'null':
+                if predicate['token_start'] <= entity['token_start'] and predicate['token_end'] >= entity['token_end'] and entity['entity'] != 'null':
                     if not entity['entity'] in variables[predicate['variable']]:
                         variables[predicate['variable']].append(entity['entity'])
+
     except:
         log.error("error during the alignment on file '{0}', exiting".format(filename))
         continue

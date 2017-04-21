@@ -6,6 +6,7 @@ import tempfile
 import ConfigParser
 import sys
 import simplejson as json
+from nltk.tokenize.punkt import PunktSentenceTokenizer
 
 config = ConfigParser.ConfigParser()
 config.read(join(dirname(__file__),'../config/semanticparsing.conf'))
@@ -16,8 +17,9 @@ def parse(text):
     semafor = join(dirname(__file__),'../{0}/bin/runSemafor.sh'.format(config.get('semafor', 'base_dir')))
     input_file = join(dirname(__file__),'../{0}/bin/in.txt'.format(config.get('semafor', 'base_dir')))
     with open(input_file, 'w') as f:
-        # TODO: call Punkt (NLTK) and write one sentence per line
-        f.write(text)
+        tokenizer = PunktSentenceTokenizer()
+        sentences = tokenizer.tokenize(text)
+        f.write('\n'.join(sentences))
     output_file = join(dirname(__file__),'../{0}/bin/out.txt'.format(config.get('semafor', 'base_dir')))
     if isfile(output_file):
         remove(output_file)
@@ -26,49 +28,59 @@ def parse(text):
     out, err = process.communicate(text)
     if err:
         log.debug('Semafor output: {0}'.format(err))
+
+    sentences_semantics = []
     with open(output_file) as f:
-        semafor_output = json.load(f)
+        # semafor outputs an invalid JSON, with one dictionary per line
+        for line in f:
+            sentence_dict = json.loads(line.rstrip())
+            sentences_semantics.append(sentence_dict)
 
     # process the output from Semafor
     predicates = dict()
     relations = []
-    for frame in semafor_output['frames']:
-        # predicate from frame type
-        for span in frame['target']['spans']:
-            variable_frame = 'x{0}-{1}'.format(span['start'], span['end'])
-            predicate_frame = {'token_end': span['end']-1,
-                         'token_start': span['start'],
-                         'symbol': span['text'],
-                         'sense': '0',
-                         'variable': variable_frame,
-                         'type': 'v'}
-            if not variable_frame in predicates:
-                predicates[variable_frame] = predicate_frame
-
-        # predicates from frame elements
-        for frame_element in frame['annotationSets'][0]['frameElements']:
-            for span in frame_element['spans']:
-                variable = 'x{0}-{1}'.format(span['start'], span['end'])
-                predicate = {'token_end': span['end']-1,
-                             'token_start': span['start'],
+    token_offset = 0
+    frames = dict()
+    for sentence in sentences_semantics:
+        for frame in sentence['frames']:
+            # predicate from frame type
+            for span in frame['target']['spans']:
+                variable_frame = 'x{0}-{1}'.format(span['start']+token_offset, span['end']+token_offset)
+                predicate_frame = {'token_end': span['end']-1+token_offset,
+                             'token_start': span['start']+token_offset,
                              'symbol': span['text'],
                              'sense': '0',
-                             'variable': variable,
-                             'type': 'n'}
-                if not variable in predicates:
-                    predicates[variable] = predicate
+                             'variable': variable_frame,
+                             'type': 'v'}
+                if not variable_frame in predicates:
+                    predicates[variable_frame] = predicate_frame
+                frames[variable_frame] = frame['target']['name']
+            # predicates from frame elements
+            for frame_element in frame['annotationSets'][0]['frameElements']:
+                for span in frame_element['spans']:
+                    variable = 'x{0}-{1}'.format(span['start']+token_offset, span['end']+token_offset)
+                    predicate = {'token_end': span['end']-1+token_offset,
+                                 'token_start': span['start']+token_offset,
+                                 'symbol': span['text'],
+                                 'sense': '0',
+                                 'variable': variable,
+                                 'type': 'n'}
+                    if not variable in predicates:
+                        predicates[variable] = predicate
 
-            relation = {'arg1': variable_frame,
-                        'arg2': variable,
-                        'symbol': frame_element['name']}
-            relations.append(relation)
+                relation = {'arg1': variable_frame,
+                            'arg2': variable,
+                            'symbol': frame_element['name']}
+                relations.append(relation)
+        token_offset += (len(sentence['tokens'])-1)
 
     semantics = {'predicates': predicates.values(),
      'namedentities': [],
      'identities': [],
-     'relations': relations}
+     'relations': relations,
+     'frames': frames}
 
-    return semantics, ' '.join(semafor_output['tokens'])
+    return semantics, '\n'.join(sentences)
 
 # now we need to map this:
 '''
