@@ -4,7 +4,8 @@ import logging as log
 import ConfigParser
 from optparse import OptionParser
 from disambiguation import disambiguation
-from candc import tokenize, get_all, get_fol
+import candc
+import semafor
 from os import listdir
 from os.path import isfile, join, dirname
 from itertools import product, combinations
@@ -18,6 +19,7 @@ log.basicConfig(level=log.INFO, format='%(asctime)s.%(msecs)03d %(levelname)s %(
 # read configuration
 config = ConfigParser.ConfigParser()
 config.read(join(dirname(__file__),'../config/namespace.conf'))
+config.read(join(dirname(__file__),'../config/disambiguation.conf'))
 
 with open(join(dirname(__file__),'../resources/thematic_roles.txt')) as f:
     thematic_roles = [line.rstrip() for line in f]
@@ -82,33 +84,39 @@ for filename in documents:
     with open(filename) as f:
         text = f.read()
 
-    # tokenization
-    if not options.tokenized:
-        log.info("Tokenization")
-        tokens = tokenize(text)
-        if not tokens:
-            log.error("error during tokenization of file '{0}', exiting".format(filename))
+    # semantic parsing
+    if config.get('semantics', 'module') == 'boxer':
+        # tokenization
+        if not options.tokenized:
+            log.info("Tokenization with t")
+            tokens = candc.tokenize(text)
+            if not tokens:
+                log.error("error during tokenization of file '{0}', exiting".format(filename))
+                continue
+            tokenized = "\n".join([' '.join(sentence) for sentence in tokens[:-1]])
+        else:
+            tokenized = text
+
+
+        log.info("Parsing with Boxer")
+        semantics = candc.get_all(tokenized)
+        if not semantics:
+            log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
             continue
-        tokenized = "\n".join([' '.join(sentence) for sentence in tokens[:-1]])
-    else:
-        tokenized = text
 
+    elif config.get('semantics', 'module') == 'semafor':
+        log.info("Parsing with Semafor")
+        semantics, tokenized = semafor.parse(text)
+        if not semantics:
+            log.error("error during the execution of Semafor on file '{0}', exiting".format(filename))
+            continue
 
-    log.info("Parsing")
-    drs = get_all(tokenized)
-    if not drs:
-        log.error("error during the execution of Boxer on file '{0}', exiting".format(filename))
-        continue
-
-    print semantics
 
     log.info("Word sense disambiguation and entity linking")
-    synsets, entities = disambiguation(tokenized, drs)
+    synsets, entities = disambiguation(tokenized, semantics)
     if synsets==None or entities==None:
         log.error("error during the disambiguation of file '{0}', exiting".format(filename))
         continue
-
-
 
     # extracting co-mentions
     if options.comentions:
@@ -121,7 +129,7 @@ for filename in documents:
     # build dictionary of variables
     try:
         variables = dict()
-        for predicate in drs['predicates']+drs['namedentities']:
+        for predicate in semantics['predicates']+semantics['namedentities']:
             if not predicate['variable'] in variables:
                 variables[predicate['variable']] = []
             for synset in synsets:
@@ -140,52 +148,16 @@ for filename in documents:
         log.error("error during the alignment on file '{0}', exiting".format(filename))
         continue
 
-    # extract frame instances
-    frame_instances = get_frame_instances(variables, drs, thematic_roles)
+    # extract frame instances.
+    # this is the core algorithm of KNEWS,
+    # the alignment between the semantic parsing and the word sense disambiguation module
+    frame_instances = get_frame_instances(variables, semantics, thematic_roles)
     frame_instance_triples.extend(get_frame_triples(frame_instances))
 
     # use DRG to get aligned frame instances
     if output_format == 'xml':
         aligned_frames_xml = get_aligned_frames_xml(tokenized, frame_instances, root)
 
-    # scanning relations
-    for relation in drs['relations']:
-        if (relation['arg1'] in variables and
-            relation['arg2'] in variables):
-            for entity1, entity2 in product(variables[relation['arg1']],
-                                         variables[relation['arg2']]):
-                entity1 = unicode(entity1, 'utf-8')
-                entity2 = unicode(entity2, 'utf-8')
-                if relation['symbol'] in thematic_roles:
-                    # thematic roles
-                    synset = entity1.split('/')[-1]
-                    try:
-                        framelist = frames[synset]
-                    except:
-                        log.info('No frame found for synset {0}'.format(synset.encode('utf-8')))
-                        framelist = [synset]
-#                        continue
-
-                    for frame in framelist:
-                        role = None             #declaring role
-                        if (entity2 != '' and frame != ''):
-                            vnrole = relation['symbol']
-                            if frame in vn2fn_roles:
-                                if vnrole in vn2fn_roles[frame]:
-                                    role = vn2fn_roles[frame][vnrole]
-                            else:
-                                role = "verbnet:{0}".format(vnrole)
-                            triple = ('<{0}>'.format(entity2.encode('utf-8')),
-                                      '<{0}#{1}>'.format(config.get('namespace', 'relation'), role),
-                                      '<{0}#{1}>'.format(config.get('namespace', 'frame'), frame))
-                            triples.append(triple)
-                else:
-                    # other types of relations
-                    if (entity2 != '' and entity1 != ''):
-                        triple = ('<{0}>'.format(entity1.encode('utf-8')),
-                                  '<{0}#{1}>'.format(config.get('namespace', 'relation'), relation['symbol'].encode('utf-8')),
-                                  '<{0}>'.format(entity2.encode('utf-8')))
-                        triples.append(triple)
 
 log.info('writing output ({0}) on file {1}...'.format(output_format, options.output_file))
 with open(output_file, "w") as f:

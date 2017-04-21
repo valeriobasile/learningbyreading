@@ -12,6 +12,7 @@ from uuid import uuid4
 # read configuration
 config = ConfigParser.ConfigParser()
 config.read(join(dirname(__file__),'../config/namespace.conf'))
+config.read(join(dirname(__file__),'../config/disambiguation.conf'))
 config_mapping = ConfigParser.ConfigParser()
 config_mapping.read(join(dirname(__file__),'../config/mapping.conf'))
 
@@ -20,7 +21,7 @@ if config_mapping.get('net', 'module') == 'wordnet':
 elif config_mapping.get('net', 'module') == 'babelnet':
     mapping_net = bn2wn
 
-def get_frame_instances(variables, drs, thematic_roles):
+def get_frame_instances(variables, semantics, thematic_roles):
     frame_instances = dict()
     for variable, senses in variables.iteritems():
         for sense in senses:
@@ -38,15 +39,18 @@ def get_frame_instances(variables, drs, thematic_roles):
                 frame_instances[instance_id]['variable'] = variable
                 frame_instances[instance_id]['roles'] = dict()
 
-                for relation in drs['relations']:
-                    if relation['arg1'] == variable and relation['arg2'] in variables and relation['symbol'] in thematic_roles:
+                for relation in semantics['relations']:
+                    if config.get('semantics', 'module') == 'boxer':
+                        if relation['arg1'] == variable and relation['arg2'] in variables and relation['symbol'] in thematic_roles:
+                            for filler in variables[relation['arg2']]:
+                                if frame in vn2fn_roles and relation['symbol'] in vn2fn_roles[frame]:
+                                    role = vn2fn_roles[frame][relation['symbol']]
+                                else:
+                                    role = "vn-{0}".format(relation['symbol'])
+                                frame_instances[instance_id]['roles'][role] = (relation['arg2'], filler)
+                    elif config.get('semantics', 'module') == 'semafor':
                         for filler in variables[relation['arg2']]:
-                            if frame in vn2fn_roles and relation['symbol'] in vn2fn_roles[frame]:
-                                role = vn2fn_roles[frame][relation['symbol']]
-                            else:
-                                role = "vn-{0}".format(relation['symbol'])
-
-                            frame_instances[instance_id]['roles'][role] = (relation['arg2'], filler)
+                            frame_instances[instance_id]['roles'][relation['symbol']] = (relation['arg2'], filler)
 
     return frame_instances
 

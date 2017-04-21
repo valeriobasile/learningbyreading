@@ -62,3 +62,4 @@ config/boxer.conf
 ext/candc/
 ext/ukb/
 ext/spotlight/
+ext/semafor/

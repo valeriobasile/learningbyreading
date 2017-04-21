@@ -6,7 +6,7 @@ import subprocess
 from os.path import join, dirname
 
 config = ConfigParser.ConfigParser()
-config.read(join(dirname(__file__),'../config/boxer.conf'))
+config.read(join(dirname(__file__),'../config/semanticparsing.conf'))
 
 def tokenize(text):
     if config.get('boxer', 'mode') == 'local' or config.get('boxer', 'mode') == 'soap':
@@ -21,7 +21,7 @@ def boxer(tokenized, fol=False, drg=False):
         return boxer_online(tokenized, fol, drg)
 
 def tokenize_local(text):
-    tokenizer = join(dirname(__file__),'../{0}/bin/t'.format(config.get('local', 'base_dir')))
+    tokenizer = join(dirname(__file__),'../{0}/bin/t'.format(config.get('candc', 'base_dir')))
     process = subprocess.Popen([tokenizer, '--stdin'],
                            shell=False,
                            stdin=subprocess.PIPE,
@@ -35,9 +35,9 @@ def tokenize_local(text):
     return [sentence.split(" ") for sentence in sentences]
 
 def parse_local(tokenized):
-    parser_options = ['--models', join(dirname(__file__),'../{0}/models/boxer'.format(config.get('local', 'base_dir'))),
+    parser_options = ['--models', join(dirname(__file__),'../{0}/models/boxer'.format(config.get('candc', 'base_dir'))),
                       '--candc-printer', 'boxer']
-    parser = '{0}/bin/candc'.format(config.get('local', 'base_dir'))
+    parser = '{0}/bin/candc'.format(config.get('candc', 'base_dir'))
     process = subprocess.Popen([parser] + parser_options,
                            shell=False,
                            stdin=subprocess.PIPE,
@@ -53,7 +53,7 @@ def parse_local(tokenized):
 
 def parse_soap(tokenized):
     parser_options = ['--url', '{0}:{1}'.format(config.get('soap', 'soap_url'), config.get('soap', 'soap_port'))]
-    parser = join(dirname(__file__),'../{0}/bin/soap_client'.format(config.get('local', 'base_dir')))
+    parser = join(dirname(__file__),'../{0}/bin/soap_client'.format(config.get('candc', 'base_dir')))
     process = subprocess.Popen([parser] + parser_options,
                            shell=False,
                            stdin=subprocess.PIPE,
@@ -100,7 +100,7 @@ def boxer_local(tokenized, fol=False, drg=False):
                          '--format', 'xml']
         boxer_options.extend(get_boxer_options().split(' '))
 
-    boxer = join(dirname(__file__),'../{0}/bin/boxer'.format(config.get('local', 'base_dir')))
+    boxer = join(dirname(__file__),'../{0}/bin/boxer'.format(config.get('candc', 'base_dir')))
 
     process = subprocess.Popen([boxer] + boxer_options,
                            shell=False,
@@ -134,13 +134,14 @@ def boxer_online(tokenized, fol=False, drg=False):
         elif drg:
             r = post('{0}/raw/candcboxer?instantiate=true&semantics=drg&{1}'.format(config.get('online', 'http_url'), boxer_options), data=tokenized)
         else:
+
             r = post('{0}/raw/candcboxer?instantiate=true&format=xml&{1}'.format(config.get('online', 'http_url'), boxer_options), data=tokenized)
     except:
         log.error("boxer(): contacting API")
         return None
     return r.text.decode('utf-8').encode("utf-8")
 
-def get_predicates(drs, token_ids): 
+def get_predicates(drs, token_ids):
     predicates = []
     try:
         preds = drs.findall('.//pred')
