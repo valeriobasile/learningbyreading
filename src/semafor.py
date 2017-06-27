@@ -7,13 +7,46 @@ import ConfigParser
 import sys
 import simplejson as json
 from nltk.tokenize.punkt import PunktSentenceTokenizer
+import socket
 
 config = ConfigParser.ConfigParser()
 config.read(join(dirname(__file__),'../config/semanticparsing.conf'))
 
-# bin/runSemafor.sh /home/vbasile/dev/semafor/in.txt /home/vbasile/dev/semafor/out.txt 1
+def semafor_remote(text):
+    # tokenize and parse with MALT
+    malt = join(dirname(__file__),'../{0}/bin/runMalt.sh'.format(config.get('semafor', 'base_dir')))
+    input_file = join(dirname(__file__),'../{0}/bin/in.txt'.format(config.get('semafor', 'base_dir')))
+    with open(input_file, 'w') as f:
+        tokenizer = PunktSentenceTokenizer()
+        sentences = tokenizer.tokenize(text)
+        f.write('\n'.join(sentences))
+    output_dir = join(dirname(__file__),'../{0}/bin/'.format(config.get('semafor', 'base_dir')))
+    process = subprocess.Popen([malt, input_file, output_dir],
+                           shell=False)
+    out, err = process.communicate(text)
+    if err:
+        log.debug(err)
 
-def parse(text):
+    # read the output of MALT and pass it to the Semafor server
+    parsed_file = join(dirname(__file__),'../{0}/bin/conll'.format(config.get('semafor', 'base_dir')))
+    with open(parsed_file, 'r') as f:
+        parsed = f.read()
+    print parsed
+
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((config.get('semafor', 'server'), config.get('semafor', 'port')))
+    s.sendall(parsed)
+    s.shutdown(socket.SHUT_WR)
+    while 1:
+        data = s.recv(1024)
+        if data == "":
+            break
+        print "Received:", repr(data)
+    print "Connection closed."
+    s.close()
+    return None, None
+
+def semafor_local(text):
     semafor = join(dirname(__file__),'../{0}/bin/runSemafor.sh'.format(config.get('semafor', 'base_dir')))
     input_file = join(dirname(__file__),'../{0}/bin/in.txt'.format(config.get('semafor', 'base_dir')))
     with open(input_file, 'w') as f:
@@ -27,7 +60,7 @@ def parse(text):
                            shell=False)
     out, err = process.communicate(text)
     if err:
-        log.debug('Semafor output: {0}'.format(err))
+        log.debug(err)
 
     sentences_semantics = []
     with open(output_file) as f:
@@ -35,6 +68,13 @@ def parse(text):
         for line in f:
             sentence_dict = json.loads(line.rstrip())
             sentences_semantics.append(sentence_dict)
+    return sentences, sentences_semantics
+
+def parse(text):
+    if config.get('semafor', 'mode') == 'local':
+        sentences, sentences_semantics = semafor_local(text)
+    elif config.get('semafor', 'mode') == 'remote':
+        sentences, sentences_semantics = semafor_remote(text)
 
     # process the output from Semafor
     predicates = dict()
@@ -81,36 +121,3 @@ def parse(text):
      'frames': frames}
 
     return semantics, '\n'.join(sentences)
-
-# now we need to map this:
-'''
-{'frames': [
-   {'target': {'name': 'Inclusion', 'spans': [{'start': 1, 'end': 2, 'text': 'contains'}]},
-      'annotationSets': [{'frameElements': [
-        {'name': 'Part', 'spans': [{'start': 2, 'end': 3, 'text': 'water'}]},
-        {'name': 'Total', 'spans': [{'start': 0, 'end': 1, 'text': 'Ajoblanco'}]}],
-      'score': 30.12078744665738,
-      'rank': 0}]},
-   {'target': {'name': 'Natural_features', 'spans': [{'start': 2, 'end': 3, 'text': 'water'}]},
-      'annotationSets': [{'frameElements': [
-        {'name': 'Locale', 'spans': [{'start': 2, 'end': 3, 'text': 'water'}]}],
-        'score': 36.96106426962915, 'rank': 0}]}],
- 'tokens': ['Ajoblanco', 'contains', 'water', 'and', 'is', 'from', 'Spain', '.']}
-
-
-'''
-# into this
-
-'''
-{'predicates': [
-   {'token_end': 1, 'token_start': 1, 'symbol': 'contain', 'sense': '0', 'variable': 'e1', 'type': 'v'},
-   {'token_end': 2, 'token_start': 2, 'symbol': 'water', 'sense': '0', 'variable': 'x2', 'type': 'n'}],
- 'namedentities': [
-   {'token_end': 6, 'token_start': 6, 'symbol': 'spain', 'variable': 'x3', 'type': 'nam', 'class': 'geo'},
-   {'token_end': 0, 'token_start': 0, 'symbol': 'ajoblanco', 'variable': 'x1', 'type': 'nam', 'class': 'org'}],
- 'identities': [],
- 'relations': [
-   {'arg1': 'x1', 'arg2': 'x3', 'symbol': 'from'},
-   {'arg1': 'e1', 'arg2': 'x2', 'symbol': 'Co-Theme'},
-   {'arg1': 'e1', 'arg2': 'x1', 'symbol': 'Theme'}]}
-'''

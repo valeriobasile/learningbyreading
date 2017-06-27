@@ -15,6 +15,9 @@ def tokenize(text):
         return tokenize_online(text)
 
 def boxer(tokenized, fol=False, drg=False):
+    if len(tokenized) > 5000:
+        log.error('File too long, skipped.')
+        return None
     if config.get('boxer', 'mode') == 'local' or config.get('boxer', 'mode') == 'soap':
         return boxer_local(tokenized, fol, drg)
     elif config.get('boxer', 'mode') == 'online':

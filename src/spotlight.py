@@ -19,15 +19,15 @@ def spotlight(tokenized):
             tokenindex[index] = t
 
     # making the request to Spotlight
-    try:
-        params = {'text': tokenized}
-        headers = {'Accept': 'application/json'}
-        data = {'confidence': config.get('spotlight', 'confidence'), 'support': 20, 'text': tokenized}
-        r = post(config.get('spotlight', 'url'), params=params, headers=headers, data=data)
-        out = r.json()
-    except:
-        log.error("spotlight(): error executing Spotlight API.")
-        return None
+    #try:
+    params = {'text': tokenized}
+    headers = {'Accept': 'application/json'}
+    data = {'confidence': config.get('spotlight', 'confidence'), 'support': 20, 'text': tokenized}
+    r = post(config.get('spotlight', 'url'), params=params, headers=headers, data=data)
+    out = r.json()
+    #except:
+    #    log.error("spotlight(): error executing Spotlight API.")
+    #    return None
 
     try:
         entities = []
