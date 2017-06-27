@@ -111,7 +111,6 @@ for filename in documents:
             log.error("error during the execution of Semafor on file '{0}', exiting".format(filename))
             continue
 
-
     log.info("Word sense disambiguation and entity linking")
     synsets, entities = disambiguation(tokenized, semantics)
     if synsets==None or entities==None:
@@ -133,13 +132,11 @@ for filename in documents:
             if not predicate['variable'] in variables:
                 variables[predicate['variable']] = []
             for synset in synsets:
-                #print synset
                 # baseline sysnet alignment
                 # TODO: make this smarter
                 if predicate['token_start'] <= synset['token_start'] and predicate['token_end'] >= synset['token_end']:
                     if not synset['synset'] in variables[predicate['variable']]:
                         variables[predicate['variable']].append(synset['synset'])
-                        print synset['synset']+' is '+ predicate['variable']
             for entity in entities:
                 # baseline entity alignment
                 # TODO: make this smarter

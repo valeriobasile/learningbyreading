@@ -291,8 +291,7 @@ def get_all(tokenized):
     return {"predicates" : predicates,
             "namedentities" : namedentities,
             "relations" : relations,
-            "identities" : identities,
-            "postags" : postags}
+            "identities" : identities}
 
 def coreference_replacements(tree):
     attributes_dict = {}
