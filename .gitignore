@@ -57,8 +57,9 @@ docs/_build/
 target/
 
 config/babelfy.var.properties
-config/boxer.conf
-
+config/disambiguation.conf
+config/semanticparsing.conf
+ext/ukb_2.2.tgz
 ext/candc/
 ext/ukb/
 ext/spotlight/
