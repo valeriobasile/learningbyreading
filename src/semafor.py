@@ -34,7 +34,7 @@ def semafor_remote(text):
 
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((config.get('semafor', 'server'), config.get('semafor', 'port')))
+    s.connect((config.get('semafor', 'server'), eval(config.get('semafor', 'port'))))
     s.sendall(parsed)
     s.shutdown(socket.SHUT_WR)
     while 1:
