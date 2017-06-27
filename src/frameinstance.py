@@ -61,6 +61,7 @@ def get_frame_instances(variables, semantics, thematic_roles):
             frame_instances[instance_id]['roles'] = dict()
             for relation in semantics['relations']:
                 if relation['arg1'] == variable and relation['arg2'] in variables:
+                    #print relation, variables[relation['arg2']]
                     for filler in variables[relation['arg2']]:
                         frame_instances[instance_id]['roles'][relation['symbol']] = (relation['arg2'], filler)
 

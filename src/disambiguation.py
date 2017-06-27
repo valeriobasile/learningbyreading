@@ -1,5 +1,6 @@
 from babelfy import babelfy
 from ukb import wsd
+from candc import postag
 from spotlight import spotlight
 import ConfigParser
 import logging as log
@@ -26,8 +27,10 @@ def disambiguation(tokenized, drs):
             if(disambiguated != None):
                 entities = disambiguated['entities']
     elif config.get('wsd', 'module') == 'ukb':
+        log.info("Calling POS-tagger")
+        postags = postag(tokenized)
         log.info("Calling UKB")
-        disambiguated = wsd(drs['predicates'])
+        disambiguated = wsd(postags)
         synsets = disambiguated['synsets']
         if config_mapping.get('net', 'module') == 'babelnet':
             synsets = ubk_to_babelnet(synsets)

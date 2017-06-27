@@ -10,8 +10,13 @@ import shlex
 from subprocess import CalledProcessError
 from os.path import join, dirname
 
-def wsd(predicates):
-    context = [u'{0}#{1}#{2}:{3}#1'.format(predicate['symbol'], predicate['type'], predicate['token_start'], predicate['token_end']) for predicate in predicates]
+def wsd(postags):
+    context = []
+    for index, item in enumerate(postags.split(' ')):
+        word, postag = item.split('|')
+        wnpostag = postag.lower()[0]
+        context.append(u'{0}#{1}#{2}#1'.format(word, wnpostag, index))
+    #context = [u'{0}#{1}#{2}:{3}#1'.format(predicate['symbol'], predicate['type'], predicate['token_start'], predicate['token_end']) for predicate in predicates]
     f = NamedTemporaryFile('w', delete=False)
     f.write(u'sentence\n{0}\n'.format(' '.join(context)).encode('utf-8'))
     f.close()
@@ -42,7 +47,7 @@ def wsd(predicates):
             try:
                 fields = line.rstrip().split(' ')
                 ctxid = fields[0]
-                tokens = fields[1]
+                tokenid = eval(fields[1])
                 lemma = fields[-1]
                 wn30ids = fields[3:-2]
             except:
@@ -54,14 +59,10 @@ def wsd(predicates):
                 except:
                     log.info('cannot find Wordnet 3.1 synset for WN3.0 synset {0}'.format(wn30id))
                     continue
-                try:
-                    token_start, token_end = map(eval, tokens.split(':'))
-                except:
-                    print line
-                    sys.exit(1)
+
                 synset = 'http://wordnet-rdf.princeton.edu/wn31/{0}'.format(wn31id)
 
-                synsets.append({'token_start':token_start,
-                                 'token_end':token_end,
+                synsets.append({'token_start':tokenid,
+                                 'token_end':tokenid,
                                  'synset': synset})
     return {'synsets':synsets}

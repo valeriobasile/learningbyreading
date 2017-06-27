@@ -14,6 +14,30 @@ def tokenize(text):
     elif config.get('boxer', 'mode') == 'online':
         return tokenize_online(text)
 
+def postag(tokenized):
+    if config.get('boxer', 'mode') == 'local' or config.get('boxer', 'mode') == 'soap':
+        return postag_local(tokenized)
+    elif config.get('boxer', 'mode') == 'online':
+        return postag_online(tokenized)
+
+
+def postag_local(tokenized):
+    postagger = join(dirname(__file__),'../{0}/bin/pos'.format(config.get('candc', 'base_dir')))
+    modeldir = join(dirname(__file__),'../{0}/models/pos'.format(config.get('candc', 'base_dir')))
+    process = subprocess.Popen([postagger, '--model', modeldir],
+                           shell=False,
+                           stdin=subprocess.PIPE,
+                           stdout=subprocess.PIPE,
+                           stderr=subprocess.PIPE)
+    out, err = process.communicate(tokenized)
+    if err:
+        log.error('POS-tagger error: {0}'.format(err))
+    parsed = out.decode('utf-8').encode("utf-8")
+    return parsed
+
+def postag_online(tokenized):
+    return None
+
 def boxer(tokenized, fol=False, drg=False):
     if len(tokenized) > 5000:
         log.error('File too long, skipped.')
@@ -71,6 +95,12 @@ def parse_soap(tokenized):
     parsed = out
     return parsed
 
+def parse(tokenized):
+    if config.get('boxer', 'mode') == 'local':
+        return parse_local(tokenized)
+    elif config.get('boxer', 'mode') == 'soap':
+        return parse_soap(tokenized)
+
 def get_boxer_options():
     parameters = config.options('options')
     options = {parameter: config.get('options', parameter) for parameter in parameters}
@@ -82,10 +112,7 @@ def get_boxer_options():
         return '&'.join(option_list)
 
 def boxer_local(tokenized, fol=False, drg=False):
-    if config.get('boxer', 'mode') == 'local':
-        parsed = parse_local(tokenized)
-    elif config.get('boxer', 'mode') == 'soap':
-        parsed = parse_soap(tokenized)
+    parsed = parse(tokenized)
 
     if fol:
         boxer_options = ['--stdin',
@@ -264,7 +291,8 @@ def get_all(tokenized):
     return {"predicates" : predicates,
             "namedentities" : namedentities,
             "relations" : relations,
-            "identities" : identities}
+            "identities" : identities,
+            "postags" : postags}
 
 def coreference_replacements(tree):
     attributes_dict = {}

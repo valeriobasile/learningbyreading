@@ -31,7 +31,7 @@ def semafor_remote(text):
     parsed_file = join(dirname(__file__),'../{0}/bin/conll'.format(config.get('semafor', 'base_dir')))
     with open(parsed_file, 'r') as f:
         parsed = f.read()
-    print parsed
+
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((config.get('semafor', 'server'), config.get('semafor', 'port')))
@@ -66,8 +66,10 @@ def semafor_local(text):
     with open(output_file) as f:
         # semafor outputs an invalid JSON, with one dictionary per line
         for line in f:
+
             sentence_dict = json.loads(line.rstrip())
             sentences_semantics.append(sentence_dict)
+
     return sentences, sentences_semantics
 
 def parse(text):
@@ -120,4 +122,10 @@ def parse(text):
      'relations': relations,
      'frames': frames}
 
-    return semantics, '\n'.join(sentences)
+    # reconstruct tokenized text
+    tokenized_sentences = []
+    for sentence in sentences_semantics:
+        tokenized_sentences.append(' '.join(sentence['tokens']))
+    tokenized = '\n'.join(tokenized_sentences)
+
+    return semantics, tokenized

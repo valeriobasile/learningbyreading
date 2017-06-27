@@ -133,11 +133,13 @@ for filename in documents:
             if not predicate['variable'] in variables:
                 variables[predicate['variable']] = []
             for synset in synsets:
+                #print synset
                 # baseline sysnet alignment
                 # TODO: make this smarter
                 if predicate['token_start'] <= synset['token_start'] and predicate['token_end'] >= synset['token_end']:
                     if not synset['synset'] in variables[predicate['variable']]:
                         variables[predicate['variable']].append(synset['synset'])
+                        print synset['synset']+' is '+ predicate['variable']
             for entity in entities:
                 # baseline entity alignment
                 # TODO: make this smarter
