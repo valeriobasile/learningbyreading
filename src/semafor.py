@@ -37,14 +37,20 @@ def semafor_remote(text):
     s.connect((config.get('semafor', 'server'), eval(config.get('semafor', 'port'))))
     s.sendall(parsed)
     s.shutdown(socket.SHUT_WR)
+    result = ''
     while 1:
         data = s.recv(1024)
+        result += data
         if data == "":
             break
-        print "Received:", repr(data)
-    print "Connection closed."
     s.close()
-    return None, None
+
+    sentences_semantics = []
+    for line in result.split('\n'):
+        if len(line)>0:
+            sentence_dict = json.loads(line.rstrip())
+            sentences_semantics.append(sentence_dict)
+    return sentences, sentences_semantics
 
 def semafor_local(text):
     semafor = join(dirname(__file__),'../{0}/bin/runSemafor.sh'.format(config.get('semafor', 'base_dir')))
@@ -66,7 +72,6 @@ def semafor_local(text):
     with open(output_file) as f:
         # semafor outputs an invalid JSON, with one dictionary per line
         for line in f:
-
             sentence_dict = json.loads(line.rstrip())
             sentences_semantics.append(sentence_dict)
 
