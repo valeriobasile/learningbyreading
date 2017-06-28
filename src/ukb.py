@@ -12,14 +12,23 @@ from os.path import join, dirname
 
 def wsd(postags):
     context = []
-    for index, item in enumerate(postags.split(' ')):
-        word, postag = item.split('|')
-        wnpostag = postag.lower()[0]
-        context.append(u'{0}#{1}#{2}#1'.format(word, wnpostag, index))
-    #context = [u'{0}#{1}#{2}:{3}#1'.format(predicate['symbol'], predicate['type'], predicate['token_start'], predicate['token_end']) for predicate in predicates]
+    indexoffset = 0
+    for indexsent, sentencepos in enumerate(postags.split('\n')):
+        sentence = []
+        tokens = sentencepos.split(' ')
+        for index, item in enumerate(tokens):
+            if len(sentencepos) > 0:
+                word, postag = item.split('|')
+                wnpostag = postag.lower()[0]
+                sentence.append(u'{0}#{1}#{2}#1'.format(word, wnpostag, index+indexoffset))
+        context.append(sentence)
+        indexoffset += (len(tokens)-1)
+
     f = NamedTemporaryFile('w', delete=False)
-    f.write(u'sentence\n{0}\n'.format(' '.join(context)).encode('utf-8'))
+    for indexsent, sentence in enumerate(context):
+        f.write(u'sentence{0}\n{1}\n'.format(indexsent, ' '.join(sentence)).encode('utf-8'))
     f.close()
+
     basedir = os.path.abspath(join(dirname(__file__),'../ext/ukb'))
     ukb = '{0}/bin/ukb_wsd'.format(basedir)
     relation_file = '{0}/wn30.bin'.format(basedir)
