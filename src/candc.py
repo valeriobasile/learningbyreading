@@ -29,7 +29,7 @@ def postag_local(tokenized):
                            stdin=subprocess.PIPE,
                            stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE)
-    out, err = process.communicate(tokenized)
+    out, err = process.communicate(tokenized.encode('utf-8'))
     if err:
         log.error('POS-tagger error: {0}'.format(err))
     parsed = out.decode('utf-8').encode("utf-8")

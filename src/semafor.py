@@ -18,8 +18,14 @@ def semafor_remote(text):
     input_file = join(dirname(__file__),'../{0}/bin/in.txt'.format(config.get('semafor', 'base_dir')))
     with open(input_file, 'w') as f:
         tokenizer = PunktSentenceTokenizer()
-        sentences = tokenizer.tokenize(text)
+        sentences = tokenizer.tokenize(text.decode('utf-8'))
+        ''' bug: if the tokenization is messed up, the Semafor server chokes on
+            longer sentences.
+            workaround: we filter out the sentences that are over a certain length (1000 chars).
+        '''
+        sentences = map(lambda x: x.strip().encode('utf-8'), list(filter(lambda x: len(x) <= 1000, sentences)))
         f.write('\n'.join(sentences))
+
     output_dir = join(dirname(__file__),'../{0}/bin/'.format(config.get('semafor', 'base_dir')))
     process = subprocess.Popen([malt, input_file, output_dir],
                            shell=False)

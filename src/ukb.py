@@ -20,13 +20,14 @@ def wsd(postags):
             if len(sentencepos) > 0:
                 word, postag = item.split('|')
                 wnpostag = postag.lower()[0]
-                sentence.append(u'{0}#{1}#{2}#1'.format(word, wnpostag, index+indexoffset))
+                sentence.append(u'{0}#{1}#{2}#1'.format(word.decode('utf-8'), wnpostag, index+indexoffset))
         context.append(sentence)
         indexoffset += (len(tokens)-1)
 
     f = NamedTemporaryFile('w', delete=False)
     for indexsent, sentence in enumerate(context):
         f.write(u'sentence{0}\n{1}\n'.format(indexsent, ' '.join(sentence)).encode('utf-8'))
+        #print(u'sentence{0}\n{1}'.format(indexsent, ' '.join(sentence)).encode('utf-8'))
     f.close()
 
     basedir = os.path.abspath(join(dirname(__file__),'../ext/ukb'))

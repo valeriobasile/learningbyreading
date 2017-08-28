@@ -107,6 +107,7 @@ for filename in documents:
     elif config.get('semantics', 'module') == 'semafor':
         log.info("Parsing with Semafor")
         semantics, tokenized = semafor.parse(text)
+
         if not semantics:
             log.error("error during the execution of Semafor on file '{0}', exiting".format(filename))
             continue
