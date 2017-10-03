@@ -69,6 +69,11 @@ The C&C source code is included in the KNEWS repository (revision v2614). A shel
     $ cd ext/
     $ ./install_candc.sh
 
+By default the script expects to be compiled on unix. In order to compile on other platforms
+please modify the `install_candc.sh` accordingly. For example, on macOS you change:
+ 
+`ln -s Makefile.unix Makefile` to `ln -s Makefile.macosx Makefile`
+
 **Please note**: you will need a working installation of [swi-prolog](http://www.swi-prolog.org/Download.html) in order to compile Boxer.
 
 To test that the installation has completed successfully run (from the *candc/* directory):
