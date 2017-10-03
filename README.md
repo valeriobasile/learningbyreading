@@ -3,7 +3,7 @@
 A Learning by Reading pipeline of NLP and Entity Linking tools.
 
 KNEWS is a composite tool that bridges semantic parsing (using [C&C
-tools and Boxer](http://valeriobasile.github.io/candcapi/)), word
+tools and Boxer](http://valeriobasile.github.io/candcapi/) or [Semafor](https://github.com/Noahs-ARK/semafor)), word
 sense disambiguation (using [UKB](http://ixa2.si.ehu.es/ukb/) or
 [Babelfy](http://babelfy.org/)) and entity linking (using Babelfy or
 [DBpedia
@@ -56,15 +56,24 @@ With *pip*, this is done with:
 
     $ pip install -r requirements.txt
 
-Next, you must configure how to run the C&C tools. Open the file *config/semanticparsing.conf* and select a value for *boxer->mode*:
+## Semantic parsing configuration
 
- * *online* will access the [online API]. This is the easiest solution but is it unpractical if KNEWS is used to parse a large amount of text.
- * *local* will use a local installation of the C&C tools (see below for instructions on how to get this running).
- * *soap* will usa a local installation of the C&C tools with the SOAP-based client/server architecture, convenient for parsing many different files.
+KNEWS can work with either Semafor or C&C tools/Boxer to perform semantic parsing. By default Semafor is used, in order to switch to Boxer set *semantics->module* value to `boxer` in the *config/disambiguation.conf* file.
 
-## Installation of the C&C tools and Boxer
+### Installation of the Semafor
 
-The C&C source code is included in the KNEWS repository (revision v2614). A shell script is provided to automate the compilation and installation. To install the C&C tools locally run
+To install Semafor run:
+
+    $ cd ext/
+    $ ./install_semafor.sh
+    
+It is expected that Semafor is run in server mode, server startup instructions can be found in [Semafor documentation](https://github.com/Noahs-ARK/semafor#server-mode).
+
+In order to run it locally, open the *config/semanticparsing.conf* file and switch the value for *semafor->mode* to `local`
+
+### Installation of the C&C tools and Boxer
+
+Alternatively, C&C tools and Boxer can be used for the semantic parsing. The C&C source code is included in the KNEWS repository (revision v2614). A shell script is provided to automate the compilation and installation. To install the C&C tools locally run
 
     $ cd ext/
     $ ./install_candc.sh
@@ -88,6 +97,12 @@ To use the SOAP client/server version of the C&C tools, run the server first wit
     $ bin/soap_server --server localhost:8888 --models models/boxer/ --candc-printer boxer
     $ waiting for connections on localhost:8888
 
+Next, you must configure how to run the C&C tools. Open the file *config/semanticparsing.conf* and select a value for *boxer->mode*:
+
+ * *online* will access the [online API]. This is the easiest solution but is it unpractical if KNEWS is used to parse a large amount of text.
+ * *local* will use a local installation of the C&C tools (see below for instructions on how to get this running).
+ * *soap* will usa a local installation of the C&C tools with the SOAP-based client/server architecture, convenient for parsing many different files.
+
 ## Configuration of the disambiguation tools
 
 You must configure which module to use for word sense disambiguation and entity linking. Open the file *config/disambiguation.conf* and set a value for wsd->module:
@@ -104,8 +119,8 @@ You can also configure an entity linking module in the **config/disambiguation.c
 
 ## Test the installation
 
-$ src/pipeline.py -i input.txt -o output.txt
+    $ src/pipeline.py -i input.txt -o output.txt
 
 or
 
-$ src/pipeline.py -d input/ -o output.txt
+    $ src/pipeline.py -d input/ -o output.txt
