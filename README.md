@@ -56,7 +56,7 @@ With *pip*, this is done with:
 
     $ pip install -r requirements.txt
 
-Next, you must configure how to run the C&C tools. Open the file *config/boxer.conf* and select a value for *mode*:
+Next, you must configure how to run the C&C tools. Open the file *config/semanticparsing.conf* and select a value for *boxer->mode*:
 
  * *online* will access the [online API]. This is the easiest solution but is it unpractical if KNEWS is used to parse a large amount of text.
  * *local* will use a local installation of the C&C tools (see below for instructions on how to get this running).
@@ -69,12 +69,12 @@ The C&C source code is included in the KNEWS repository (revision v2614). A shel
     $ cd ext/
     $ ./install_candc.sh
 
-By default the script expects to be compiled on unix. In order to compile on other platforms
-please modify the `install_candc.sh` accordingly. For example, on macOS you change:
+By default the script expects to be run on unix/linux. In order to compile on other platforms
+please modify the `install_candc.sh` accordingly. For example, on macOS you should change:
  
 `ln -s Makefile.unix Makefile` to `ln -s Makefile.macosx Makefile`
 
-**Please note**: you will need a working installation of [swi-prolog](http://www.swi-prolog.org/Download.html) in order to compile Boxer.
+**Please note**: you will need a working installation of [swi-prolog v6.6.x](https://github.com/SWI-Prolog/swipl/releases/tag/V6.6.6) in order to correctly compile Boxer.
 
 To test that the installation has completed successfully run (from the *candc/* directory):
 
