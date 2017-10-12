@@ -32,11 +32,14 @@ def postag_local(tokenized):
     out, err = process.communicate(tokenized.encode('utf-8'))
     if err:
         log.error('POS-tagger error: {0}'.format(err))
-    parsed = out.decode('utf-8').encode("utf-8")
-    return parsed
+    postagged = out.decode('utf-8').encode("utf-8")
+    return postagged
 
 def postag_online(tokenized):
-    return None
+    # HTTP request
+    r = post('{0}/raw/pos'.format(config.get('online', 'http_url')), data=text)
+    postagged = r.text.decode('utf-8').encode("utf-8")
+    return postagged
 
 def boxer(tokenized, fol=False, drg=False):
     if len(tokenized) > 5000:
@@ -149,7 +152,7 @@ def boxer_local(tokenized, fol=False, drg=False):
 
 def tokenize_online(text):
     # HTTP request
-    r = post('{0}/raw/t'.format(config.get('online', 'http_url')), data=text)
+    r = post('{0}/raw/p'.format(config.get('online', 'http_url')), data=text)
     tokenized = r.text.decode('utf-8').encode("utf-8")
     sentences = tokenized.split('\n')
     return [sentence.split(" ") for sentence in sentences]
