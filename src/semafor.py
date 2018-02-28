@@ -38,7 +38,6 @@ def semafor_remote(text):
     with open(parsed_file, 'r') as f:
         parsed = f.read()
 
-
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((config.get('semafor', 'server'), eval(config.get('semafor', 'port'))))
     s.sendall(parsed)

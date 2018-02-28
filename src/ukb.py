@@ -74,5 +74,6 @@ def wsd(postags):
 
                 synsets.append({'token_start':tokenid,
                                  'token_end':tokenid,
+                                 'lemma':lemma,
                                  'synset': synset})
     return {'synsets':synsets}

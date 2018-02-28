@@ -23,7 +23,11 @@ public class BabelfyAloof {
 
 		}
 		for (String str_token : str_tokens) {
-			BabelfyToken token = new BabelfyToken(str_token);
+			String[] wordlemma = str_token.split("\\|");
+			String word = wordlemma[0];
+			String lemma = wordlemma[1];
+			BabelfyToken token = new BabelfyToken(word);
+			token.setLemma(lemma);
 			tokens.add(token);
 		}
 
