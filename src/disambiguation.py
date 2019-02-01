@@ -18,7 +18,7 @@ def disambiguation(tokenized, drs):
     entities = []
     if config.get('wsd', 'module') == 'babelfy':
         log.info("Calling Babelfy")
-        disambiguated = babelfy(tokenized)
+        disambiguated = babelfy(tokenized, config.get('babelfy', 'key'))
         synsets = disambiguated['synsets']
         if config_mapping.get('net', 'module') == 'wordnet':
             synsets = babelfy_to_wordnet(synsets)
