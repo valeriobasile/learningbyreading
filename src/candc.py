@@ -1,11 +1,11 @@
 from requests import post
 from lxml import etree, objectify
 import logging as log
-import ConfigParser
+import configparser
 import subprocess
 from os.path import join, dirname
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(join(dirname(__file__),'../config/semanticparsing.conf'))
 
 def tokenize(text):
@@ -278,7 +278,7 @@ def get_all(tokenized):
     try:
         drs = objectify.fromstring(boxer(tokenized))
     except:
-        print boxer(tokenized)
+        print (boxer(tokenized))
         log.error("cannot read Boxer XML")
         return None
 

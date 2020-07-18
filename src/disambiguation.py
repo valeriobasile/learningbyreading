@@ -2,15 +2,15 @@ from babelfy import babelfy
 from ukb import wsd
 from candc import postag
 from spotlight import spotlight
-import ConfigParser
+import configparser
 import logging as log
 from mappings import bn2dbpedia, offset2bn, bn2offset
 from os.path import join, dirname
 
 # read configuration
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(join(dirname(__file__),'../config/disambiguation.conf'))
-config_mapping = ConfigParser.ConfigParser()
+config_mapping = configparser.ConfigParser()
 config_mapping.read(join(dirname(__file__),'../config/mapping.conf'))
 
 def disambiguation(tokenized, drs):

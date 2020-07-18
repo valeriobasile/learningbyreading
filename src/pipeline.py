@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-import simplejson as json
+import json
 import logging as log
-import ConfigParser
+import configparser
 from optparse import OptionParser
 from disambiguation import disambiguation
 import candc
@@ -17,7 +17,7 @@ from lxml import objectify
 log.basicConfig(level=log.INFO, format='%(asctime)s.%(msecs)03d %(levelname)s %(message)s')
 
 # read configuration
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(join(dirname(__file__),'../config/namespace.conf'))
 config.read(join(dirname(__file__),'../config/disambiguation.conf'))
 
@@ -129,7 +129,7 @@ for filename in documents:
     # build dictionary of variables
     #try:
     variables = dict()
-    for predicate in semantics['predicates']+semantics['namedentities']:
+    for predicate in list(semantics['predicates'])+semantics['namedentities']:
         if not predicate['variable'] in variables:
             variables[predicate['variable']] = []
         for synset in synsets:

@@ -1,5 +1,5 @@
 # unboxer.py
-from drg import DRGParser, DRG
+from . import drg
 import sys
 
 def generate_from_referent(drg, ref, surface, complete=False, generic=False):
@@ -79,7 +79,7 @@ def generate_from_relation(drg, int_ref, ext_ref, generic=False):
 
 def unbox(tuples):
     surface = []
-    parser = DRGParser()
+    parser = drg.DRGParser()
     drg = parser.parse_tup_lines(tuples)
 
     du_list = drg.discourse_units()

@@ -1,11 +1,11 @@
-import simplejson as json
+import json
 from requests import post
 import logging as log
-import ConfigParser
+import configparser
 from os.path import join, dirname
 
 # read configuration
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(join(dirname(__file__),'../config/disambiguation.conf'))
 
 def spotlight(tokenized):

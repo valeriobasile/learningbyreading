@@ -5,15 +5,15 @@ from framenet import frames, vn2fn_roles
 from candc import get_drg
 import logging as log
 from mappings import offset2wn, bn2wn
-import ConfigParser
+import configparser
 from os.path import dirname, join
 from uuid import uuid4
 
 # read configuration
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(join(dirname(__file__),'../config/namespace.conf'))
 config.read(join(dirname(__file__),'../config/disambiguation.conf'))
-config_mapping = ConfigParser.ConfigParser()
+config_mapping = configparser.ConfigParser()
 config_mapping.read(join(dirname(__file__),'../config/mapping.conf'))
 
 if config_mapping.get('net', 'module') == 'wordnet':
@@ -51,7 +51,7 @@ def get_frame_instances(variables, semantics, thematic_roles):
 
 
     elif config.get('semantics', 'module') == 'semafor':
-        for variable, frame in semantics['frames'].iteritems():
+        for variable, frame in semantics['frames'].items():
             # create new frame instance
             instance_id = "{0}_{1}".format(frame, uuid4())
             frame_instances[instance_id] = dict()
@@ -69,7 +69,7 @@ def get_frame_instances(variables, semantics, thematic_roles):
 
 def get_frame_triples(frame_instances):
     triples = []
-    for frame_instance_id, frame_instance in frame_instances.iteritems():
+    for frame_instance_id, frame_instance in frame_instances.items():
         if len(frame_instance['roles']) > 0:
             framebase_id = frame_instance['frame']
             # maybe now we don't need the synset in the frame type anymore?
@@ -84,7 +84,7 @@ def get_frame_triples(frame_instances):
                       '<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>',
                       '<{0}/frame-{1}>'.format(config.get('namespace', 'frame'), framebase_id))
             triples.append(triple)
-            for role, (variable, filler) in frame_instance['roles'].iteritems():
+            for role, (variable, filler) in frame_instance['roles'].items():
                 #filler = unicode(filler, "utf-8")
                 triple = ('<{0}/fi-{1}>'.format(config.get('namespace', 'frame'), frame_instance_id),
                           '<{0}/fe-{1}>'.format(config.get('namespace', 'frame'), role),
@@ -98,7 +98,7 @@ def get_aligned_frames_xml(tokenized, frame_instances, root):
     drgparser = drg.DRGParser()
     d = drgparser.parse_tup_lines(tuples)
 
-    for instance_id, frame_instance in frame_instances.iteritems():
+    for instance_id, frame_instance in frame_instances.items():
         if len(frame_instance['roles']) > 0:
             if frame_instance['frame'] != "Unmapped":
                 framebase_id = "{0}-{1}".format(frame_instance['frame'], mapping_net[frame_instance['synset']].split("#")[0].replace('-', '.'))
@@ -120,7 +120,7 @@ def get_aligned_frames_xml(tokenized, frame_instances, root):
                 unboxer.generate_from_referent(d, reificated_frame_var, surface, complete=True)
                 tag_instancelexicalization[0] = ' '.join(surface)
                 tag_frameelements = objectify.SubElement(tag_frameinstance, "frameelements")
-                for role, (variable, filler) in frame_instance['roles'].iteritems():
+                for role, (variable, filler) in frame_instance['roles'].items():
                     tag_frameelement = objectify.SubElement(tag_frameelements, "frameelement")
                     tag_frameelement.attrib['role'] = role
                     tag_frameelement.attrib['internalvariable'] = variable

@@ -1,5 +1,5 @@
 import subprocess
-import simplejson as json
+import json
 from requests import get
 import logging as log
 import os

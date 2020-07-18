@@ -1,14 +1,14 @@
 import sys
 import rdflib
 import re
-import ConfigParser
+import configparser
 import logging as log
 from os.path import join, dirname
 from mappings import wn30wn31
 from lxml import etree, objectify
 
 # read configuration
-config_mapping = ConfigParser.ConfigParser()
+config_mapping = configparser.ConfigParser()
 config_mapping.read(join(dirname(__file__),'../config/mapping.conf'))
 
 frames = {}
@@ -21,7 +21,7 @@ def read_wnfn_mapping():
             try:
                 frame, synset_id, posoffset = line.rstrip().split(' - ')
             except:
-                print "error reading line\n{0}".format(line)
+                print ("error reading line\n{0}".format(line))
                 continue
             frame = frame.split(' ')[-1]
             lemma, pos = synset_id.split('.')
@@ -37,7 +37,7 @@ def read_wnfn_mapping():
                 else:
                     frames[offset31] = [frame]
             else:
-                print "{0} not in wn30 mapping".format(offset30)
+                print ("{0} not in wn30 mapping".format(offset30))
 
 #builds a dictionary of frame names indexed by babelnet synset id
 def read_bnfn_mapping():

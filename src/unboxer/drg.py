@@ -153,7 +153,7 @@ class DRGParser:
         try:
             tup.token_index = eval(fields[3])
         except:
-           print line
+           print (line)
            sys.exit(1)
         tup.tokens = fields[5:-1]
         return tup

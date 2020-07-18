@@ -1,5 +1,5 @@
 import subprocess
-import simplejson as json
+import json
 from requests import get
 import logging as log
 from mappings import bn2offset, wn30wn31, offset2bn, bn2dbpedia
@@ -13,20 +13,20 @@ from os.path import join, dirname
 def wsd(postags):
     context = []
     indexoffset = 0
-    for indexsent, sentencepos in enumerate(postags.split('\n')):
+    for indexsent, sentencepos in enumerate(postags.decode("utf-8").split('\n')):
         sentence = []
         tokens = sentencepos.split(' ')
         for index, item in enumerate(tokens):
             if len(sentencepos) > 0:
                 word, postag = item.split('|')
                 wnpostag = postag.lower()[0]
-                sentence.append(u'{0}#{1}#{2}#1'.format(word.decode('utf-8'), wnpostag, index+indexoffset))
+                sentence.append(u'{0}#{1}#{2}#1'.format(word, wnpostag, index+indexoffset))
         context.append(sentence)
         indexoffset += (len(tokens)-1)
 
     f = NamedTemporaryFile('w', delete=False)
     for indexsent, sentence in enumerate(context):
-        f.write(u'sentence{0}\n{1}\n'.format(indexsent, ' '.join(sentence)).encode('utf-8'))
+        f.write(u'sentence{0}\n{1}\n'.format(indexsent, ' '.join(sentence)))
         #print(u'sentence{0}\n{1}'.format(indexsent, ' '.join(sentence)).encode('utf-8'))
     f.close()
 
@@ -41,13 +41,13 @@ def wsd(postags):
                             stdin=subprocess.PIPE,
                             stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE)
-    except CalledProcessError, e:
-        print e.args
-        print e.cmd
-        print e.message
-        print e.output
-        print e.returncode
-        print '--'
+    except CalledProcessError as e:
+        print (e.args)
+        print (e.cmd)
+        print (e.message)
+        print (e.output)
+        print (e.returncode)
+        print ('--')
     out, err = process.communicate()
     os.remove(f.name)
 

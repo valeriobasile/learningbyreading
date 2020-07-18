@@ -3,13 +3,13 @@ import subprocess
 from os.path import join, dirname, isfile
 from os import remove
 import tempfile
-import ConfigParser
+import configparser
 import sys
-import simplejson as json
+import json
 from nltk.tokenize.punkt import PunktSentenceTokenizer
 import socket
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(join(dirname(__file__),'../config/semanticparsing.conf'))
 
 def semafor_remote(text):
@@ -18,12 +18,12 @@ def semafor_remote(text):
     input_file = join(dirname(__file__),'../{0}/bin/in.txt'.format(config.get('semafor', 'base_dir')))
     with open(input_file, 'w') as f:
         tokenizer = PunktSentenceTokenizer()
-        sentences = tokenizer.tokenize(text.decode('utf-8'))
+        sentences = tokenizer.tokenize(text)
         ''' bug: if the tokenization is messed up, the Semafor server chokes on
             longer sentences.
             workaround: we filter out the sentences that are over a certain length (1000 chars).
         '''
-        sentences = map(lambda x: x.strip().encode('utf-8'), list(filter(lambda x: len(x) <= 1000, sentences)))
+        sentences = map(lambda x: x.strip(), list(filter(lambda x: len(x) <= 1000, sentences)))
         f.write('\n'.join(sentences))
 
     output_dir = join(dirname(__file__),'../{0}/bin/'.format(config.get('semafor', 'base_dir')))
@@ -40,16 +40,16 @@ def semafor_remote(text):
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((config.get('semafor', 'server'), eval(config.get('semafor', 'port'))))
-    s.sendall(parsed)
+    s.sendall(parsed.encode("utf-8"))
     s.shutdown(socket.SHUT_WR)
     result = ''
     while 1:
         data = s.recv(1024)
-        result += data
-        if data == "":
+        result += data.decode("utf-8")
+        if data == b"":
             break
     s.close()
-
+    
     sentences_semantics = []
     for line in result.split('\n'):
         if len(line)>0:
