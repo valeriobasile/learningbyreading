@@ -66,7 +66,7 @@ namespace NLP {
       ulong nchained(void){
         return next ? next->nchained() + 1 : 1;
       }
-      
+
       std::ostream &save(std::ostream &out) const {
 	return out << str << ' ' << std::setprecision(4) << value;
       }

@@ -4,6 +4,10 @@ cd candc
 cat Makefile.unix | sed "s/^PROLOG = swipl/PROLOG = bin\/swipl/" > Makefile
 BASEDIR=`pwd`
 
+# brutal patch workaround for the new C++ lib versions
+cat src/include/hashtable/word.h | sed "s/bool equal(const std::string \&str, const Hash hash)/bool equal(const Word \&str, const Hash hash)/" > src/include/hashtable/word.h.bak
+mv src/include/hashtable/word.h.bak src/include/hashtable/word.h
+
 # install SOAP
 cd ext
 unzip gsoap_2.8.16.zip
