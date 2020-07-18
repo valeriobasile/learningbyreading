@@ -2,7 +2,7 @@
 from optparse import OptionParser
 from babelfy import babelfy
 from candc import tokenize, get_all, get_fol
-import simplejson as json
+import json
 import logging as log
 from os import listdir
 from os.path import isfile, join
@@ -79,8 +79,8 @@ for filename in documents:
     log.info("Word sense disambiguation and entity linking")
     synsets, entities = disambiguation(tokenized, drs)
     if synsets==None or entities==None:
-		log.error("error during the disambiguation of file '{0}', exiting".format(filename))
-		continue
+        log.error("error during the disambiguation of file '{0}', exiting".format(filename))
+        continue
 
     # extracting co-mentions
     if options.comentions:
@@ -121,7 +121,7 @@ for filename in documents:
             i+=1
     # build symbol-synset dictionary
     synsets = dict()
-    for variable, predicates in variables.iteritems():
+    for variable, predicates in variables.items():
         for predicate in predicates:
             wn_id = predicate.split('/')[-1]
             synsets[prolog_variables[variable]] = wn_id
