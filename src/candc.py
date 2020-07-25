@@ -184,7 +184,7 @@ def get_predicates(drs, token_ids):
         preds = drs.findall('.//pred')
         for pred in preds:
             try:
-                poslist = list(map(lambda x: token_ids.index(x.text), pred['indexlist']['index']))
+                poslist = [token_ids.index(x.text) for x in pred['indexlist']['index']]
             except:
                 poslist = [-1]
 
@@ -196,8 +196,8 @@ def get_predicates(drs, token_ids):
                          'variable' : pred.attrib['arg']}
             predicates.append(predicate)
     except:
-        log.error("boxer(): error getting predicates")
-        return None
+       log.error("boxer(): error getting predicates")
+       return None
     return predicates
 
 def get_named(drs, token_ids):
@@ -206,7 +206,7 @@ def get_named(drs, token_ids):
         nameds = drs.findall('.//named')
         for named in nameds:
             try:
-                poslist = map(lambda x: token_ids.index(x.text), named['indexlist']['index'])
+                poslist = [token_ids.index(x.text) for x in named['indexlist']['index']]
             except:
                 poslist = [-1]
             namedentity = {'token_start' : poslist[0],
@@ -255,7 +255,7 @@ def get_identities(drs):
 def get_tokens(drs):
     try:
         tagtokens = drs['xdrs']['taggedtokens']['tagtoken']
-        token_ids = map(lambda x: x.attrib['{http://www.w3.org/XML/1998/namespace}id'], tagtokens)
+        token_ids = list(map(lambda x: x.attrib['{http://www.w3.org/XML/1998/namespace}id'], tagtokens))
     except:
         log.error("boxer(): error getting token IDs")
         return None

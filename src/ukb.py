@@ -25,10 +25,13 @@ def wsd(postags):
         indexoffset += (len(tokens)-1)
 
     f = NamedTemporaryFile('w', delete=False)
+    f1 = open('tmp.txt', 'w')
     for indexsent, sentence in enumerate(context):
         f.write(u'sentence{0}\n{1}\n'.format(indexsent, ' '.join(sentence)))
+        f1.write(u'sentence{0}\n{1}\n'.format(indexsent, ' '.join(sentence)))
         #print(u'sentence{0}\n{1}'.format(indexsent, ' '.join(sentence)).encode('utf-8'))
     f.close()
+    f1.close()
 
     basedir = os.path.abspath(join(dirname(__file__),'../ext/ukb'))
     ukb = '{0}/bin/ukb_wsd'.format(basedir)
@@ -36,7 +39,7 @@ def wsd(postags):
     dict_file = '{0}/lkb_sources/30/wnet30_dict.txt'.format(basedir)
     cmdline = "{0} --ppr -K {1} -D {2} {3}".format(ukb, relation_file, dict_file, os.path.abspath(f.name))
     try:
-        process = subprocess.Popen(shlex.split(cmdline), 
+        process = subprocess.Popen(shlex.split(cmdline),
                             shell=False,
                             stdin=subprocess.PIPE,
                             stdout=subprocess.PIPE,
@@ -52,8 +55,6 @@ def wsd(postags):
     out, err = process.communicate()
     os.remove(f.name) # print (boxer(tokenized))
        # log.error("cannot read Boxer XML")
-
-
     synsets = []
     for line in out.split('\n'):
         if not line.startswith('!!') and len(line) > 1:
