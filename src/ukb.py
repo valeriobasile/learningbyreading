@@ -13,7 +13,7 @@ from os.path import join, dirname
 def wsd(postags):
     context = []
     indexoffset = 0
-    for indexsent, sentencepos in enumerate(postags.decode("utf-8").split('\n')):
+    for indexsent, sentencepos in enumerate(postags.split('\n')):
         sentence = []
         tokens = sentencepos.split(' ')
         for index, item in enumerate(tokens):
@@ -36,11 +36,12 @@ def wsd(postags):
     dict_file = '{0}/lkb_sources/30/wnet30_dict.txt'.format(basedir)
     cmdline = "{0} --ppr -K {1} -D {2} {3}".format(ukb, relation_file, dict_file, os.path.abspath(f.name))
     try:
-        process = subprocess.Popen(shlex.split(cmdline), universal_newlines=True,
+        process = subprocess.Popen(shlex.split(cmdline), 
                             shell=False,
                             stdin=subprocess.PIPE,
                             stdout=subprocess.PIPE,
-                            stderr=subprocess.PIPE)
+                            stderr=subprocess.PIPE,
+                            universal_newlines=True)
     except CalledProcessError as e:
         print (e.args)
         print (e.cmd)
@@ -49,7 +50,9 @@ def wsd(postags):
         print (e.returncode)
         print ('--')
     out, err = process.communicate()
-    os.remove(f.name)
+    os.remove(f.name) # print (boxer(tokenized))
+       # log.error("cannot read Boxer XML")
+
 
     synsets = []
     for line in out.split('\n'):

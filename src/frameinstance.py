@@ -24,7 +24,7 @@ elif config_mapping.get('net', 'module') == 'babelnet':
 def get_frame_instances(variables, semantics, thematic_roles):
     frame_instances = dict()
     if config.get('semantics', 'module') == 'boxer':
-        for variable, senses in variables.iteritems():
+        for variable, senses in variables.items():
             for sense in senses:
                 synset = sense.split('/')[-1]
                 if synset in frames:

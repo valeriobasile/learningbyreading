@@ -28,11 +28,12 @@ def postag_local(tokenized):
                            shell=False,
                            stdin=subprocess.PIPE,
                            stdout=subprocess.PIPE,
-                           stderr=subprocess.PIPE)
-    out, err = process.communicate(tokenized.encode('utf-8'))
+                           stderr=subprocess.PIPE,
+                           universal_newlines=True)
+    out, err = process.communicate(tokenized+"\n")
     if err:
         log.error('POS-tagger error: {0}'.format(err))
-    postagged = out.decode('utf-8').encode("utf-8")
+    postagged = out
     return postagged
 
 def postag_online(tokenized):
@@ -56,11 +57,12 @@ def tokenize_local(text):
                            shell=False,
                            stdin=subprocess.PIPE,
                            stdout=subprocess.PIPE,
-                           stderr=subprocess.PIPE)
-    out, err = process.communicate(text)
+                           stderr=subprocess.PIPE,
+                           universal_newlines=True)
+    out, err = process.communicate(text+"\n")
     if err:
         log.error('Tokenizer error: {0}'.format(err))
-    tokenized = out.decode('utf-8').encode("utf-8")
+    tokenized = out
     sentences = tokenized.split('\n')
     return [sentence.split(" ") for sentence in sentences]
 
@@ -72,13 +74,14 @@ def parse_local(tokenized):
                            shell=False,
                            stdin=subprocess.PIPE,
                            stdout=subprocess.PIPE,
-                           stderr=subprocess.PIPE)
-    out, err = process.communicate(tokenized)
+                           stderr=subprocess.PIPE,
+                           universal_newlines=True)
+    out, err = process.communicate(tokenized+"\n")
     if err:
         # C&C writes info on the stderr, we want to ignore it
         if not err.startswith('#'):
             log.error('Parser error: {0}'.format(err))
-    parsed = out.decode('utf-8').encode("utf-8")
+    parsed = out
     return parsed
 
 def parse_soap(tokenized):
@@ -88,13 +91,13 @@ def parse_soap(tokenized):
                            shell=False,
                            stdin=subprocess.PIPE,
                            stdout=subprocess.PIPE,
-                           stderr=subprocess.PIPE)
-    out, err = process.communicate(tokenized)
+                           stderr=subprocess.PIPE,
+                           universal_newlines=True)
+    out, err = process.communicate(tokenized+"\n")
     if err:
         # C&C writes info on the stderr, we want to ignore it
         if not err.startswith('#'):
             log.error('Parser error: {0}'.format(err))
-    #parsed = out.decode('utf-8').encode("utf-8")
     parsed = out
     return parsed
 
@@ -108,10 +111,10 @@ def get_boxer_options():
     parameters = config.options('options')
     options = {parameter: config.get('options', parameter) for parameter in parameters}
     if config.get('boxer', 'mode') == 'local' or config.get('boxer', 'mode') == 'soap':
-        option_list = ['--{0} {1}'.format(parameter, value) for parameter, value in options.iteritems()]
+        option_list = ['--{0} {1}'.format(parameter, value) for parameter, value in options.items()]
         return ' '.join(option_list)
     elif config.get('boxer', 'mode') == 'online':
-        option_list = ['{0}={1}'.format(parameter, value) for parameter, value in options.iteritems()]
+        option_list = ['{0}={1}'.format(parameter, value) for parameter, value in options.items()]
         return '&'.join(option_list)
 
 def boxer_local(tokenized, fol=False, drg=False):
@@ -139,14 +142,15 @@ def boxer_local(tokenized, fol=False, drg=False):
                            shell=False,
                            stdin=subprocess.PIPE,
                            stdout=subprocess.PIPE,
-                           stderr=subprocess.PIPE)
-    out, err = process.communicate(parsed)
+                           stderr=subprocess.PIPE,
+                           universal_newlines=True)
+    out, err = process.communicate(parsed+"\n")
 
     if err:
         # Boxer throws a silly error every time (a bug), we want to ignore it
         if not "No source location" in err:
             log.error('Boxer error: {0}'.format(err))
-    boxed = out.decode('utf-8').encode("utf-8")
+    boxed = out
 
     return boxed
 
@@ -180,7 +184,7 @@ def get_predicates(drs, token_ids):
         preds = drs.findall('.//pred')
         for pred in preds:
             try:
-                poslist = map(lambda x: token_ids.index(x.text), pred['indexlist']['index'])
+                poslist = list(map(lambda x: token_ids.index(x.text), pred['indexlist']['index']))
             except:
                 poslist = [-1]
 
@@ -276,11 +280,11 @@ def get_drg(tokenized):
 def get_all(tokenized):
     # get the tokens and their IDs
     try:
-        drs = objectify.fromstring(boxer(tokenized))
+        drs = objectify.fromstring(boxer(tokenized).encode("utf-8"))
     except:
-        print (boxer(tokenized))
-        log.error("cannot read Boxer XML")
-        return None
+       print (boxer(tokenized))
+       log.error("cannot read Boxer XML")
+       return None
 
     token_ids = get_tokens(drs)
     if not token_ids:
