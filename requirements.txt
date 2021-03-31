@@ -6,7 +6,7 @@ configparser==5.0.0
 idna==2.10
 isodate==0.6.0
 joblib==0.16.0
-lxml==4.6.2
+lxml==4.6.3
 nltk==3.5
 pkg-resources==0.0.0
 pyparsing==2.4.7
