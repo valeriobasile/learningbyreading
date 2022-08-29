@@ -1,4 +1,4 @@
-** Are you looking for C&C/Boxer? READ THIS **
+**Are you looking for C&C/Boxer? READ THIS**
 
 The C&C tools and Boxer are not maintained nor distributed anymore. A frozen version of them is contained in this repository, along with helper scripts to install the software.
 
