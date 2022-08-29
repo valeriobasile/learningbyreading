@@ -1,3 +1,10 @@
+** Are you looking for C&C/Boxer? READ THIS **
+
+The C&C tools and Boxer are not maintained nor distributed anymore. A frozen version of them is contained in this repository, along with helper scripts to install the software.
+
+A newer, more maintained package can be found here: https://github.com/ajung202/ccg2lambda
+Credits to Alex Jung
+
 # KNEWS: Knowledge Extraction With Semantics
 
 A Learning by Reading pipeline of NLP and Entity Linking tools.
